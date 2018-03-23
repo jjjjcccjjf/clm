@@ -11,7 +11,7 @@ $(document).ready(function () {
       data: { email: email, password: password},
       success: function (res, textStatus, xhr) {
         if (xhr.status === 200 && res.code === 'ok') {
-          window.location.href = 'dashboard';
+          window.location.href = res.url;
         } else if (xhr.status === 200 && res.code === 'unauthorized') {
           alert(res.message);
         }

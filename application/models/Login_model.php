@@ -8,12 +8,12 @@ class Login_model extends CI_Model
   }
 
   /**
-   * [verifyCredentials description]
-   * @param  [type] $email      [description]
-   * @param  [type] $password   [description]
-   * @param  [type] $login_type this parameter is for the table name to check
-   * @return [type]             [description]
-   */
+  * [verifyCredentials description]
+  * @param  [type] $email      [description]
+  * @param  [type] $password   [description]
+  * @param  [type] $login_type this parameter is for the table name to check
+  * @return [type]             [description]
+  */
   public function verifyCredentials($email, $password, $login_type)
   {
     $user = $this->getUserByEmail($email, $login_type);
@@ -36,4 +36,21 @@ class Login_model extends CI_Model
     $this->session->set_userdata('login_type', $login_type);
     // $this->session->set_userdata('X-API-KEY', '');
   }
+
+  public function createRedirectURL($login_type)
+  {
+    switch ($login_type) {
+      case 'sellers':
+      // code...
+      // break;
+
+      case 'admin':
+      default:
+      $url = base_url('admin/dashboard');
+      break;
+    }
+
+    return $url;
+  }
+
 }

@@ -17,6 +17,10 @@ class Admin_controller extends CI_Controller
 
   public function wrapper($body, $data = null)
   {
+    if ($this->session->login_type !== 'admin') {
+      redirect('admin');
+    }
+    
     $this->load->view('admin/partials/header');
     $this->load->view('admin/partials/left-sidebar');
     $this->load->view($body, $data);

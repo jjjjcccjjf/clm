@@ -7,14 +7,6 @@ class Login extends CI_Controller {
   {
     parent::__construct();
 
-    if ($this->session->login_type === 'admin') {
-      redirect('dashboard');
-    }
-  }
-
-  public function index()
-  {
-    $this->load->view('admin/login');
   }
 
   public function attempt($login_type)
@@ -25,9 +17,18 @@ class Login extends CI_Controller {
     if($user = $this->login_model->verifyCredentials($email, $password, $login_type)){
       $this->login_model->setSession($user, $login_type);
 
-      custom_response(200, [ 'message' => 'Login success', 'code' => 'ok'], $this);
+      $url = $this->login_model->createRedirectURL($login_type);
+
+      custom_response(200, ['message' => 'Login success', 'code' => 'ok', 'url' => $url], $this);
     } else {
-      custom_response(200, [ 'message' => 'Invalid username or password', 'code' => 'unauthorized'], $this);
+      custom_response(200, ['message' => 'Invalid username or password', 'code' => 'unauthorized'], $this);
     }
+  }
+
+  public function logout()
+  {
+    $this->session->sess_destroy();
+    redirect();
+    die();
   }
 }
