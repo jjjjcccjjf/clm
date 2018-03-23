@@ -34,7 +34,7 @@ class Login_model extends CI_Model
   {
     $this->session->set_userdata('id', $user->id);
     $this->session->set_userdata('login_type', $login_type);
-    // $this->session->set_userdata('X-API-KEY', '');
+    $this->session->set_userdata('name', $user->name);
   }
 
   public function createRedirectURL($login_type)

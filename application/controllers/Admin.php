@@ -24,7 +24,7 @@ class Admin extends Admin_controller { # see application/core/MY_Controller.php
 
   public function dashboard()
   {
-    $this->wrapper('admin/blank');
+    $this->wrapper('admin/index');
   }
 
 }

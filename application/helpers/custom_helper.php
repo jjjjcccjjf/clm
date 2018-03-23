@@ -22,3 +22,49 @@ function custom_response($status, $response, $class)
   ->_display();
   exit;
 }
+
+######### Beyond this line are loader stuffs ##########
+function createLoader($options){
+  $loader = initializeLoader($options['type']);
+  if (@$options['wrap']) {
+    $loader = wrapLoader($options, $loader);
+  }
+
+  return $loader;
+}
+
+function wrapLoader($options, $loader)
+{
+  switch ($options['wrap']) {
+    case 'table':
+    $loader = "<tr><td colspan='{$options['colspan']}'>"
+    . $loader . "</td></tr>";
+    break;
+
+    default:
+    // code...
+    break;
+  }
+
+  return $loader;
+}
+
+function initializeLoader($type)
+{
+  $loader = '<center><img src="';
+
+  switch ($type) {
+    case 'other':
+    // other loaders
+    break;
+
+    case 'gear':
+    default:
+    $loader .= base_url('public/admin/img/gear-loader.gif');
+    // code...
+    break;
+  }
+  $loader .= '" height="25px" alt=""></center>';
+
+  return $loader;
+}
