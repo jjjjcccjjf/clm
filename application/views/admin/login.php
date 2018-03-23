@@ -1,100 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Mosaddek">
+  <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
 
-    <title>Cebu Landmasters Sellers Portal</title>
+  <title>Cebu Landmasters Sellers Portal</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url('public/admin/') ?>css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url('public/admin/') ?>css/bootstrap-reset.css" rel="stylesheet">
-    <!--external css-->
-    <link href="<?php echo base_url('public/admin/') ?>assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link href="<?php echo base_url('public/admin/') ?>css/style.css" rel="stylesheet">
-    <link href="<?php echo base_url('public/admin/') ?>css/style-responsive.css" rel="stylesheet" />
+  <!-- Bootstrap core CSS -->
+  <link href="<?php echo base_url('public/admin/') ?>css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url('public/admin/') ?>css/bootstrap-reset.css" rel="stylesheet">
+  <!--external css-->
+  <link href="<?php echo base_url('public/admin/') ?>assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="<?php echo base_url('public/admin/') ?>css/style.css" rel="stylesheet">
+  <link href="<?php echo base_url('public/admin/') ?>css/style-responsive.css" rel="stylesheet" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-    <script src="<?php echo base_url('public/admin/') ?>js/html5shiv.js"></script>
-    <script src="<?php echo base_url('public/admin/') ?>js/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+  <!--[if lt IE 9]>
+  <script src="<?php echo base_url('public/admin/') ?>js/html5shiv.js"></script>
+  <script src="<?php echo base_url('public/admin/') ?>js/respond.min.js"></script>
+  <![endif]-->
+  <style media="screen">
+  html {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #434343;
+    background-image:linear-gradient(#434343, #282828);
+  }
+  #content{
+    background-color: transparent;
+    background-image:       linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    height:100%;
+    background-size:50px 50px;
+  }
+
+  .follow-me {
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  </style>
 </head>
 
-  <body class="login-body">
+<body class="login-body">
 
-    <div class="container">
+  <div class="container">
 
-      <form class="form-signin" action="index.html">
-        <h2 class="form-signin-heading">sign in now</h2>
-        <div class="login-wrap">
-            <input type="text" class="form-control" placeholder="User ID" autofocus>
-            <input type="password" class="form-control" placeholder="Password">
-            <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right">
-                    <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
-
-                </span>
-            </label>
-            <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
-            <p>or you can sign in via social network</p>
-            <div class="login-social-link">
-                <a href="index.html" class="facebook">
-                    <i class="fa fa-facebook"></i>
-                    Facebook
-                </a>
-                <a href="index.html" class="twitter">
-                    <i class="fa fa-twitter"></i>
-                    Twitter
-                </a>
-            </div>
-            <div class="registration">
-                Don't have an account yet?
-                <a class="" href="registration.html">
-                    Create an account
-                </a>
-            </div>
-
-        </div>
-
-          <!-- Modal -->
-          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title">Forgot Password ?</h4>
-                      </div>
-                      <div class="modal-body">
-                          <p>Enter your e-mail address below to reset your password.</p>
-                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
-
-                      </div>
-                      <div class="modal-footer">
-                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                          <button class="btn btn-success" type="button">Submit</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- modal -->
-
-      </form>
-
-    </div>
+    <form class="form-signin" action="index.html">
+      <h2 class="form-signin-heading" style="background: dimgray;">
+        <img src="<?php echo base_url('public/front/images/')?>clm-logo2.png" alt=""
+        style="max-height:80px;">
+      </h2>
+      <div class="login-wrap">
+        <input type="text" class="form-control" placeholder="User ID" autofocus>
+        <input type="password" class="form-control" placeholder="Password">
+        <button style="background: dimgray; box-shadow: 0px 4px #908f8f"
+        class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
+      </div>
 
 
+    </form>
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url('public/admin/') ?>js/jquery.js"></script>
-    <script src="<?php echo base_url('public/admin/') ?>js/bootstrap.min.js"></script>
+  </div>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="<?php echo base_url('public/admin/') ?>js/jquery.js"></script>
+  <script src="<?php echo base_url('public/admin/') ?>js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url('public/admin/js/custom/login/') ?>index.js"></script>
 
-
-  </body>
+</body>
 </html>
