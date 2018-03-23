@@ -8,7 +8,7 @@ class Migration_admin_table extends CI_Migration {
   {
     $this->dbforge->add_field('id');
     $this->dbforge->add_field(array(
-      'full_name' => array(
+      'name' => array(
         'type' => 'VARCHAR',
         'constraint' => '200',
       ),
@@ -29,7 +29,7 @@ class Migration_admin_table extends CI_Migration {
       $table = 'admin';
 
       $data = array(
-        'full_name' => 'Admin',
+        'name' => 'Admin',
         'email' => 'lsalamante@myoptimind.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );

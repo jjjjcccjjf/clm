@@ -8,6 +8,22 @@ class MY_Controller extends \Restserver\Libraries\REST_Controller
   # I prefer more declarative class names than `MY_*`
 }
 
+class Admin_controller extends CI_Controller
+{
+  function __construct()
+  {
+    parent::__construct();
+  }
+
+  public function wrapper($body, $data = null)
+  {
+    $this->load->view('admin/partials/header');
+    $this->load->view('admin/partials/left-sidebar');
+    $this->load->view($body, $data);
+    $this->load->view('admin/partials/footer');
+  }
+}
+
 class Crud_controller extends \Restserver\Libraries\REST_Controller
 {
 
