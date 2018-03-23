@@ -46,7 +46,7 @@ class Login_model extends CI_Model
 
       case 'admin':
       default:
-      $url = base_url('admin/dashboard');
+      $url = base_url('admin');
       break;
     }
 

@@ -15,16 +15,30 @@ class Admin extends Admin_controller { # see application/core/MY_Controller.php
 
   public function admin()
   {
+    $res = $this->admin_model->all();
+
+    $data['admins'] = $res;
+    $this->wrapper('admin/index', $data);
+  }
+
+  function login($value='')
+  {
     if ($this->session->login_type === 'admin') {
-      redirect('admin/dashboard');
+      redirect('admin');
     }
 
     $this->load->view('admin/login');
   }
 
-  public function dashboard()
+  public function update($id)
   {
-    $this->wrapper('admin/index');
+    if($this->admin_model->update($id, $this->input->post())){
+      $this->session->set_flashdata('update_msg', ['message' => 'User updated successfully', 'color' => 'green']);
+    } else {
+      $this->session->set_flashdata('update_msg', ['message' => 'Error updating user', 'color' => 'red']);
+    }
+
+    $this->admin_redirect();
   }
 
 }

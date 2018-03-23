@@ -8,7 +8,7 @@
   <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
 
-  <title>Cebu Landmasters Sellers Portal</title>
+  <title>Cebu Landmasters</title>
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo base_url('public/admin/') ?>css/bootstrap.min.css" rel="stylesheet">
@@ -50,6 +50,9 @@
     color: #FFFFFF;
   }
   </style>
+  <script type="text/javascript">
+  const base_url = '<?php echo base_url(); ?>';
+  </script>
 </head>
 
 <body class="login-body">
@@ -75,7 +78,7 @@
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="<?php echo base_url('public/admin/') ?>js/jquery.js"></script>
   <script src="<?php echo base_url('public/admin/') ?>js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url('public/admin/js/custom/login/') ?>index.js"></script>
+  <script src="<?php echo base_url('public/admin/js/custom/') ?>login.js"></script>
 
 </body>
 </html>
