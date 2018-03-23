@@ -1,0 +1,901 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/Proxima Nova Alt Regular-webfont.eot');
+    src: url('fonts/Proxima Nova Alt Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Alt Regular-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Alt Regular-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Alt Regular-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Alt Regular-webfont.svg#proxima_nova_altregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'proxima_nova_ltsemibold';
+    src: url('fonts/Proxima Nova Semibold-webfont.eot');
+    src: url('fonts/Proxima Nova Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Semibold-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Semibold-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Semibold-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Semibold-webfont.svg#proxima_nova_ltsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'futura_icgregular';
+    src: url('fonts/futura_icg-webfont.woff2') format('woff2'),
+         url('fonts/futura_icg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'montserratsemibold';
+    src: url('fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {outline: none; box-sizing: border-box;}
+a {text-decoration: none; cursor: pointer;}
+body, html, h1, h2, h3, h4, h5, h6, p, header, footer, div, article, section, aside {padding: 0; margin: 0; position: relative;}
+body, html {height: 100%;}
+input, select, textarea, button {outline: 0; border: 0; appearance: none; -webkit-appearance: none; -moz-appearance: none; -o-appearance: none;}
+
+/* Common Classes */
+.wid100 {width:100%; float: left; }
+.fleft {float: left;}
+.fright {float: right;}
+.listn {list-style: none; margin: 0; padding: 0;}
+.defimg {width: 100%; height: auto;}
+.defimg2 {width: auto; height: auto;}
+.coverimg {width: 100%; height: 100%; object-fit: cover;}
+.containimg {width: 100%; height: 100%; object-fit: contain;}
+.pagewrapper {width: 100%;  margin: 0 auto; max-width: 1366px; padding: 0 25px;}
+.pagewrapper2 {width: 100%; margin: 0 auto; max-width: 990px;}
+img {@extend .defimg}
+.close {width: 35px; height: 35px; background: url(../images/iconset1.png) no-repeat right -35px; position: absolute; right: 10px; top: 10px;}
+
+
+/* Colors & Fonts */
+$fontmain: 'futura_icgregular', Arial, sans-serif;
+$fonthead: 'proxima_nova_ltsemibold', Arial, sans-serif;
+$fontlink: 'Proxima Nova', Arial, sans-serif;
+$fontcat: 'montserratsemibold', Arial, sans-serif;
+
+/* BGC Colors */
+$white: #fff;
+$yellowgreen: #77bb53;
+$orange: #e48810;
+$lightgreen: #d0cc3a;
+$transorange: rgba(228,136,16,0.7);
+$translightgreen: rgba(194,205,35,0.7);
+$transblack: rgba(0,0,0,0.6);
+$textgray: #353535;
+$darkgray: #2d2d2d;
+
+/* Header */
+nav.cbp-spmenu {background: $orange;
+	button {background-position: right top; width: 35px; height: 35px; position: absolute; left: 85%; top: 5px; @extend .fright;}
+	
+	a {font: 16px/22px $fontlink; color: $white;}
+}
+header {@extend .wid100; z-index: 1000;}
+
+.altaraza {
+	section {@extend .wid100; background: $orange; padding: 15px 45px; box-shadow: 0 3px 3px rgba(0,0,0,0.5); min-height: 68px;
+		div {z-index: 100;}
+		div ul {display: none; z-index: 100;}
+		aside {@extend .fright; z-index: 100;
+		ul {@extend .listn; font: 16px/22px $fontlink; margin-top: 8px;
+				li {display: inline-block;
+					a {color: $white; @extend .fleft;
+						span { @extend .fright; width: 35px; height: 25px; background: url(../images/iconset1.png) no-repeat -35px -8px;}
+					}
+					a:hover, a:hover span {animation: opac 1s; animation-fill-mode: forwards; -webkit-animation: opac 1s; -webkit-animation-fill-mode: forwards;}
+					a.search, a.location, a.call {width: 35px; height: 25px; background: url(../images/iconset1.png) no-repeat; @extend .fleft;}
+					a.search {background-position: -70px -8px;}
+					a.location {background-position: -105px -8px;}
+					a.call {background-position: -140px -8px;}
+				}
+			}
+		}
+		article {@extend .wid100; text-align: center; height: 58px; position: absolute; top: 5px; z-index: 1; display: block; left: 0;
+			img.estatelogo {@extend .containimg; display: none;}
+			img.ayalalogo {display: block!important; width: auto; height: auto; text-align: center; margin: 10px auto 0;}
+		}
+
+	}
+	aside.header-logo {@extend .wid100; text-align: center; height: 99px; padding: 5px; background: #f9fafa;
+		.bgleft {background: url(../images/bgleft.png) no-repeat left top; @extend .fleft; width: 189px; height: 99px; position: absolute; top: 0; left: 0;}
+		.bgright {background: url(../images/bgright.png) no-repeat right top; @extend .fleft; width: 189px; height: 99px; position: absolute; top: 0; right: 0;}
+		img {@extend .containimg}
+	}
+
+
+	nav.main-nav {@extend .wid100; padding: 10px 0; background: $orange; text-align: center; height: 65px;
+		ul {@extend .listn; text-align: center;
+			li {display: inline-block;
+				a {font: 18px/24px $fontlink; color: $white; padding: 10px 25px 10px; @extend .fleft;
+					span { @extend .fright; width: 35px; height: 25px; background: url(../images/iconset1.png) no-repeat -35px -5px;}
+				}
+				a:hover, a:hover span {animation: opac 1s; animation-fill-mode: forwards; -webkit-animation: opac 1s; -webkit-animation-fill-mode: forwards;}
+			}
+		}
+		section.categories, section.explore-categories {display: none; @extend .wid100; background: $lightgreen; padding: 30px 10px; color: $white; position: absolute; top: 231px;
+			ul {
+				li { text-align: center; 
+					a {
+						span {width: 80px; height: 80px;  background: url(../images/bgc-icons.png) no-repeat; clear: both; display: block; float: none; margin: 0 auto;}
+						p {@extend .wid100;}
+					}
+					span.live {background-position: left top}
+					span.health {background-position: right top}
+				}
+			}
+		}
+	}
+
+}
+
+
+.list-estates {position: absolute; @extend .wid100; padding: 30px; background: $white; top: 68px; display: none; z-index: 1001;}
+.searchbox {position: absolute; width: 400px; padding: 30px; background: $white; top: 68px; right: 0; display: none; z-index: 1001;
+	span {@extend .wid100; padding-right: 45px;
+		input[type="text"] {border: solid 1px rgba(0,0,0,0.3); font: 16px/22px $fontlink; padding: 5px 10px; height: 35px; width: 100%; box-sizing: border-box;}
+		input[type="text"]:hover, input[type="text"]:focus {border: solid 1px $orange;}
+		
+	}
+	input[type="submit"] {background: $orange url(../images/iconset1.png) no-repeat -70px top; width: 35px; height: 35px; position: absolute; right: 30px; @extend .fright; cursor: pointer}
+	input[type="submit"]:hover {animation: opac 1s; -webkit-animation: opac 1s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards;}
+}
+
+.list-estates {@extend .listn; text-align: center; height: 100%; overflow: scroll;
+	h4 {font: 18px/24px $fontlink; color: $textgray; margin-bottom: 20px;}
+	ul {@extend .listn;
+		li {display: inline-block; position: relative; padding: 10px; border: solid 1px $white; margin: 0 12px;
+			img {width: auto; max-width: 100%; height: auto;}
+			img + span {display: none; background: $lightgreen; font: 16px/22px $fontmain; color: white; padding: 5px; text-align: center; position: absolute; bottom: 0; z-index: 100; @extend .wid100; left: 0; border: solid 5px $white; border-top: 0;}
+			
+		}
+		li:hover {border: solid 1px rgba(0,0,0,0.2); 
+			img + span {display: block; animation: opac1 1s; -webkit-animation: opac1 1s;  animation-fill-mode: forwards; -webkit-animation: opac1 1s; -webkit-animation-fill-mode: forwards;}
+		}
+	}
+	hr {width: 80%; max-width: 925px; margin-bottom: 30px; opacity: 0.5}
+}
+section {z-index: 10;}
+/* Navigation */
+nav {}
+.toggle-menu {position: absolute;  top: 0; left: 0; @extend .fleft; width: 35px; height: 35px; background: url(../images/iconset1.png) no-repeat left top;}
+.toggle-menu:hover {opacity: 0.6}
+
+/* Footer */
+footer {@extend .wid100; background: $darkgray; z-index: 100; color: $white; font: 14px/20px $fontlink;
+	ul {@extend .listn; z-index: 100;
+		li {display: inline-block; margin-right: 10px; 
+			a {color: $white; }
+			a:hover {text-decoration: underline;}
+		}
+	}
+	.nav-links {@extend .fleft;}
+	.social-links {@extend .fright; margin-top: -10px;
+		li {margin-right: 0;
+			a {width: 35px; height: 35px; margin-right: 0; padding: 0; background: url(../images/iconset1.png) no-repeat; @extend .fleft; }
+			a:hover {opacity: 0.6;}
+			a.fb {background-position: left bottom; }
+			a.tw {background-position: -35px bottom; }
+			a.ig {background-position: -70px bottom; }
+			a.gp {background-position: -105px bottom; }
+			a.yt {background-position: -140px bottom; }
+			a.wc {background-position: -175px bottom; }
+		}
+	}
+	.footer-top, aside {@extend .wid100; padding: 30px 0 20px; border-bottom: solid 1px rgba(255,255,255,0.2); z-index: 100;}
+	aside {border-bottom: 0;
+		ul {@extend .fleft;}
+		p {@extend .fright;}
+	}
+	
+}
+
+/* Homepage */
+.home-slider {@extend .wid100; 
+	div {
+		aside {position: absolute; top: 40%; z-index: 100; text-align: center; @extend .wid100;
+			h3 {font: 70px/86px $fonthead; color: white; text-shadow: 1px 3px 3px rgba(0,0,0,0.8); margin-bottom: 50px;}
+			h6 a {font: 27px/36px $fontlink; color: $white; padding: 15px 70px; background: $lightgreen}
+			h6 a:hover {animation: buttonorange 1s; -webkit-animation: buttonorange 1s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards;}
+		}
+	}
+}
+
+.articles {@extend .wid100; padding: 30px 0; z-index: 100;
+	h3 {font: 26px/30px $fonthead; text-transform: uppercase; text-align: center; margin: 40px 0 20px; color: $orange; background: url(../images/line.png) no-repeat center center; @extend .wid100;
+		span {background: white; padding: 30px 100px;}
+	}
+	div.more {margin: 20px 0 40px; @extend .wid100;
+		h6 {text-align: center;
+			a {font: 15px/22px $fontmain; text-transform: uppercase; color: $white; padding: 10px 50px; background: $orange; border-radius: 30px; text-align: center;}
+			a:hover {animation: opac 1s; -webkit-animation: opac 1s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards;}
+		}
+	}
+	ul {@extend .listn; @extend .wid100; z-index: 200;
+		li {position:relative; z-index: 201; overflow: hidden; height: 310px;
+			aside {position: absolute; z-index: 100;
+				h4 {font: 19px/25px $fontcat; color: $white; text-transform: uppercase; display: block; clear: both;
+					span { padding: 10px 25px 10px 15px; background: $translightgreen; width: auto;}
+				}
+				p, h5 {font: 20px/26px $fontmain; color: $white; background: $transorange; padding: 10px 25px 10px 15px; max-width: 85%;display: block; clear: both; margin-top: 9px;}
+				span, p {-webkit-clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%); }
+			}
+			.top-left {top: 30px; left: 10px;}
+			.top-right {top: 30px; right: 10px; text-align: right}
+			.bottom-left {bottom: 30px; left: 10px;}
+			.bottom-right {bottom: 30px; right: 10px; text-align: right}
+			.center-left {top: 45%; left: 10px;}
+			.center-right {top: 45%; right: 10px; text-align: right}
+			.top-right, .bottom-right, .center-right {
+				h4, p {@extend .fright; }
+				span, p {padding: 10px 15px 10px 25px;-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);}
+			}
+			div{overflow: hidden; @extend .wid100; height: 310px;}
+			aside.top-center {position: absolute; text-align: center; padding: 15px 30px; width: 94%;
+				h4 {float: none!important; text-align: center!important; background: transparent!important; clear: none; font-size: 22px!important; line-height: 28px!important;}
+				p, h5 {text-align: center;float: none!important;background: transparent!important; max-width: 100%!important;
+					img {width: auto!important; height: auto; max-width: 100%;}
+					span {border: solid 1px $white; padding: 8px 30px; font: 14px/20px $fontlink; border-radius: 10px;-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+				}
+			}
+			aside.top-center:hover {
+				h4, h5 {animation: scale 2s; -webkit-animation: scale 2s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards; }
+				img {animation: down 1s; -webkit-animation: down 1s;animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards;}
+			}
+
+		}
+		.newsletter div, .contact div, .how-to-get-there div {background: $orange; position: relative; @extend .wid100; height: 100%; @extend .fleft; text-align: center;}
+		li a:hover img {animation: scale 2s; -webkit-animation: scale 2s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards;}
+		li.col-1 {width: 25%; padding: 10px; display: table-cell; height: 310px;
+			img {@extend .coverimg}
+		}
+		li.col-2 {width: 50%; padding: 10px; display: table-cell; height: 310px;
+			img {@extend .coverimg}
+		}
+		li.col-3 {width: 75%; padding: 10px; display: table-cell; height: 310px;
+			img {@extend .coverimg}
+		}
+		li.col-4 {width: 100%; padding: 10px; display: table-cell; height: 310px;
+			img {@extend .coverimg}
+		}
+		
+	} 
+}
+.about-estate, .social, .interests {@extend .wid100; z-index: 100; margin-bottom: 40px;} 
+
+.about-estate {
+	article {position: absolute; background: $transblack; top: 105px; right: 265px; bottom: 105px; left: 265px; border: solid 1px $white; padding: 50px; text-align: center; @extend .fleft; color: $white;
+		h1 {font: 44px/56px $fonthead; text-transform: uppercase; margin: 20px}
+		p, h6 {font: 18px/24px $fontlink; margin-bottom: 40px;
+			a {color: $white; padding: 10px 40px; border: solid 1px $white; border-radius: 30px;}
+			a:hover {animation: buttonwhite 1s; -webkit-animation: buttonwhite 1s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards;}
+		}
+	}
+}
+
+.social {
+	.col2 {width: 50%; @extend .fleft; z-index: 100;
+		h5 {font: 18px/36px $fontlink; margin-top: 15px; color: $textgray;
+			span {width: 35px; height: 35px; background: url(../images/iconset1.png) no-repeat; @extend .fleft;}
+			span.tw {background-position: left -70px;}
+			span.yt {background-position: -35px -70px;}
+			span.ig {background-position: -70px -70px;}
+		}
+		.twitter {@extend .wid100; min-height: 277px; padding: 50px 10px 0 0;
+			p {font: 16px/24px $fonthead; color: $textgray; padding-bottom: 30px; border-bottom: solid 1px rgba(0,0,0,0.3);
+				a {color: $textgray;}
+				a:hover {animation: opac 1s; -webkit-animation: opac 1s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards; }
+			}
+		}
+		.youtube {@extend .wid100;}
+		.instagram {@extend .wid100; padding-left: 20px; margin-top: 18px; z-index: 100;
+			h5 {margin-left: 10px;}
+			ul {@extend .listn;
+				li {width: 50%; padding: 10px; @extend .fleft; position: relative; z-index: 100;}
+			}
+		}
+
+	}
+}
+
+.interests {
+	h4 {font: 24px/30px $fonthead; color: $textgray;}
+	ul {@extend .listn; 
+		li {display: table-cell; width: 25%; padding: 8px; vertical-align: top;
+			article {@extend .wid100; height: 65px; text-align: center; margin: 20px 0;
+				img {@extend .containimg}
+			}
+			aside {position: absolute; z-index: 100;
+				h4 {font: 19px/25px $fontcat; color: $white; text-transform: uppercase; display: block; clear: both;
+					span { padding: 5px 15px;  width: auto;}
+				}
+				p, h5 {font: 20px/26px $fontmain; color: $white;  padding: 10px 15px; max-width: 85%;display: block; clear: both; margin-top: 4px;}
+				span, p {-webkit-clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);}
+			}
+			aside + img {@extend .coverimg}
+			.top-left {top: 30px; left: 0px;}
+			.top-right {top: 30px; right: 0px; text-align: right}
+			.bottom-left {bottom: 30px; left: 0px;}
+			.bottom-right {bottom: 30px; right: 0px; text-align: right}
+			.center-left {top: 45%; left: 0px;}
+			.center-right {top: 45%; right: 0px; text-align: right}
+			.top-right, .bottom-right, .center-right {
+				h4, p {@extend .fright;}
+				span, p {-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);}
+			}
+			div{overflow: hidden; @extend .wid100; height: 310px;}
+			aside.top-center {position: absolute; text-align: center; padding: 25px 30px; width: 94%;
+				h4 {float: none!important; text-align: center!important; background: transparent!important; clear: none; font-size: 22px!important; line-height: 28px!important;}
+				p, h5 {text-align: center;float: none!important;background: transparent!important; max-width: 100%!important;
+					img {width: auto!important; height: auto; max-width: 100%;}
+					span {border: solid 1px $white; padding: 8px 30px; font: 14px/20px $fontlink; border-radius: 10px;}
+				}
+			}
+		}
+	}
+}
+
+/* Fixed Menu */
+.fixed-header {position: fixed; top:0; left:0;width: 100%; z-index: 10000; background: #fff!important; animation: opac1 1s; animation-fill-mode: forwards; box-shadow: 0 3px 3px rgba(0,0,0,0.3)!important;
+	article {display: block!important; left: 0;
+		img.estatelogo {display: block!important;}
+		img.ayalalogo {display: none!important; height: 0!important}
+	}
+	div ul {display: block!important; @extend .listn; margin-left: 40px!important; font: 18px/24px $fontlink; color: $textgray; width: auto; position: absolute; top: 5px;
+		li {display: inline-block; margin-right: 30px;
+			a {color: $textgray!important;
+				span {background: url(../images/iconset1.png) no-repeat -35px -42px !important; width: 25px; height: 35px; @extend .fright;}
+			}
+			a:hover, a:hover span {animation: opac 1s!important; -webkit-animation: opac 1s!important; animation-fill-mode: forwards!important; -webkit-animation-fill-mode: forwards!important;}
+		}
+	}
+	.toggle-menu {background-position: left -35px!important;}
+	a {color: $textgray!important;
+		span {background-position: -35px -43px!important;}
+	}
+	a:hover, a:hover span {animation: opac 1s!important; -webkit-animation: opac 1s!important; animation-fill-mode: forwards!important; -webkit-animation-fill-mode: forwards!important;}
+	a.search {background-position: -70px -43px!important;}
+	a.location {background-position: -105px -43px!important;}
+	a.call {background-position: -140px -43px!important;}
+	
+}
+.fixed {position: fixed; top: 68px!important;}
+.fixed-cat {position: fixed!important; top: 68px!important; background: $lightgreen!important;
+	a {color: $white!important;
+		span.live {background-position: left top!important}
+		span.health {background-position: right top!important}
+	}
+}
+.bgnone {background-image: none!important;}
+
+/* Articles */
+.banner div {@extend .wid100; background: url(../images/slider1.jpg) no-repeat center top; background-size: cover; padding: 50px; text-align: center; height: 360px; margin-bottom: 30px;
+	aside {
+		h3 {font: 60px/76px $fonthead; color: $white; text-shadow: 0 2px 2px rgba(0,0,0,0.8); margin-top: 30px;}
+		p {font: 24px/30px $fontlink; color: $white; text-shadow: 0 2px 2px rgba(0,0,0,0.8)}
+	}
+}
+.selectarticle { 
+	.breadcrumbs {@extend .listn; @extend .wid100; margin-bottom: 30px; margin-top: 20px;
+		li {display: inline-block; color: $darkgray; font: 14px/20px $fontlink; margin-right: 5px;
+			a {color: $lightgreen;}
+			a:hover {text-decoration: underline;}
+		}
+	}
+	.connected {@extend .wid100; display: block; clear: both; margin-bottom: 50px;
+		h3 {font: 26px/46px $fonthead; text-transform: uppercase; text-align: center; margin: 40px 0 20px; color: $orange; background: url(../images/line.png) no-repeat center center; @extend .wid100;
+			span {background: white; padding: 30px 100px;}
+		}
+		ul {@extend .listn; @extend .wid100;
+			li {width: 33.33%; display: table-cell; padding: 10px; text-align: center;
+				.socialicons {@extend .wid100; height: 320px; margin-bottom: 20px;overflow: hidden;
+					img {@extend .containimg}
+				}
+				p {font: 20px/22px $fonthead; 
+					a {color: $orange;}
+				}
+
+			}
+			li:hover {
+				.socialicons {
+				img {animation: scale 2s; -webkit-animation: scale 2s; animation-fill-mode: forwards; -webkit-animation-fill-mode: forwards; }
+				}
+				p {
+					a {opacity: 0.8}
+				}
+			}
+		}
+	}
+	section {
+		article.directory-list {@extend .wid100; position: relative; margin-bottom: 50px;
+			div.directorylist {width: 400px; position: absolute; float: left; z-index: 100; height: 800px;  background: #eee;
+				.search-list {@extend .wid100; height: 35px; z-index: 100;
+					li {position: relative;
+						span {width: 100%; padding-right: 35px; box-sizing: border-box; top: 0; position: absolute;
+							input[type="text"] {@extend .wid100; padding: 8px 10px; border: solid 1px rgba(0,0,0,0.3); box-sizing: border-box; height: 35px; font-size: 14px; } 
+							input[type="text"]::-webkit-input-placeholder {color: $orange;}
+							input[type="text"]::-moz-placeholder {color: $orange;}
+							input[type="text"]:-ms-input-placeholder {color: $orange;}
+							input[type="text"]:-moz-placeholder {color: $orange;}
+						}
+						input[type="submit"] {width: 35px; height: 35px; background: $lightgreen url(../images/iconset1.png) no-repeat -70px top; position: absolute; right: 0; top: 0; cursor: pointer;}
+						input[type="submit"]:hover {opacity: .8;}
+					}
+				}
+				.list-shops {@extend .wid100; z-index: 100; overflow-y: scroll; height: 765px;
+					li {position: relative; padding: 15px; border-top: solid 1px rgba(0,0,0,0.1);
+						h4 {font: 20px/26px $fonthead;  margin-bottom: 5px;
+							a {color: $orange;}
+							a:hover {color: $lightgreen;}
+						}
+						p {font: 14px/20px $fontlink; color: $textgray; margin-bottom: 0;}
+					}
+					li:first-child {border-top: 0;}
+				}
+			}
+			aside.map {@extend .wid100; padding-left: 400px; z-index:99; background: $orange; min-height: 800px; position:relative;}
+			ul {@extend .listn;}
+		}
+		
+		article {width: 65%; @extend .fleft;
+			h1, h2 {color: $orange; font: 30px/42px $fonthead; text-transform: uppercase; margin-bottom: 20px;}
+			p {font: 18px/24px $fontlink; color: $textgray; margin-bottom: 30px;}
+			.sectionsub {@extend .listn; @extend .wid100; border-bottom: solid 1px rgba(0,0,0,0.3);
+				li {display: inline-block; border: solid 1px rgba(0,0,0,0.3);border-bottom: 0!important; margin-right: 3px; padding: 0; @extend .fleft;
+					a {padding: 10px 20px; color: $textgray; font: 18px/24px $fontcat; @extend .fleft; }
+				}
+				li:hover, li.active {border-color: $lightgreen!important;
+					a {color: $orange; }
+					}
+			}
+			.sectionsub + .other-interests {border-top: 0!important; margin-top: 0;}
+			.news-list {@extend .wid100; padding: 20px 5px;
+				ul {@extend .listn;
+					li {border-bottom: solid 1px rgba(0,0,0,0.2); padding-bottom: 10px; margin-bottom: 10px;
+						a {color: $darkgray; font: 16px/24px $fontlink; }
+						a:hover {color: $orange;}
+						h6 {font: 12px/18px $fontlink; color: $white; margin-bottom: 25px;
+							span { background: $lightgreen; padding: 3px 10px; @extend .fleft; border-radius: 10px;}
+						}
+					}
+				}
+			}
+
+			h6 {font: 14px/20px $fontlink; color: $textgray; margin-bottom: 20px;}
+			.cform {@extend .listn; @extend .wid100; color: $darkgray; font: 16px/22px $fonthead; text-transform: uppercase; margin-bottom: 50px; 
+				li {margin-bottom: 15px; position: relative; z-index: 100;
+					label {margin-bottom: 5px; @extend .wid100;}
+					input[type="text"], input[type="email"], select {@extend .wid100; border: solid 1px rgba(0,0,0,0.3); height: 35px; padding: 5px 10px; box-sizing: border-box; font: 16px/22px $fontlink;}
+					select {border-radius: 0; }
+				}
+				li.col2:nth-child(odd) {width:49%; @extend .fleft;}
+				li.col2:nth-child(even) {width:49%; @extend .fright;}
+				li.col1 {width: 100%!important; position: relative; @extend .fleft}
+				textarea {@extend .wid100; border: solid 1px rgba(0,0,0,0.3); height: 35px; padding: 5px 10px; box-sizing: border-box; font: 16px/22px $fontlink; height: 100px;}
+				li.check {position:relative; @extend .wid100; 
+					span {width: 30px; @extend .fleft; position: relative; height: 30px; }
+					label { @extend .fleft; position: relative; width: auto; padding-left: 10px; }
+				}
+				input[type="submit"] {background: $orange; font: 18px/24px $fontlink; padding: 10px 20px; color: $white; cursor: pointer;}
+				input[type="submit"]:hover {opacity: 0.8}
+				input[type="checkbox"] {border: solid 1px rgba(0,0,0,0.3); width: 20px; height: 20px;}
+				input[type="checkbox"]:checked {background: $orange url(../images/check.png) no-repeat center center;}
+				input[type="radio"] {border: solid 1px rgba(0,0,0,0.3); width: 20px; height: 20px; border-radius: 50%;}
+				input[type="radio"]:checked {background: $orange url(../images/radio.png) no-repeat center center;}
+			 }
+			
+			ul.rules {@extend .listn; @extend .wid100; margin-bottom: 30px;
+				li {position: relative; display: block; clear: both; @extend .wid100; margin-bottom: 20px;
+					img {width: auto; height: auto; max-width: 178px; position: absolute;}
+					div {position:relative; @extend .wid100; padding-left: 210px; min-height: 200px;
+						h4 {font: 24px/30px $fonthead; color: $orange;}
+						p {margin-bottom: 10px;}
+						ul {@extend .listn; font: 16px/22px $fontlink; margin-bottom: 20px!important;
+							li {margin-bottom: 5px; padding-left: 30px; background: url(../images/list.jpg) no-repeat 10px 5px;}
+						}
+					}
+				}
+			}
+			.faq {@extend .wid100;
+				.tab {
+					  position: relative;
+					  margin-bottom: 1px;
+					  width: 100%;
+					  color: #fff;
+					  overflow: hidden;
+					}
+					input {
+					  position: absolute;
+					  opacity: 0;
+					  z-index: -1;
+					}
+					label {
+					  position: relative;
+					  display: block;
+					  padding: 10px 0 10px 1em;
+					  font-weight: bold;
+					  line-height: 3;
+					  cursor: pointer;
+					  font: 16px/22px $fontcat;
+					  border-bottom: solid 1px rgba(0,0,0,0.3)
+					}
+					.blue label {
+					  color: $orange;
+					}
+					.tab-content {
+					  max-height: 0;
+					  overflow: hidden;
+					  
+					  -webkit-transition: max-height .35s;
+					  -o-transition: max-height .35s;
+					  transition: max-height .35s;
+					}
+					.blue .tab-content {
+					 background: rgba(0,0,0,0.1);
+
+					}
+					.tab-content p {
+					  margin: 20px;
+					}
+					/* :checked */
+					input:checked ~ .tab-content {
+					  max-height: 1200px;
+					}
+					/* Icon */
+					label::after {
+					  position: absolute;
+					  right: 0;
+					  top: 0;
+					  display: block;
+					  width: 3em;
+					  height: 3em;
+					  line-height: 3;
+					  text-align: center;
+					  -webkit-transition: all .35s;
+					  -o-transition: all .35s;
+					  transition: all .35s;
+					}
+					input[type=checkbox] + label::after {
+					  content: "+";
+					}
+					input[type=radio] + label::after {
+					  content: "\25BC";
+					}
+					input[type=checkbox]:checked + label::after {
+					  transform: rotate(315deg);
+					}
+					input[type=radio]:checked + label::after {
+					  transform: rotateX(180deg);
+					}
+
+			}
+		}
+		aside.sidebar {width: 30%; @extend .fright;
+			.side-location {@extend .wid100;  max-width: 320px; margin-bottom: 50px;
+				.location-map {@extend .wid100; position: relative; margin-bottom: 20px;
+				}
+
+				h4 {font: 20px/26px $fontlink; margin-bottom: 15px;}
+				p {font: 16px/24px $fontlink; margin-bottom: 15px;}
+			}
+			.contact-info {@extend .wid100; @extend .fleft; max-width: 320px; margin-bottom: 50px;
+				h3 {font: 24px/30px $fonthead; color: $orange;}
+				ul {@extend .wid100; @extend .listn;
+					li {margin-bottom: 15px;
+						h4 {font: 18px/24px $fonthead; color: $darkgray;}
+						p {font-size: 16px; line-height: 24px;}
+					}
+				}
+			}
+			.archive {@extend .wid100; max-width: 320px; margin-bottom: 50px;
+				h3 {font: 24px/30px $fontlink; color: $textgray; letter-spacing: 1px; margin-bottom: 15px;}
+				ul {@extend .listn; @extend .fleft; @extend .wid100;
+					li {position: relative; border-bottom: solid 1px rgba(0,0,0,0.2);@extend .wid100; display: block; clear: both;
+						a {color: $textgray; font: 18px/24px $fontlink; padding: 10px; @extend .fleft; @extend .wid100; cursor: pointer;
+							label {@extend .wid100; padding-right: 80px;}
+							span {background: $orange; padding: 3px 10px; color: $white; position: absolute; right: 0; top: 8px; border-radius: 10px; min-width: 30px; text-align: center;}
+						}
+						a:hover {color: $lightgreen;
+							span {background: $lightgreen;}
+							label {cursor: pointer;}
+						}
+					}
+					li.active a {color: $lightgreen;}
+				   }
+			}
+			.submenu {@extend .wid100; @extend .fleft; max-width: 320px; margin-bottom: 50px;
+				ul {@extend .listn; @extend .fleft; @extend .wid100;
+					li {position: relative; border-bottom: solid 1px rgba(0,0,0,0.2);@extend .wid100; display: block; clear: both;
+						a {color: $textgray; font: 18px/24px $fontlink; padding: 10px; @extend .fleft; @extend .wid100;}
+						a:hover {color: $orange;}
+					}
+					li.active a {color: $orange;}
+				   }
+			}
+			.related-articles {@extend .wid100; @extend .fright; max-width: 320px;
+				ul {@extend .listn; @extend .fright;
+					li {position: relative;
+					 	a {
+							aside {@extend .fleft; height: 315px; @extend .wid100; max-width: 320px; background: $transorange;
+								img {@extend .coverimg;}
+							}
+							article {@extend .wid100; max-width: 320px; padding: 15px 0;
+								h5 {font: 16px/22px $fontcat; letter-spacing: 3px; text-transform: uppercase; color: $orange;}
+								h4 {font: 18px/26px $fontcat; color: $darkgray;letter-spacing: 1px;}
+							}
+						}
+						a:hover {
+							aside {opacity: 0.6}
+						}
+					}
+				}
+			}
+			.ttdcat {@extend .wid100; @extend .fright; max-width: 320px; padding-top: 30px; border-top: solid 1px rgba(0,0,0,0.2);
+				h3 {font: 24px/30px $fontlink; color: $textgray; letter-spacing: 1px; margin-bottom: 15px;}
+				ul {@extend .listn; @eextend .fright;
+					.tab {
+					  position: relative;
+					  margin-bottom: 1px;
+					  width: 100%;
+					  color: #fff;
+					  overflow: hidden;
+					  	p {@extend .wid100; margin-bottom: 30px; text-align: center;
+					  	 	a {font: 20px/26px $fontlink; padding: 10px 30px; color: $textgray; border: solid 1px $lightgreen; margin: 0 auto;}
+					  	 	a:hover {color: $white; background: $lightgreen;}
+					  	}
+					}
+					.tab:hover label {opacity: 0.6}
+					input {
+					  position: absolute;
+					  opacity: 0;
+					  z-index: -1;
+					}
+					label {
+					  position: relative;
+					  display: block;
+					  padding: 10px 0 10px 1em;
+					  height: 80px;
+					  color: $orange;
+					  line-height: 3;
+					  cursor: pointer;
+					  font: 20px/24px $fontlink;
+					  text-transform: uppercase;
+					  border-bottom: solid 1px rgba(0,0,0,0.2);
+					  	span {width:60px; height: 60px; background: url(../images/bgccat.png) no-repeat; @extend .fleft;}
+					  	.live {background-position: left top;}
+					  	.health {background-position: -60px top ;}
+					  	
+					  	span + span {padding-top: 20px; float: left; background: none; padding-left: 50px;}
+					}
+					
+					.tab-content {
+					  max-height: 0;
+					  overflow: hidden;
+					  -webkit-transition: max-height .35s;
+					  -o-transition: max-height .35s;
+					  transition: max-height .35s;
+					  	li {position: relative; margin-bottom: 20px;
+							article {position: absolute; top: 30%;
+								h5 {font: 16px/24px $fontcat; letter-spacing: 1px; display: block; clear: both;text-transform: uppercase; color: $white; width: 90%; @extend .fleft;
+									span {background: $translightgreen; padding: 10px 15px; @extend .fleft;}
+								}
+								h4 {font: 20px/26px $fontmain; color: $white; display: block;clear: both;width: 90%; @extend .fleft;
+									span {background: $transorange; padding: 10px 15px; @extend .fleft;}
+								}
+							}
+						}
+						li:hover aside {opacity: 0.6}
+					}
+					
+					/* :checked */
+					input:checked ~ .tab-content {
+					  max-height: 2000px;
+					}
+					
+
+				}
+			}
+		}
+		.other-interests {@extend .wid100; margin: 30px 0; padding-top: 30px; border-top: solid 1px rgba(0,0,0,0.2);
+			h3 {font: 24px/30px $fonthead; margin-bottom: 20px; color: $orange;}
+			ul {@extend .listn; @extend .wid100;
+				li {position: relative; @extend .wid100;
+					aside {width: 190px; height: 190px; @extend .fleft; position: absolute; top: 0; left: 0;}
+					article {@extend .wid100; min-height: 215px; border-bottom: solid 1px rgba(0,0,0,0.3);padding: 15px 0 15px 220px; margin-bottom: 20px;
+						h4 {font: 22px/30px $fontcat; color: $textgray; margin-bottom: 10px;}
+					}
+					a {position:relative; z-index: 100;} 
+
+				}
+				li:hover img {opacity: 0.8}
+				li:hover h4 {color: $lightgreen;}
+			}
+		}
+	}
+}
+
+.cbp-spmenu {
+	a:hover {opacity: 0.8}
+	.tab {
+					  position: relative;
+					  margin-bottom: 1px;
+					  width: 100%;
+					  color: #fff;
+					  overflow: hidden;
+					}
+					input {
+					  position: absolute;
+					  opacity: 0;
+					  z-index: -1;
+					}
+					label {
+					  position: relative;
+					  display: block;
+					  padding: 10px 0 10px 10px;;
+					  line-height: 3;
+					  cursor: pointer;
+					  font: 16px/22px $fontlink;
+					  
+					  color: $white;
+					}
+					.blue label {
+					  color: $white;
+					}
+					.tab-content {
+					  max-height: 0;
+					  overflow: hidden;
+					  
+					  -webkit-transition: max-height .35s;
+					  -o-transition: max-height .35s;
+					  transition: max-height .35s;
+					}
+					.blue .tab-content {
+					 background: rgba(0,0,0,0.1);
+
+					}
+					.tab-content p {
+					  margin: 20px;
+					}
+					/* :checked */
+					input:checked ~ .tab-content {
+					  max-height: 1200px;
+					}
+					/* Icon */
+					label::after {
+					  position: absolute;
+					  right: 0;
+					  top: 0;
+					  display: block;
+					  width: 3em;
+					  height: 3em;
+					  line-height: 3;
+					  text-align: center;
+					  -webkit-transition: all .35s;
+					  -o-transition: all .35s;
+					  transition: all .35s;
+					}
+					input[type=checkbox] + label::after {
+					  content: "+";
+					}
+					input[type=radio] + label::after {
+					  content: "\25BC";
+					}
+					input[type=checkbox]:checked + label::after {
+					  transform: rotate(315deg);
+					}
+					input[type=radio]:checked + label::after {
+					  transform: rotateX(180deg);
+					}
+}
+
+/* Pagination */
+div.pagination {@extend .wid100; margin: 0 0 50px;
+	ul {@extend .listn; text-align: center; @extend .wid100;
+		li {display: inline-block; margin: 10px;
+			a {color: $white; font: 14px/20px $fontlink; padding: 5px 10px; background: $orange; border-radius: 10px;}
+
+		}
+		li:hover, li.active {
+			a {background: $lightgreen!important;}
+		}
+	}
+}
+
+/* Responsive Google Map/Youtube Video */
+.googleMaps {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+.googleMaps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0; 
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.h30 {height: 30px; @extend .wid100;}
+/* Animation */
+@keyframes opac {
+	0% {opacity: 1}
+	100% {opacity: 0.6}
+}
+@-webkit-keyframes opac {
+	0% {opacity: 1}
+	100% {opacity: 0.6}
+}
+@keyframes opac1 {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+@-webkit-keyframes opac1 {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+@keyframes buttonwhite {
+	0% {background: transparent; color: white;}
+	100% {background: white; color: black;}
+}
+@-webkit-keyframes buttonwhite {
+	0% {background: transparent; color: white;}
+	100% {background: white; color: black;}
+}
+@keyframes buttonorange {
+	0% {background: $lightgreen; color: $white;}
+	100% {background: $white; color: $lightgreen;}
+}
+@-webkit-keyframes buttonorange {
+	0% {background: $lightgreen; color: $white;}
+	100% {background: $white; color: $lightgreen;}
+}
+@keyframes scale {
+	0% {transform: scale(1,1); text-shadow: 1px 2px 2px rgba(0,0,0,0)}
+	100% {transform: scale(1.25,1.25); text-shadow: 1px 2px 2px rgba(0,0,0,0.5)}
+}
+@-webkit-keyframes scale {
+	0% {transform: scale(1,1); text-shadow: 1px 2px 2px rgba(0,0,0,0)}
+	100% {transform: scale(1.25,1.25); text-shadow: 1px 2px 2px rgba(0,0,0,0.5)}
+}
+@keyframes down {
+	0% {margin-top: 0}
+	100% {margin-top: 10px}
+}
+@-webkit-keyframes scale {
+	0% {margin-top: 0}
+	100% {margin-top: 10px}
+}
