@@ -31,7 +31,8 @@
       <!-- sidebar menu start-->
       <ul class="sidebar-menu" id="nav-accordion">
         <li>
-          <a href="index.html">
+          <a href="index.html"
+          class="<?php echo $this->uri->segment(1) === 'admin' ? 'active': ''; ?>">
             <i class="fa fa-dashboard"></i>
             <span>Admin Management</span>
           </a>
@@ -42,15 +43,10 @@
             <span>Portal Management</span>
           </a>
           <ul class="sub">
-            <li><a  href="file_upload.html">Home</a></li>
+            <li><a  href="file_upload.html">News</a></li>
+            <li><a  href="file_upload.html">Events</a></li>
             <li><a  href="file_upload.html">About</a></li>
           </ul>
-        </li>
-        <li>
-          <a href="index.html">
-            <i class="fa fa-dashboard"></i>
-            <span>Events Management</span>
-          </a>
         </li>
         <li>
           <a href="index.html">
