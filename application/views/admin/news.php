@@ -26,23 +26,31 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php if (count($news) > 0 ): ?>
+
                   <?php $i = 1; foreach ($news as $key => $value): ?>
                     <tr>
                       <th scope="row"><?php echo $i++ ?></th>
                       <td><?php echo $value->title ?></td>
                       <td><?php echo $value->description ?></td>
-                      <td><a href="<?php echo $value->image_url ?>">
+                      <td><a href="<?php echo $value->image_url ?>" target="_blank">
                         <img src="<?php echo $value->image_url ?>" alt="" style="max-width:90px">
                       </a></td>
                       <td>
                         <button type="button"
-                        data-payload='<?php echo json_encode(['id' => $value->id, 'title' => $value->title, 'content' => $value->content, 'image_url' => $value->image_url])?>'
+                        data-payload='<?php echo json_encode(['id' => $value->id, 'title' => $value->title, 'description' => $value->description, 'image_url' => $value->image_url])?>'
                         class="edit-row btn btn-info btn-xs">Edit</button>
                         <button type="button" data-id='<?php echo $value->id; ?>'
                           class="btn btn-delete btn-danger btn-xs">Delete</button>
                         </td>
                       </tr>
                     <?php endforeach; ?>
+
+                  <?php else: ?>
+                    <tr>
+                      <td colspan="5" style="text-align:center">Empty table data</td>
+                    </tr>
+                  <?php endif; ?>
                   </tbody>
                 </table>
               </div>

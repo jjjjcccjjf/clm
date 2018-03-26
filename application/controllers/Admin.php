@@ -33,9 +33,9 @@ class Admin extends Admin_controller { # see application/core/MY_Controller.php
   public function update($id)
   {
     if($this->admin_model->update($id, $this->input->post())){
-      $this->session->set_flashdata('flash_msg', ['message' => 'User updated successfully', 'color' => 'green']);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Item updated successfully', 'color' => 'green']);
     } else {
-      $this->session->set_flashdata('flash_msg', ['message' => 'Error updating user', 'color' => 'red']);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Error updating item', 'color' => 'red']);
     }
 
     $this->admin_redirect('admin');
@@ -44,7 +44,7 @@ class Admin extends Admin_controller { # see application/core/MY_Controller.php
   public function add()
   {
     if($this->admin_model->add($this->input->post())){
-      $this->session->set_flashdata('flash_msg', ['message' => 'User added successfully', 'color' => 'green']);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Item added successfully', 'color' => 'green']);
     } else {
       $this->session->set_flashdata('flash_msg', ['message' => 'Error adding user. Email already exists.', 'color' => 'red']);
     }
@@ -55,9 +55,9 @@ class Admin extends Admin_controller { # see application/core/MY_Controller.php
   public function delete($id)
   {
     if($this->admin_model->delete($this->input->post('id'))){
-      $this->session->set_flashdata('flash_msg', ['message' => 'User deleted successfully', 'color' => 'green']);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Item deleted successfully', 'color' => 'green']);
     } else {
-      $this->session->set_flashdata('flash_msg', ['message' => 'Error deleting user', 'color' => 'red']);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Error deleting item', 'color' => 'red']);
     }
 
     $this->admin_redirect('admin');

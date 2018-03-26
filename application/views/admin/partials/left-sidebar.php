@@ -38,14 +38,15 @@
           </a>
         </li>
         <li class="sub-menu">
-          <a href="javascript:;" >
+
+          <a href="javascript:;" class="<?php echo (in_array($this->uri->segment(1), ['news', 'events', 'about']))  ? 'active': ''; ?>">
             <i class="fa fa-tasks"></i>
             <span>Portal Management</span>
           </a>
-          <ul class="sub">
+          <ul class="sub" >
             <li><a href="<?php echo base_url('news') ?>">News</a></li>
-            <li><a  href="file_upload.html">Events</a></li>
-            <li><a  href="file_upload.html">About</a></li>
+            <li><a href="<?php echo base_url('events') ?>">Events</a></li>
+            <li><a href="<?php echo base_url('about') ?>">About</a></li>
           </ul>
         </li>
         <li>

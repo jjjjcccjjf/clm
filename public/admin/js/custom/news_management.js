@@ -4,14 +4,13 @@ $(document).ready(function() {
     $('form')[0].reset() // reset the form
     const payload = $(this).data('payload')
 
-    $('input[name=name]').removeAttr('required')
-    $('input[name=email]').removeAttr('required')
-    $('input[name=password]').removeAttr('required')
-    $('input[id=confirm_password]').removeAttr('required')
+    $('input[name=title]').removeAttr('required')
+    $('textarea').removeAttr('required')
+    $('input[type=file]').removeAttr('required')
 
-    $('input[name=name]').val(payload.name)
-    $('input[name=email]').val(payload.email)
-    $('form').attr('action', base_url + 'admin/update/' + payload.id)
+    $('input[name=title]').val(payload.title)
+    $('textarea').val(payload.description)
+    $('form').attr('action', base_url + 'news/update/' + payload.id)
     $('.modal').modal()
   })
 
@@ -34,9 +33,8 @@ $(document).ready(function() {
     if (p === 'DELETE') {
       const id = $(this).data('id')
 
-      invokeForm(base_url + 'admin/delete', {id: id});
+      invokeForm(base_url + 'news/delete', {id: id});
     }
-
   })
 
   $('form').on('submit', function (){

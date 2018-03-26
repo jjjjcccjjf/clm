@@ -20,6 +20,22 @@ class News_model extends CI_Model
     return $this->db->insert('news', $data);
   }
 
+  public function deleteUploadedMedia($id)
+  {
+    $this->db->where('id', $id);
+    $path = "uploads/news/" . $this->db->get('news')->row()->image_url;
+    return unlink($path);
+  }
+
+  public function delete($id)
+  {
+    $this->deleteUploadedMedia($id);
+
+    $this->db->reset_query();
+    $this->db->where('id', $id);
+    return $this->db->delete('news');
+  }
+
   public function upload($file_key)
   {
     @$file = $_FILES[$file_key];
@@ -38,6 +54,12 @@ class News_model extends CI_Model
     }else{
       return [];
     }
+  }
+
+  public function update($id, $data)
+  {
+    $this->db->where('id', $id);
+    return $this->db->update('news', $data);
   }
 
 }
