@@ -6,11 +6,14 @@
         <section class="panel">
           <header class="panel-heading">
             Administrators
-            <?php if ($update_msg = $this->session->update_msg): ?>
-              <br><sub style="color: <?php echo $update_msg['color'] ?>"><?php echo $update_msg['message'] ?></sub>
+            <?php if ($flash_msg = $this->session->flash_msg): ?>
+              <br><sub style="color: <?php echo $flash_msg['color'] ?>"><?php echo $flash_msg['message'] ?></sub>
             <?php endif; ?>
           </header>
           <div class="panel-body">
+            <p>
+              <button type="button" class="add-btn btn btn-success btn-sm">Add new</button>
+            </p>
             <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="1">
               <table class="table table-bordered">
                 <thead>
@@ -31,7 +34,8 @@
                         <button type="button"
                         data-payload='<?php echo json_encode(['id' => $admin->id, 'name' => $admin->name, 'email' => $admin->email])?>'
                         class="edit-row btn btn-info btn-xs">Edit</button>
-                        <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                        <button type="button" data-id='<?php echo $admin->id; ?>'
+                           class="btn btn-delete btn-danger btn-xs">Delete</button>
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -52,7 +56,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Edit</h4>
+        <h4 class="modal-title">Manage</h4>
       </div>
       <div class="modal-body">
 
@@ -71,7 +75,7 @@
           </div>
           <div class="form-group">
             <label >Confirm Password</label>
-            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm New Password">
+            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm New Password">
           </div>
 
         </div>
@@ -86,3 +90,4 @@
 <!-- modal -->
 
 <script src="<?php echo base_url('public/admin/js/custom/') ?>admin_management.js"></script>
+<script src="<?php echo base_url('public/admin/js/custom/') ?>generic.js"></script>

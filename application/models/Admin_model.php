@@ -16,8 +16,6 @@ class Admin_model extends CI_Model
 
   public function update($id, $data)
   {
-    unset($data['confirm_password']);
-
     if ($data['password']) {
       $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
     } else {
@@ -26,6 +24,17 @@ class Admin_model extends CI_Model
 
     $this->db->where('id', $id);
     return $this->db->update('admin', $data);
+  }
+
+  public function add($data)
+  {
+    return $this->db->insert('admin', $data);
+  }
+
+  public function delete($id)
+  {
+    $this->db->where('id', $id);
+    return $this->db->delete('admin');
   }
 
 }

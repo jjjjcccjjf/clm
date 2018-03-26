@@ -12,7 +12,7 @@
       <ul class="nav pull-right top-menu">
         <li class="dropdown">
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <img alt="" src="img/avatar1_small.jpg">
+            <!-- <img alt="" src="img/avatar1_small.jpg"> -->
             <span class="username">Welcome back, <?php echo $this->session->userdata('name'); ?></span>
             <b class="caret"></b>
           </a>
