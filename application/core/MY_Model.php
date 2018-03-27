@@ -6,6 +6,70 @@ class MY_Model extends CI_model
   # I prefer more declarative class names than `MY_*`
 }
 
+class Admin_core_model extends CI_model {
+
+  function __construct()
+  {
+    parent::__construct();
+    $this->table = 'crud'; # Replace these properties on children
+    $this->upload_dir = 'crud'; # Replace these properties on children
+  }
+
+  public function all()
+  {
+    $res = $this->db->get($this->table)->result();
+    return $res;
+  }
+
+  public function add($data)
+  {
+    return $this->db->insert($this->table, $data);
+  }
+
+  public function deleteUploadedMedia($id)
+  {
+    $this->db->where('id', $id);
+    $path = "{$this->upload_dir}/" . $this->db->get($this->table)->row()->image_url;
+    return unlink($path);
+  }
+
+  public function delete($id)
+  {
+    $this->deleteUploadedMedia($id);
+
+    $this->db->reset_query();
+    $this->db->where('id', $id);
+    return $this->db->delete($this->table);
+  }
+
+  public function upload($file_key)
+  {
+    @$file = $_FILES[$file_key];
+    $upload_path = $this->upload_dir;
+
+    $config['upload_path'] = $upload_path; # NOTE: Change your directory as needed
+    $config['allowed_types'] = 'gif|jpg|jpeg|png'; # NOTE: Change file types as needed
+    $config['file_name'] = time() . '_' . $file['name']; # Set the new filename
+    $this->upload->initialize($config);
+
+    if (!is_dir($upload_path) && !mkdir($upload_path, DEFAULT_FOLDER_PERMISSIONS, true)){
+      mkdir($upload_path, DEFAULT_FOLDER_PERMISSIONS, true); # You can set DEFAULT_FOLDER_PERMISSIONS constant in application/config/constants.php
+    }
+    if($this->upload->do_upload($file_key)){
+      return [$file_key => $this->upload->data('file_name')];
+    }else{
+      return [];
+    }
+  }
+
+  public function update($id, $data)
+  {
+    $this->db->where('id', $id);
+    return $this->db->update($this->table, $data);
+  }
+
+}
+
 class Crud_model extends CI_model
 {
   /**
@@ -184,6 +248,6 @@ class Crud_model extends CI_model
   ###########################################
   # your custom methods go beyond this line #
   ###########################################
-  
+
 
 }

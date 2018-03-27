@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends Admin_controller { # see application/core/MY_Controller.php
+class Admin extends Admin_core_controller { # see application/core/MY_Controller.php
 
   function __construct()
   {
@@ -16,7 +16,7 @@ class Admin extends Admin_controller { # see application/core/MY_Controller.php
   public function admin()
   {
     $res = $this->admin_model->all();
-
+    
     $data['admins'] = $res;
     $this->wrapper('admin/index', $data);
   }

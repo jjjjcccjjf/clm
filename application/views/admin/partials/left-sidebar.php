@@ -32,7 +32,7 @@
       <ul class="sidebar-menu" id="nav-accordion">
         <li>
           <a href="<?php echo base_url('admin') ?>"
-          class="<?php echo $this->uri->segment(1) === 'admin' ? 'active': ''; ?>">
+            class="<?php echo $this->uri->segment(1) === 'admin' ? 'active': ''; ?>">
             <i class="fa fa-dashboard"></i>
             <span>Admin Management</span>
           </a>
@@ -44,26 +44,32 @@
             <span>Portal Management</span>
           </a>
           <ul class="sub" >
-            <li><a href="<?php echo base_url('news') ?>">News</a></li>
-            <li><a href="<?php echo base_url('events') ?>">Events</a></li>
-            <li><a href="<?php echo base_url('about') ?>">About</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="index.html">
-            <i class="fa fa-dashboard"></i>
-            <span>Sellers</span>
-          </a>
-        </li>
-        <li>
-          <a href="index.html">
-            <i class="fa fa-dashboard"></i>
-            <span>Sales</span>
-          </a>
-        </li>
+            <li><a
+              <?php echo $this->uri->segment(1) === 'news' ? 'style="color:#ff6c60"': ''; ?>
+              href="<?php echo base_url('news') ?>">News</a></li>
+              <li><a
+                <?php echo $this->uri->segment(1) === 'events' ? 'style="color:#ff6c60"': ''; ?>
+                href="<?php echo base_url('events') ?>">Events</a></li>
+                <li><a
+                  <?php echo $this->uri->segment(1) === 'about' ? 'style="color:#ff6c60"': ''; ?>
+                  href="<?php echo base_url('about') ?>">About</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="index.html">
+                  <i class="fa fa-dashboard"></i>
+                  <span>Sellers</span>
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <i class="fa fa-dashboard"></i>
+                  <span>Sales</span>
+                </a>
+              </li>
 
-      </ul>
-      <!-- sidebar menu end-->
-    </div>
-  </aside>
-  <!--sidebar end-->
+            </ul>
+            <!-- sidebar menu end-->
+          </div>
+        </aside>
+        <!--sidebar end-->

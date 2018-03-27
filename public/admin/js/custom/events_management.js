@@ -7,10 +7,14 @@ $(document).ready(function() {
     $('input[name=title]').removeAttr('required')
     $('textarea').removeAttr('required')
     $('input[type=file]').removeAttr('required')
+    $('input[type=date]').attr("required", 'required')
+    // $('input[type=date]').removeAttr('required')
 
     $('input[name=title]').val(payload.title)
     $('textarea').val(payload.description)
-    $('form').attr('action', base_url + 'news/update/' + payload.id)
+    $('input[type=date]').val(payload.date)
+
+    $('form').attr('action', base_url + 'events/update/' + payload.id)
     $('.modal').modal()
   })
 
@@ -21,8 +25,9 @@ $(document).ready(function() {
     $('input[name=title]').attr('required', 'required')
     $('textarea').attr("required", 'required')
     $('input[type=file]').attr("required", 'required')
+    $('input[type=date]').attr("required", 'required')
 
-    $('form').attr('action', base_url + 'news/add')
+    $('form').attr('action', base_url + 'events/add')
     $('.modal').modal()
   })
 
@@ -33,9 +38,8 @@ $(document).ready(function() {
     if (p === 'DELETE') {
       const id = $(this).data('id')
 
-      invokeForm(base_url + 'news/delete', {id: id});
+      invokeForm(base_url + 'events/delete', {id: id});
     }
   })
- 
 
 })

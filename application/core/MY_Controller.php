@@ -8,7 +8,7 @@ class MY_Controller extends \Restserver\Libraries\REST_Controller
   # I prefer more declarative class names than `MY_*`
 }
 
-class Admin_controller extends CI_Controller
+class Admin_core_controller extends CI_Controller
 {
   function __construct()
   {
