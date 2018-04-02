@@ -65,7 +65,7 @@
         style="max-height:80px;">
       </h2>
       <div class="login-wrap">
-        <input type="text" class="form-control" placeholder="User ID" autofocus>
+        <input type="text" class="form-control" placeholder="Email" autofocus>
         <input type="password" class="form-control" placeholder="Password">
         <button style="background: dimgray; box-shadow: 0px 4px #908f8f"
         class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>

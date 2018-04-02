@@ -23,3 +23,14 @@ function invokeForm(path, parameters) {
   $(document.body).append(form);
   form.submit();
 }
+
+/**
+ * [appendToEl description]
+ * @param  {[type]} el            example: $(this)
+ * @param  {[type]} thingToAppend [description]
+ * @return {[type]}               [description]
+ */
+function appendToEl(el, thingToAppend) {
+  el.empty();
+  el.append(thingToAppend);
+}

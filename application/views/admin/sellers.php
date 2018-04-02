@@ -170,9 +170,35 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <h4>Real Estate Record</h4>
+                  <h5>Are you a broker or an agent?</h5>
                 </div>
               </div>
 
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label >
+                    <input type="radio" id="chk_broker" name="real_estate_record_type" value="Broker">
+                    Broker
+                  </label>
+                </div>
+                <div class="form-group col-md-6">
+                  <label >
+                    <input type="radio" id="chk_agent" name="real_estate_record_type" value="Agent">
+                     Agent
+                  </label>
+                </div>
+              </div>
+
+              <div id="real_estate_record_dynamic">
+                <!-- loaded through jQuery -->
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label >Upload 1x1 photo <sub>(.jpg & .png only)</sub></label>
+                  <input type="file" class="form-control" name="image_url">
+                </div>
+              </div>
 
             </div>
             <div class="modal-footer">
@@ -185,5 +211,5 @@
     </div>
     <!-- modal -->
 
-    <script src="<?php echo base_url('public/admin/js/custom/') ?>events_management.js"></script>
+    <script src="<?php echo base_url('public/admin/js/custom/') ?>sellers_management.js"></script>
     <script src="<?php echo base_url('public/admin/js/custom/') ?>generic.js"></script>
