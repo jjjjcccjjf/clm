@@ -56,7 +56,8 @@
                 </ul>
               </li>
               <li>
-                <a href="index.html">
+                <a href="<?php echo base_url('sellers')?>"
+                  class="<?php echo $this->uri->segment(1) === 'sellers' ? 'active': ''; ?>">
                   <i class="fa fa-dashboard"></i>
                   <span>Sellers</span>
                 </a>
