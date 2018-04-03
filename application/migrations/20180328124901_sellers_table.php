@@ -50,6 +50,7 @@ class Migration_sellers_table extends CI_Migration {
       'email' => array(
         'type' => 'VARCHAR',
         'constraint' => '200',
+        'unique' => true
       ),
       # 'Broker' or 'Agent'
       'real_estate_record_type' => array(
@@ -120,7 +121,7 @@ class Migration_sellers_table extends CI_Migration {
         'mobile_num' => '09451494311',
         'office_fax' => 'Hello',
         'home_num' => '22299222',
-        'email' => 'est@est.com',
+        'email' => 'est@esty.com',
         'real_estate_record_type' => 'Agent',
         'real_estate_record_payload' => '{}',
         'image_url' => 'https://robohash.org/Vane?set=set4' ,

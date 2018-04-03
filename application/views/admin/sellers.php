@@ -45,7 +45,17 @@
                           data-payload='<?php echo json_encode(
                             ['id' => $value->id,
                             'full_name' => $value->full_name,
+                            'birth_date' => $value->birth_date,
+                            'gender' => $value->gender,
+                            'civil_status' => $value->civil_status,
+                            'home_address' => $value->home_address,
+                            'office_address' => $value->office_address,
+                            'mobile_num' => $value->mobile_num,
+                            'office_fax' => $value->office_fax,
+                            'home_num' => $value->home_num,
                             'email' => $value->email,
+                            'real_estate_record_payload' => $value->real_estate_record_payload,
+                            'real_estate_record_type' => $value->real_estate_record_type,
                             'image_url' => $value->image_url
                             ])?>'
                             class="edit-row btn btn-info btn-xs">Edit</button>
@@ -92,12 +102,12 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label >Full name</label>
-                  <input type="text" class="form-control" name="full_name" placeholder="Full name">
+                  <input type="text" class="form-control" name="full_name" placeholder="Full name" required="required">
                 </div>
                 <div class="form-group col-md-6">
                   <label >Birth date</label>
-                  <input class="form-control" type="date"
-                  name="birth_date" value="">
+                  <input class="form-control" type="date" required="required"
+                  name="birth_date">
                 </div>
               </div>
 
@@ -105,16 +115,16 @@
                 <div class="form-group col-md-6">
                   <label >Gender</label>
                   <select class="form-control" name="gender">
-                    <option value="Male"></option>
-                    <option value="Female"></option>
+                    <option>Male</option>
+                    <option>Female</option>
                   </select>
                 </div>
                 <div class="form-group col-md-6">
                   <label >Civil status</label>
                   <select class="form-control" name="civil_status">
-                    <option value="Single"></option>
-                    <option value="Married"></option>
-                    <option value="Widowed"></option>
+                    <option>Single</option>
+                    <option>Married</option>
+                    <option>Widowed</option>
                   </select>
                 </div>
               </div>
@@ -122,7 +132,7 @@
               <div class="row">
                 <div class="form-group col-md-12">
                   <label >Home address</label>
-                  <input class="form-control" type="text" placeholder="Home address"
+                  <input class="form-control" type="text" placeholder="Home address" required="required"
                   name="home_address" value="">
                 </div>
               </div>
@@ -130,7 +140,7 @@
               <div class="row">
                 <div class="form-group col-md-12">
                   <label >Office address</label>
-                  <input class="form-control" type="text" placeholder="Office address"
+                  <input class="form-control" type="text" placeholder="Office address" required="required"
                   name="office_address" value="">
                 </div>
               </div>
@@ -146,7 +156,7 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label >Mobile number</label>
-                  <input type="text" class="form-control" name="mobile_num" placeholder="Mobile">
+                  <input type="text" class="form-control" name="mobile_num" placeholder="Mobile" required="required">
                 </div>
                 <div class="form-group col-md-6">
                   <label >Office / Fax</label>
@@ -161,7 +171,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label >Email address</label>
-                  <input type="email" class="form-control" name="email" placeholder="Email">
+                  <input type="email" class="form-control" name="email" placeholder="Email" required="required">
                 </div>
               </div>
 

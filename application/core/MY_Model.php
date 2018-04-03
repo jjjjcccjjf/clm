@@ -30,7 +30,17 @@ class Admin_core_model extends CI_model {
   {
     $this->db->where('id', $id);
     $path = "{$this->upload_dir}/" . $this->db->get($this->table)->row()->image_url;
-    return unlink($path);
+
+    $file_deleted = false;
+
+    try {
+      unlink($file_deleted);
+      $file_deleted =  true;
+    } catch (\Exception $e) {
+      $file_deleted = false;
+    }
+
+    return $file_deleted;
   }
 
   public function delete($id)

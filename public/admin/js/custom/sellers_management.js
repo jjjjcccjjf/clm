@@ -4,9 +4,29 @@ $(document).ready(function() {
     $('form')[0].reset() // reset the form
     const payload = $(this).data('payload')
 
-    $('input[name=title]').val(payload.title)
-    $('textarea').val(payload.description)
-    $('input[type=date]').val(payload.date)
+    $('input[name=full_name]').val(payload.full_name)
+    $('input[name=birth_date]').val(payload.birth_date)
+
+    $('select[name=gender] option')
+    .filter(function () { return $(this).html() == payload.gender; })
+    .prop('selected', true);
+
+    $('select[name=civil_status] option')
+    .filter(function () { return $(this).html() == payload.civil_status; })
+    .prop('selected', true);
+
+    $('input[name=home_address]').val(payload.home_address)
+    $('input[name=office_address]').val(payload.office_address)
+    $('input[name=mobile_num]').val(payload.mobile_num)
+    $('input[name=office_fax]').val(payload.office_fax)
+    $('input[name=home_num]').val(payload.home_num)
+    $('input[name=email]').val(payload.email)
+    $("input[name=real_estate_record_type][value=" + payload.real_estate_record_type + "]").prop('checked', true);
+
+    let json_payload = JSON.parse(payload.real_estate_record_payload);
+
+    appendToDynamicPanel(payload.real_estate_record_type, json_payload);
+    setupDynamicPart(payload.real_estate_record_type, json_payload);
 
     $('form').attr('action', base_url + 'sellers/update/' + payload.id)
     $('.modal').modal()
@@ -39,16 +59,31 @@ $(document).ready(function() {
 
 })
 // DAT FUNCITON NAME DOE! BRUH
-function setupDynamicPart() {
+function setupDynamicPart(real_estate_record_type, json_payload) {
+
   $('input[name="real_estate_record_type"]').on('click', function(){
-      appendToDynamicPanel();
+    appendToDynamicPanel(real_estate_record_type, json_payload);
   })
+
 }
 
-function appendToDynamicPanel() {
+function appendToDynamicPanel(real_estate_record_type, json_payload) {
   let checkedVal = $('input[name=real_estate_record_type]:checked').val();
   let thingToAppend = generateBrokerAgentPanel(checkedVal);
   appendToEl($('#real_estate_record_dynamic'), thingToAppend);
+
+  ///////////// This block is mainly for the Update ///////////
+  try {
+    if (real_estate_record_type === 'Broker') {
+      initBrokerValues(json_payload);
+    } else if (real_estate_record_type === 'Agent'){
+      initAgentValues(json_payload);
+    }
+
+  } catch (e) {
+    console.error(e.message());
+  }
+  ///////////// This block is mainly for the Update ///////////
 }
 
 function generateBrokerAgentPanel(t) {
@@ -72,17 +107,17 @@ function generateBrokerPanel() {
   <div class="row">
   <div class="form-group col-md-6">
   <label >Realty firm</label>
-  <input type="text" class="form-control" name="realty_firm" placeholder="Realty firm">
+  <input type="text" class="form-control" name="realty_firm" placeholder="Realty firm" required="required">
   </div>
   <div class="form-group col-md-6">
   <label ># of Agents</label>
-  <input type="text" class="form-control" name="num_of_agents" placeholder="# of agents">
+  <input type="number" min="0" class="form-control" name="num_of_agents" placeholder="# of agents" required="required">
   </div>
   </div>
   <div class="row">
   <div class="form-group col-md-6">
   <label >TIN No.</label>
-  <input type="text" class="form-control" name="tin_num" placeholder="TIN No.">
+  <input type="text" class="form-control" name="tin_num" placeholder="TIN No." required="required">
   </div>
   <div class="form-group col-md-6">
   <label >Team Leader (if applicable)</label>
@@ -92,11 +127,11 @@ function generateBrokerPanel() {
   <div class="row">
   <div class="form-group col-md-6">
   <label >PRC Reg. No.</label>
-  <input type="text" class="form-control" name="prc_reg_num" placeholder="PRC Reg. No.">
+  <input type="text" class="form-control" name="prc_reg_num" placeholder="PRC Reg. No." required="required">
   </div>
   <div class="form-group col-md-6">
   <label >HLURB Cert. of registration</label>
-  <input type="text" class="form-control" name="hlurb_cert" placeholder="HLURB Cert. of registration">
+  <input type="text" class="form-control" name="hlurb_cert" placeholder="HLURB Cert. of registration" required="required">
   </div>
   </div>
   `;
@@ -107,18 +142,33 @@ function generateAgentPanel() {
   <div class="row">
   <div class="form-group col-md-6">
   <label >Affiliated Realty Firm</label>
-  <input type="text" class="form-control" name="affiliated_realty_firm" placeholder="Affiliated Realty Firm">
+  <input type="text" class="form-control" name="affiliated_realty_firm" placeholder="Affiliated Realty Firm" required="required">
   </div>
   <div class="form-group col-md-6">
   <label >Affiliated Broker</label>
-  <input type="text" class="form-control" name="affiliated_broker" placeholder="Affiliated Broker">
+  <input type="text" class="form-control" name="affiliated_broker" placeholder="Affiliated Broker" required="required">
   </div>
   </div>
   <div class="row">
   <div class="form-group col-md-6">
   <label >TIN No.</label>
-  <input type="text" class="form-control" name="tin_num" placeholder="TIN No.">
+  <input type="text" class="form-control" name="tin_num" placeholder="TIN No." required="required">
   </div>
   </div>
   `;
+}
+
+function initBrokerValues(payload) {
+  $('input[name=realty_firm]').val(payload.realty_firm)
+  $('input[name=num_of_agents]').val(payload.num_of_agents)
+  $('input[name=tin_num]').val(payload.tin_num)
+  $('input[name=team_leader]').val(payload.team_leader)
+  $('input[name=prc_reg_num]').val(payload.prc_reg_num)
+  $('input[name=hlurb_cert]').val(payload.hlurb_cert)
+}
+
+function initAgentValues(payload) {
+  $('input[name=tin_num]').val(payload.tin_num)
+  $('input[name=affiliated_broker]').val(payload.affiliated_broker)
+  $('input[name=affiliated_realty_firm]').val(payload.affiliated_realty_firm)
 }
