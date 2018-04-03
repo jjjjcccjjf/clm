@@ -6,7 +6,7 @@ $(document).ready(function () {
     let password = $('input[type="password"]').val()
 
     $.ajax({
-      url: base_url + '/login/attempt/admin',
+      url: base_url + '/admin/login/attempt/admin',
       type: 'POST',
       data: { email: email, password: password},
       success: function (res, textStatus, xhr) {

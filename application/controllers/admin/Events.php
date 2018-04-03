@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class News extends Admin_core_controller { # see application/core/MY_Controller.php
+class Events extends Admin_core_controller { # see application/core/MY_Controller.php
 
   function __construct()
   {
@@ -10,35 +10,35 @@ class News extends Admin_core_controller { # see application/core/MY_Controller.
 
   public function index()
   {
-    $res = $this->news_model->all();
+    $res = $this->events_model->all();
 
-    $data['news'] = $res;
+    $data['events'] = $res;
 
-    $this->wrapper('admin/news', $data);
+    $this->wrapper('admin/events', $data);
   }
 
   public function add()
   {
-    $data = array_merge($this->input->post(), $this->news_model->upload('image_url'));
+    $data = array_merge($this->input->post(), $this->events_model->upload('image_url'));
 
-    if($this->news_model->add($data)){
+    if($this->events_model->add($data)){
       $this->session->set_flashdata('flash_msg', ['message' => 'Item added successfully', 'color' => 'green']);
     } else {
       $this->session->set_flashdata('flash_msg', ['message' => 'Error adding item', 'color' => 'red']);
     }
 
-    $this->admin_redirect('news');
+    $this->admin_redirect('admin/events');
   }
 
   public function delete($id)
   {
-    if($this->news_model->delete($this->input->post('id'))){
+    if($this->events_model->delete($this->input->post('id'))){
       $this->session->set_flashdata('flash_msg', ['message' => 'Item deleted successfully', 'color' => 'green']);
     } else {
       $this->session->set_flashdata('flash_msg', ['message' => 'Error deleting item', 'color' => 'red']);
     }
 
-    $this->admin_redirect('news');
+    $this->admin_redirect('admin/events');
   }
 
   public function update($id)
@@ -46,17 +46,17 @@ class News extends Admin_core_controller { # see application/core/MY_Controller.
     $data = $this->input->post();
 
     if ($_FILES['image_url']['size'] > 0) {
-      $this->news_model->deleteUploadedMedia($id);
-      $data = array_merge($data, $this->news_model->upload('image_url'));
+      $this->events_model->deleteUploadedMedia($id);
+      $data = array_merge($data, $this->events_model->upload('image_url'));
     }
 
-    if($this->news_model->update($id, $data)){
+    if($this->events_model->update($id, $data)){
       $this->session->set_flashdata('flash_msg', ['message' => 'Item updated successfully', 'color' => 'green']);
     } else {
       $this->session->set_flashdata('flash_msg', ['message' => 'Error updating item', 'color' => 'red']);
     }
 
-    $this->admin_redirect('news');
+    $this->admin_redirect('admin/events');
   }
 
 }

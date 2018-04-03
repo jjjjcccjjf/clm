@@ -13,7 +13,7 @@ $(document).ready(function() {
     $('textarea[name=iframe_code]').val(payload.iframe_code)
     $('textarea[name=description]').val(payload.description)
 
-    $('form').attr('action', base_url + 'about/update/' + payload.id)
+    $('form').attr('action', base_url + 'admin/about/update/' + payload.id)
     $('.modal').modal()
   })
 

@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     $('input[name=title]').val(payload.title)
     $('textarea').val(payload.description)
-    $('form').attr('action', base_url + 'news/update/' + payload.id)
+    $('form').attr('action', base_url + 'admin/news/update/' + payload.id)
     $('.modal').modal()
   })
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
     $('textarea').attr("required", 'required')
     $('input[type=file]').attr("required", 'required')
 
-    $('form').attr('action', base_url + 'news/add')
+    $('form').attr('action', base_url + 'admin/news/add')
     $('.modal').modal()
   })
 
@@ -33,9 +33,9 @@ $(document).ready(function() {
     if (p === 'DELETE') {
       const id = $(this).data('id')
 
-      invokeForm(base_url + 'news/delete', {id: id});
+      invokeForm(base_url + 'admin/news/delete', {id: id});
     }
   })
- 
+
 
 })

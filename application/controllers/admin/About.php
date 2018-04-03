@@ -20,7 +20,7 @@ class About extends Admin_core_controller { # see application/core/MY_Controller
       $this->session->set_flashdata('flash_msg', ['message' => 'Error updating item', 'color' => 'red']);
     }
 
-    $this->admin_redirect('about');
+    $this->admin_redirect('admin/about');
   }
 
 }

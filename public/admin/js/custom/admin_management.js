@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     $('input[name=name]').val(payload.name)
     $('input[name=email]').val(payload.email)
-    $('form').attr('action', base_url + 'admin/update/' + payload.id)
+    $('form').attr('action', base_url + 'admin/admin/update/' + payload.id)
     $('.modal').modal()
   })
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
     $('input[name=password]').attr("required", 'required')
     $('input[id=confirm_password]').attr("required", 'required')
 
-    $('form').attr('action', base_url + 'admin/add')
+    $('form').attr('action', base_url + 'admin/admin/add')
     $('.modal').modal()
   })
 
@@ -35,7 +35,7 @@ $(document).ready(function() {
     if (p === 'DELETE') {
       const id = $(this).data('id')
 
-      invokeForm(base_url + 'admin/delete', {id: id});
+      invokeForm(base_url + 'admin/admin/delete', {id: id});
     }
 
   })

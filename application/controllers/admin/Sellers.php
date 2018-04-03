@@ -30,7 +30,7 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
       $this->session->set_flashdata('flash_msg', ['message' => 'Error adding item', 'color' => 'red']);
     }
 
-    $this->admin_redirect('sellers');
+    $this->admin_redirect('admin/sellers');
   }
 
   public function delete($id)
@@ -41,7 +41,7 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
       $this->session->set_flashdata('flash_msg', ['message' => 'Error deleting item', 'color' => 'red']);
     }
 
-    $this->admin_redirect('sellers');
+    $this->admin_redirect('admin/sellers');
   }
 
   public function update($id)
@@ -50,7 +50,7 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
     $_POST = $this->unsetJsonFields($_POST);
 
     $data = $this->input->post();
-    
+
     if ($_FILES['image_url']['size'] > 0) {
       $this->sellers_model->deleteUploadedMedia($id);
       $data = array_merge($data, $this->sellers_model->upload('image_url'));
@@ -62,7 +62,7 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
       $this->session->set_flashdata('flash_msg', ['message' => 'Error updating item', 'color' => 'red']);
     }
 
-    $this->admin_redirect('sellers');
+    $this->admin_redirect('admin/sellers');
   }
 
   function unsetJsonFields($arr)

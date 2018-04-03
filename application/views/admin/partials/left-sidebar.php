@@ -17,7 +17,7 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu extended logout">
-            <li><a href="<?php echo base_url('login/logout') ?>"><i class="fa fa-key"></i> Log Out</a></li>
+            <li><a href="<?php echo base_url('admin/login/logout') ?>"><i class="fa fa-key"></i> Log Out</a></li>
           </ul>
         </li>
 
@@ -32,32 +32,32 @@
       <ul class="sidebar-menu" id="nav-accordion">
         <li>
           <a href="<?php echo base_url('admin') ?>"
-            class="<?php echo $this->uri->segment(1) === 'admin' ? 'active': ''; ?>">
+            class="<?php echo $this->uri->segment(1) === 'admin' && $this->uri->segment(2) === null ? 'active': ''; ?>">
             <i class="fa fa-dashboard"></i>
             <span>Admin Management</span>
           </a>
         </li>
         <li class="sub-menu">
 
-          <a href="javascript:;" class="<?php echo (in_array($this->uri->segment(1), ['news', 'events', 'about']))  ? 'active': ''; ?>">
+          <a href="javascript:;" class="<?php echo (in_array($this->uri->segment(2), ['news', 'events', 'about']))  ? 'active': ''; ?>">
             <i class="fa fa-tasks"></i>
             <span>Portal Management</span>
           </a>
           <ul class="sub" >
             <li><a
-              <?php echo $this->uri->segment(1) === 'news' ? 'style="color:#ff6c60"': ''; ?>
-              href="<?php echo base_url('news') ?>">News</a></li>
+              <?php echo $this->uri->segment(2) === 'news' ? 'style="color:#ff6c60"': ''; ?>
+              href="<?php echo base_url('admin/news') ?>">News</a></li>
               <li><a
-                <?php echo $this->uri->segment(1) === 'events' ? 'style="color:#ff6c60"': ''; ?>
-                href="<?php echo base_url('events') ?>">Events</a></li>
+                <?php echo $this->uri->segment(2) === 'events' ? 'style="color:#ff6c60"': ''; ?>
+                href="<?php echo base_url('admin/events') ?>">Events</a></li>
                 <li><a
-                  <?php echo $this->uri->segment(1) === 'about' ? 'style="color:#ff6c60"': ''; ?>
-                  href="<?php echo base_url('about') ?>">About</a></li>
+                  <?php echo $this->uri->segment(2) === 'about' ? 'style="color:#ff6c60"': ''; ?>
+                  href="<?php echo base_url('admin/about') ?>">About</a></li>
                 </ul>
               </li>
               <li>
-                <a href="<?php echo base_url('sellers')?>"
-                  class="<?php echo $this->uri->segment(1) === 'sellers' ? 'active': ''; ?>">
+                <a href="<?php echo base_url('admin/sellers')?>"
+                  class="<?php echo $this->uri->segment(2) === 'sellers' ? 'active': ''; ?>">
                   <i class="fa fa-dashboard"></i>
                   <span>Sellers</span>
                 </a>

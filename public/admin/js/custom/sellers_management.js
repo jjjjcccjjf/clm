@@ -28,7 +28,7 @@ $(document).ready(function() {
     appendToDynamicPanel(payload.real_estate_record_type, json_payload);
     setupDynamicPart(payload.real_estate_record_type, json_payload);
 
-    $('form').attr('action', base_url + 'sellers/update/' + payload.id)
+    $('form').attr('action', base_url + 'admin/sellers/update/' + payload.id)
     $('.modal').modal()
   })
 
@@ -37,7 +37,7 @@ $(document).ready(function() {
     $('form')[0].reset() // reset the form
 
 
-    $('form').attr('action', base_url + 'sellers/add')
+    $('form').attr('action', base_url + 'admin/sellers/add')
     $('.modal').modal()
 
     $('#chk_broker').prop("checked", true);
@@ -53,7 +53,7 @@ $(document).ready(function() {
     if (p === 'DELETE') {
       const id = $(this).data('id')
 
-      invokeForm(base_url + 'sellers/delete', {id: id});
+      invokeForm(base_url + 'admin/sellers/delete', {id: id});
     }
   })
 
