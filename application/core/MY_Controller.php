@@ -44,7 +44,7 @@ class Front_core_controller extends CI_Controller
     parent::__construct();
   }
 
-  public function wrapper($body, $sidebar = 'generic', $data = null)
+  public function wrapper($body, $data = null,  $sidebar = 'generic')
   {
     // if ($this->session->login_type !== 'front') {
     //   redirect('login');

@@ -16,7 +16,14 @@ class Dashboard extends Front_core_controller {
 
   public function about()
   {
-    $this->wrapper('front/about');
+    $res = $this->about_model->all()[0];
+
+    $data = array(
+      'title' => $res->title,
+      'description' => $res->description,
+      'iframe_code' => $res->iframe_code,
+    );
+    $this->wrapper('front/about', $data);
   }
 
 

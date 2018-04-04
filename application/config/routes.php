@@ -64,6 +64,7 @@ $route['api/example/(:num)'] = 'api/example/single/$1';
 
 $route['migrate/(:any)'] = 'migrate/index/$1';
 $route['admin/login'] = 'admin/admin/login';
+$route['admin'] = 'admin/admin';
 
 # Restserver default examples
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1';
