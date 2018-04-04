@@ -37,8 +37,24 @@ class Migration_events_table extends CI_Migration {
       $data = array(
         'title' => 'Some event',
         'description' => 'asdasd',
-        'image_url' => '',
-        'date' => '2018-01-01',
+        'image_url' => 'https://robohash.org/bruh?set=set4',
+        'date' => '2018-04-28',
+      );
+      $this->db->insert($table, $data);
+
+      $data = array(
+        'title' => 'Some event2',
+        'description' => 'asdasda',
+        'image_url' => 'https://robohash.org/nee?set=set4',
+        'date' => '2018-04-28',
+      );
+      $this->db->insert($table, $data);
+
+      $data = array(
+        'title' => 'Birthday of Obama',
+        'description' => 'asdasda',
+        'image_url' => 'https://robohash.org/newe?set=set4',
+        'date' => '2018-04-25',
       );
       $this->db->insert($table, $data);
 

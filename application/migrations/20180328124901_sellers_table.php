@@ -106,7 +106,7 @@ class Migration_sellers_table extends CI_Migration {
         'email' => 'lsalamante@myoptimind.com',
         'real_estate_record_type' => 'Broker',
         'real_estate_record_payload' => '{}',
-          'image_url' => 'https://robohash.org/Magen Attraglaitz?set=set4' ,
+        'image_url' => 'https://robohash.org/Magen Attraglaitz?set=set4' ,
         );
         $this->db->insert($table, $data);
 

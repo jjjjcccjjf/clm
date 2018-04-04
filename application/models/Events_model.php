@@ -12,7 +12,9 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
   {
     $res = $this->db->get($this->table)->result();
     foreach ($res as $key => $value) {
-      $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
+      if (!(strpos($value->image_url, 'http') === 0)) {
+        $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
+      }
       $res[$key]->date_f = date_format(date_create($value->date),"F d, Y");
     }
     return $res;

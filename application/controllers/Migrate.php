@@ -42,6 +42,8 @@ class Migrate extends CI_Controller
       break;
     }
 
+    $this->session->sess_destroy();
+
 
   }
 
