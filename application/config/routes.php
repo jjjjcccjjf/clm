@@ -63,6 +63,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['api/example/(:num)'] = 'api/example/single/$1';
 
 $route['migrate/(:any)'] = 'migrate/index/$1';
+$route['admin'] = 'admin/admin';
 $route['admin/login'] = 'admin/admin/login';
 $route['admin/login/logout'] = 'admin/login/logtfout'; # logtfout = log the fuck out HAHAHAHHAHA!
 $route['login/logout'] = 'admin/login/logout';

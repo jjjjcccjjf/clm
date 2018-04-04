@@ -29,5 +29,12 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/about', $data);
   }
 
+  public function events()
+  {
+    $data['events'] = $this->events_model->all();
+
+    $this->wrapper('front/events', $data);
+  }
+
 
 }
