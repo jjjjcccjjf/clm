@@ -16,6 +16,7 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
         $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
       }
       $res[$key]->date_f = date_format(date_create($value->date),"F d, Y");
+      $res[$key]->excerpt = (strlen($value->description) > 50)? substr($value->description, 0, 50) . "..." : $value->description;
     }
     return $res;
   }

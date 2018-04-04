@@ -11,6 +11,8 @@ $(document).ready(function() {
     // $('input[type=date]').removeAttr('required')
 
     $('input[name=title]').val(payload.title)
+    $('input[name=read_more_url]').val(payload.read_more_url)
+    $('input[name=read_more_label]').val(payload.read_more_label)
     $('textarea').val(payload.description)
     $('input[type=date]').val(payload.date)
 
