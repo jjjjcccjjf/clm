@@ -37,6 +37,35 @@ class Admin_core_controller extends CI_Controller
   }
 }
 
+class Front_core_controller extends CI_Controller
+{
+  function __construct()
+  {
+    parent::__construct();
+  }
+
+  public function wrapper($body, $sidebar = 'generic', $data = null)
+  {
+    // if ($this->session->login_type !== 'front') {
+    //   redirect('login');
+    // }
+
+    $this->load->view('front/partials/header');
+    $this->load->view("front/partials/sidebar/{$sidebar}");
+    $this->load->view($body, $data);
+    $this->load->view('front/partials/footer');
+  }
+
+  public function front_redirect($param = null)
+  {
+    if ($this->session->login_type !== 'front') {
+      redirect('login');
+    } else {
+      redirect($param);
+    }
+  }
+}
+
 class Crud_controller extends \Restserver\Libraries\REST_Controller
 {
 
