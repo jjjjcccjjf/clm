@@ -85,7 +85,7 @@
             </div>
             <div class="form-group">
               <label >Image</label>
-              <input type="file" name="image_url" class="default">
+              <input type="file" name="image_url" class="default" accept=".jpg,.png,.jpeg">
             </div>
 
           </div>

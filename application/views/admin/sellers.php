@@ -206,7 +206,7 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label >Upload 1x1 photo <sub>(.jpg & .png only)</sub></label>
-                  <input type="file" class="form-control" name="image_url">
+                  <input type="file" class="form-control" name="image_url" accept=".jpg,.png,.jpeg">
                 </div>
               </div>
 
