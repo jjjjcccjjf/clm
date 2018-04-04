@@ -41,8 +41,8 @@ class Login_model extends CI_Model
   {
     switch ($login_type) {
       case 'sellers':
-      // code...
-      // break;
+      $url = base_url('dashboard');
+      break;
 
       case 'admin':
       default:

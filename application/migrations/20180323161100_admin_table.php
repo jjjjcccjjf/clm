@@ -18,8 +18,7 @@ class Migration_admin_table extends CI_Migration {
         'unique' => TRUE,
       ),
       'password' => array(
-        'type' => 'VARCHAR',
-        'constraint' => '200',
+        'type' => 'TEXT',
       ),
     ));
     $this->dbforge->add_field("`created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP");
@@ -55,7 +54,7 @@ class Migration_admin_table extends CI_Migration {
         'email' => 'lsalamante4@myoptimind.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );
-      
+
       $this->db->insert($table, $data);
       $data = array(
         'name' => 'Vane',

@@ -33,7 +33,7 @@
         <li><a href="#">Events</a></li>
         <li><a href="#">Projects</a></li>
         <li class="active"><a href="#">About Us</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="<?php echo base_url('login/logout') ?>">Logout</a></li>
       </ul>
     </nav>
     <button class="toggle-menu menu-right menu">MENU</button>
@@ -47,7 +47,7 @@
           <li><a href="#">Events</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">About Us</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="<?php echo base_url('login/logout') ?>">Logout</a></li>
         </ul>
 
       </ul>

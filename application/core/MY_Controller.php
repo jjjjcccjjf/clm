@@ -46,9 +46,9 @@ class Front_core_controller extends CI_Controller
 
   public function wrapper($body, $data = null,  $sidebar = 'generic')
   {
-    // if ($this->session->login_type !== 'front') {
-    //   redirect('login');
-    // }
+    if ($this->session->login_type !== 'sellers') {
+      redirect('login');
+    }
 
     $this->load->view('front/partials/header');
     $this->load->view("front/partials/sidebar/{$sidebar}");
@@ -58,7 +58,7 @@ class Front_core_controller extends CI_Controller
 
   public function front_redirect($param = null)
   {
-    if ($this->session->login_type !== 'front') {
+    if ($this->session->login_type !== 'sellers') {
       redirect('login');
     } else {
       redirect($param);

@@ -11,6 +11,10 @@ class Login extends CI_Controller {
 
   public function index()
   {
+    if ($this->session->login_type === 'sellers') {
+      redirect('dashboard');
+    }
+
     $this->load->view('front/login');
   }
 

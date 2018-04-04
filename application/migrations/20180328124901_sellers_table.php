@@ -103,7 +103,7 @@ class Migration_sellers_table extends CI_Migration {
         'mobile_num' => '09451494315',
         'office_fax' => 'Hello',
         'home_num' => '22299222',
-        'email' => 'est@est.com',
+        'email' => 'lsalamante@myoptimind.com',
         'real_estate_record_type' => 'Broker',
         'real_estate_record_payload' => '{}',
           'image_url' => 'https://robohash.org/Magen Attraglaitz?set=set4' ,

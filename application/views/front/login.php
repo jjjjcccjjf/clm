@@ -14,13 +14,15 @@
   <script src="js/css3-mediaqueries.js"></script>
   <![endif]-->
 
-
+  <script type="text/javascript">
+  const base_url = '<?php echo base_url(); ?>';
+  </script>
 </head>
 
 
 <body>
   <aside class="main-logo">
-    <img src="images/clm-logo.png">
+    <img src="<?php echo base_url('public/front/') ?>images/clm-logo.png">
   </aside>
   <article class="loginreg">
     <div class="tabs">
@@ -29,14 +31,17 @@
       <div class="tab">
         <ul>
           <li>
-            <label>Email Address</label>
-            <input type="email" name="">
-          </li>
-          <li>
-            <label>Password</label>
-            <input type="password" name="">
-          </li>
-          <li><input type="submit" name="" value="LOGIN"></li>
+            <form method="post">
+
+              <label>Email Address</label>
+              <input type="email" name="email">
+            </li>
+            <li>
+              <label>Password</label>
+              <input type="password" name="password">
+            </li>
+            <li><input type="submit" name="" value="LOGIN"></li>
+          </form>
           <li><a href="forgot-password.html">Forgot your password?</a></li>
         </ul>
 
@@ -75,6 +80,9 @@
 
   <div class="bgleft"></div>
   <div class="bgright"></div>
+  <script src="<?php echo base_url('public/front/') ?>js/jquery-1.9.1.min.js"></script>
+  <script src="<?php echo base_url('public/front/js/custom/') ?>login.js"></script>
+
 
 </body>
 

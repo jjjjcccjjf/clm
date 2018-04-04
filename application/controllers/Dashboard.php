@@ -11,7 +11,8 @@ class Dashboard extends Front_core_controller {
 
   public function index()
   {
-    $this->wrapper('front/dashboard');
+    // $this->wrapper('front/dashboard');
+    $this->about();
   }
 
   public function about()

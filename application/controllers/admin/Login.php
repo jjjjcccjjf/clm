@@ -25,10 +25,18 @@ class Login extends CI_Controller {
     }
   }
 
-  public function logout()
+  public function logtfout()
   {
     $this->session->sess_destroy();
     redirect('admin');
     die();
   }
+
+  public function logout()
+  {
+    $this->session->sess_destroy();
+    redirect('dashboard');
+    die();
+  }
+
 }
