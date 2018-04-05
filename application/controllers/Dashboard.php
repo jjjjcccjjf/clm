@@ -33,7 +33,7 @@ class Dashboard extends Front_core_controller {
   {
     $data['events'] = $this->events_model->all();
 
-    $this->wrapper('front/events', $data);
+    $this->wrapper('front/events', $data, 'events');
   }
 
   public function account()

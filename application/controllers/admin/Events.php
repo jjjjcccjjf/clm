@@ -59,4 +59,13 @@ class Events extends Admin_core_controller { # see application/core/MY_Controlle
     $this->admin_redirect('admin/events');
   }
 
+  public function eventsPerPeriod($month, $year)
+  {
+    if ($res = $this->events_model->getEventsPerPeriod($month, $year)) {
+      custom_response(200, ['message' => 'Success', 'code' => 'ok', 'data' => $res], $this);
+    }else{
+      custom_response(200, ['message' => 'No events available at this month', 'code' => 'empty'], $this);
+    }
+  }
+
 }

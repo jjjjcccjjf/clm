@@ -20,6 +20,9 @@
   <!--[if lt IE 9]>
   <script src="<?php echo base_url('public/front/') ?>js/css3-mediaqueries.js"></script>
   <![endif]-->
+  <script type="text/javascript">
+    const base_url = '<?php echo base_url(); ?>';
+  </script>
 </head>
 
 <body>

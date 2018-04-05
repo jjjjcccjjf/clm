@@ -5,15 +5,15 @@
       <ul class="featured-news">
         <?php foreach ($news as $key => $value): ?>
 
-        <li>
-          <a href="#">
-            <img src="<?php echo $value->image_url ?>" alt="">
-            <div class="caption">
-              <h3><?php echo $value->title ?></h3>
-              <p><?php echo $value->excerpt ?></p>
-            </div>
-          </a>
-        </li>
+          <li>
+            <a href="#">
+              <img src="<?php echo $value->image_url ?>" alt="">
+              <div class="caption">
+                <h3><?php echo $value->title ?></h3>
+                <p><?php echo $value->excerpt ?></p>
+              </div>
+            </a>
+          </li>
 
         <?php endforeach; ?>
       </ul>
@@ -57,96 +57,7 @@
 
       </div>
       <article class="events-list">
-        <ul>
-          <li>
-            <table>
-              <tr>
-                <td><h3>14</h3></td>
-                <td>
-                  <ul>
-                    <li>
-                      <a href="#">Allow users to drag or swipe directly to a slide irrespective of slidesToScroll</a>
-                    </li>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
-          </li>
-
-          <li>
-            <table>
-              <tr>
-                <td><h3>14</h3></td>
-                <td>
-                  <ul>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
-          </li>
-
-          <li>
-            <table>
-              <tr>
-                <td><h3>14</h3></td>
-                <td>
-                  <ul>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
-          </li>
-          <li>
-            <table>
-              <tr>
-                <td><h3>14</h3></td>
-                <td>
-                  <ul>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
-          </li>
-
-          <li>
-            <table>
-              <tr>
-                <td><h3>14</h3></td>
-                <td>
-                  <ul>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                    <li>
-                      <a href="#">Event Title 1</a>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
-          </li>
-        </ul>
+          <!-- initialized via js  -->
       </article>
     </aside>
   </section>
@@ -218,7 +129,7 @@
   </aside>
 </article>
 <!-- End of Main Dashboard -->
-
+<script src="<?php echo base_url('public/front/') ?>js/custom/event_panel.js"></script>
 <!-- Responsive Slide -->
 <script>
 $(document).ready(function(){

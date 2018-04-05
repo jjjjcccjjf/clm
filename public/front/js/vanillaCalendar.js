@@ -69,12 +69,13 @@ var vanillaCalendar = {
     )
     for (var i = 0; i < this.activeDates.length; i++) {
       this.activeDates[i].addEventListener('click', function (event) {
-        var picked = document.querySelectorAll(
-          '[data-calendar-label="picked"]'
-        )[0]
-        picked.innerHTML = this.dataset.calendarDate
+        // var picked = document.querySelectorAll(
+        //   '[data-calendar-label="picked"]'
+        // )[0]
+        // picked.innerHTML = this.dataset.calendarDate
         _this.removeActiveClass()
         this.classList.add('vcal-date--selected')
+        console.log($(this).data('calendar-date'))
       })
     }
   },
@@ -96,6 +97,11 @@ var vanillaCalendar = {
     this.label.innerHTML =
       this.monthsAsString(this.date.getMonth()) + ' ' + this.date.getFullYear()
     this.dateClicked()
+
+    /**
+     * @author @jjjjcccjjf
+     */
+    initEventPanel(this.date.getMonth() +1, this.date.getFullYear())
   },
 
   monthsAsString: function (monthIndex) {
