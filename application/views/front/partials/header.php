@@ -27,17 +27,17 @@
     <aside><a href="<?php echo base_url('dashboard') ?>"><img src="<?php echo base_url('public/front/') ?>images/clm-logo2.png"></a></aside>
     <nav class="main">
       <ul>
-        <li class="<?php echo $this->uri->segment(2) === 'account'; ?>">
+        <li class="<?php echo ($this->uri->segment(2) === 'account') ? 'active' : ''; ?>">
           <a href="<?php echo base_url('dashboard/account'); ?>">My Account</a></li>
-        <li class="<?php echo $this->uri->segment(2) === 'sales'; ?>">
+        <li class="<?php echo ($this->uri->segment(2) === 'sales') ? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/sales'); ?>">Sales</a></li>
-        <li class="<?php echo $this->uri->segment(2) === 'rewards'; ?>">
+        <li class="<?php echo ($this->uri->segment(2) === 'rewards')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/rewards'); ?>">Rewards</a></li>
-        <li class="<?php echo $this->uri->segment(2) === 'events'; ?>">
+        <li class="<?php echo ($this->uri->segment(2) === 'events')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/events'); ?>">Events</a></li>
-        <li class="<?php echo $this->uri->segment(2) === 'projects'; ?>">
+        <li class="<?php echo ($this->uri->segment(2) === 'projects')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/projects'); ?>">Projects</a></li>
-        <li class="<?php echo $this->uri->segment(2) === 'about'; ?>">
+        <li class="<?php echo ($this->uri->segment(2) === 'about')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/about'); ?>">About Us</a></li>
         <li><a href="<?php echo base_url('login/logout') ?>">Logout</a></li>
       </ul>
@@ -47,17 +47,17 @@
       <button class="toggle-menu menu-right">X CLOSE</button>
       <ul>
         <ul>
-          <li class="<?php echo $this->uri->segment(2) === 'account'; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'account') ? 'active' : ''; ?>">
             <a href="<?php echo base_url('dashboard/account'); ?>">My Account</a></li>
-          <li class="<?php echo $this->uri->segment(2) === 'sales'; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'sales') ? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/sales'); ?>">Sales</a></li>
-          <li class="<?php echo $this->uri->segment(2) === 'rewards'; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'rewards')? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/rewards'); ?>">Rewards</a></li>
-          <li class="<?php echo $this->uri->segment(2) === 'events'; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'events')? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/events'); ?>">Events</a></li>
-          <li class="<?php echo $this->uri->segment(2) === 'projects'; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'projects')? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/projects'); ?>">Projects</a></li>
-          <li class="<?php echo $this->uri->segment(2) === 'about'; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'about')? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/about'); ?>">About Us</a></li>
           <li><a href="<?php echo base_url('login/logout') ?>">Logout</a></li>
         </ul>

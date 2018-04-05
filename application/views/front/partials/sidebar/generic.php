@@ -4,7 +4,11 @@
     <a id="menu-toggle" class="togglebtn" href="#"><img src="<?php echo base_url('public/front/') ?>images/toggle.png"></a>
     <div class="sideprofile">
 
-      <div class="logo"><img src="<?php echo base_url('public/front/') ?>images/clm-logo2.png"></div>
+      <div class="logo">
+        <a href="<?php echo base_url('dashboard') ?>">
+        <img src="<?php echo base_url('public/front/') ?>images/clm-logo2.png">
+      </a>
+      </div>
       <section class="profile">
         <aside>
           <img src="<?php echo base_url('public/front/') ?>images/profilepic.jpg">
