@@ -11,11 +11,11 @@
       </div>
       <section class="profile">
         <aside>
-          <img src="<?php echo base_url('public/front/') ?>images/profilepic.jpg">
+          <img src="<?php echo $side_seller->image_url ?>">
           <div><img src="<?php echo base_url('public/front/') ?>images/badge.png"></div>
         </aside>
         <article>
-          <h3>Robert S. Manson</h3>
+          <h3><?php echo $side_seller->full_name ?></h3>
 
           <h6>GOLD CLASS</h6>
         </article>

@@ -50,8 +50,14 @@ class Front_core_controller extends CI_Controller
       redirect('login');
     }
 
+    $id = $_SESSION['id'];
+    $seller['side_seller'] = $this->sellers_model->get($id);
+    // $seller['side_sales'] = $this->sales_model->getUserSales($id);
+    // $seller['side_rewards'] = $this->rewards_model->getUserReward($id);
+    // $seller['side_events'] = $this->events_model->~;
+
     $this->load->view('front/partials/header');
-    $this->load->view("front/partials/sidebar/{$sidebar}");
+    $this->load->view("front/partials/sidebar/{$sidebar}", $seller);
     $this->load->view($body, $data);
     $this->load->view('front/partials/footer');
   }
