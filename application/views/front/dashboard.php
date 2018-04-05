@@ -6,7 +6,7 @@
         <?php foreach ($news as $key => $value): ?>
 
           <li>
-            <a href="#">
+            <a href="#<?php echo "news-{$key}"?>" class="open-popup-link">
               <img src="<?php echo $value->image_url ?>" alt="">
               <div class="caption">
                 <h3><?php echo $value->title ?></h3>
@@ -57,7 +57,7 @@
 
       </div>
       <article class="events-list">
-          <!-- initialized via js  -->
+        <!-- initialized via js  -->
       </article>
     </aside>
   </section>
@@ -128,11 +128,33 @@
     </ul>
   </aside>
 </article>
+
+<?php foreach ($news as $key => $value): ?>
+  <!-- Inline Popup -->
+  <div id="<?php echo "news-{$key}"?>" class="white-popup mfp-hide">
+    <section class="event-details">
+      <h3><?php echo $value->title ?></h3>
+      <aside>
+        <img src="<?php echo $value->image_url ?>">
+      </aside>
+      <article>
+        <p><?php echo $value->description; ?></p>
+      </article>
+    </section>
+  </div>
+<?php endforeach; ?>
+
 <!-- End of Main Dashboard -->
 <script src="<?php echo base_url('public/front/') ?>js/custom/event_panel.js"></script>
 <!-- Responsive Slide -->
 <script>
 $(document).ready(function(){
+
+  $('.open-popup-link').magnificPopup({
+    type:'inline',
+    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  });
+
   $('.featured-news').slick({
     autoplay: true,
     infinite: true,
