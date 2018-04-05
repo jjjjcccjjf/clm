@@ -36,5 +36,13 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/events', $data);
   }
 
+  public function account()
+  {
+    $id = $_SESSION['id'];
+    $data['seller'] = $this->sellers_model->get($id);
+
+    $this->wrapper('front/account', $data);
+  }
+
 
 }

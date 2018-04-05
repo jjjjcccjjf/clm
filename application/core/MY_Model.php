@@ -26,6 +26,11 @@ class Admin_core_model extends CI_model {
     return $this->db->insert($this->table, $data);
   }
 
+  public function get($id)
+  {
+    return $this->db->get_where($this->table, array('id' => $id))->row();
+  }
+
   public function deleteUploadedMedia($id)
   {
     $this->db->where('id', $id);
