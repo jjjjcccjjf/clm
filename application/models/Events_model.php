@@ -8,8 +8,11 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
     $this->upload_dir = 'uploads/events';
   }
 
-  public function all()
+  public function all($month = null, $year = null)
   {
+    if ($month && $year) {
+      $this->db->where("month(date) = {$month} AND year(date) = {$year}");
+    }
     $res = $this->db->get($this->table)->result();
     $res = $this->filterFields($res);
     return $res;

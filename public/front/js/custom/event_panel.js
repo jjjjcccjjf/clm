@@ -39,11 +39,11 @@ function generateEventPanel(data) {
     <td>
     <ul>
     <li>
-    <a href="${base_url + 'events' + '/' + data[i].month + '/' + data[i].year}">
+    <a href="${base_url + 'dashboard/events' + '/' + data[i].month + '/' + data[i].year}">
     ${data[i].excerpt}</a>
     </li>
     <li>
-    <a href="${base_url + 'events' + '/' + data[i].month + '/' + data[i].year}">
+    <a href="${base_url + 'dashboard/events' + '/' + data[i].month + '/' + data[i].year}">
     ${data[i].title}</a>
     </li>
     </ul>

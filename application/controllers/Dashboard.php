@@ -29,9 +29,9 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/about', $data);
   }
 
-  public function events()
+  public function events($month = null, $year = null)
   {
-    $data['events'] = $this->events_model->all();
+    $data['events'] = $this->events_model->all($month, $year);
 
     $this->wrapper('front/events', $data, 'events');
   }
