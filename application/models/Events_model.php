@@ -12,6 +12,10 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
   {
     if ($month && $year) {
       $this->db->where("month(date) = {$month} AND year(date) = {$year}");
+    }else{
+      $d = date('m');
+      $y = date('Y');
+      $this->db->where("month(date) = {$d} AND year(date) = {$y}");
     }
     $res = $this->db->get($this->table)->result();
     $res = $this->filterFields($res);
