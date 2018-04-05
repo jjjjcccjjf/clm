@@ -33,6 +33,29 @@ class Dashboard extends Front_core_controller {
   {
     $data['events'] = $this->events_model->all($month, $year);
 
+    $start    = new DateTime(date('Y-m-d', strtotime('-1 years')));
+    $start->modify('first day of this month');
+    $end    = new DateTime(date('Y-m-d', strtotime('+1 years')));
+    $end->modify('first day of next month');
+    $interval = DateInterval::createFromDateString('1 month');
+    $period   = new DatePeriod($start, $interval, $end);
+
+    $month_year = [];
+    foreach ($period as $dt) {
+
+      $active = "";
+
+      if ($month == $dt->format('m') && $year == $dt->format('Y')) {
+        $active = "selected='selected'";
+      }
+
+      $month_year[] = "<option $active
+      data-redirect='" .base_url('dashboard/events/'). "{$dt->format("m")}/{$dt->format("Y")}' >
+      {$dt->format("F Y")}</option>";
+    }
+
+    $data['month_year'] = $month_year;
+
     $this->wrapper('front/events', $data, 'events');
   }
 
