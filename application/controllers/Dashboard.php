@@ -67,6 +67,22 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/account', $data);
   }
 
+  public function forgot_password()
+  {
+    $this->load->view('front/forgot_password');
+  }
+
+  public function send_password_token()
+  {
+    $email = $this->input->post('email');
+
+    if($this->sellers_model->resetPassword($email)){
+      custom_response(200, ['message' => "Instructions sent to $email" , 'code' => 'ok'], $this);
+    } else {
+      custom_response(200, ['message' => 'That account does not exist or is inactive', 'code' => 'error'], $this);
+    }
+  }
+
   public function change_password()
   {
     $data['password'] = password_hash($this->input->post('new_password'), PASSWORD_DEFAULT);

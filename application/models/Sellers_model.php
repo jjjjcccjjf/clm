@@ -6,6 +6,18 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     parent::__construct();
     $this->table = 'sellers';
     $this->upload_dir = 'uploads/sellers';
+
+    $config_mail['protocol']='smtp';
+    $config_mail['smtp_host']='mail.smtp2go.com';
+    $config_mail['smtp_port']='80';
+    $config_mail['smtp_timeout']='30';
+    $config_mail['smtp_user']='betamail@optimindsolutions.com';
+    $config_mail['smtp_pass']='MDFldDJ5a3lkbWk3';
+    $config_mail['charset']='utf-8';
+    $config_mail['newline']="\r\n";
+    $config_mail['wordwrap'] = TRUE;
+    $config_mail['mailtype'] = 'html';
+    $this->email->initialize($config_mail);
   }
 
 
@@ -42,7 +54,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     if ($this->db->insert($this->table, $data)) { # if success we finally inseert it
 
       # Block for checking if email sends
-      if(!$this->sendEmail($this->input->post('email'), $this->input->post('full_name'), $password)){
+      if(!$this->sendPasswordToEmail($this->input->post('email'), $this->input->post('full_name'), $password)){
         $id = $this->db->insert_id();
 
         # Delete if email failed sending
@@ -69,19 +81,35 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     return $key;
   }
 
-  public function sendEmail($email, $full_name, $password)
+  public function resetPassword($email)
   {
-    $config_mail['protocol']='smtp';
-    $config_mail['smtp_host']='mail.smtp2go.com';
-    $config_mail['smtp_port']='80';
-    $config_mail['smtp_timeout']='30';
-    $config_mail['smtp_user']='betamail@optimindsolutions.com';
-    $config_mail['smtp_pass']='MDFldDJ5a3lkbWk3';
-    $config_mail['charset']='utf-8';
-    $config_mail['newline']="\r\n";
-    $config_mail['wordwrap'] = TRUE;
-    $config_mail['mailtype'] = 'html';
-    $this->email->initialize($config_mail);
+    $this->db->where('email', $email);
+    $token_inserted = $this->db->update('sellers', ['forgot_token' => $code = $this->generatePassword(32)]);
+
+    if ($token_inserted) {
+      $this->email->from('noreply@cebulandmasters.com', 'Cebu Landmasters');
+      $this->email->to($email);
+      $this->email->subject('Password reset');
+
+      $url = base_url('dashboard/reset-password');
+      $msg = "
+      <table>
+      </td></tr>
+      <tr><td>Click the link to reset your password: <a href='$url?c={$code}'>$url?c={$code}</a></td></tr>
+      <tr><td>Thank you</td></tr>
+      </table>
+      ";
+      $this->email->message($msg);
+      return $this->email->send();
+      
+    } else {
+      return false;
+    }
+
+  }
+
+  public function sendPasswordToEmail($email, $full_name, $password)
+  {
 
     $this->email->from('noreply@cebulandmasters.com', 'Cebu Landmasters');
     $this->email->to($email);

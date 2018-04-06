@@ -42,7 +42,7 @@
             </li>
             <li><input type="submit" name="" value="LOGIN"></li>
           </form>
-          <li><a href="forgot-password.html">Forgot your password?</a></li>
+          <li><a href="<?php echo base_url('forgot-password')?>">Forgot your password?</a></li>
         </ul>
 
         <h6>GO TO <a href="https://www.cebulandmasters.com">www.cebulandmasters.com</a></h6>
