@@ -77,5 +77,23 @@ class Dashboard extends Front_core_controller {
     $this->front_redirect('dashboard/account');
   }
 
+  public function change_photo()
+  {
+    $data = [];
+
+    if ($_FILES['image_url']['size'] > 0) {
+      $this->sellers_model->deleteUploadedMedia($_SESSION['id']);
+      $data = array_merge($data, $this->sellers_model->upload('image_url'));
+    }
+
+    if($this->sellers_model->update($_SESSION['id'], $data)){
+      $this->session->set_flashdata('flash_msg_photo', ['message' => 'Display photo updated', 'color' => 'green']);
+    } else {
+      $this->session->set_flashdata('flash_msg_photo', ['message' => 'Invalid photo', 'color' => 'red']);
+    }
+
+    $this->front_redirect('dashboard/account');
+  }
+
 
 }

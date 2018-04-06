@@ -97,7 +97,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     <tr><td><b>Your password is:</b> $password
     <br><sub>Notice: This password SHOULD NOT be shared to anyone</sub>
     </td></tr>
-    <tr><td>Sign-in to the portal using this link: <a href='$url'>$url</a></td></tr>
+    <tr><td>You can sign-in to the portal using this link: <a href='$url'>$url</a></td></tr>
     <tr><td></td></tr>
     <tr><td>Thank you</td></tr>
     </table>

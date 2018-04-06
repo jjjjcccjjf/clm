@@ -34,6 +34,31 @@
           </ul>
         </form>
       </section>
+    <section class="real-estate-record">
+      <form class="" action="<?php echo base_url('dashboard/change_photo') ?>"
+        method="post" id="change_photo"
+        enctype="multipart/form-data"
+        >
+        <h4>Update display photo
+          <?php if ($flash_msg = $this->session->flash_msg_photo): ?>
+
+            <br>
+            <sub style="color:<?php echo $flash_msg['color'] ?>;font-weight:bold">
+              <?php echo $flash_msg['message']; ?></sub>
+            <?php endif; ?>
+
+          </h4>
+          <ul>
+            <li>
+              <h6>Upload 1x1 photo <span>(.jpg &amp; .png only)</span></h6>
+              <input type="file" name="image_url" id="file" required="required" accept=".jpg,.png,.jpeg">
+            </li>
+          </ul>
+          <input
+          style="margin-top: -10px; margin-bottom: 12px;"
+           type="submit" name="" value="CHANGE DISPLAY PHOTO">
+        </form>
+      </section>
       <section class="personal-info">
         <h4>Personal Information</h4>
         <ul>
@@ -118,14 +143,6 @@
         <aside id="real_estate_record_dynamic">
           <ul>
           </aside>
-
-          <ul>
-            <li>
-              <h6>Upload 1x1 photo <span>(.jpg &amp; .png only)</span></h6>
-              <input type="file" name="image_url" id="file" class="inputfile" accept=".jpg,.png,.jpeg">
-              <label for="file">BROWSE</label>
-            </li>
-          </ul>
         </section>
 
         <input type="submit" name="" value="SUBMIT">
@@ -144,3 +161,4 @@
 
     <script src="<?php echo base_url('public/front/') ?>js/custom/account_management.js"></script>
     <script src="<?php echo base_url('public/front/') ?>js/custom/change_password.js"></script>
+    <script src="<?php echo base_url('public/front/') ?>js/custom/change_display_photo.js"></script>
