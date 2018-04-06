@@ -27,7 +27,7 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
     if($this->sellers_model->add($data)){
       $this->session->set_flashdata('flash_msg', ['message' => 'Item added successfully', 'color' => 'green']);
     } else {
-      $this->session->set_flashdata('flash_msg', ['message' => 'Error adding item', 'color' => 'red']);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Error adding seller', 'color' => 'red']);
     }
 
     $this->admin_redirect('admin/sellers');
