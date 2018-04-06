@@ -16,7 +16,7 @@ $(document).ready(function() {
           let thingToAppend = `
           <ul>
           <li> <label>Success. ${res.message}.</label> </li>
-          <li><a href="<?php echo base_url('login'); ?>">Already have an account? Login</a></li>
+          <li><a href="${base_url}login">Already have an account? Login</a></li>
           </ul>
           `;
           appendToEl($(".tab"), thingToAppend);

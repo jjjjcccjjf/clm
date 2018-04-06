@@ -34,11 +34,15 @@
             <form method="post">
 
               <label>Email Address</label>
-              <input type="email" name="email">
+              <input type="email" name="email" autofocus
+              value="<?php echo $this->session->flash_email ?>"
+              >
             </li>
             <li>
               <label>Password</label>
-              <input type="password" name="password">
+              <input type="password" name="password"
+              value="<?php echo $this->session->flash_password ?>"
+              >
             </li>
             <li><input type="submit" name="" value="LOGIN"></li>
           </form>
@@ -82,8 +86,7 @@
   <div class="bgright"></div>
   <script src="<?php echo base_url('public/front/') ?>js/jquery-1.9.1.min.js"></script>
   <script src="<?php echo base_url('public/front/js/custom/') ?>login.js"></script>
-
-
+  <?php echo $this->session->auto_login # auto login script from the reset password ?>
 </body>
 
 </html>

@@ -20,7 +20,6 @@
   <script src="<?php echo base_url('public/admin/js/custom/') ?>generic.js"></script>
 </head>
 
-
 <body>
   <aside class="main-logo">
     <img src="<?php echo base_url('public/front/') ?>images/clm-logo.png">
@@ -30,7 +29,7 @@
       <input type="radio" name="tabs" id="tabone" checked="checked">
       <label for="tabone">Reset password</label>
       <div class="tab">
-        <form method="post">
+        <form method="post" action="<?php echo base_url('dashboard/change_password/reset/?c=') . $this->input->get('c') . "&e=" . base64_encode($email)?>">
 
           <ul>
             <li>
@@ -44,6 +43,8 @@
             </li>
 
             <li><input type="submit" name="" value="RESET PASSWORD"></li>
+
+            </form>
           </ul>
         </form>
       </div>

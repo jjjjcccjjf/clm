@@ -6,7 +6,6 @@ class Dashboard extends Front_core_controller {
   function __construct()
   {
     parent::__construct();
-
   }
 
   public function index()
@@ -78,8 +77,7 @@ class Dashboard extends Front_core_controller {
     $user = $this->db->get_where('sellers', ['forgot_token' => $forgot_token])->row();
 
     if (!$user || !$forgot_token) {
-      # if token is empty or if there are no matching forgot token
-      redirect();
+      redirect('login');
     } else{
       $data['email'] = $user->email;
       $this->load->view('front/reset_password', $data);
@@ -98,14 +96,26 @@ class Dashboard extends Front_core_controller {
     }
   }
 
-  public function change_password()
+  public function change_password($type = 'account')
   {
     $data['password'] = password_hash($this->input->post('new_password'), PASSWORD_DEFAULT);
-    $this->sellers_model->update($_SESSION['id'], $data);
 
-    $this->session->set_flashdata('flash_msg', ['message' => 'Password changed successfully', 'color' => 'green']);
+    if ($type === 'account') {
+      $this->sellers_model->update($_SESSION['id'], $data);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Password changed successfully', 'color' => 'green']);
+      $this->front_redirect('dashboard/account');
 
-    $this->front_redirect('dashboard/account');
+    } else if ($type === 'reset') {
+      $this->db->where('forgot_token', $this->input->get('c'));
+      $data['forgot_token'] = null;
+      $this->db->update('sellers', $data);
+
+      $this->session->set_flashdata('flash_email', base64_decode($this->input->get('e')));
+      $this->session->set_flashdata('flash_password', $this->input->post('new_password'));
+      $this->session->set_flashdata('auto_login', '<script>$(document).ready(function() {$("form").submit();});</script>');
+
+      redirect('login');
+    }
   }
 
   public function change_photo()
