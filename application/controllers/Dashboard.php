@@ -67,5 +67,15 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/account', $data);
   }
 
+  public function change_password()
+  {
+    $data['password'] = password_hash($this->input->post('new_password'), PASSWORD_DEFAULT);
+    $this->sellers_model->update($_SESSION['id'], $data);
+
+    $this->session->set_flashdata('flash_msg', ['message' => 'Password changed successfully', 'color' => 'green']);
+
+    $this->front_redirect('dashboard/account');
+  }
+
 
 }
