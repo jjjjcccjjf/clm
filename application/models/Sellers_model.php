@@ -91,11 +91,11 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
       $this->email->to($email);
       $this->email->subject('Password reset');
 
-      $url = base_url('dashboard/reset-password');
+      $url = base_url('reset-password');
       $msg = "
       <table>
       </td></tr>
-      <tr><td>Click the link to reset your password: <a href='$url/{$code}'>$url/{$code}</a></td></tr>
+      <tr><td>Click the link to reset your password: <a href='$url?c={$code}'>$url?c={$code}</a></td></tr>
       <tr><td>Thank you</td></tr>
       </table>
       ";

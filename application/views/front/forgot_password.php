@@ -28,7 +28,7 @@
   <article class="loginreg">
     <div class="tabs">
       <input type="radio" name="tabs" id="tabone" checked="checked">
-      <label for="tabone">Forgot Password</label>
+      <label for="tabone">Forgot password</label>
       <div class="tab">
         <form method="post">
 
@@ -50,7 +50,7 @@
 
     </div>
 
-    
+
   </article>
 
   <div class="bgleft"></div>

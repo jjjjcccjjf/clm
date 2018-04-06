@@ -72,9 +72,19 @@ class Dashboard extends Front_core_controller {
     $this->load->view('front/forgot_password');
   }
 
-  public function reset_password($code = null)
+  public function reset_password()
   {
-    $this->load->view('front/reset_password');
+    $forgot_token = $this->input->get('c');
+    $user = $this->db->get_where('sellers', ['forgot_token' => $forgot_token])->row();
+
+    if (!$user || !$forgot_token) {
+      # if token is empty or if there are no matching forgot token
+      redirect();
+    } else{
+      $data['email'] = $user->email;
+      $this->load->view('front/reset_password', $data);
+    }
+
   }
 
   public function send_password_token()

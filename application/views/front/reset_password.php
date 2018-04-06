@@ -28,23 +28,22 @@
   <article class="loginreg">
     <div class="tabs">
       <input type="radio" name="tabs" id="tabone" checked="checked">
-      <label for="tabone">Reset</label>
+      <label for="tabone">Reset password</label>
       <div class="tab">
         <form method="post">
 
           <ul>
             <li>
-              <label>New password</label>
+              <label>Reset password for <?php echo $email ?></label>
               <input type="password"
               name="new_password" placeholder="New password" required="required">
             </li>
             <li>
-              <label>Confirm new password</label>
               <input type="password"
-              name="confirm_new_password" placeholder="Confirm " required="required">
+              name="confirm_new_password" placeholder="Confirm new password" required="required">
             </li>
 
-            <li><input type="submit" name="" value="CHANGE PASSWORD"></li>
+            <li><input type="submit" name="" value="RESET PASSWORD"></li>
           </ul>
         </form>
       </div>
