@@ -17,7 +17,7 @@
   const base_url = '<?php echo base_url(); ?>';
   </script>
   <script src="<?php echo base_url('public/front/') ?>js/jquery-1.9.1.min.js"></script>
-
+  <script src="<?php echo base_url('public/admin/js/custom/') ?>generic.js"></script>
 </head>
 
 
@@ -28,34 +28,38 @@
   <article class="loginreg">
     <div class="tabs">
       <input type="radio" name="tabs" id="tabone" checked="checked">
-      <label for="tabone">Forgot Password</label>
+      <label for="tabone">Reset</label>
       <div class="tab">
         <form method="post">
 
           <ul>
             <li>
-              <label>Email Address</label>
-              <input type="email" name="email" required="required">
+              <label>New password</label>
+              <input type="password"
+              name="new_password" placeholder="New password" required="required">
+            </li>
+            <li>
+              <label>Confirm new password</label>
+              <input type="password"
+              name="confirm_new_password" placeholder="Confirm " required="required">
             </li>
 
-            <li><input type="submit" name="" value="RESET PASSWORD"></li>
-            <li><a href="<?php echo base_url('login'); ?>">Already have an account? Login</a></li>
+            <li><input type="submit" name="" value="CHANGE PASSWORD"></li>
           </ul>
         </form>
-
-        <h6>GO TO <a href="https://www.cebulandmasters.com">www.cebulandmasters.com</a></h6>
       </div>
 
 
 
     </div>
 
-    
+
   </article>
 
   <div class="bgleft"></div>
   <div class="bgright"></div>
-  <script src="<?php echo base_url('public/front/') ?>js/custom/forgot_password.js"></script>
+  <script src="<?php echo base_url('public/front/') ?>js/custom/reset_password.js"></script>
   <script src="<?php echo base_url('public/admin/js/custom/') ?>generic.js"></script>
+
 </body>
 </html>

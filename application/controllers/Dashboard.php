@@ -72,6 +72,11 @@ class Dashboard extends Front_core_controller {
     $this->load->view('front/forgot_password');
   }
 
+  public function reset_password($code = null)
+  {
+    $this->load->view('front/reset_password');
+  }
+
   public function send_password_token()
   {
     $email = $this->input->post('email');
@@ -79,7 +84,7 @@ class Dashboard extends Front_core_controller {
     if($this->sellers_model->resetPassword($email)){
       custom_response(200, ['message' => "Instructions sent to $email" , 'code' => 'ok'], $this);
     } else {
-      custom_response(200, ['message' => 'That account does not exist or is inactive', 'code' => 'error'], $this);
+      custom_response(200, ['message' => 'That account is inactive or nonexistent', 'code' => 'error'], $this);
     }
   }
 

@@ -84,9 +84,9 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
   public function resetPassword($email)
   {
     $this->db->where('email', $email);
-    $token_inserted = $this->db->update('sellers', ['forgot_token' => $code = $this->generatePassword(32)]);
+    $this->db->update('sellers', ['forgot_token' => $code = $this->generatePassword(32)]);
 
-    if ($token_inserted) {
+    if ($this->db->affected_rows()) {
       $this->email->from('noreply@cebulandmasters.com', 'Cebu Landmasters');
       $this->email->to($email);
       $this->email->subject('Password reset');
@@ -95,13 +95,13 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
       $msg = "
       <table>
       </td></tr>
-      <tr><td>Click the link to reset your password: <a href='$url?c={$code}'>$url?c={$code}</a></td></tr>
+      <tr><td>Click the link to reset your password: <a href='$url/{$code}'>$url/{$code}</a></td></tr>
       <tr><td>Thank you</td></tr>
       </table>
       ";
       $this->email->message($msg);
       return $this->email->send();
-      
+
     } else {
       return false;
     }
