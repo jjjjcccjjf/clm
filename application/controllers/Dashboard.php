@@ -68,13 +68,13 @@ class Dashboard extends Front_core_controller {
     * structure
     * [ {...}, {...}]
     */
-    if ($seller->pending_payload !== '[{},{}]') {
+    if ($seller->pending_payload != '[{},{}]') {
       $data['seller_pending'] = json_decode($seller->pending_payload)[1];
       $data['seller_pending']->real_estate_record_payload = json_decode($seller->pending_payload)[0];
     } else {
       $data['seller_pending'] = $seller;
     }
-
+    // var_dump($data); die();
     $this->wrapper('front/account', $data);
   }
 
@@ -110,6 +110,7 @@ class Dashboard extends Front_core_controller {
 
   public function change_profile()
   {
+    // var_dump($_POST); die();
     $_POST = $this->setJsonPayload($this->input->post(), $this->input->post('real_estate_record_type'));
     $_POST = $this->unsetJsonFields($_POST);
 
@@ -118,7 +119,6 @@ class Dashboard extends Front_core_controller {
     $arr[] = $this->input->post('real_estate_record_payload');
     unset($_POST['real_estate_record_payload']);
     $arr[] = $_POST;
-
     if ($this->sellers_model->update($_SESSION['id'], ['pending_payload' => json_encode($arr)])){
       $this->session->set_flashdata('flash_msg_profile', ['message' => 'Changes will be reviewed by the admin', 'color' => 'gold']);
     } else {

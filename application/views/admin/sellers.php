@@ -41,7 +41,7 @@
                           <img src="<?php echo $value->image_url ?>" alt="" style="max-width:90px">
                         </a></td>
                         <td>
-                          <button type="button"
+                          <button type="button" data-edit-type="update"
                           data-payload='<?php echo json_encode(
                             ['id' => $value->id,
                             'full_name' => $value->full_name,
@@ -61,6 +61,31 @@
                             class="edit-row btn btn-info btn-xs">Edit</button>
                             <button type="button" data-id='<?php echo $value->id; ?>'
                               class="btn btn-delete btn-danger btn-xs">Delete</button>
+                              <?php if ($value->pending_payload !== '[{},{}]'):
+                                $seller_pending = json_decode($value->pending_payload)[1];
+                                $seller_pending->real_estate_record_payload = json_decode($value->pending_payload)[0];
+
+                                ?>
+                              <button type="button"
+                              data-edit-type="review"
+                              data-payload='<?php echo json_encode(
+                                ['id' => $value->id,
+                                'full_name' => $seller_pending->full_name,
+                                'birth_date' => $seller_pending->birth_date,
+                                'gender' => $seller_pending->gender,
+                                'civil_status' => $seller_pending->civil_status,
+                                'home_address' => $seller_pending->home_address,
+                                'office_address' => $seller_pending->office_address,
+                                'mobile_num' => $seller_pending->mobile_num,
+                                'office_fax' => $seller_pending->office_fax,
+                                'home_num' => $seller_pending->home_num,
+                                'email' => $seller_pending->email,
+                                'real_estate_record_payload' => $seller_pending->real_estate_record_payload,
+                                'real_estate_record_type' => $seller_pending->real_estate_record_type,
+                                'image_url' => $seller_pending->image_url
+                                ])?>'
+                                class="edit-row btn btn-warning btn-xs">Review Pending</button>
+                              <?php endif; ?>
                             </td>
                           </tr>
                         <?php endforeach; ?>

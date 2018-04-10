@@ -65,6 +65,28 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
     $this->admin_redirect('admin/sellers');
   }
 
+  public function review($id)
+  {
+    $_POST = $this->setJsonPayload($this->input->post(), $this->input->post('real_estate_record_type'));
+    $_POST = $this->unsetJsonFields($_POST);
+    $_POST['pending_payload'] = '[{},{}]'; # reset this baby
+  
+    $data = $this->input->post();
+
+    if ($_FILES['image_url']['size'] > 0) {
+      $this->sellers_model->deleteUploadedMedia($id);
+      $data = array_merge($data, $this->sellers_model->upload('image_url'));
+    }
+
+    if($this->sellers_model->update($id, $data)){
+      $this->session->set_flashdata('flash_msg', ['message' => 'Changes approved', 'color' => 'green']);
+    } else {
+      $this->session->set_flashdata('flash_msg', ['message' => 'Error updating item', 'color' => 'red']);
+    }
+
+    $this->admin_redirect('admin/sellers');
+  }
+
   function unsetJsonFields($arr)
   {
     unset($arr['realty_firm']);

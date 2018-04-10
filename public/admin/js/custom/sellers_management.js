@@ -28,7 +28,13 @@ $(document).ready(function() {
     appendToDynamicPanel(payload.real_estate_record_type, json_payload);
     setupDynamicPart(payload.real_estate_record_type, json_payload);
 
-    $('form').attr('action', base_url + 'admin/sellers/update/' + payload.id)
+    if ($(this).data('edit-type') === 'update') {
+      $('form').attr('action', base_url + 'admin/sellers/update/' + payload.id)
+    } else if ($(this).data('edit-type') === 'review') {
+      $('form').attr('action', base_url + 'admin/sellers/review/' + payload.id)
+    }
+
+
     $('.modal').modal()
   })
 

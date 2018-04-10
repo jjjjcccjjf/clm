@@ -146,157 +146,159 @@
               <ul class="choice">
                 <li>
                   <label>
-                    <input disabled type="radio" id="chk_broker" class="real_estate_record_type" value="Broker">
+                    <input disabled type="radio" id="chk_broker" name="real_estate_record_type_r" value="Broker">
                     Broker
                   </label>
                 </li>
                 <li>
                   <label>
-                    <input disabled type="radio" id="chk_agent" class="real_estate_record_type" value="Agent">
+                    <input disabled type="radio" id="chk_agent" name="real_estate_record_type_r" value="Agent">
                     Agent
                   </label>
                 </li>
               </ul>
               <!-- Show if Broker is selected -->
               <aside id="real_estate_record_dynamic_readonly">
+              </aside>
+            </section>
+          </div>
+
+          <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
+          <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
+          <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
+          <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
+          <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
+          <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
+
+        <div id="editing_panel" style="display:none">
+
+          <form method="post" action="<?php echo base_url('dashboard/change_profile') ?>">
+            <section class="personal-info">
+              <h4>Update Personal Information</h4>
+              <a href="<?php echo base_url('dashboard/account'); ?>">
+                <input id="go_back"
+                type="button" name="" value="GO BACK">
+              </a>
+              <ul style="margin:10px 0px -10px">
+                <li>
+                  <label style="color:gold">
+                    <span style="font-weight:bold">Note:</span>
+                    Changes made are to be approved by the System Administrator</label>
+                  </li>
+                </ul>
                 <ul>
+                  <li>
+                    <label>Full Name</label>
+                    <input type="text" title=""
+                    name="full_name" placeholder="Full name" required="required"
+                    value="<?php echo $seller_pending->full_name ?>">
+                  </li>
+                  <li>
+                    <label>Birth Date</label>
+                    <input type="date" required="required"
+                    name="birth_date"
+                    value="<?php echo $seller_pending->birth_date ?>">
+                  </li>
+                  <li>
+                    <label>Gender</label>
+                    <select name="gender">
+                      <option class="optiony">Male</option>
+                      <option class="optiony">Female</option>
+                    </select>
+                  </li>
+                  <li>
+                    <label>Civil Status</label>
+                    <select name="civil_status">
+                      <option class="optiony">Single</option>
+                      <option class="optiony">Married</option>
+                      <option class="optiony">Widowed</option>
+                    </select>
+                  </li>
+                  <li>
+                    <label>Home Address</label>
+                    <input type="text" placeholder="Home address" required="required"
+                    name="home_address" value="<?php echo $seller_pending->home_address ?>">
+                  </li>
+                  <li>
+                    <label>Office Address</label>
+                    <input type="text" placeholder="Office address" required="required"
+                    name="office_address" value="<?php echo $seller_pending->office_address ?>">
+                  </li>
+                </ul>
+              </section>
+              <section class="contact-info">
+                <h4>Contact Information</h4>
+                <ul>
+                  <li>
+                    <label>Mobile</label>
+                    <input type="text" name="mobile_num" value="<?php echo $seller_pending->mobile_num ?>"
+                    placeholder="Mobile" required="required">
+                  </li>
+                  <li>
+                    <label>Office / Fax</label>
+                    <input type="text" name="office_fax" value="<?php echo $seller_pending->office_fax ?>"
+                    placeholder="Office / Fax">
+                  </li>
+                  <li>
+                    <label>Home</label>
+                    <input type="text" name="home_num" value="<?php echo $seller_pending->home_num ?>"
+                    placeholder="Mobile">
+                  </li>
+                  <li>
+                    <label>Email Address</label>
+                    <input type="email" name="email" value="<?php echo $seller_pending->email ?>"
+                    placeholder="Email" required="required">
+                  </li>
+                </ul>
+              </section>
+              <section class="real-estate-record">
+                <h4>Real Estate Record</h4>
+                <h5>Are you a broker or an agent?</h5>
+                <ul class="choice">
+                  <li>
+                    <label>
+                      <input type="radio" id="chk_broker" name="real_estate_record_type" value="Broker">
+                      Broker
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="radio" id="chk_agent" name="real_estate_record_type" value="Agent">
+                      Agent
+                    </label>
+                  </li>
+                </ul>
+                <!-- Show if Broker is selected -->
+                <aside id="real_estate_record_dynamic">
                 </aside>
               </section>
-            </div>
+              <input type="submit" name="" value="SUBMIT">
+            </form>
+          </div>
 
-            <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
-            <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
-            <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
-            <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
-            <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
-            <!-- READONLY PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 -->
+          <!-- / pagewrapper -->
+        </div>
+      </article>
+      <!-- End of Main Dashboard -->
 
+<!-- js stuffs for init -->
 
-            <div id="editing_panel" style="display:none">
-              <section class="personal-info">
-                <h4>Update Personal Information</h4>
-                <a href="<?php echo base_url('dashboard/account'); ?>">
-                  <input style="margin-bottom:10px" type="submit" name="" value="GO BACK">
-                </a>
-                <form method="post" action="<?php echo base_url('dashboard/change_profile') ?>">
-                  <ul>
-                    <li>
-                      <label style="color:gold"><b>Note:</b> Changes made are to be approved by the System Administrator</label>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li>
-                      <label>Full Name</label>
-                      <input type="text" title=""
-                      name="full_name" placeholder="Full name" required="required"
-                      value="<?php echo $seller_pending->full_name ?>">
-                    </li>
-                    <li>
-                      <label>Birth Date</label>
-                      <input type="date" required="required"
-                      name="birth_date"
-                      value="<?php echo $seller_pending->birth_date ?>">
-                    </li>
-                    <li>
-                      <label>Gender</label>
-                      <select name="gender">
-                        <option class="optiony">Male</option>
-                        <option class="optiony">Female</option>
-                      </select>
-                    </li>
-                    <li>
-                      <label>Civil Status</label>
-                      <select name="civil_status">
-                        <option class="optiony">Single</option>
-                        <option class="optiony">Married</option>
-                        <option class="optiony">Widowed</option>
-                      </select>
-                    </li>
-                    <li>
-                      <label>Home Address</label>
-                      <input type="text" placeholder="Home address" required="required"
-                      name="home_address" value="<?php echo $seller_pending->home_address ?>">
-                    </li>
-                    <li>
-                      <label>Office Address</label>
-                      <input type="text" placeholder="Office address" required="required"
-                      name="office_address" value="<?php echo $seller_pending->office_address ?>">
-                    </li>
-                  </ul>
-                </section>
-                <section class="contact-info">
-                  <h4>Contact Information</h4>
-                  <ul>
-                    <li>
-                      <label>Mobile</label>
-                      <input type="text" name="mobile_num" value="<?php echo $seller_pending->mobile_num ?>"
-                      placeholder="Mobile" required="required">
-                    </li>
-                    <li>
-                      <label>Office / Fax</label>
-                      <input type="text" name="office_fax" value="<?php echo $seller_pending->office_fax ?>"
-                      placeholder="Office / Fax">
-                    </li>
-                    <li>
-                      <label>Home</label>
-                      <input type="text" name="home_num" value="<?php echo $seller_pending->home_num ?>"
-                      placeholder="Mobile">
-                    </li>
-                    <li>
-                      <label>Email Address</label>
-                      <input type="email" name="email" value="<?php echo $seller_pending->email ?>"
-                      placeholder="Email" required="required">
-                    </li>
-                  </ul>
-                </section>
-                <section class="real-estate-record">
-                  <h4>Real Estate Record</h4>
-                  <h5>Are you a broker or an agent?</h5>
-                  <ul class="choice">
-                    <li>
-                      <label>
-                        <input type="radio" id="chk_broker" name="real_estate_record_type" value="Broker">
-                        Broker
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input type="radio" id="chk_agent" name="real_estate_record_type" value="Agent">
-                        Agent
-                      </label>
-                    </li>
-                  </ul>
-                  <!-- Show if Broker is selected -->
-                  <aside id="real_estate_record_dynamic">
-                    <ul>
-                    </aside>
-                  </section>
-                  <input type="submit" name="" value="SUBMIT">
-                </div>
-              </form>
+<script type="text/javascript">
+var gender_r = "<?php echo $seller->gender; ?>";
+var civil_status_r = "<?php echo $seller->civil_status; ?>";
+var real_estate_record_type_r = "<?php echo $seller->real_estate_record_type; ?>";
+var json_payload_r = <?php echo $seller->real_estate_record_payload; ?>;
+</script>
 
-            </div>
-          </article>
-          <!-- End of Main Dashboard -->
+<script type="text/javascript">
+var gender = "<?php echo $seller_pending->gender; ?>";
+var civil_status = "<?php echo $seller_pending->civil_status; ?>";
+var real_estate_record_type = "<?php echo $seller_pending->real_estate_record_type; ?>";
+var json_payload = <?php echo $seller_pending->real_estate_record_payload; ?>;
+</script>
 
-          <!-- js stuffs for init -->
-
-          <script type="text/javascript">
-          var gender_r = "<?php echo $seller->gender; ?>";
-          var civil_status_r = "<?php echo $seller->civil_status; ?>";
-          var real_estate_record_type_r = "<?php echo $seller->real_estate_record_type; ?>";
-          var json_payload_r = <?php echo $seller->real_estate_record_payload; ?>;
-          </script>
-
-          <script type="text/javascript">
-          var gender = "<?php echo $seller_pending->gender; ?>";
-          var civil_status = "<?php echo $seller_pending->civil_status; ?>";
-          var real_estate_record_type = "<?php echo $seller_pending->real_estate_record_type; ?>";
-          var json_payload = <?php echo $seller_pending->real_estate_record_payload; ?>;
-          </script>
-
-          <script src="<?php echo base_url('public/front/') ?>js/custom/account_management.js"></script>
-          <script src="<?php echo base_url('public/front/') ?>js/custom/account_management_editing.js"></script>
-          <script src="<?php echo base_url('public/front/') ?>js/custom/account_management_readonly.js"></script>
-          <script src="<?php echo base_url('public/front/') ?>js/custom/change_password.js"></script>
-          <script src="<?php echo base_url('public/front/') ?>js/custom/change_display_photo.js"></script>
+<script src="<?php echo base_url('public/front/') ?>js/custom/account_management.js"></script>
+<script src="<?php echo base_url('public/front/') ?>js/custom/account_management_editing.js"></script>
+<script src="<?php echo base_url('public/front/') ?>js/custom/account_management_readonly.js"></script>
+<script src="<?php echo base_url('public/front/') ?>js/custom/change_password.js"></script>
+<script src="<?php echo base_url('public/front/') ?>js/custom/change_display_photo.js"></script>

@@ -11,8 +11,7 @@ $(document).ready(function() {
   .prop('selected', true);
 
   // REAL ESTATE RECORD TPYE
-  $(".real_estate_record_type[value=" + real_estate_record_type_r + "]").prop('checked', true);
-
+  $("input[name='real_estate_record_type_r'][value=" + real_estate_record_type_r + "]").prop('checked', true);
 
   appendToDynamicPanel_r(real_estate_record_type_r, json_payload_r);
   setupDynamicPart_r(real_estate_record_type_r, json_payload_r);
@@ -22,14 +21,14 @@ $(document).ready(function() {
 // DAT FUNCITON NAME DOE! BRUH
 function setupDynamicPart_r(real_estate_record_type, json_payload) {
 
-  $('.real_estate_record_type').on('click', function(){
+  $('input[name="real_estate_record_type_r"]').on('click', function(){
     appendToDynamicPanel_r(real_estate_record_type, json_payload);
   })
 
 }
 
 function appendToDynamicPanel_r(real_estate_record_type, json_payload) {
-  let checkedVal = $('.real_estate_record_type:checked').val();
+  let checkedVal = $('input[name="real_estate_record_type_r"]:checked').val();
   let thingToAppend = generateBrokerAgentPanel_r(checkedVal);
   appendToEl($('#real_estate_record_dynamic_readonly'), thingToAppend);
 
@@ -42,7 +41,7 @@ function appendToDynamicPanel_r(real_estate_record_type, json_payload) {
     }
 
   } catch (e) {
-    console.error(e.message());
+    console.error(e.message);
   }
   ///////////// This block is mainly for the Update ///////////
 }
@@ -68,27 +67,27 @@ function generateBrokerPanel_r() {
   <ul>
   <li>
   <label>Realty Firm</label>
-  <input readonly type="text" placeholder="Realty firm" required="required">
+  <input readonly type="text" class="realty_firm" placeholder="Realty firm" required="required">
   </li>
   <li>
   <label># of Agents</label>
-  <input readonly type="number" min="0" placeholder="# of agents" required="required">
+  <input readonly type="number" class="num_of_agents" min="0" placeholder="# of agents" required="required">
   </li>
   <li>
   <label>TIN No.</label>
-  <input readonly type="text" placeholder="TIN No." required="required">
+  <input readonly type="text" class="tin_num" placeholder="TIN No." required="required">
   </li>
   <li>
   <label>Team Leader <span>(if applicable)</span></label>
-  <input readonly type="text" placeholder="Team Leader (if applicable)">
+  <input readonly type="text" class="team_leader" placeholder="Team Leader (if applicable)">
   </li>
   <li>
   <label>PRC Reg. No.</label>
-  <input readonly type="text" placeholder="PRC Reg. No." required="required">
+  <input readonly type="text" class="prc_reg_num" placeholder="PRC Reg. No." required="required">
   </li>
   <li>
   <label>HLURB Cert. of Registration</label>
-  <input readonly type="text" placeholder="HLURB Cert. of registration" required="required">
+  <input readonly type="text" class="hlurb_cert" placeholder="HLURB Cert. of registration" required="required">
   </li>
   </ul>`;
 }
@@ -98,31 +97,32 @@ function generateAgentPanel_r() {
   <ul>
   <li>
   <label>Affiliated Realty Firm</label>
-  <input readonly type="text" placeholder="Affiliated Realty Firm" required="required">
+  <input readonly type="text" class="affiliated_realty_firm" placeholder="Affiliated Realty Firm" required="required">
   </li>
   <li>
   <label>Affiliated Broker</label>
-  <input readonly type="text" placeholder="Affiliated Broker" required="required">
+  <input readonly type="text" class="affiliated_broker" placeholder="Affiliated Broker" required="required">
   </li>
   <li>
   <label>TIN No.</label>
-  <input readonly type="text" placeholder="TIN No." required="required">
+  <input readonly type="text" class="tin_num" placeholder="TIN No." required="required">
   </li>
   </ul>
   `;
 }
 
 function initBrokerValues_r(payload) {
-  $('input[name=realty_firm]').val(payload.realty_firm)
-  $('input[name=num_of_agents]').val(payload.num_of_agents)
-  $('input[name=tin_num]').val(payload.tin_num)
-  $('input[name=team_leader]').val(payload.team_leader)
-  $('input[name=prc_reg_num]').val(payload.prc_reg_num)
-  $('input[name=hlurb_cert]').val(payload.hlurb_cert)
+  console.log(payload);
+  $('.realty_firm').val(payload.realty_firm)
+  $('.num_of_agents').val(payload.num_of_agents)
+  $('.tin_num').val(payload.tin_num)
+  $('.team_leader').val(payload.team_leader)
+  $('.prc_reg_num').val(payload.prc_reg_num)
+  $('.hlurb_cert').val(payload.hlurb_cert)
 }
 
 function initAgentValues_r(payload) {
-  $('input[name=tin_num]').val(payload.tin_num)
-  $('input[name=affiliated_broker]').val(payload.affiliated_broker)
-  $('input[name=affiliated_realty_firm]').val(payload.affiliated_realty_firm)
+  $('.tin_num').val(payload.tin_num)
+  $('.affiliated_broker').val(payload.affiliated_broker)
+  $('.affiliated_realty_firm').val(payload.affiliated_realty_firm)
 }

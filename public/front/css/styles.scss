@@ -136,7 +136,7 @@ article.loginreg {width: 53%; float: right; position: relative; top: 15%; right:
 	  padding: 1rem 2rem;
 	  margin-right: 0.2rem;
 	  cursor: pointer;
-	  background: transparent; 
+	  background: transparent;
 	  font: 26px/32px $fontmain;
 	  color: $white;
 	  font-weight: bold;
@@ -174,7 +174,7 @@ article.loginreg {width: 53%; float: right; position: relative; top: 15%; right:
 			ol {margin: 0 0 20px; padding-left: 25px; font-family: $fontlight;}
 			h3 {font-family: $fontsemi; color: $gold;}
 		}
-		.application-btn {border-top: solid 1px $gold; text-align: center; padding: 40px 0; 
+		.application-btn {border-top: solid 1px $gold; text-align: center; padding: 40px 0;
 			a {color: $darkergray; padding: 10px 15px; background: $gold; border-radius: 5px; margin: 20px; font-family: $fontmed;}
 		}
 	}
@@ -188,17 +188,17 @@ article.loginreg {width: 53%; float: right; position: relative; top: 15%; right:
 	.tabs input[type="radio"]:checked + label { background: transparent; border: solid 1px $gold; border-bottom: 0; }
 
 	.tabs input[type="radio"]:checked + label + .tab { display: block; }
-	
+
 }
 
 /* Header */
-header {@extend .wid100; background: $gold; height: 82px; position: absolute; top: 0; z-index: 500; 
+header {@extend .wid100; background: $gold; height: 82px; position: absolute; top: 0; z-index: 500;
 	aside {width: 249px; height: 82px; @extend .fleft; text-align: center; background: $darkgray; padding: 5px 0; box-sizing: border-box;
 		img {@extend .containimg}
 	}
 	nav {width: auto; @extend .fright; padding-right: 30px;
 		ul {@extend .listn;
-			li {display: inline-block; 
+			li {display: inline-block;
 				a {height: 81px; @extend .fleft; padding: 25px 20px 0; font: 18px/24px $fontmain; text-transform: uppercase; box-sizing: border-box; color: $black;}
 				a:hover {border-bottom: solid 5px $black;}
 			}
@@ -226,7 +226,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
     transition: all .4s ease 0s;
     height: 100%;
     margin-top:0;
-    
+
 }
 
 #sidebar-wrapper {
@@ -261,7 +261,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
     				li:nth-child(odd) {background: $dblack;}
     			}
 
-    			ul.rewards {@extend .listn; width: 205px; margin: 20px auto 0; float: none; 
+    			ul.rewards {@extend .listn; width: 205px; margin: 20px auto 0; float: none;
     				li {@extend .wid100; box-sizing: border-box; margin-bottom: 20px;
     					h4 {font: 30px/36px $fontbold; color: $black; margin-bottom: 5px;}
     					h6 {font: 14px/20px $fontmain; color: $black; margin-bottom: 5px; text-transform: uppercase}
@@ -272,8 +272,8 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
     					a:hover, a.active {color: $gold; background: transparent!important; }
     				}
     				li:nth-child(2), li:last-child{padding: 0!important;}
-    				
-    				
+
+
     			}
     			.calendar {@extend .wid100; padding: 0 10px 0 20px; box-sizing: border-box; margin-top: 80px;}
     		}
@@ -328,7 +328,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 		.events-calendar {@extend .wid100; background: $white; position: relative; height: 270px; color: $black; margin-top: 20px;
 			.calendar-container {width: 285px; @extend .fleft; color: $black; position: absolute; top: 0; left: 0; z-index: 100; border-right: solid 10px $darkgray; height: 270px;
 				#v-cal .vcal-header {padding: 10px!important; background: $gold; }
-			} 
+			}
 			.events-list {@extend .wid100; height: 270px; overflow-y: scroll; box-sizing: border-box; padding: 10px 20px 0 300px;
 				ul {@extend .listn; @extend .wid100;
 					li {@extend .wid100; margin-bottom: 10px;
@@ -338,7 +338,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 									h3 {@extend .wid100; text-align: center; font: 24px/30px $fontsemi;}
 								}
 								td:last-child {text-align: left; vertical-align: middle; width: auto;
-									ul {@extend .wid100; @extend .listn; 
+									ul {@extend .wid100; @extend .listn;
 										li {@extend .wid100;
 											a {font: 16px/24px $fontmain; color: $black;}
 										}
@@ -372,7 +372,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 	/* Sales */
 	.sales-content {@extend .wid100;
 		table {width: 100%; height: 100%}
-		
+
 		.sales {width: 98%; box-sizing: border-box; height: 100%;
 			.filter {@extend .wid100; background: $black; padding: 10px; box-sizing: border-box; position:relative; border: solid 1px $gold; margin-bottom: 15px; z-index: 101;
 			label {width: 100px; position: absolute; top: 13px; left: 10px; text-transform: uppercase; font: 16px/20px $fontlight; color: $gold;}
@@ -394,7 +394,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 				table {width: 100%; border: solid 1px $gold; margin-bottom: 30px;
 					tr, thead{ @extend .wid100;  border-bottom: solid 1px $gold; background: $darkergray;
 						td:first-child { width: 40%; float: left; text-align: left;}
-						td {width: 20%; float: left; padding: 10px; text-align: center; 
+						td {width: 20%; float: left; padding: 10px; text-align: center;
 							label {display: none; width: auto!important;  margin-bottom: 5px; font-family: $fontbold;margin-right: 15px;}
 						}
 					}
@@ -427,7 +427,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 	/* Rewards Catalogue */
 	.pagewrapper {
 		ul.catalogue {@extend .wid100; @extend .listn; margin: 20px 0 20px -40px;
-			li {width: 50%; float:left!important; padding-left: 40px; box-sizing: border-box; position: relative!important; border-bottom: solid 30px $darkgray; overflow: hidden;  
+			li {width: 50%; float:left!important; padding-left: 40px; box-sizing: border-box; position: relative!important; border-bottom: solid 30px $darkgray; overflow: hidden;
 				article.reward {@extend .wid100; height: 325px; box-sizing: border-box; overflow: hidden; background: $white;
 					div {@extend .wid100; position: absolute; background: $transblack; padding: 15px; box-sizing: border-box; border: solid 1px $gold; bottom: 0;
 						h3 {font: 18px/24px $fontmed; color: $gold;
@@ -440,11 +440,11 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 		}
 
 		ul.events {@extend .wid100; @extend .listn; margin: 20px 0 20px -40px;
-			li {width: 50%; float:left!important; padding-left: 40px; box-sizing: border-box; position: relative!important; border-bottom: solid 30px $darkgray; overflow: hidden;  
+			li {width: 50%; float:left!important; padding-left: 40px; box-sizing: border-box; position: relative!important; border-bottom: solid 30px $darkgray; overflow: hidden;
 				article.reward {@extend .wid100; height: 325px; box-sizing: border-box; background: $black;
 					div {@extend .wid100; position: absolute; background: $black; padding: 15px; box-sizing: border-box; border: solid 1px $gold; bottom: 0;
 						h3 {font: 24px/30px $fontmed; color: $gold;text-align: center;}
-						
+
 					}
 					img {width: 100%!important; height: 100%; object-fit: cover!important }
 				}
@@ -478,7 +478,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 		h5 {@extend .wid100; margin-bottom: 30px;
 			input[type="checkbox"] {border: solid 1px $gold; width: 30px; height: 30px; margin-right: 20px; float: left;}
 			input[type="checkbox"]:checked {background: url(../images/checkbox.png) no-repeat center center;}
-			
+
 			span {float: left; padding-top: 5px;
 				a {color: $gold; text-decoration: underline; font: 18px/24px $fontmain;}
 			}
@@ -502,7 +502,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 		h5 {@extend .wid100; margin-top: 100px;
 			input[type="checkbox"] {border: solid 1px $gold; width: 30px; height: 30px; margin-right: 20px; float: left;}
 			input[type="checkbox"]:checked {background: $gold}
-			
+
 			span {float: left; padding-top: 5px;
 				a {color: $gold; text-decoration: underline; font: 18px/24px $fontmain;}
 			}
@@ -521,7 +521,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 	section {@extend .wid100; z-index: 100;
 		h4, h5 {font: 20px/26px $fontmed; color: $gold; margin-bottom: 5px;}
 		ul {@extend .listn; @extend .wid100; margin-bottom: 10px;
-			li {width: 50%; display: table-cell; @extend .fleft; padding-right: 25px; box-sizing: border-box; margin-bottom: 15px; 
+			li {width: 50%; display: table-cell; @extend .fleft; padding-right: 25px; box-sizing: border-box; margin-bottom: 15px;
 				label {@extend .wid100; margin-bottom: 5px; font: 16px/22px $fontmain;
 					span {font-size: 12px;}
 				}
@@ -551,7 +551,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 		    font: 16px/24px $fontbold;
 		    color: $black;
 		    background: $gold;
-		    border-radius: 5px; 
+		    border-radius: 5px;
 		    padding: 5px 10px;
 		    width: 140px;
 		    text-align: center;
@@ -570,6 +570,9 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 	}
 	input[type="submit"] {padding: 8px 30px; background: $gold; color: $black; font: 18px/24px $fontbold; text-transform: uppercase; border-radius: 5px; border: solid 2px $gold;}
 	input[type="submit"]:hover {color: $gold; background: transparent;}
+  /* zzzz */
+	input[type="button"] {padding: 8px 30px; background: $gold; color: $black; font: 18px/24px $fontbold; text-transform: uppercase; border-radius: 5px; border: solid 2px $gold;}
+	input[type="button"]:hover {color: $gold; background: transparent;}
 }
 
 /* Jpushmenu */
@@ -580,7 +583,7 @@ nav.cbp-spmenu {background: $darkgray;
 			a {font: 16px/22px $fontmain; color: $white;}
 		}
 	}
-	
+
 }
 .menu {position: absolute; right: 10px; background: $darkgray; color: $white; padding: 10px; font: 16px/24px $fontbold; top:15px; display: none }
 
@@ -605,7 +608,7 @@ nav.cbp-spmenu {background: $darkgray;
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    height: 0; 
+    height: 0;
     overflow: hidden;
     margin-bottom: 20px;
 }
@@ -622,14 +625,13 @@ nav.cbp-spmenu {background: $darkgray;
 
 /* IE Edge only CSS*/
  @supports (-ms-ime-align:auto) {
- 	
+
  }
 
 /* IE 10+ only CSS*/
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
    .containimg, header aside img {width: 150px!important; height: auto!important; object-fit: initial!important;}
    #sidebar-wrapper .sideprofile .profile aside img, .maincontent .top-sellers ul li figure img, .maincontent .pagewrapper ul.catalogue li article.reward img, .maincontent .pagewrapper ul.events li article.reward img {height: auto!important; object-fit: initial!important;}
    h1 span select, .maincontent .sales-content .sales .filter ul li select {padding-right:6px!important; background-image: none!important;}
 
 }
-
