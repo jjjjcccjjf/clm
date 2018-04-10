@@ -1,21 +1,23 @@
 $(document).ready(function() {
 
-  // GENDEr
-  $('select[name=gender] option')
-  .filter(function () { return $(this).html() == gender; })
-  .prop('selected', true);
+  $("#enable_editing").on('click', function () {
+    // GENDEr
+    $('select[name=gender] option')
+    .filter(function () { return $(this).html() == gender; })
+    .prop('selected', true);
 
-  // CIVIL STATUS
-  $('select[name=civil_status] option')
-  .filter(function () { return $(this).html() == civil_status; })
-  .prop('selected', true);
-  
-  // REAL ESTATE RECORD TPYE
-  $("input[name=real_estate_record_type][value=" + real_estate_record_type + "]").prop('checked', true);
+    // CIVIL STATUS
+    $('select[name=civil_status] option')
+    .filter(function () { return $(this).html() == civil_status; })
+    .prop('selected', true);
+
+    // REAL ESTATE RECORD TPYE
+    $("input[name=real_estate_record_type][value=" + real_estate_record_type + "]").prop('checked', true);
 
 
-  appendToDynamicPanel(real_estate_record_type, json_payload);
-  setupDynamicPart(real_estate_record_type, json_payload);
+    appendToDynamicPanel(real_estate_record_type, json_payload);
+    setupDynamicPart(real_estate_record_type, json_payload);
+  });
 
 });
 

@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -60,7 +60,8 @@ class Migration_sellers_table extends CI_Migration {
       # JSON string
       'real_estate_record_payload' => array(
         'type' => 'VARCHAR',
-        'constraint' => '20000',
+        'constraint' => '10000',
+        'default' => '{}'
       ),
       'forgot_token' => array(
         'type' => 'TEXT',
@@ -80,6 +81,12 @@ class Migration_sellers_table extends CI_Migration {
       ),
       'image_url' => array(
         'type' => 'TEXT',
+      ),
+      # Pending edits are saved here
+      'pending_payload' => array(
+        'type' => 'VARCHAR',
+        'constraint' => '10000',
+        'default' => '[{},{}]'
       ),
     ));
 

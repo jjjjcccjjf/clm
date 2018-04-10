@@ -61,7 +61,19 @@ class Dashboard extends Front_core_controller {
   public function account()
   {
     $id = $_SESSION['id'];
-    $data['seller'] = $this->sellers_model->get($id);
+    $seller = $this->sellers_model->get($id);
+    $data['seller'] = $seller;
+
+    /**
+    * structure
+    * [ {...}, {...}]
+    */
+    if ($seller->pending_payload !== '[{},{}]') {
+      $data['seller_pending'] = json_decode($seller->pending_payload)[1];
+      $data['seller_pending']->real_estate_record_payload = json_decode($seller->pending_payload)[0];
+    } else {
+      $data['seller_pending'] = $seller;
+    }
 
     $this->wrapper('front/account', $data);
   }
@@ -94,6 +106,27 @@ class Dashboard extends Front_core_controller {
     } else {
       custom_response(200, ['message' => 'That account is inactive or nonexistent', 'code' => 'error'], $this);
     }
+  }
+
+  public function change_profile()
+  {
+    $_POST = $this->setJsonPayload($this->input->post(), $this->input->post('real_estate_record_type'));
+    $_POST = $this->unsetJsonFields($_POST);
+
+    $arr = [];
+
+    $arr[] = $this->input->post('real_estate_record_payload');
+    unset($_POST['real_estate_record_payload']);
+    $arr[] = $_POST;
+
+    if ($this->sellers_model->update($_SESSION['id'], ['pending_payload' => json_encode($arr)])){
+      $this->session->set_flashdata('flash_msg_profile', ['message' => 'Changes will be reviewed by the admin', 'color' => 'gold']);
+    } else {
+      $this->session->set_flashdata('flash_msg_profile', ['message' => 'Error updating profile', 'color' => 'red']);
+    }
+
+    $this->front_redirect('dashboard/account');
+
   }
 
   public function change_password($type = 'account')
@@ -134,6 +167,42 @@ class Dashboard extends Front_core_controller {
     }
 
     $this->front_redirect('dashboard/account');
+  }
+
+  function unsetJsonFields($arr)
+  {
+    unset($arr['realty_firm']);
+    unset($arr['num_of_agents']);
+    unset($arr['tin_num']);
+    unset($arr['team_leader']);
+    unset($arr['prc_reg_num']);
+    unset($arr['hlurb_cert']);
+    unset($arr['affiliated_realty_firm']);
+    unset($arr['affiliated_broker']);
+
+    return $arr;
+  }
+
+  public function setJsonPayload($post, $real_estate_record_type)
+  {
+    if ($real_estate_record_type === 'Broker') {
+      $post['real_estate_record_payload'] = json_encode(array(
+        'realty_firm' => @$post['realty_firm'],
+        'num_of_agents' => @$post['num_of_agents'],
+        'tin_num' => @$post['tin_num'],
+        'team_leader' => @$post['team_leader'],
+        'prc_reg_num' => @$post['prc_reg_num'],
+        'hlurb_cert' => @$post['hlurb_cert'],
+      ));
+    } else if ($real_estate_record_type === 'Agent'){
+      $post['real_estate_record_payload'] = json_encode(array(
+        'affiliated_realty_firm' => @$post['affiliated_realty_firm'],
+        'affiliated_broker' => @$post['affiliated_broker'],
+        'tin_num' => @$post['tin_num'],
+      ));
+    }
+
+    return $post;
   }
 
 
