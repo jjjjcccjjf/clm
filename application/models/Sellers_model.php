@@ -41,6 +41,9 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     if (!(strpos($res->image_url, 'http') === 0)) {
       $res->image_url = base_url("{$this->upload_dir}/") . $res->image_url;
     }
+    if ($res->imported_csv !== null) {
+      $res->imported_csv = base_url("uploads/sales/") . $res->imported_csv;
+    }
     $res->created_at_f = date_format(date_create($res->created_at),"F d, Y");
 
     return $res;
@@ -50,7 +53,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
   {
     $res = $this->db->get_where($this->table, array('id' => $id))->row();
     if (!(strpos($res->imported_csv, 'http') === 0)) {
-      $res->imported_csv = base_url("{$this->upload_dir}/") . $res->imported_csv;
+      $res->imported_csv = base_url("uploads/sales/") . $res->imported_csv;
     }
 
     return $res->imported_csv;

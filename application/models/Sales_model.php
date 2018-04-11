@@ -39,9 +39,27 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     return $res;
   }
 
+  /**
+   * @deprecated
+   * @param  [type] $id      [description]
+   * @param  [type] $csv_arr [description]
+   * @return [type]          [description]
+   */
   public function appendCsv($id, $csv_arr)
   {
     $data = $this->formatCsvArr($id, $csv_arr);
+    return $this->db->insert_batch($this->table, $data);
+  }
+
+  public function replaceCsv($id, $csv_arr)
+  {
+    $data = $this->formatCsvArr($id, $csv_arr);
+    # delete block
+    $this->db->where('seller_id', $id);
+    $this->db->delete('sales');
+    #/ delete block
+
+    $this->db->reset_query();
     return $this->db->insert_batch($this->table, $data);
   }
 
