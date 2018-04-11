@@ -138,5 +138,6 @@ $autoload['model'] = array(
   'news_model',
   'events_model',
   'about_model',
-  'sellers_model'
+  'sellers_model',
+  'sales_model',
 );

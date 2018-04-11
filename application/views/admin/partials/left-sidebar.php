@@ -57,17 +57,18 @@
               </li>
               <li>
                 <a href="<?php echo base_url('admin/sellers')?>"
-                  class="<?php echo $this->uri->segment(2) === 'sellers' ? 'active': ''; ?>">
+                  class="<?php echo in_array($this->uri->segment(2), ['sellers', 'sales']) ? 'active': ''; ?>">
                   <i class="fa fa-dashboard"></i>
                   <span>Sellers</span>
                 </a>
               </li>
-              <li>
-                <a href="index.html">
+              <!-- <li>
+                <a href="<?php echo base_url('admin/sales')?>"
+                  class="<?php echo $this->uri->segment(2) === 'sales' ? 'active': ''; ?>">
                   <i class="fa fa-dashboard"></i>
                   <span>Sales</span>
                 </a>
-              </li>
+              </li> -->
 
             </ul>
             <!-- sidebar menu end-->

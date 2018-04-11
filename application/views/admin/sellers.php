@@ -59,6 +59,12 @@
                             'image_url' => $value->image_url
                             ])?>'
                             class="edit-row btn btn-info btn-xs">Edit</button>
+                            <!-- sales button -->
+                            <a href="<?php echo base_url('admin/sales?u=') . $value->id ?>">
+                            <button type="button" data-id='<?php echo $value->id; ?>'
+                              class="btn btn-sales btn-success btn-xs">Sales</button>
+                            </a>
+                            <!-- /sales button -->
                             <button type="button" data-id='<?php echo $value->id; ?>'
                               class="btn btn-delete btn-danger btn-xs">Delete</button>
                               <?php if ($value->pending_payload !== '[{},{}]'):

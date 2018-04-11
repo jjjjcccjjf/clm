@@ -46,6 +46,16 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     return $res;
   }
 
+  public function getLastUploadedCsv($id)
+  {
+    $res = $this->db->get_where($this->table, array('id' => $id))->row();
+    if (!(strpos($res->imported_csv, 'http') === 0)) {
+      $res->imported_csv = base_url("{$this->upload_dir}/") . $res->imported_csv;
+    }
+
+    return $res->imported_csv;
+  }
+
   public function add($data)
   {
     $password = $this->generatePassword(8); # we make the hashed password

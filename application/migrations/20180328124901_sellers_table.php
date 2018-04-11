@@ -88,6 +88,10 @@ class Migration_sellers_table extends CI_Migration {
         'constraint' => '10000',
         'default' => '[{},{}]'
       ),
+      'imported_csv' => array(
+        'type' => 'TEXT',
+        'null' => true
+      ),
     ));
 
     # Table date defaults
