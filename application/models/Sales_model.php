@@ -9,14 +9,14 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     $this->upload_dir = 'uploads/sales';
   }
 
-  public function upload($file_key)
+  public function upload($file_key, $full_name)
   {
     @$file = $_FILES[$file_key];
     $upload_path = $this->upload_dir;
 
     $config['upload_path'] = $upload_path; # NOTE: Change your directory as needed
     $config['allowed_types'] = 'csv'; # NOTE: Change file types as needed
-    $config['file_name'] = time() . '_' . $file['name']; # Set the new filename
+    $config['file_name'] = $full_name . "_" . time() . '_' . $file['name']; # Set the new filename
     $this->upload->initialize($config);
 
     if (!is_dir($upload_path) && !mkdir($upload_path, DEFAULT_FOLDER_PERMISSIONS, true)){
@@ -31,6 +31,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
 
   public function getSales($id)
   {
+    // $this->db->order_by('id', 'asc');
     $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
     foreach ($res as $key => $value) {
       $res[$key]->date_f = date_format(date_create($value->date),"F d, Y");

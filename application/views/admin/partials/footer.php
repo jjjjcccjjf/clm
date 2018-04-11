@@ -19,9 +19,9 @@
 <script src="<?php echo base_url('public/admin/'); ?>js/respond.min.js" ></script>
 
 <!-- dynamic table -->
-<script  language="javascript" src="<?php echo base_url('public/admin/'); ?>assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
-<script  src="<?php echo base_url('public/admin/'); ?>assets/data-tables/DT_bootstrap.js"></script>
-<script src="<?php echo base_url('public/admin/'); ?>js/dynamic_table_init.js"></script>
+<script type="text/javascript" language="javascript" src="<?php echo base_url('public/admin/'); ?>assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="<?php echo base_url('public/admin/'); ?>assets/data-tables/DT_bootstrap.js"></script>
+<script  src="<?php echo base_url('public/admin/'); ?>js/dynamic_table_init.js"></script>
 
 
 <!--common script for all pages-->

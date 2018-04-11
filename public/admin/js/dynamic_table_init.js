@@ -12,9 +12,7 @@ function fnFormatDetails ( oTable, nTr )
 
 $(document).ready(function() {
 
-    $('#dynamic-table').dataTable( {
-        "aaSorting": [[ 4, "desc" ]]
-    } );
+    $('#dynamic-table').dataTable( );
 
     /*
      * Insert a 'details' column to the table
@@ -51,13 +49,13 @@ $(document).ready(function() {
         if ( oTable.fnIsOpen(nTr) )
         {
             /* This row is already open - close it */
-            this.src = "p'+ base_url +'ublic/admin/img/details_open.png";
+            this.src = base_url + "public/admin/img/details_open.png";
             oTable.fnClose( nTr );
         }
         else
         {
             /* Open this row */
-            this.src = "img/details_close.png";
+            this.src = base_url + "public/admin/img/details_close.png";
             oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
         }
     } );

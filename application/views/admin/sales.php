@@ -22,44 +22,41 @@
                   </a>
                 <?php endif; ?>
                 <a href="#myModal" data-toggle="modal"
-                class="btn btn-info btn-xs">
-                <i class="fa fa-plus"></i> Import
+                class="btn btn-info btn-xs" title="Import and replace all existing data for <?php echo $seller->full_name?>"
+                <i class="fa fa-plus"></i> Import and Replace
               </a>
             </div>
           </header>
-          <div class="panel-body">
 
+          <div class="panel-body">
             <div class="adv-table">
               <table  class="display table table-bordered table-striped" id="dynamic-table">
                 <thead>
                   <tr>
+                    <th>#</th>
                     <th>Project name</th>
                     <th>Sales amount</th>
                     <th>Date</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($sales as $key => $value): ?>
-
+                  <?php $i = 1; foreach ($sales as $key => $value): ?>
                     <tr>
+                      <td><?php echo $i++ ?></td>
                       <td><?php echo $value->project_name ?></td>
                       <td><?php echo $value->sales_amount_f ?></td>
                       <td><?php echo $value->date_f ?></td>
-                    <?php endforeach; ?>
-                  </tr>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
-
               </table>
             </div>
-
-
           </div>
+
         </section>
       </div>
     </div>
     <!-- page end-->
-
-    <!-- modal -->
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -76,7 +73,7 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <h4>Import CSV file</h4>
-                  <a href="download format">
+                  <a href="<?php echo base_url('public/uploads/sales_template.csv') ?>">
                     <button class="btn btn-warning btn-xs" type="button">
                       <i class="fa fa-download"></i>
                       Download CSV Template</button>
@@ -84,8 +81,8 @@
                   </div>
                 </div>
                 <div class="form-group">
-
                   <input type="file" class="form-control" name="imported_csv" accept=".csv">
+                  <input type="hidden" name="full_name" value="<?php echo $seller->full_name?>">
                 </div>
 
 
