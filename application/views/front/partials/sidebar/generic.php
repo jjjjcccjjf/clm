@@ -22,13 +22,13 @@
         <ul>
           <li>
             <h6>MONTH TO DATE SALE</h6>
-            <h4>3M</h4>
-            <h5>3,000,000.00</h5>
+            <h4><?php echo formatPrice($m2d_sale) ?></h4>
+            <h5><?php echo number_format($m2d_sale) ?></h5>
           </li>
           <li>
             <h6>YEAR TO DATE SALE</h6>
-            <h4>95M</h4>
-            <h5>95,000,000.00</h5>
+            <h4><?php echo formatPrice($y2d_sale) ?></h4>
+            <h5><?php echo number_format($y2d_sale) ?></h5>
           </li>
           <li>
             <h6>POINTS RECEIVED</h6>

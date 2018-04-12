@@ -70,6 +70,34 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     return ceil(count($res) / $per_page);
   }
 
+  public function monthToDateSales($id)
+  {
+    $this->db->like('date', date('Y-m'));
+    $per_page = $this->per_page;
+    $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
+
+    $total_sales = 0;
+    foreach ($res as $item) {
+      $total_sales += $item->sales_amount;
+    }
+
+    return $total_sales;
+  }
+
+  public function yearToDateSales($id)
+  {
+    $this->db->like('date', date('Y'));
+    $per_page = $this->per_page;
+    $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
+
+    $total_sales = 0;
+    foreach ($res as $item) {
+      $total_sales += $item->sales_amount;
+    }
+    
+    return $total_sales;
+  }
+
   /**
   * @deprecated
   * @param  [type] $id      [description]

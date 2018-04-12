@@ -68,3 +68,21 @@ function initializeLoader($type)
 
   return $loader;
 }
+
+function formatPrice($n)
+{
+	if ($n < 1000000) {
+		// Anything less than a million
+		$f = round(number_format($n / 1000, 3), 2);
+		$f .= 'K';
+	} else if ($n < 1000000000) {
+		// Anything less than a billion
+		$f = round(number_format($n / 1000000, 3), 2);
+		$f .= 'M';
+	} else {
+		// At least a billion
+		$f = round(number_format($n / 1000000000, 3), 2);
+		$f .= 'B';
+	}
+	return $f;
+}

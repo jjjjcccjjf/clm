@@ -104,7 +104,6 @@ class Dashboard extends Front_core_controller {
       $this->input->get('to_date')
     );
 
-
     $data['total_overall_sales'] = $this->sales_model->getTotalSales(
       $_SESSION['id']
     );
