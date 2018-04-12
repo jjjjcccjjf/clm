@@ -30,11 +30,13 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     }
   }
 
-  public function getSales($id, $page = 1)
+  public function getSales($id, $page = 1, $from_date = null, $to_date = null)
   {
     $per_page = $this->per_page;
     $offset = max(($page - 1) * $per_page, 0);
-
+    if ($from_date && $to_date) {
+      $this->db->where("date BETWEEN '$from_date' AND '$to_date'");
+    }
     $res =  $this->db->get_where('sales', ['seller_id' => $id], $per_page, $offset)->result();
     foreach ($res as $key => $value) {
       $res[$key]->date_f = date_format(date_create($value->date),"F d, Y");
@@ -43,21 +45,26 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     return $res;
   }
 
-  public function getTotalSales($id)
+  public function getTotalSales($id, $from_date = null, $to_date = null)
   {
+    if ($from_date && $to_date) {
+      $this->db->where("date BETWEEN '$from_date' AND '$to_date'");
+    }
     $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
     $total_sales = 0;
     foreach ($res as $item) {
       $total_sales += $item->sales_amount;
     }
 
-    return  number_format($total_sales);
+    return number_format($total_sales);
   }
 
-  public function getSalesTotalCount($id)
+  public function getSalesTotalCount($id, $from_date = null, $to_date = null)
   {
+    if ($from_date && $to_date) {
+      $this->db->where("date BETWEEN '$from_date' AND '$to_date'");
+    }
     $per_page = $this->per_page;
-
     $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
 
     return ceil(count($res) / $per_page);
