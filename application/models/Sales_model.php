@@ -6,7 +6,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
   {
     parent::__construct();
     $this->table = 'sales';
-    $this->per_page = 10;
+    $this->per_page = 15;
     $this->upload_dir = 'uploads/sales';
   }
 
@@ -43,6 +43,17 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     return $res;
   }
 
+  public function getTotalSales($id)
+  {
+    $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
+    $total_sales = 0;
+    foreach ($res as $item) {
+      $total_sales += $item->sales_amount;
+    }
+
+    return  number_format($total_sales);
+  }
+
   public function getSalesTotalCount($id)
   {
     $per_page = $this->per_page;
@@ -53,11 +64,11 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
   }
 
   /**
-   * @deprecated
-   * @param  [type] $id      [description]
-   * @param  [type] $csv_arr [description]
-   * @return [type]          [description]
-   */
+  * @deprecated
+  * @param  [type] $id      [description]
+  * @param  [type] $csv_arr [description]
+  * @return [type]          [description]
+  */
   public function appendCsv($id, $csv_arr)
   {
     $data = $this->formatCsvArr($id, $csv_arr);

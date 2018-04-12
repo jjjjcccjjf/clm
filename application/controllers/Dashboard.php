@@ -87,14 +87,7 @@ class Dashboard extends Front_core_controller {
   {
     $data['sales'] = $this->sales_model->getSales($_SESSION['id'], $this->input->get('page'));
     $data['total_page_count'] = $this->sales_model->getSalesTotalCount($_SESSION['id']);
-
-    // var_dump($data['toal_page_count']); die();
-    $total_sales = 0;
-    foreach ($data['sales'] as $item) {
-      $total_sales += $item->sales_amount_f;
-    }
-
-    $data['total_sales'] = number_format($total_sales);
+    $data['total_sales'] = $this->sales_model->getTotalSales($_SESSION['id']);
 
     $this->wrapper('front/sales', $data);
   }
