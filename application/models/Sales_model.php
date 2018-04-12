@@ -6,6 +6,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
   {
     parent::__construct();
     $this->table = 'sales';
+    $this->per_page = 10;
     $this->upload_dir = 'uploads/sales';
   }
 
@@ -29,15 +30,26 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     }
   }
 
-  public function getSales($id)
+  public function getSales($id, $page = 1)
   {
-    // $this->db->order_by('id', 'asc');
-    $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
+    $per_page = $this->per_page;
+    $offset = max(($page - 1) * $per_page, 0);
+
+    $res =  $this->db->get_where('sales', ['seller_id' => $id], $per_page, $offset)->result();
     foreach ($res as $key => $value) {
       $res[$key]->date_f = date_format(date_create($value->date),"F d, Y");
       $res[$key]->sales_amount_f = round($value->sales_amount);
     }
     return $res;
+  }
+
+  public function getSalesTotalCount($id)
+  {
+    $per_page = $this->per_page;
+
+    $res =  $this->db->get_where('sales', ['seller_id' => $id])->result();
+
+    return ceil(count($res) / $per_page);
   }
 
   /**

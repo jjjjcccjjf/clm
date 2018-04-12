@@ -83,6 +83,22 @@ class Dashboard extends Front_core_controller {
     $this->load->view('front/forgot_password');
   }
 
+  public function sales()
+  {
+    $data['sales'] = $this->sales_model->getSales($_SESSION['id'], $this->input->get('page'));
+    $data['total_page_count'] = $this->sales_model->getSalesTotalCount($_SESSION['id']);
+
+    // var_dump($data['toal_page_count']); die();
+    $total_sales = 0;
+    foreach ($data['sales'] as $item) {
+      $total_sales += $item->sales_amount_f;
+    }
+
+    $data['total_sales'] = number_format($total_sales);
+
+    $this->wrapper('front/sales', $data);
+  }
+
   public function reset_password()
   {
     $forgot_token = $this->input->get('c');
