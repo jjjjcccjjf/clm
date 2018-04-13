@@ -47,6 +47,8 @@
                             'full_name' => $value->full_name,
                             'birth_date' => $value->birth_date,
                             'gender' => $value->gender,
+                            'division' => $value->division,
+                            'position' => $value->position,
                             'civil_status' => $value->civil_status,
                             'home_address' => $value->home_address,
                             'office_address' => $value->office_address,
@@ -79,6 +81,8 @@
                                 'full_name' => $seller_pending->full_name,
                                 'birth_date' => $seller_pending->birth_date,
                                 'gender' => $seller_pending->gender,
+                                'division' => $value->division,
+                                'position' => $value->position,
                                 'civil_status' => $seller_pending->civil_status,
                                 'home_address' => $seller_pending->home_address,
                                 'office_address' => $seller_pending->office_address,
@@ -157,6 +161,17 @@
                     <option>Married</option>
                     <option>Widowed</option>
                   </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label >Division</label>
+                  <input type="text" class="form-control" name="division" placeholder="Division" required="required">
+                </div>
+                <div class="form-group col-md-6">
+                  <label >Position</label>
+                  <input type="text" class="form-control" name="position" placeholder="Position" required="required">
                 </div>
               </div>
 

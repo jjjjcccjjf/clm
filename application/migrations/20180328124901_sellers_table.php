@@ -13,7 +13,7 @@ class Migration_sellers_table extends CI_Migration {
     $this->dbforge->add_field(array(
       'full_name' => array(
         'type' => 'VARCHAR',
-        'constraint' => '200',
+        'constraint' => '140',
       ),
       'birth_date' => array(
         'type' => 'DATE',
@@ -27,7 +27,7 @@ class Migration_sellers_table extends CI_Migration {
       ),
       'civil_status' => array(
         'type' => 'VARCHAR',
-        'constraint' => '200',
+        'constraint' => '140',
       ),
       'home_address' => array(
         'type' => 'TEXT',
@@ -37,25 +37,25 @@ class Migration_sellers_table extends CI_Migration {
       ),
       'mobile_num' => array(
         'type' => 'VARCHAR',
-        'constraint' => '200',
+        'constraint' => '140',
       ),
       'office_fax' => array(
         'type' => 'VARCHAR',
-        'constraint' => '200',
+        'constraint' => '140',
       ),
       'home_num' => array(
         'type' => 'VARCHAR',
-        'constraint' => '200',
+        'constraint' => '140',
       ),
       'email' => array(
         'type' => 'VARCHAR',
-        'constraint' => '200',
+        'constraint' => '140',
         'unique' => true
       ),
       # 'Broker' or 'Agent'
       'real_estate_record_type' => array(
         'type' => 'VARCHAR',
-        'constraint' => '200',
+        'constraint' => '140',
       ),
       # JSON string
       'real_estate_record_payload' => array(
@@ -67,17 +67,15 @@ class Migration_sellers_table extends CI_Migration {
           'type' => 'TEXT',
           'null' => true,
         ),
-        'position_id' => array(
-          'type' => 'INT',
-          'null' => true,
+        'position' => array(
+          'type' => 'VARCHAR',
+          'constraint' => '140',
+          'null' => true
         ),
-        'division_id' => array(
-          'type' => 'INT',
-          'null' => true,
-        ),
-        'group_id' => array(
-          'type' => 'INT',
-          'null' => true,
+        'division' => array(
+          'type' => 'VARCHAR',
+          'constraint' => '140',
+          'null' => true
         ),
         'image_url' => array(
           'type' => 'TEXT',
@@ -111,6 +109,8 @@ class Migration_sellers_table extends CI_Migration {
             'civil_status' => 'Single',
             'home_address' => 'Royal Capital, Luspierheil, Attraglaitz Royal Castle',
             'office_address' => 'Strangaz',
+            'division' => 'Some division',
+            'position' => 'Some position',
             'mobile_num' => '09451494315',
             'office_fax' => 'Hello',
             'home_num' => '22299222',
@@ -129,6 +129,8 @@ class Migration_sellers_table extends CI_Migration {
               'civil_status' => 'Single',
               'home_address' => 'Unknown',
               'office_address' => 'Strangaz',
+              'division' => 'Some divisionvsa',
+              'position' => 'Some positionasd',
               'mobile_num' => '09451494311',
               'office_fax' => 'Hello',
               'home_num' => '22299222',
@@ -147,6 +149,8 @@ class Migration_sellers_table extends CI_Migration {
                 'civil_status' => 'Single',
                 'home_address' => 'Unknown',
                 'office_address' => 'Strangaz',
+                'division' => 'S1 division',
+                'position' => 'S42 position',
                 'mobile_num' => '09451494371',
                 'office_fax' => 'Hello',
                 'home_num' => '22299222',
@@ -165,6 +169,8 @@ class Migration_sellers_table extends CI_Migration {
                   'civil_status' => 'Single',
                   'home_address' => 'Unknown',
                   'office_address' => 'Strangaz',
+                  'division' => 'Someaaa division',
+                  'position' => 'Someaad position',
                   'mobile_num' => '09451494371',
                   'office_fax' => 'Hello',
                   'home_num' => '22299222',
@@ -183,6 +189,8 @@ class Migration_sellers_table extends CI_Migration {
                     'civil_status' => 'Single',
                     'home_address' => 'Unknown',
                     'office_address' => 'Strangaz',
+                    'division' => 'Some11 division',
+                    'position' => 'Some11 position',
                     'mobile_num' => '09451494371',
                     'office_fax' => 'Hello',
                     'home_num' => '22299222',
@@ -201,6 +209,8 @@ class Migration_sellers_table extends CI_Migration {
                       'civil_status' => 'Single',
                       'home_address' => 'Unknown',
                       'office_address' => 'Strangaz',
+                      'division' => 'Som51e division',
+                      'position' => 'So125me position',
                       'mobile_num' => '09451494371',
                       'office_fax' => 'Hello',
                       'home_num' => '22299222',
@@ -219,6 +229,8 @@ class Migration_sellers_table extends CI_Migration {
                         'civil_status' => 'Single',
                         'home_address' => 'Unknown',
                         'office_address' => 'Strangaz',
+                        'division' => 'Some qwe',
+                        'position' => 'Some posiqweqwetion',
                         'mobile_num' => '09451494371',
                         'office_fax' => 'Hello',
                         'home_num' => '22299222',
@@ -237,6 +249,8 @@ class Migration_sellers_table extends CI_Migration {
                           'civil_status' => 'Single',
                           'home_address' => 'Unknown',
                           'office_address' => 'Strangaz',
+                          'division' => '1 qqwe',
+                          'position' => '215 25',
                           'mobile_num' => '09451494371',
                           'office_fax' => 'Hello',
                           'home_num' => '22299222',

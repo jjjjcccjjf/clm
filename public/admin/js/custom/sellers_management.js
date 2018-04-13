@@ -16,6 +16,8 @@ $(document).ready(function() {
     .prop('selected', true);
 
     $('input[name=home_address]').val(payload.home_address)
+    $('input[name=division]').val(payload.division)
+    $('input[name=position]').val(payload.position)
     $('input[name=office_address]').val(payload.office_address)
     $('input[name=mobile_num]').val(payload.mobile_num)
     $('input[name=office_fax]').val(payload.office_fax)
