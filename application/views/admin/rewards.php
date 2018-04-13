@@ -22,6 +22,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Image</th>
+                    <th>Points needed</th>
                     <th>Winners</th>
                     <th>Action</th>
                   </tr>
@@ -37,10 +38,11 @@
                       <td><a href="<?php echo $value->image_url ?>" target="_blank">
                         <img src="<?php echo $value->image_url ?>" alt="" style="max-width:90px">
                       </a></td>
+                      <td><?php echo $value->cost ?></td>
                       <td><?php echo $value->winners . "/" . $value->total_winners_allowed ?></td>
                       <td>
                         <button type="button"
-                        data-payload='<?php echo json_encode(['id' => $value->id, 'title' => $value->title, 'description' => $value->description, 'image_url' => $value->image_url])?>'
+                        data-payload='<?php echo json_encode(['id' => $value->id, 'title' => $value->title, 'description' => $value->description, 'image_url' => $value->image_url, 'cost' => $value->cost, 'total_winners_allowed' => $value->total_winners_allowed ])?>'
                         class="edit-row btn btn-info btn-xs">Edit</button>
                         <button type="button" data-id='<?php echo $value->id; ?>'
                           class="btn btn-delete btn-danger btn-xs">Delete</button>
@@ -50,7 +52,7 @@
 
                   <?php else: ?>
                     <tr>
-                      <td colspan="6" style="text-align:center">Empty table data</td>
+                      <td colspan="7" style="text-align:center">Empty table data</td>
                     </tr>
                   <?php endif; ?>
                   </tbody>
@@ -78,6 +80,14 @@
             <div class="form-group">
               <label >Title</label>
               <input type="text" class="form-control" name="title" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label >Cost (Points needed)</label>
+              <input min="0" type="number" class="form-control" name="cost" placeholder="Cost (Points needed)">
+            </div>
+            <div class="form-group">
+              <label>Total winners allowed</label>
+              <input min="0" type="number" class="form-control" name="total_winners_allowed" placeholder="Total winners allowed">
             </div>
             <div class="form-group">
               <label >Description</label>

@@ -10,6 +10,8 @@ $(document).ready(function() {
 
     $('input[name=title]').val(payload.title)
     $('textarea').val(payload.description)
+    $('input[name=cost]').val(payload.cost)
+    $('input[name=total_winners_allowed]').val(payload.total_winners_allowed)
     $('form').attr('action', base_url + 'admin/rewards/update/' + payload.id)
     $('.modal').modal()
   })
@@ -21,6 +23,7 @@ $(document).ready(function() {
     $('input[name=title]').attr('required', 'required')
     $('textarea').attr("required", 'required')
     $('input[type=file]').attr("required", 'required')
+    $('input[type=number]').attr("required", 'required')
 
     $('form').attr('action', base_url + 'admin/rewards/add')
     $('.modal').modal()
