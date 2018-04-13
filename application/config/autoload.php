@@ -140,4 +140,5 @@ $autoload['model'] = array(
   'about_model',
   'sellers_model',
   'sales_model',
+  'rewards_model',
 );
