@@ -52,6 +52,7 @@ class Front_core_controller extends CI_Controller
 
     $id = $_SESSION['id'];
     $seller['side_seller'] = $this->sellers_model->get($id);
+
     $seller['m2d_sale'] = $this->sales_model->monthToDateSales(
       $_SESSION['id']
     );

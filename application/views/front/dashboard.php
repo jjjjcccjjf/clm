@@ -65,66 +65,21 @@
   <aside class="top-sellers">
     <h2>Top Sellers</h2>
     <ul>
-      <li>
-        <figure>
-          <img src="<?php echo base_url('public/front/') ?>images/profilepic.jpg">
-          <div>1</div>
-        </figure>
-        <figcaption>
-          <h4>Robert S. Manson</h4>
-          <h5>Position</h5>
-          <h5>Division</h5>
-          <h6>Php 33,000,000.00</h6>
-        </figcaption>
-      </li>
-      <li>
-        <figure>
-          <img src="<?php echo base_url('public/front/') ?>images/profilepic.jpg">
-          <div>2</div>
-        </figure>
-        <figcaption>
-          <h4>Robert S. Manson</h4>
-          <h5>Position</h5>
-          <h5>Division</h5>
-          <h6>Php 33,000,000.00</h6>
-        </figcaption>
-      </li>
-      <li>
-        <figure>
-          <img src="<?php echo base_url('public/front/') ?>images/profilepic.jpg">
-          <div>3</div>
-        </figure>
-        <figcaption>
-          <h4>Robert S. Manson</h4>
-          <h5>Position</h5>
-          <h5>Division</h5>
-          <h6>Php 33,000,000.00</h6>
-        </figcaption>
-      </li>
-      <li>
-        <figure>
-          <img src="<?php echo base_url('public/front/') ?>images/profilepic.jpg">
-          <div>4</div>
-        </figure>
-        <figcaption>
-          <h4>Robert S. Manson</h4>
-          <h5>Position</h5>
-          <h5>Division</h5>
-          <h6>Php 33,000,000.00</h6>
-        </figcaption>
-      </li>
-      <li>
-        <figure>
-          <img src="<?php echo base_url('public/front/') ?>images/profilepic.jpg">
-          <div>5</div>
-        </figure>
-        <figcaption>
-          <h4>Robert S. Manson</h4>
-          <h5>Position</h5>
-          <h5>Division</h5>
-          <h6>Php 33,000,000.00</h6>
-        </figcaption>
-      </li>
+      <?php $i = 1; foreach ($top_sellers as $key => $value):
+        ?>
+        <li>
+          <figure>
+            <img src="<?php echo $value["image_url"] ?>">
+            <div><?php echo $i++; ?></div>
+          </figure>
+          <figcaption>
+            <h4><?php echo $key ?></h4>
+            <h5>Position</h5>
+            <h5>Division</h5>
+            <h6>Php <?php echo number_format($value["sales_amount"]) ?></h6>
+          </figcaption>
+        </li>
+      <?php endforeach; ?>
     </ul>
   </aside>
 </article>

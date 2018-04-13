@@ -49,6 +49,35 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     return $res;
   }
 
+  /**
+   * retrieves list of top sellers in the current quarter
+   * @return [type] [description]
+   */
+  public function getTopSellers()
+  {
+    $qtr = get_dates_of_quarter();
+    $start = $qtr['start']->format('Y-m-d');
+    $end = $qtr['end']->format('Y-m-d');
+    $res = $this->db->query("SELECT seller_id, SUM(sales_amount) as sales_amount
+    FROM sales
+    WHERE date BETWEEN '$start' AND '$end'
+    GROUP BY seller_id DESC
+    ORDER BY sales_amount DESC
+    LIMIT 5
+    ")->result();
+
+    $top_sellers = [];
+    foreach ($res as $key => $value) {
+      $u = $this->sellers_model->get($value->seller_id);
+      $top_sellers[$u->full_name] = [
+        'sales_amount' => $value->sales_amount,
+        'image_url' => $u->image_url
+      ];
+    }
+
+    return $top_sellers;
+  }
+
   public function getLastUploadedCsv($id)
   {
     $res = $this->db->get_where($this->table, array('id' => $id))->row();

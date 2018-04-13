@@ -11,8 +11,7 @@ class Dashboard extends Front_core_controller {
   public function index()
   {
     $data['news'] = $this->news_model->all();
-    // $data['events'] = $this->events_model->all();
-
+    $data['top_sellers'] = $this->sellers_model->getTopSellers();
     $this->wrapper('front/dashboard', $data);
   }
 
