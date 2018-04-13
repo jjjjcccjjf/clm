@@ -49,7 +49,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     $res->created_at_f = date_format(date_create($res->created_at),"F d, Y");
     $total_sales = $this->sales_model->getTotalSales($res->id, date('Y') . "-01-01", date('Y') . "-12-31");
     $res->master_class = $this->getMasterClass($total_sales);
-    
+
     return $res;
   }
 
@@ -87,7 +87,9 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
       $u = $this->sellers_model->get($value->seller_id);
       $top_sellers[$u->full_name] = [
         'sales_amount' => $value->sales_amount,
-        'image_url' => $u->image_url
+        'image_url' => $u->image_url,
+        'position' => $u->position,
+        'division' => $u->division,
       ];
     }
 

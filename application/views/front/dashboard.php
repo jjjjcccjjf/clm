@@ -74,8 +74,8 @@
           </figure>
           <figcaption>
             <h4><?php echo $key ?></h4>
-            <h5>Position</h5>
-            <h5>Division</h5>
+            <h5><?php echo $value["position"] ?></h5>
+            <h5><?php echo $value["division"] ?></h5>
             <h6>Php <?php echo number_format($value["sales_amount"]) ?></h6>
           </figcaption>
         </li>
