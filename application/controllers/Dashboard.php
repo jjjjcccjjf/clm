@@ -27,6 +27,13 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/about', $data);
   }
 
+  public function rewards()
+  {
+    $data['rewards'] = $this->rewards_model->all();
+
+    $this->wrapper('front/rewards', $data, 'rewards');
+  }
+
   public function events($month = null, $year = null)
   {
     $data['events'] = $this->events_model->all($month, $year);

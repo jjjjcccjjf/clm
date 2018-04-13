@@ -465,7 +465,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
   float: left;
 }
 
-#rewards-details {
+.rewards-det {
 	h3 {font: 36px/42px $fontmed; text-align: center; color: $white; margin-bottom: 30px; @extend .wid100; letter-spacing: 5px;}
 	aside {width: 45%; @extend .fleft;
 		img {@extend .defimg}

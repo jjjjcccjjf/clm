@@ -59,8 +59,6 @@
   </div>
 <?php endforeach; ?>
 
-
-
 <script type="text/javascript">
 $(document).ready(function() {
 
