@@ -12,12 +12,12 @@
       <section class="profile">
         <aside>
           <img src="<?php echo $side_seller->image_url ?>">
-          <div><img src="<?php echo base_url('public/front/') ?>images/badge.png"></div>
+          <div><img src="<?php echo base_url('public/front/') ?>images/badge_<?php echo $side_seller->master_class ?>.png"></div>
         </aside>
         <article>
           <h3><?php echo $side_seller->full_name ?></h3>
 
-          <h6>GOLD CLASS</h6>
+          <h6><?php echo $side_seller->master_class ?> CLASS</h6>
         </article>
         <ul>
           <li>

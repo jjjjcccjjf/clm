@@ -30,6 +30,8 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
         $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
       }
       $res[$key]->created_at_f = date_format(date_create($value->created_at),"F d, Y");
+      $total_sales = $this->sales_model->getTotalSales($value->id, date('Y') . "-01-01", date('Y') . "-12-31");
+      $res[$key]->master_class = $this->getMasterClass($total_sales);
     }
 
     return $res;
@@ -45,8 +47,22 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
       $res->imported_csv = base_url("uploads/sales/") . $res->imported_csv;
     }
     $res->created_at_f = date_format(date_create($res->created_at),"F d, Y");
-
+    $total_sales = $this->sales_model->getTotalSales($res->id, date('Y') . "-01-01", date('Y') . "-12-31");
+    $res->master_class = $this->getMasterClass($total_sales);
+    
     return $res;
+  }
+
+  public function getMasterClass($sales)
+  {
+    if ($sales < 49999999) { #classic
+      $class = 'classic';
+    } else if ($sales < 99999999 && $sales > 49999999) { # gold
+      $class = 'gold';
+    } else if ($sales > 100000000) { # platinum
+      $class = 'platinum';
+    }
+    return $class;
   }
 
   /**

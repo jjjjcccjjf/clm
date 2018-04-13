@@ -70,7 +70,7 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
     $_POST = $this->setJsonPayload($this->input->post(), $this->input->post('real_estate_record_type'));
     $_POST = $this->unsetJsonFields($_POST);
     $_POST['pending_payload'] = '[{},{}]'; # reset this baby
-  
+
     $data = $this->input->post();
 
     if ($_FILES['image_url']['size'] > 0) {

@@ -56,7 +56,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
       $total_sales += $item->sales_amount;
     }
 
-    return number_format($total_sales);
+    return $total_sales;
   }
 
   public function getSalesTotalCount($id, $from_date = null, $to_date = null)
@@ -94,7 +94,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     foreach ($res as $item) {
       $total_sales += $item->sales_amount;
     }
-    
+
     return $total_sales;
   }
 

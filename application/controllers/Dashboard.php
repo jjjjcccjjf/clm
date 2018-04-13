@@ -97,15 +97,15 @@ class Dashboard extends Front_core_controller {
       $this->input->get('to_date')
     );
 
-    $data['total_sales'] = $this->sales_model->getTotalSales(
+    $data['total_sales'] = number_format($this->sales_model->getTotalSales(
       $_SESSION['id'],
       $this->input->get('from_date'),
       $this->input->get('to_date')
-    );
+    ));
 
-    $data['total_overall_sales'] = $this->sales_model->getTotalSales(
+    $data['total_overall_sales'] = number_format($this->sales_model->getTotalSales(
       $_SESSION['id']
-    );
+    ));
 
     $this->wrapper('front/sales', $data);
   }

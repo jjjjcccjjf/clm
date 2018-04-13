@@ -72,6 +72,26 @@ class Migration_events_table extends CI_Migration {
       );
       $this->db->insert($table, $data);
 
+      $data = array(
+        'title' => 'Hello of world',
+        'description' => 'Toxic brew for evil queen and jack the quick brown fox jumps over hte lay dog ',
+        'read_more_url' => 'http://english.stackexchange.com',
+        'read_more_label' => 'Read more here?...',
+        'image_url' => 'https://robohash.org/afqgh?set=set4',
+        'date' => '2018-06-25',
+      );
+      $this->db->insert($table, $data);
+
+      $data = array(
+        'title' => 'Extinction of dinosaurs',
+        'description' => 'Toxic brew for evil queen and jack the quick brown fox jumps over hte lay dog ',
+        'read_more_url' => 'http://english.stackexchange.com',
+        'read_more_label' => 'Read more here?...',
+        'image_url' => 'https://robohash.org/asdaq?set=set4',
+        'date' => '2018-05-25',
+      );
+      $this->db->insert($table, $data);
+
     }
   }
 
