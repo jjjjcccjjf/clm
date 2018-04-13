@@ -23,12 +23,8 @@ class Migration_rewards_table extends CI_Migration {
       'cost' => array(
         'type' => 'INT',
       ),
-      'total_stock' => array(
+      'total_winners_allowed' => array(
         'type' => 'INT',
-      ),
-      'current_stock' => array(
-        'type' => 'INT',
-        'default' => 0
       ),
     ));
 
@@ -44,36 +40,36 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Lemonade',
         'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/naee?asdasdw=set3',
+        'image_url' => 'https://robohash.org/gasg?set=set3',
         'cost' => 5,
-        'total_stock' => 10,
+        'total_winners_allowed' => 10,
       );
       $this->db->insert($table, $data);
 
       $data = array(
         'title' => 'Some really nice cake',
         'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/naee?asdasdw=set3',
+        'image_url' => 'https://robohash.org/nae22e?set=set3',
         'cost' => 3,
-        'total_stock' => 10,
+        'total_winners_allowed' => 10,
       );
       $this->db->insert($table, $data);
 
       $data = array(
         'title' => 'Butter',
         'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/naee?asdasdw=set3',
+        'image_url' => 'https://robohash.org/na41ee?set=set3',
         'cost' => 4,
-        'total_stock' => 10,
+        'total_winners_allowed' => 10,
       );
       $this->db->insert($table, $data);
 
       $data = array(
         'title' => 'Cheese',
         'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/naee?asdasdw=set3',
+        'image_url' => 'https://robohash.org/na11ee?set=set3',
         'cost' => 1,
-        'total_stock' => 11,
+        'total_winners_allowed' => 11,
       );
       $this->db->insert($table, $data);
 

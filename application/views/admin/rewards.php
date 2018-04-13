@@ -22,13 +22,14 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Image</th>
+                    <th>Winners</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php if (count($news) > 0 ): ?>
+                  <?php if (count($rewards) > 0 ): ?>
 
-                  <?php $i = 1; foreach ($news as $key => $value): ?>
+                  <?php $i = 1; foreach ($rewards as $key => $value): ?>
                     <tr>
                       <th scope="row"><?php echo $i++ ?></th>
                       <td><?php echo $value->title ?></td>
@@ -36,6 +37,7 @@
                       <td><a href="<?php echo $value->image_url ?>" target="_blank">
                         <img src="<?php echo $value->image_url ?>" alt="" style="max-width:90px">
                       </a></td>
+                      <td><?php echo $value->winners . "/" . $value->total_winners_allowed ?></td>
                       <td>
                         <button type="button"
                         data-payload='<?php echo json_encode(['id' => $value->id, 'title' => $value->title, 'description' => $value->description, 'image_url' => $value->image_url])?>'
@@ -48,7 +50,7 @@
 
                   <?php else: ?>
                     <tr>
-                      <td colspan="5" style="text-align:center">Empty table data</td>
+                      <td colspan="6" style="text-align:center">Empty table data</td>
                     </tr>
                   <?php endif; ?>
                   </tbody>
@@ -99,5 +101,5 @@
   </div>
   <!-- modal -->
 
-  <script src="<?php echo base_url('public/admin/js/custom/') ?>news_management.js"></script>
+  <script src="<?php echo base_url('public/admin/js/custom/') ?>rewards_management.js"></script>
   <script src="<?php echo base_url('public/admin/js/custom/') ?>generic.js"></script>
