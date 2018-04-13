@@ -32,6 +32,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
       $res[$key]->created_at_f = date_format(date_create($value->created_at),"F d, Y");
       $total_sales = $this->sales_model->getTotalSales($value->id, date('Y') . "-01-01", date('Y') . "-12-31");
       $res[$key]->master_class = $this->getMasterClass($total_sales);
+      $res[$key]->rank = $this->getRank($value->id);
     }
 
     return $res;
@@ -49,8 +50,23 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     $res->created_at_f = date_format(date_create($res->created_at),"F d, Y");
     $total_sales = $this->sales_model->getTotalSales($res->id, date('Y') . "-01-01", date('Y') . "-12-31");
     $res->master_class = $this->getMasterClass($total_sales);
+    $res->rank = $this->getRank($res->id);
 
     return $res;
+  }
+
+  public function getRank($id)
+  {
+    $res = $this->db->query("SELECT seller_id, SUM(sales_amount) as sales_amount FROM `sales`
+    GROUP BY seller_id
+    ORDER BY sales_amount DESC");
+    $sellers = $res->result();
+
+    for ($i=0; $i < $res->num_rows(); $i++) {
+      if ($sellers[$i]->seller_id == $id){
+        return $i+1; #the rank
+      }
+    }
   }
 
   public function getMasterClass($sales)
@@ -66,9 +82,9 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
   }
 
   /**
-   * retrieves list of top sellers in the current quarter
-   * @return [type] [description]
-   */
+  * retrieves list of top sellers in the current quarter
+  * @return [type] [description]
+  */
   public function getTopSellers()
   {
     $qtr = get_dates_of_quarter();
