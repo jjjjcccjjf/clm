@@ -141,4 +141,5 @@ $autoload['model'] = array(
   'sellers_model',
   'sales_model',
   'rewards_model',
+  'bulk_import_model',
 );

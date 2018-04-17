@@ -57,14 +57,14 @@
               </li>
               <li>
                 <a href="<?php echo base_url('admin/sellers')?>"
-                  class="<?php echo in_array($this->uri->segment(2), ['sellers', 'sales']) ? 'active': ''; ?>">
+                  class="<?php echo in_array($this->uri->segment(2), ['sellers', 'sales']) && strlen($this->uri->segment(3)) <= 0 ? 'active': ''; ?>">
                   <i class="fa fa-users"></i>
                   <span>Sellers</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url('admin/sales-bulk-import')?>"
-                  class="<?php echo $this->uri->segment(2) === 'sales-bulk-import' ? 'active': ''; ?>">
+                <a href="<?php echo base_url('admin/sales/bulk-import')?>"
+                  class="<?php echo $this->uri->segment(3) === 'bulk-import' ? 'active': ''; ?>">
                   <i class="fa fa-plus-square"></i>
                   <span>Sales bulk import</span>
                 </a>

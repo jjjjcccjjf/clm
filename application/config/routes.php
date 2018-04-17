@@ -69,6 +69,7 @@ $route['admin/login/logout'] = 'admin/login/logtfout'; # logtfout = log the fuck
 $route['login/logout'] = 'admin/login/logout';
 $route['forgot-password'] = 'dashboard/forgot_password';
 $route['reset-password'] = 'dashboard/reset_password';
+$route['admin/sales/bulk-import'] = 'admin/sales/bulk_import';
 
 # Restserver default examples
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1';
