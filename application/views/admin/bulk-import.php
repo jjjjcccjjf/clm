@@ -16,8 +16,8 @@
             <div>
               <h4>Backup</h4>
               <br>
-              <a class="btn btn-md btn-success" href="#"><i class="fa fa-download"></i> Download last imported CSV</a> <br> <br>
-              <a class="btn btn-md btn-success" href="#"><i class="fa fa-download"></i> Export sales data CSV</a> <br> <hr>
+              <a class="btn btn-md btn-success" href="<?php echo $last_uploaded_csv_path; ?>"><i class="fa fa-download"></i> Download last imported CSV</a> <br> <br>
+              <a class="btn btn-md btn-success" href="<?php echo $export_csv_url ?>"><i class="fa fa-download"></i> Export sales data CSV</a> <br> <hr>
 
               <h4>Add or Replace data</h4>
               <br>

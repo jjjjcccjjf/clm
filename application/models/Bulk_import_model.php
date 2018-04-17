@@ -63,4 +63,12 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
     return $new_arr;
   }
 
+  public function getLastUploadedCsv()
+  {
+    $this->db->order_by('id', 'desc');
+    $res = $this->db->get($this->table)->row()->file_name;
+
+    return base_url($this->upload_dir . "/") . $res;
+  }
+
 }

@@ -61,6 +61,11 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     return $this->db->get_where($this->table, array('email' => $email))->row();
   }
 
+  public function getById($id)
+  {
+    return $this->db->get_where($this->table, array('id' => $id))->row();
+  }
+
   public function getRank($id)
   {
     $res = $this->db->query("SELECT seller_id, SUM(sales_amount) as sales_amount FROM `sales`

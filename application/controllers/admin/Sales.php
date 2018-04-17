@@ -33,7 +33,52 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
 
   public function bulk_import($value='')
   {
-    $this->wrapper('admin/bulk-import');
+    $data['last_uploaded_csv_path'] = $this->bulk_import_model->getLastUploadedCsv();
+    $data['export_csv_url'] = base_url('admin/sales/export-all');
+    $this->wrapper('admin/bulk-import', $data);
+  }
+
+  public function export_all()
+  {
+    $list = $this->db->get('sales')->result_array();;
+
+    // output headers so that the file is downloaded rather than displayed
+    header('Content-type: text/csv');
+    header('Content-Disposition: attachment; filename="sales_export.csv"');
+
+    // do not cache the file
+    header('Pragma: no-cache');
+    header('Expires: 0');
+
+    // create a file pointer connected to the output stream
+    $file = fopen('php://output', 'w');
+
+    // send the column headers
+    fputcsv($file, array('Project name', 'Sales amount', 'Date', 'Sellers Email'));
+
+    $res = $this->sales_model->all();
+    $new_res = [];
+    foreach ($res as $key => $value) {
+      if ($value->seller_id) { # skip zeros
+        $new_res[] = array(
+          $value->project_name,
+          $value->sales_amount,
+          $value->date,
+          $this->sellers_model->getById($value->seller_id)->email,
+        );
+      }
+    }
+
+    $data = $new_res;
+    // var_dump($data); die();
+
+    // output each row of the data
+    foreach ($data as $row)
+    {
+      fputcsv($file, $row);
+    }
+
+    exit();
   }
 
   public function bulk_append()
