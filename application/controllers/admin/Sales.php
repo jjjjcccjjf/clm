@@ -53,4 +53,21 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
     }
   }
 
+  public function bulk_replace()
+  {
+    $imported_csv = $this->bulk_import_model->upload('file_name');
+    $this->bulk_import_model->add($imported_csv); # We update the seller's last imported CSV
+
+    $last_uploaded_csv_path = base_url() . "uploads/bulk_import/{$imported_csv['file_name']}";
+    $csv_arr = array_map('str_getcsv', file($last_uploaded_csv_path));
+
+    if ($this->bulk_import_model->replaceCsv($csv_arr)) {
+      $this->session->set_flashdata('flash_msg', ['message' => 'Import success. Dataset replaced', 'color' => 'green']);
+      custom_response(200, ['message' => 'Import success. Data updated', 'code' => 'ok'], $this);
+    } else {
+      $this->session->set_flashdata('flash_msg', ['message' => 'Unknown error occured while importing', 'color' => 'red']);
+      custom_response(200, ['message' => 'Unknown error occured while importing', 'code' => 'err'], $this);
+    }
+  }
+
 }

@@ -39,12 +39,11 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
   {
     $data = $this->formatCsvArr($csv_arr);
     # delete block
-    $this->db->where('1');
-    $this->db->delete('sales');
+    $this->db->truncate('sales');
     #/ delete block
 
     $this->db->reset_query();
-    return $this->db->insert_batch($this->table, $data);
+    return $this->db->insert_batch('sales', $data);
   }
 
   public function formatCsvArr($csv_arr)

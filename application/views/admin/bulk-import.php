@@ -53,24 +53,36 @@ $(document).ready(function() {
 
   function ajaxCsv(seg) {
 
+    var q = '';
+
+    if(seg === 'bulk_append') {
+      q = 'IMPORT & APPEND';
+    } else if (seg === 'bulk_replace') {
+      q = 'IMPORT & REPLACE';
+    }
+
     if ($('input[type=file]').val()) {
-      var $form = $('form');
-      var form_data = new FormData($form[0]);
+      if (confirm('Are you sure you want to perform ' + q + '?')) {
 
-      $form.empty();
-      $form.append(loader_gif);
+        var $form = $('form');
+        var form_data = new FormData($form[0]);
 
-      $.ajax({
-        url: base_url + 'admin/sales/' + seg,
-        type: 'POST',
-        data: form_data,
-        success: function (result, textStatus, xhr) {
-          location.reload();
-        },
-        cache: false,
-        contentType: false,
-        processData: false
-      });
+        $form.empty();
+        $form.append(loader_gif);
+
+        $.ajax({
+          url: base_url + 'admin/sales/' + seg,
+          type: 'POST',
+          data: form_data,
+          success: function (result, textStatus, xhr) {
+            location.reload();
+          },
+          cache: false,
+          contentType: false,
+          processData: false
+        });
+      }
+
     } else {
       alert('Please choose a file first')
     }
