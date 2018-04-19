@@ -9,7 +9,6 @@
             echo $value; # The options
           }
           ?>
-          <option>February 2017</option>
         </select>
       </span>
     </h1>

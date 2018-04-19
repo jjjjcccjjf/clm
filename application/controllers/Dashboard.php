@@ -114,6 +114,85 @@ class Dashboard extends Front_core_controller {
       $_SESSION['id']
     ));
 
+    ############# Month block start #################
+    $start    = new DateTime(date('Y-m-d', strtotime('-1 years')));
+    $start->modify('first day of this month');
+    $end    = new DateTime(date('Y-m-d', strtotime('+1 years')));
+    $end->modify('first day of next month');
+    $interval = DateInterval::createFromDateString('1 month');
+    $period   = new DatePeriod($start, $interval, $end);
+
+    $month_year_start = [];
+    foreach ($period as $dt) {
+      $month_year_start[] = "<option value='{$dt->format("Y-m-d")}'>{$dt->format("F Y")}</option>";
+    }
+    $data['month_year_start'] = $month_year_start;
+    ############# Month block start #################
+
+    ############# Month block end #################
+    $start    = new DateTime(date('Y-m-d', strtotime('-1 years')));
+    $start->modify('first day of this month');
+    $end    = new DateTime(date('Y-m-d', strtotime('+1 years')));
+    $end->modify('first day of next month');
+    $interval = DateInterval::createFromDateString('1 month');
+    $period   = new DatePeriod($start, $interval, $end);
+
+    $month_year_end = [];
+    foreach ($period as $dt) {
+      $month_year_end[] = "<option value='{$dt->format("Y-m-t")}'>{$dt->format("F Y")}</option>";
+    }
+    $data['month_year_end'] = $month_year_end;
+    ############# Month block end #################
+
+
+    ################# Years start block #################
+    $yearly_start = [];
+    $yearly_start[] = "<option value='" . date('Y', strtotime('-2 year')) . "-01-01'>" . date('Y', strtotime('-2 year')) . "</option>";
+    $yearly_start[] = "<option value='" . date('Y', strtotime('-1 year')) . "-01-01'>" . date('Y', strtotime('-1 year')) . "</option>";
+    $yearly_start[] = "<option value='" . date('Y') . "-01-01'>" . date('Y') . "</option>";
+    $yearly_start[] = "<option value='" . date('Y', strtotime('+1 year')) . "-01-01'>" . date('Y', strtotime('+1 year')) . "</option>";
+    $yearly_start[] = "<option value='" . date('Y', strtotime('+2 year')) . "-01-01'>" . date('Y', strtotime('+2 year')) . "</option>";
+    ################# Years start block #################
+
+    ################# Years start block #################
+    $yearly_end = [];
+    $yearly_end[] = "<option value='" . date('Y', strtotime('-2 year')) . "-12-31'>" . date('Y', strtotime('-2 year')) . "</option>";
+    $yearly_end[] = "<option value='" . date('Y', strtotime('-1 year')) . "-12-31'>" . date('Y', strtotime('-1 year')) . "</option>";
+    $yearly_end[] = "<option value='" . date('Y') . "-12-31'>" . date('Y') . "</option>";
+    $yearly_end[] = "<option value='" . date('Y', strtotime('+1 year')) . "-12-31'>" . date('Y', strtotime('+1 year')) . "</option>";
+    $yearly_end[] = "<option value='" . date('Y', strtotime('+2 year')) . "-12-31'>" . date('Y', strtotime('+2 year')) . "</option>";
+    ################# Years start block #################
+
+    $data['yearly_start'] = $yearly_start;
+    $data['yearly_end'] = $yearly_end;
+
+
+    $q1 = get_dates_of_quarter(1 , date('Y'));
+    $q2 = get_dates_of_quarter(2 , date('Y'));
+    $q3 = get_dates_of_quarter(3 , date('Y'));
+    $q4 = get_dates_of_quarter(4 , date('Y'));
+
+    $quarterly_start = [];
+    $quarterly_end = [];
+
+    # At this point, tinatamad na ko
+    ######## Quarterly start ################
+    $quarterly_start[] = "<option value='{$q1['start']->format('Y-m-d')}'>1st Quarter</option>";
+    $quarterly_start[] = "<option value='{$q2['start']->format('Y-m-d')}'>2nd Quarter</option>";
+    $quarterly_start[] = "<option value='{$q3['start']->format('Y-m-d')}'>3rd Quarter</option>";
+    $quarterly_start[] = "<option value='{$q4['start']->format('Y-m-d')}'>4th Quarter</option>";
+    ######## Quarterly start ################
+
+    ######## Quarterly end ################
+    $quarterly_end[] = "<option value='{$q1['end']->format('Y-m-d')}'>1st Quarter</option>";
+    $quarterly_end[] = "<option value='{$q2['end']->format('Y-m-d')}'>2nd Quarter</option>";
+    $quarterly_end[] = "<option value='{$q3['end']->format('Y-m-d')}'>3rd Quarter</option>";
+    $quarterly_end[] = "<option value='{$q4['end']->format('Y-m-d')}'>4th Quarter</option>";
+    ######## Quarterly end ################
+
+    $data['quarterly_start'] = $quarterly_start;
+    $data['quarterly_end'] = $quarterly_end;
+
     $this->wrapper('front/sales', $data);
   }
 

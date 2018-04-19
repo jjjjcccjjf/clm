@@ -16,14 +16,83 @@
               <label>Filter by</label>
               <ul>
                 <li>
-                  <select>
-                    <option>Date Range</option>
+                  <select class="select_filter">
+                    <option value="date_range_filter">Date Range</option>
+                    <option value="monthly_filter">Monthly</option>
+                    <option value="yearly_filter">Yearly</option>
+                    <option value="quarterly_filter">Quarterly</option>
                   </select>
                 </li>
-                <form method="get">
+                <form method="get" class="sales_filter date_range_filter">
                   <input type="hidden" name="page" value="1">
                   <li><input type="date" name="from_date" value="<?php echo $this->input->get('from_date') ?>"></li>
                   <li><input type="date" name="to_date" value="<?php echo $this->input->get('to_date') ?>"></li>
+                  <li><input type="submit" name="" value="FILTER"></li>
+                </form>
+                <form method="get" class="sales_filter yearly_filter" style="display:none">
+                  <input type="hidden" name="page" value="1">
+                  <li>
+                    <select name="from_date">
+                      <?php
+                      foreach ($yearly_start as $key => $value) {
+                        echo $value; # The options
+                      }
+                      ?>
+                    </select>
+                  </li>
+                  <li>
+                    <select name="to_date">
+                      <?php
+                      foreach ($yearly_end as $key => $value) {
+                        echo $value; # The options
+                      }
+                      ?>
+                    </select>
+                  </li>
+                  <li><input type="submit" name="" value="FILTER"></li>
+                </form>
+                <form method="get" class="sales_filter monthly_filter" style="display:none">
+                  <input type="hidden" name="page" value="1">
+                  <li>
+                    <select name="from_date">
+                      <?php
+                      foreach ($month_year_start as $key => $value) {
+                        echo $value; # The options
+                      }
+                      ?>
+                    </select>
+                  </li>
+                  <li>
+                    <select name="to_date">
+                      <?php
+                      foreach ($month_year_end as $key => $value) {
+                        echo $value; # The options
+                      }
+                      ?>
+                    </select>
+                  </li>
+                  <li><input type="submit" name="" value="FILTER"></li>
+                </form>
+                <form method="get" class="sales_filter quarterly_filter" style="display:none">
+                  <input type="hidden" name="page" value="1">
+                  <li>
+                    <select name="from_date">
+                      <?php
+                      foreach ($quarterly_start as $key => $value) {
+                        echo $value; # The options
+                      }
+                      ?>
+                    </select>
+                  </li>
+                  <li>
+                    <select name="to_date">
+                      <?php
+                      foreach ($quarterly_end as $key => $value) {
+                        echo $value; # The options
+                      }
+                      ?>
+                    </select>
+                  </li>
                   <li><input type="submit" name="" value="FILTER"></li>
                 </form>
               </ul>
@@ -99,3 +168,34 @@
 
 </article>
 <!-- End of Main Dashboard -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.select_filter').on('change', function (){
+    let filter_by = $(this).val();
+
+    $('.sales_filter').hide();
+
+    switch (filter_by) {
+
+      case 'monthly_filter' :
+      $('.monthly_filter').show();
+      break;
+
+      case 'yearly_filter' :
+      $('.yearly_filter').show();
+      break;
+
+      case 'quarterly_filter' :
+      $('.quarterly_filter').show();
+      break;
+
+      case 'date_range_filter' :
+      default:
+      $('.date_range_filter').show();
+      break;
+
+    }
+  })
+});
+</script>
