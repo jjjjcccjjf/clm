@@ -28,7 +28,7 @@
           <a href="<?php echo "" ?>" class="active">Rewards Catalogue</a>
         </li>
         <li>
-          <a href="#">Redeem History</a>
+          <a href="<?php echo base_url('dashboard/redeem-history') ?>">Redeem History</a>
         </li>
       </ul>
     </div>

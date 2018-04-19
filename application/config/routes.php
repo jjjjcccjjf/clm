@@ -69,6 +69,7 @@ $route['admin/login/logout'] = 'admin/login/logtfout'; # logtfout = log the fuck
 $route['login/logout'] = 'admin/login/logout';
 $route['forgot-password'] = 'dashboard/forgot_password';
 $route['reset-password'] = 'dashboard/reset_password';
+$route['dashboard/redeem-history'] = 'dashboard/redeem_history';
 $route['admin/sales/bulk-import'] = 'admin/sales/bulk_import';
 $route['admin/sales/export-all'] = 'admin/sales/export_all';
 
