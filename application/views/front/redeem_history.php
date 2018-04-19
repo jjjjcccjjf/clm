@@ -16,9 +16,9 @@
               <table>
                 <?php if ($redeem_history): ?>
                   <tr>
-                    <td>Project</td>
-                    <td>Sales Amount</td>
-                    <td>Date</td>
+                    <td>Item</td>
+                    <td>Cost</td>
+                    <td>Date Redeemed</td>
                   </tr>
                   <?php foreach ($redeem_history as $key => $value): ?>
 
@@ -30,9 +30,9 @@
                   <?php endforeach; ?>
                 <?php else: ?>
                   <tr>
-                    <td colspan="3" style="width:100%; text-align:center">No.
+                    <td colspan="3" style="width:100%; text-align:center">No redeemed items yet.
                       <a style="color:gold;text-decoration:underline"
-                      href="<?php echo base_url('dashboard/sales') ?>">View all sales
+                      href="<?php echo base_url('dashboard/rewards') ?>">View all rewards
                     </a>
                   </td>
                 </tr>
@@ -40,19 +40,17 @@
 
             </table>
           </article>
-          <?php if ($sales): ?>
+          <?php if ($redeem_history): ?>
             <div class="pagination">
               <label>Pages:</label>
               <ul>
                 <?php
                 $page = ($_GET['page']) ?: 1;
-                for ($i=1; $i <= $total_page_count; $i++) { ?>
+                for ($i=1; $i <= $total_redeemed; $i++) { ?>
                   <li><a
                     class="<?php echo ($i == $page) ? 'active' : '' ?>"
-                    href="<?php echo base_url('dashboard/sales')
-                    . "?page=" . $i
-                    . "&from_date=" . $this->input->get('from_date')
-                    . "&to_date=" . $this->input->get('to_date')
+                    href="<?php echo base_url('dashboard/redeem_history')
+                    . "?page=" . $i;
                     ?>"><?php echo $i ?></a></li>
                   <?php } ?>
                 </ul>
