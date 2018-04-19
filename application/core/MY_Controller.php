@@ -52,14 +52,9 @@ class Front_core_controller extends CI_Controller
 
     $id = $_SESSION['id'];
     $seller['side_seller'] = $this->sellers_model->get($id);
-
-    $seller['m2d_sale'] = $this->sales_model->monthToDateSales(
-      $_SESSION['id']
-    );
-
-    $seller['y2d_sale'] = $this->sales_model->yearToDateSales(
-      $_SESSION['id']
-    );
+    $seller['m2d_sale'] = $this->sales_model->monthToDateSales($id);
+    $seller['y2d_sale'] = $this->sales_model->yearToDateSales($id);
+    $seller['available_points'] = $this->sales_model->getNetPoints($id);
 
     // $seller['side_sales'] = $this->sales_model->getUserSales($id);
     // $seller['side_rewards'] = $this->rewards_model->getUserReward($id);

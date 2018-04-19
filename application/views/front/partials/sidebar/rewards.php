@@ -22,7 +22,7 @@
       <ul class="rewards">
         <li>
           <h6>Available Points</h6>
-          <h4>3,100</h4>
+          <h4><?php echo $available_points ?></h4>
         </li>
         <li>
           <a href="<?php echo "" ?>" class="active">Rewards Catalogue</a>

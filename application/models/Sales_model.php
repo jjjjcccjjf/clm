@@ -138,4 +138,31 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
 
     return $new_arr;
   }
+
+  /**
+  * eww, gross!
+  */
+  public function getGrossPoints($id)
+  {
+    $gross_points = $this->db->query('SELECT SUM(sales_amount) as sales_amount
+    FROM sales WHERE seller_id = ' . $id . '')->row()->sales_amount;
+
+    return $gross_points;
+  }
+
+  public function getPointsSpent($id)
+  {
+    $points_spent = $this->db->query('SELECT SUM(cost) as cost
+    FROM rewards_history
+    LEFT JOIN rewards ON rewards_history.reward_id = rewards.id
+    WHERE seller_id = ' . $id . '')->row()->cost;
+
+    return $points_spent;
+  }
+
+  public function getNetPoints($id)
+  {
+    return floor($this->getGrossPoints($id) / 1000000) - $this->getPointsSpent($id);
+  }
+
 }
