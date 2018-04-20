@@ -31,9 +31,8 @@
             <h5><?php echo number_format($y2d_sale) ?></h5>
           </li>
           <li>
-            <h6>POINTS RECEIVED</h6>
-            <h4>3.1K</h4>
-            <h5>3,100</h5>
+            <h6>AVAILABLE POINTS</h6>
+            <h5><?php echo number_format($available_points) ?></h5>
           </li>
         </ul>
       </div>

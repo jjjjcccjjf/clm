@@ -61,9 +61,11 @@
 
         </td>
         <td class="current-sales">
+          <h4>Total Points Accumulated</h4>
+          <h3><?php echo $gross_points ?></h3>
+          <br>
           <h4>Total Points Spent</h4>
           <h3><?php echo $points_spent ?></h3>
-          <br>
         </td>
       </tr>
     </table>

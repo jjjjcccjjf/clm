@@ -41,19 +41,19 @@ class Migration_sales_table extends CI_Migration {
           'project_name' => 'Test project 1',
           'date' => '2018-04-13',
           'seller_id' => 1,
-          'sales_amount' => 3000000,
+          'sales_amount' => 9000000,
         ),
         array(
           'project_name' => 'Test project 2',
           'date' => '2018-04-13',
           'seller_id' => 1,
-          'sales_amount' => 1800000,
+          'sales_amount' => 8800000,
         ),
         array(
           'project_name' => 'Test project 3',
           'date' => '2018-04-13',
           'seller_id' => 1,
-          'sales_amount' => 200000,
+          'sales_amount' => 2200000,
         )
       ]
     );

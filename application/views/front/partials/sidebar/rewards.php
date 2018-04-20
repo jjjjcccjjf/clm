@@ -6,9 +6,9 @@
   <div class="sideprofile">
 
     <div class="logo">
-      <img src="<?php echo base_url('public/front/') ?>images/clm-logo2.png"></div>
-
-
+      <a href="<?php echo base_url('dashboard') ?>">
+      <img src="<?php echo base_url('public/front/') ?>images/clm-logo2.png">
+    </a>
     <section class="profile">
       <aside>
         <img src="<?php echo $side_seller->image_url ?>">
@@ -25,7 +25,7 @@
           <h4><?php echo $available_points ?></h4>
         </li>
         <li>
-          <a href="<?php echo "" ?>" class="active">Rewards Catalogue</a>
+          <a href="<?php echo base_url('dashboard/rewards') ?>" class="active">Rewards Catalogue</a>
         </li>
         <li>
           <a href="<?php echo base_url('dashboard/redeem-history') ?>">Redeem History</a>

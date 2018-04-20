@@ -147,7 +147,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     $gross_points = $this->db->query('SELECT SUM(sales_amount) as sales_amount
     FROM sales WHERE seller_id = ' . $id . '')->row()->sales_amount;
 
-    return $gross_points;
+    return floor($gross_points / 1000000);
   }
 
   public function getPointsSpent($id)
@@ -162,7 +162,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
 
   public function getNetPoints($id)
   {
-    return floor($this->getGrossPoints($id) / 1000000) - $this->getPointsSpent($id);
+    return $this->getGrossPoints($id) - $this->getPointsSpent($id);
   }
 
 }
