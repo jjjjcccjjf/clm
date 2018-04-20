@@ -25,10 +25,18 @@
           <h4><?php echo $available_points ?></h4>
         </li>
         <li>
-          <a href="<?php echo base_url('dashboard/rewards') ?>" class="active">Rewards Catalogue</a>
+          <a href="<?php echo base_url('dashboard/rewards') ?>"
+            <?php if ($this->uri->segment(2) === 'rewards'): ?>
+              class="active"
+            <?php endif; ?>
+            >Rewards Catalogue</a>
         </li>
         <li>
-          <a href="<?php echo base_url('dashboard/redeem-history') ?>">Redeem History</a>
+          <a href="<?php echo base_url('dashboard/redeem-history') ?>"
+            <?php if ($this->uri->segment(2) === 'redeem-history'): ?>
+              class="active"
+            <?php endif; ?>
+            >Redeem History</a>
         </li>
       </ul>
     </div>

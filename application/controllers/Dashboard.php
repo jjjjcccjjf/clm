@@ -36,7 +36,7 @@ class Dashboard extends Front_core_controller {
 
   public function redeem_history()
   {
-    $id = @$_SESSION['id'];
+    $id = @$this->session->id;
     $data['redeem_history'] = $this->rewards_model->getRedeemHistory($id, $this->input->get('page'));
     $data['total_redeemed'] = $this->rewards_model->getTotalRedeemHistory($id);
     $data['points_spent'] = $this->sales_model->getPointsSpent($id);
@@ -77,7 +77,7 @@ class Dashboard extends Front_core_controller {
 
   public function account()
   {
-    $id = $_SESSION['id'];
+    $id = $this->session->id;
     $seller = $this->sellers_model->get($id);
     $data['seller'] = $seller;
 
@@ -103,26 +103,26 @@ class Dashboard extends Front_core_controller {
   public function sales()
   {
     $data['sales'] = $this->sales_model->getSales(
-      $_SESSION['id'],
+      $this->session->id,
       $this->input->get('page'),
       $this->input->get('from_date'),
       $this->input->get('to_date')
     );
 
     $data['total_page_count'] = $this->sales_model->getSalesTotalCount(
-      $_SESSION['id'],
+      $this->session->id,
       $this->input->get('from_date'),
       $this->input->get('to_date')
     );
 
     $data['total_sales'] = number_format($this->sales_model->getTotalSales(
-      $_SESSION['id'],
+      $this->session->id,
       $this->input->get('from_date'),
       $this->input->get('to_date')
     ));
 
     $data['total_overall_sales'] = number_format($this->sales_model->getTotalSales(
-      $_SESSION['id']
+      $this->session->id
     ));
 
     ############# Month block start #################
@@ -243,7 +243,7 @@ class Dashboard extends Front_core_controller {
     $arr[] = $this->input->post('real_estate_record_payload');
     unset($_POST['real_estate_record_payload']);
     $arr[] = $_POST;
-    if ($this->sellers_model->update($_SESSION['id'], ['pending_payload' => json_encode($arr)])){
+    if ($this->sellers_model->update($this->session->id, ['pending_payload' => json_encode($arr)])){
       $this->session->set_flashdata('flash_msg_profile', ['message' => 'Changes will be reviewed by the admin', 'color' => 'gold']);
     } else {
       $this->session->set_flashdata('flash_msg_profile', ['message' => 'Error updating profile', 'color' => 'red']);
@@ -258,7 +258,7 @@ class Dashboard extends Front_core_controller {
     $data['password'] = password_hash($this->input->post('new_password'), PASSWORD_DEFAULT);
 
     if ($type === 'account') {
-      $this->sellers_model->update($_SESSION['id'], $data);
+      $this->sellers_model->update($this->session->id, $data);
       $this->session->set_flashdata('flash_msg', ['message' => 'Password changed successfully', 'color' => 'green']);
       $this->front_redirect('dashboard/account');
 
@@ -275,16 +275,28 @@ class Dashboard extends Front_core_controller {
     }
   }
 
+  public function redeem_item($item_id)
+  {
+    if($this->rewards_model->redeem($this->session->id, $item_id)){
+      // $this->rewards_model->sendRedemptionEmail($this->session->id, $item_id); # Bruh! Nice function name b(*u*)b
+      $this->session->set_flashdata('flash_msg_redeem', ['message' => 'Item redeemed. Please check your email for further instructions.', 'color' => 'green']);
+    } else {
+      $this->session->set_flashdata('flash_msg_redeem', ['message' => 'Insufficient points', 'color' => 'red']);
+    }
+
+    $this->front_redirect('dashboard/redeem-history');
+  }
+
   public function change_photo()
   {
     $data = [];
 
     if ($_FILES['image_url']['size'] > 0) {
-      $this->sellers_model->deleteUploadedMedia($_SESSION['id']);
+      $this->sellers_model->deleteUploadedMedia($this->session->id);
       $data = array_merge($data, $this->sellers_model->upload('image_url'));
     }
 
-    if($this->sellers_model->update($_SESSION['id'], $data)){
+    if($this->sellers_model->update($this->session->id, $data)){
       $this->session->set_flashdata('flash_msg_photo', ['message' => 'Display photo updated', 'color' => 'green']);
     } else {
       $this->session->set_flashdata('flash_msg_photo', ['message' => 'Invalid photo', 'color' => 'red']);

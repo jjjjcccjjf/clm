@@ -6,11 +6,11 @@
         <td class="sales-side">
           <section class="sales">
             <h1>Redeem History
-              <?php if ($_GET['from_date'] && $_GET['to_date']): ?>
-                from
-                <?php echo $this->input->get('from_date') ?> -
-                <?php echo $this->input->get('to_date') ?>
-              <?php endif; ?>
+              <?php if ($flash_msg = $this->session->flash_msg_redeem): ?>
+                <br>
+                <sub style="color:<?php echo $flash_msg['color'] ?>;font-weight:bold">
+                  <?php echo $flash_msg['message']; ?></sub>
+                <?php endif; ?>
             </h1>
             <article>
               <table>

@@ -9,7 +9,7 @@
         <li>
           <article class="reward"
           <?php if ($value->is_grayed_out): ?>
-            style="opacity:0.6"
+            style="opacity:0.5"
           <?php endif; ?>
           >
           <div>
@@ -46,8 +46,11 @@
         <h4>Description</h4>
         <p><?php echo $value->description ?></p>
         <?php if (!$value->is_grayed_out): ?>
-          <h5><input type="checkbox" name=""><span><a href="#">Terms &amp; Conditions</a></span></h5>
-          <input type="submit" name="" value="REDEEM">
+          <h5><input type="checkbox" id="terms-<?php echo $value->id; ?>"><span><a href="#">Terms &amp; Conditions</a></span></h5>
+          <a class="redeem-btn" data-id='<?php echo $value->id; ?>'
+           href="<?php echo base_url('dashboard/redeem_item/') . $value->id ?>">
+            <input style='cursor:pointer' type="submit" name="" value="REDEEM">
+          </a>
         <?php endif; ?>
       </article>
     </section>
@@ -59,6 +62,18 @@ $(document).ready(function() {
   $('.open-popup-link').magnificPopup({
     type:'inline',
     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  });
+
+  $('.redeem-btn').on('click', function(e){
+    let reward_id = $(this).data('id');
+
+    if ($('#terms-' + reward_id + ':checked').length <= 0 )  {
+      alert('Please agree to the terms & conditions to proceed');
+      return false;
+    } else {
+      return confirm('Are you sure you want to redeem this item?');
+    }
+
   });
 });
 </script>
