@@ -7,21 +7,25 @@
       <?php foreach ($rewards as $key => $value): ?>
 
         <li>
-          <article class="reward">
-            <div>
-              <h3>Points
-                <span><?php echo $value->winners . "/" . $value->total_winners_allowed; ?></span>
-              </h3>
-            </div>
-            <a href="#rewards-details-<?php echo $value->id ?>" class="open-popup-link">
-              <img src="<?php echo $value->image_url ?>">
-            </a>
-          </article>
-        </li>
-      <?php endforeach; ?>
+          <article class="reward"
+          <?php if ($value->is_grayed_out): ?>
+            style="opacity:0.6"
+          <?php endif; ?>
+          >
+          <div>
+            <h3><?php echo number_format($value->cost) ?> Points
+              <span><?php echo $value->winners . "/" . $value->total_winners_allowed; ?></span>
+            </h3>
+          </div>
+          <a href="#rewards-details-<?php echo $value->id ?>" class="open-popup-link">
+            <img src="<?php echo $value->image_url ?>">
+          </a>
+        </article>
+      </li>
+    <?php endforeach; ?>
 
-    </ul>
-  </div>
+  </ul>
+</div>
 
 
 </article>
@@ -41,8 +45,10 @@
         <h4>Winners: <span><?php echo $value->winners . "/" . $value->total_winners_allowed ?></span></h4>
         <h4>Description</h4>
         <p><?php echo $value->description ?></p>
-        <h5><input type="checkbox" name=""><span><a href="#">Terms &amp; Conditions</a></span></h5>
-        <input type="submit" name="" value="REDEEM">
+        <?php if (!$value->is_grayed_out): ?>
+          <h5><input type="checkbox" name=""><span><a href="#">Terms &amp; Conditions</a></span></h5>
+          <input type="submit" name="" value="REDEEM">
+        <?php endif; ?>
       </article>
     </section>
   </div>

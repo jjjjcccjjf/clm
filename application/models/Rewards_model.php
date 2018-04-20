@@ -16,8 +16,8 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
       if (!(strpos($value->image_url, 'http') === 0)) {
         $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
       }
-      $res[$key]->winners = $this->getWinners($value->id);
-
+      $res[$key]->winners = $winners = $this->getWinners($value->id);
+      $res[$key]->is_grayed_out = ($winners >= $value->total_winners_allowed); # 
       $res[$key]->excerpt = (strlen($value->description) > 50)? substr($value->description, 0, 50) . "..." : $value->description;
     }
     return $res;

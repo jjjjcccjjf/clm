@@ -41,7 +41,6 @@ class Migration_admin_table extends CI_Migration {
       );
       $this->db->insert($table, $data);
 
-
       $data = array(
         'name' => 'Sin',
         'email' => 'lsalamante3@myoptimind.com',
@@ -58,12 +57,11 @@ class Migration_admin_table extends CI_Migration {
       $this->db->insert($table, $data);
       $data = array(
         'name' => 'Vane',
-        'email' => 'lsalamante5@myoptimind.com',
+        'email' => 'lsalamante15@myoptimind.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );
       $this->db->insert($table, $data);
 
-      $this->db->insert($table, $data);
       $data = array(
         'name' => 'Admin',
         'email' => 'john@doe.com',
