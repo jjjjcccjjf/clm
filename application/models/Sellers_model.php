@@ -11,7 +11,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     $config_mail['smtp_host']='mail.smtp2go.com';
     $config_mail['smtp_port']='2525';
     $config_mail['smtp_timeout']='30';
-    $config_mail['smtp_user']='apps@myoptimind.com';
+    $config_mail['smtp_user']='lsalamante@myoptimind.com';
     $config_mail['smtp_pass']='rC9u2UK3Qrz1';
     $config_mail['charset']='utf-8';
     $config_mail['newline']="\r\n";
