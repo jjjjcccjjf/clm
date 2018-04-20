@@ -29,7 +29,9 @@ class Dashboard extends Front_core_controller {
 
   public function rewards()
   {
-    $data['rewards'] = $this->rewards_model->all();
+    $data['rewards'] = $this->rewards_model->all(
+      $this->sellers_model->get($this->session->id)->master_class
+    );
 
     $this->wrapper('front/rewards', $data, 'rewards');
   }

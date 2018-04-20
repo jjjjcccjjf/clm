@@ -9,8 +9,11 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
     $this->per_page = 15;
   }
 
-  public function all() # overriden method
+  public function all($master_class = null) # overriden method
   {
+    if ($master_class) {
+      $this->db->like('class_available', $master_class);
+    }
     $res = $this->db->get($this->table)->result();
     foreach ($res as $key => $value) {
       if (!(strpos($value->image_url, 'http') === 0)) {
