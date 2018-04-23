@@ -34,6 +34,7 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
   public function bulk_import($value='')
   {
     $data['last_uploaded_csv_path'] = $this->bulk_import_model->getLastUploadedCsv();
+    $data['bulk_upload_template_link'] = base_url('public/uploads/bulk_import_template.csv');
     $data['export_csv_url'] = base_url('admin/sales/export-all');
     $this->wrapper('admin/bulk-import', $data);
   }
