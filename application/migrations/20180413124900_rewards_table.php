@@ -103,7 +103,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'All cheese',
         'description' => 'hhihuhuahsud',
-        'image_url' => 'https://robohash.org/na11e111e?set=set3',
+        'image_url' => 'https://robohash.org/hello111?set=set3',
         'cost' => 1,
         'class_available' => 'gold,platinum,classic',
         'total_winners_allowed' => 10,

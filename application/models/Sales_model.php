@@ -165,4 +165,27 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     return $this->getGrossPoints($id) - $this->getPointsSpent($id);
   }
 
+  /**
+   * this deletes the entire sales db
+   * and converts the points to accumulated_points
+   * in the sellers table
+   * @return [type]        [description]
+   */
+  public function accumulateSales()
+  {
+    $sellers = $this->sellers_model->all();
+    foreach ($sellers as $seller) {
+      $this->accumulateSellerPoints($seller->id);
+    }
+
+    return $this->db->truncate('sales');
+  }
+
+  public function accumulateSellerPoints($seller_id)
+  {
+    $points = $this->getNetPoints($seller_id);
+    $this->db->where('id', $seller_id);
+    return $this->db->update('sellers', ['accumulated_points' => $points]);
+  }
+
 }

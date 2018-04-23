@@ -80,6 +80,10 @@ class Migration_sellers_table extends CI_Migration {
         'image_url' => array(
           'type' => 'TEXT',
         ),
+        'accumulated_points' => array(
+          'type' => 'INT',
+          'default' => 0,
+        ),
         # Pending edits are saved here
         'pending_payload' => array(
           'type' => 'VARCHAR',
