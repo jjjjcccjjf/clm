@@ -29,8 +29,7 @@ $(document).ready(function() {
   //Deleting
   $('.btn-delete').on('click', function(){
 
-    let p = prompt("Are you sure you want to delete this? Type DELETE to continue", "");
-    if (p === 'DELETE') {
+    if (confirm("Are you sure you want to delete this?")) {
       const id = $(this).data('id')
 
       invokeForm(base_url + 'admin/news/delete', {id: id});

@@ -57,7 +57,7 @@ $(document).ready(function() {
   //Deleting
   $('.btn-delete').on('click', function(){
 
-    let p = prompt("Are you sure you want to delete this? Type DELETE to continue", "");
+    let p = prompt("Are you REALLY sure you want to delete this? Type DELETE to continue", "");
     if (p === 'DELETE') {
       const id = $(this).data('id')
 
