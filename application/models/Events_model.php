@@ -10,13 +10,18 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
 
   public function all($month = null, $year = null)
   {
-    if ($month && $year) {
-      $this->db->where("month(date) = {$month} AND year(date) = {$year}");
-    }else{
-      $d = date('m');
-      $y = date('Y');
-      $this->db->where("month(date) = {$d} AND year(date) = {$y}");
+    # Block to show everything to admin
+    if ($this->session->login_type === 'sellers') {
+      if ($month && $year) {
+        $this->db->where("month(date) = {$month} AND year(date) = {$year}");
+      }else{
+        $d = date('m');
+        $y = date('Y');
+        $this->db->where("month(date) = {$d} AND year(date) = {$y}");
+      }
+      $this->db->order_by('date', 'desc');
     }
+
     $res = $this->db->get($this->table)->result();
     $res = $this->filterFields($res);
     return $res;

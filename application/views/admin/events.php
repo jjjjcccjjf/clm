@@ -25,7 +25,7 @@
                     <th>Read more label</th>
                     <th>Date</th>
                     <th>Image</th>
-                    <th>Action</th>
+                    <th style="width:120px">Action</th>
                   </tr>
                 </thead>
                 <tbody>
