@@ -88,14 +88,22 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
     }
   }
 
-  public function getRedeemHistory($seller_id, $page = 1)
+  public function getRedeemHistory($seller_id, $page = 1, $from_date = null, $to_date = null)
   {
     $per_page = $this->per_page;
     $offset = max(($page - 1) * $per_page, 0);
+
+    if ($from_date && $to_date) {
+      $where_date_block = "AND rewards_history.created_at BETWEEN '$from_date' AND '$to_date'";
+    } else {
+      $where_date_block = '';
+    }
+
     $res = $this->db->query('SELECT rewards_history.created_at as created_at,
       title, cost FROM rewards_history
       LEFT JOIN rewards ON rewards_history.reward_id = rewards.id
       WHERE seller_id = ' . $seller_id . '
+      ' . $where_date_block . '
       LIMIT ' . $per_page . ' OFFSET ' . $offset . '')->result();
 
       foreach ($res as $key => $value) {

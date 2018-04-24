@@ -35,12 +35,12 @@ class Dashboard extends Front_core_controller {
     );
 
     $this->wrapper('front/rewards', $data, 'rewards');
-  } 
+  }
 
   public function redeem_history()
   {
     $id = @$this->session->id;
-    $data['redeem_history'] = $this->rewards_model->getRedeemHistory($id, $this->input->get('page'));
+    $data['redeem_history'] = $this->rewards_model->getRedeemHistory($id, $this->input->get('page'), $this->input->get('from_date'), $this->input->get('to_date'));
     $data['total_redeemed'] = $this->rewards_model->getTotalRedeemHistory($id);
     $data['points_spent'] = $this->sales_model->getPointsSpent($id);
     $data['gross_points'] = $this->sales_model->getGrossPoints($id);

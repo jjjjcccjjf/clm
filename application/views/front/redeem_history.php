@@ -12,6 +12,22 @@
                   <?php echo $flash_msg['message']; ?></sub>
                 <?php endif; ?>
             </h1>
+            <aside class="filter">
+              <label>Filter by</label>
+              <ul>
+                <li>
+                  <select class="select_filter">
+                    <option value="date_range_filter">Date Range</option>
+                  </select>
+                </li>
+                <form method="get" class="date_range_filter">
+                  <input type="hidden" name="page" value="1">
+                  <li><input type="date" name="from_date" value="<?php echo $this->input->get('from_date') ?>"></li>
+                  <li><input type="date" name="to_date" value="<?php echo $this->input->get('to_date') ?>"></li>
+                  <li><input type="submit" name="" value="FILTER"></li>
+                </form>
+              </ul>
+            </aside>
             <article>
               <table>
                 <?php if ($redeem_history): ?>
