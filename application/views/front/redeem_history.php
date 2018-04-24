@@ -34,6 +34,7 @@
                   <tr>
                     <td>Item</td>
                     <td>Cost</td>
+                    <td>Master Class</td>
                     <td>Date Redeemed</td>
                   </tr>
                   <?php foreach ($redeem_history as $key => $value): ?>
@@ -41,6 +42,7 @@
                     <tr>
                       <td><?php echo $value->title ?></td>
                       <td><?php echo $value->cost ?> Pts.</td>
+                      <td><?php echo ucfirst($value->master_class) ?></td>
                       <td><?php echo $value->created_at ?></td>
                     </tr>
                   <?php endforeach; ?>

@@ -100,7 +100,7 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
     }
 
     $res = $this->db->query('SELECT rewards_history.created_at as created_at,
-      title, cost FROM rewards_history
+      title, cost, class_available FROM rewards_history
       LEFT JOIN rewards ON rewards_history.reward_id = rewards.id
       WHERE seller_id = ' . $seller_id . '
       ' . $where_date_block . '
@@ -108,6 +108,7 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
 
       foreach ($res as $key => $value) {
         $res[$key]->created_at = date_format(date_create($value->created_at),"F d, Y");
+        $res[$key]->master_class = $this->getClassbyTier($value->class_available);
       }
 
       return $res;
