@@ -174,7 +174,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     $this->db->update('sellers', ['forgot_token' => $code = $this->generatePassword(32)]);
 
     if ($this->db->affected_rows()) {
-      $this->email->from('noreply@cebulandmasters.com', 'Cebu Landmasters');
+      $this->email->from('sales@cebulandmasters.com', 'Cebu Landmasters');
       $this->email->to($email);
       $this->email->subject('Password reset');
 
@@ -182,8 +182,10 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
       $msg = "
       <table>
       </td></tr>
-      <tr><td>Click the link to reset your password: <a href='$url?c={$code}'>$url?c={$code}</a></td></tr>
+      <tr><td>Click the link to reset your password:<br><a href='$url?c={$code}'>$url?c={$code}</a></td></tr>
       <tr><td>Thank you</td></tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr><td><sub>Please ignore this email if you did not make this password request</sub></td></tr>
       </table>
       ";
       $this->email->message($msg);
@@ -198,7 +200,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
   public function sendPasswordToEmail($email, $full_name, $password)
   {
 
-    $this->email->from('noreply@cebulandmasters.com', 'Cebu Landmasters');
+    $this->email->from('sales@cebulandmasters.com', 'Cebu Landmasters');
     $this->email->to($email);
     // $this->email->bcc(['cvalerio@myoptimind.com', 'lsalamante@myoptimind.com']);
     $this->email->subject('Cebu Landmasters Sellers Reward Program');

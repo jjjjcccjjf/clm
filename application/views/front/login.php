@@ -52,41 +52,73 @@
         <h6>GO TO <a href="https://www.cebulandmasters.com">www.cebulandmasters.com</a></h6>
       </div>
 
-      <input type="radio" name="tabs" id="tabtwo">
+      <input type="radio" name="tabs" id="tabtwo" >
       <label for="tabtwo" class="marg10">Register</label>
       <div class="tab tabreg">
         <section class="requirements">
-          <h3>List of Requirements:</h3>
-          <ol>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-            <li>Vivamus iaculis nisl nec volutpat malesuada.</li>
-            <li>Aliquam bibendum, nisi vitae tempus consectetur, </li>
-            <li>Duis eu nisl ut mi pretium viverra. </li>
-            <li>Maecenas pulvinar est ac volutpat tempus.</li>
-          </ol>
-          <h3>Instructions on how to pass requirements:</h3>
-          <ol>
-            <li>Phasellus vestibulum congue lectus pretium tincidunt. </li>
-            <li>Quisque eu tortor posuere, ultrices ligula eget, elementum leo.</li>
-            <li>Etiam luctus dictum velit sit amet rhoncus.</li>
-          </ol>
+          <h3>HOW TO REGISTER:</h3>
+          <br>
+          <h3>1. Must be a Cebu Landmasters Inc. (CLI) accredited broker or a registered seller agent.</h3>
+          <br>
+          <h3>2. Download, print and fill out the registration form then submit together with the
+            requirements through one of the following:</h3>
+            <ol>
+              <li>
+                Visit CLI office at the 10 th /F Park Centrale, Cebu IT Park and approach the Sales
+                department.<br>
+                Deliver via mail to CLI office and address to Sales department. <br>
+                Scan/take a photo of registration form and requirements then email to
+                <a style="color:gold" href="mailto:sales@cebulandmasters.com">sales@cebulandmasters.com</a>
+              </li>
+            </ol>
+            <h3>*Requirements to be submitted along with the registration form are the following:</h3>
+            <ol>
+              <li>Photocopy of:<br>
+                - PRC Certificate of Registration <br>
+                - PRC Real Estate Broker ID <br>
+                - HLURB Certificate of Registration <br>
+                - Certificate of Registration of Business Name <br>
+                - Mayor’s Permit
+              </li>
+              <li>1 Pc. 1x1 ID Picture <br>
+                For brokers, list of agents with the following information: <br>
+                - Name <br>
+                - Tin <br>
+                - PRC Reg. No. <br>
+                - HLURB Reg. No. <br>
+                - Home Address <br>
+                - Contact numbers <br>
+                - Email address</li>
+              </ol>
+              <h3>3. Approval of registration will take a month (30 days). Once approved, a CLI representative
+                will contact and inform you to claim your membership card. Membership cards are
+                upgradable.</h3>
+                <ol>
+                  <li>Membership Card Types: <br>
+                    1. Classic Card – Up to `50 million pesos worth of sales <br>
+                    2. Platinum Card – From 50 million to 100 million pesos worth of sales <br>
+                    3. Diamond Card – From 100 million pesos and up worth of sales
+                  </li>
+                </ol>
+                <h3>4. After approval, you may visit the Masters Class portal to keep track of your sales, check
+                  available rewards programs, access project updates and materials, and company
+                  announcements. For inquiries, you can email <a style="color:gold" href="mailto:sales@cebulandmasters.com">sales@cebulandmasters.com</a></h3><br>
+                </section>
+                <!-- <section class="application-btn" >
+                  <a href="#">Download</a> or <a href="#">View</a> Application Form
+                </section> -->
+              </div>
 
-        </section>
-        <section class="application-btn">
-          <a href="#">Download</a> or <a href="#">View</a> Application Form
-        </section>
-      </div>
-
-    </div>
+            </div>
 
 
-  </article>
+          </article>
 
-  <div class="bgleft"></div>
-  <div class="bgright"></div>
-  <script src="<?php echo base_url('public/front/') ?>js/jquery-1.9.1.min.js"></script>
-  <script src="<?php echo base_url('public/front/js/custom/') ?>login.js"></script>
-  <?php echo $this->session->auto_login # auto login script from the reset password ?>
-</body>
+          <div class="bgleft"></div>
+          <div class="bgright"></div>
+          <script src="<?php echo base_url('public/front/') ?>js/jquery-1.9.1.min.js"></script>
+          <script src="<?php echo base_url('public/front/js/custom/') ?>login.js"></script>
+          <?php echo $this->session->auto_login # auto login script from the reset password ?>
+        </body>
 
-</html>
+        </html>
