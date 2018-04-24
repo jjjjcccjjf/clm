@@ -64,7 +64,10 @@ class Dashboard extends Front_core_controller {
 
       $active = "";
 
-      if ($month == $dt->format('m') && $year == $dt->format('Y')) {
+      if (($month === null && $year === null) &&
+      date('m') == $dt->format('m') && date('Y') == $dt->format('Y')) {
+        $active = "selected='selected'";
+      } else if ($month == $dt->format('m') && $year == $dt->format('Y')) {
         $active = "selected='selected'";
       }
 
