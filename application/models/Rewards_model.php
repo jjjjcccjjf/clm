@@ -7,20 +7,45 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
     $this->table = 'rewards';
     $this->upload_dir = 'uploads/rewards';
     $this->per_page = 15;
+
+    $this->tiers = [
+      'classic' => 0,
+      'gold' => 1,
+      'platinum' => 2
+    ];
+
+  }
+
+  public function getTiers()
+  {
+    return $this->tiers;
+  }
+
+  public function getTierByClass($master_class)
+  {
+    return $this->tiers[$master_class];
+  }
+
+  public function getClassbyTier($tier)
+  {
+    return array_search ($tier, $this->tiers);
   }
 
   public function all($master_class = null) # overriden method
   {
     if ($master_class) {
-      $this->db->like('class_available', $master_class);
+      $tier = $this->getTierByClass($master_class);
+      $this->db->where('class_available <=', $tier);
     }
+
     $res = $this->db->get($this->table)->result();
     foreach ($res as $key => $value) {
       if (!(strpos($value->image_url, 'http') === 0)) {
         $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
       }
       $res[$key]->winners = $winners = $this->getWinners($value->id);
-      $res[$key]->is_grayed_out = ($winners >= $value->total_winners_allowed); #
+      $res[$key]->is_grayed_out = ($winners >= $value->total_winners_allowed);
+      $res[$key]->master_class = $this->getClassbyTier($value->class_available);
       $res[$key]->excerpt = (strlen($value->description) > 50)? substr($value->description, 0, 50) . "..." : $value->description;
     }
     return $res;

@@ -20,7 +20,7 @@ class Migration_sales_table extends CI_Migration {
       ),
       'sales_amount' => array(
         'type' => 'DOUBLE',
-        'constraint' => '11,2',
+        'constraint' => '20,2',
       ),
       'date' => array(
         'type' => 'DATE',

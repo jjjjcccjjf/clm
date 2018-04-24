@@ -23,6 +23,7 @@
                     <th>Description</th>
                     <th>Image</th>
                     <th>Points needed</th>
+                    <th>Master class</th>
                     <th>Winners</th>
                     <th>Action</th>
                   </tr>
@@ -39,10 +40,11 @@
                         <img src="<?php echo $value->image_url ?>" alt="" style="max-width:90px">
                       </a></td>
                       <td><?php echo $value->cost ?></td>
+                      <td><?php echo ucfirst($value->master_class); ?></td>
                       <td><?php echo $value->winners . "/" . $value->total_winners_allowed ?></td>
                       <td>
                         <button type="button"
-                        data-payload='<?php echo json_encode(['id' => $value->id, 'title' => $value->title, 'description' => $value->description, 'image_url' => $value->image_url, 'cost' => $value->cost, 'total_winners_allowed' => $value->total_winners_allowed ])?>'
+                        data-payload='<?php echo json_encode(['id' => $value->id, 'title' => $value->title, 'description' => $value->description, 'image_url' => $value->image_url, 'cost' => $value->cost, 'total_winners_allowed' => $value->total_winners_allowed, 'class_available' => $value->class_available ])?>'
                         class="edit-row btn btn-info btn-xs">Edit</button>
                         <button type="button" data-id='<?php echo $value->id; ?>'
                           class="btn btn-delete btn-danger btn-xs">Delete</button>
@@ -94,6 +96,18 @@
               <textarea name="description" placeholder="Description"
               class="form-control" style="resize:vertical"
               rows="8" cols="60"></textarea>
+            </div>
+            <div class="form-group">
+              <label >Class availability<br>
+                <sub>Note: Lower classes are available when a seller has a greater class. <br>
+                  Example: Classic rewards are always available in Gold ranking users.
+                </sub>
+              </label>
+              <select class="form-control" name="class_available">
+                <?php foreach ($tiers as $key => $value): ?>
+                  <option value="<?php echo $value ?>"><?php echo ucfirst($key) ?></option>
+                <?php endforeach; ?>
+              </select>
             </div>
             <div class="form-group">
               <label >Image</label>

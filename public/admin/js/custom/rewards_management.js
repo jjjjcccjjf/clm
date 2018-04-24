@@ -11,6 +11,7 @@ $(document).ready(function() {
     $('input[name=title]').val(payload.title)
     $('textarea').val(payload.description)
     $('input[name=cost]').val(payload.cost)
+    $('select option[value="' + payload.class_available + '"]').prop('selected', 'true')
     $('input[name=total_winners_allowed]').val(payload.total_winners_allowed)
     $('form').attr('action', base_url + 'admin/rewards/update/' + payload.id)
     $('.modal').modal()

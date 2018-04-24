@@ -13,6 +13,7 @@ class Rewards extends Admin_core_controller { # see application/core/MY_Controll
     $res = $this->rewards_model->all();
 
     $data['rewards'] = $res;
+    $data['tiers'] = $this->rewards_model->getTiers();
 
     $this->wrapper('admin/rewards', $data);
   }
