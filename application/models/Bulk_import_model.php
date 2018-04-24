@@ -68,7 +68,11 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
     $this->db->order_by('id', 'desc');
     $res = $this->db->get($this->table)->row()->file_name;
 
-    return base_url($this->upload_dir . "/") . $res;
+    if ($res) {
+      return base_url($this->upload_dir . "/") . $res;
+    } else {
+      return false;
+    }
   }
 
 }

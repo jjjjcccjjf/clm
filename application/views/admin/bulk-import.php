@@ -17,7 +17,9 @@
               <h4>Backup</h4>
               <br>
               <a class="btn btn-md btn-success" href="<?php echo $export_csv_url ?>"><i class="fa fa-download"></i> Export sales data CSV</a> <br> <br>
-              <a class="btn btn-md btn-success" href="<?php echo $last_uploaded_csv_path; ?>"><i class="fa fa-download"></i> Download last imported CSV</a> <br> <hr>
+              <?php if ($last_uploaded_csv_path): ?>
+                <a class="btn btn-md btn-success" href="<?php echo $last_uploaded_csv_path; ?>"><i class="fa fa-download"></i> Download last imported CSV</a> <br> <hr>
+              <?php endif; ?>
               <h4>Bulk import Template</h4>
               <br>
               <a class="btn btn-md btn-info" href="<?php echo $bulk_upload_template_link; ?>"><i class="fa fa-download"></i> Download CSV template</a> <br> <hr>
