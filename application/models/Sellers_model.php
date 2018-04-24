@@ -223,5 +223,67 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     return $this->email->send();
   }
 
+  public function sendSellerRedeemEmail($user, $reward)
+  {
+
+    $this->email->from('sales@cebulandmasters.com', 'Cebu Landmasters');
+    $this->email->to($user->email);
+    // $this->email->bcc(['cvalerio@myoptimind.com', 'lsalamante@myoptimind.com']);
+    $this->email->subject('Cebu Landmasters Sellers Reward Program');
+
+    $d = date('F j, Y');
+    $msg = "
+    <table>
+    <tr><td>Dear $user->full_name,</td></tr>
+    <tr><td></td></tr>
+    <tr><td>You just redeemed an item called $reward->title.<br>
+    You can find the reward details below:</td></tr>
+    <tr><td></td></tr>
+    <tr><td><b>Reward details</b></td></tr>
+    <tr><td><b>-------------------</b></td></tr>
+    <tr><td>Reward name: $reward->title</td></tr>
+    <tr><td>Reward cost: $reward->cost</td></tr>
+    <tr><td>Date redeemed: $d</td></tr>
+    <tr><td><b>-------------------</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td>Thank you.</td></tr>
+    </table>
+    ";
+    $this->email->message($msg);
+    return $this->email->send();
+  }
+
+  public function sendAdminRedeemEmail($user, $admins, $reward)
+  {
+
+    $this->email->from('sales@cebulandmasters.com', 'Cebu Landmasters');
+    $this->email->to($admins[0]);
+    unset($admins[0]); # Remove first admin
+    $this->email->cc($admins);
+    $this->email->subject('Cebu Landmasters Sellers Reward Program');
+
+    $d = date('F j, Y');
+    $msg = "
+    <table>
+    <tr><td>Dear Administrators,</td></tr>
+    <tr><td></td></tr>
+    <tr><td>A user named <em>$user->full_name<em> just redeemed an item called <em>$reward->title.</em><br>
+    You can find the reward details below:</td></tr>
+    <tr><td></td></tr>
+    <tr><td><b>Reward details</b></td></tr>
+    <tr><td><b>-------------------</b></td></tr>
+    <tr><td>Reward name: $reward->title</td></tr>
+    <tr><td>Reward cost: $reward->cost</td></tr>
+    <tr><td>Date redeemed: $d</td></tr>
+    <tr><td><b>-------------------</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td>Thank you.</td></tr>
+    </table>
+    ";
+
+    $this->email->message($msg);
+    return $this->email->send();
+  }
+
 
 }

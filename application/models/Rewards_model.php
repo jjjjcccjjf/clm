@@ -40,12 +40,24 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
     $available_points = $this->sales_model->getNetPoints($seller_id);
     $cost = $reward->cost;
 
+    $user = $this->sellers_model->get($seller_id);
+
+    # admins block
+    $a = $this->admin_model->all();
+    $admins = [];
+    foreach ($a as $admin) {
+      $admins[] = $admin->email;
+    }
+    # / admins block
+
     $winners = $this->getWinners($reward_id);
     $total_winners_allowed = $reward->total_winners_allowed;
 
     if ($available_points >= $cost && $winners < $total_winners_allowed) {
-      return $this->db->insert('rewards_history',
-      ['seller_id' => $seller_id, 'reward_id' => $reward_id]);
+      if( $this->db->insert('rewards_history', ['seller_id' => $seller_id, 'reward_id' => $reward_id])){
+        return $this->sellers_model->sendSellerRedeemEmail($user, $reward)
+        && $this->sellers_model->sendAdminRedeemEmail($user, $admins, $reward);
+      }
     } else {
       return false;
     }

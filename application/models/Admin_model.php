@@ -8,7 +8,7 @@ class Admin_model extends CI_Model
 
   public function all()
   {
-    if ($id = $this->session->id) {
+    if ($id = $this->session->id && $this->session->login_type === 'admin') {
       $this->db->where("id != {$id}");
     }
     return $this->db->get('admin')->result();

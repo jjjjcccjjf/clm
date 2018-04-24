@@ -36,35 +36,35 @@ class Migration_admin_table extends CI_Migration {
 
       $data = array(
         'name' => 'Magen',
-        'email' => 'lsalamante2@myoptimind.com',
+        'email' => 'lorenzosalamante@gmail.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );
       $this->db->insert($table, $data);
 
       $data = array(
         'name' => 'Sin',
-        'email' => 'lsalamante3@myoptimind.com',
+        'email' => 'jjjjcccjjf@yahoo.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );
       $this->db->insert($table, $data);
 
       $data = array(
         'name' => 'Godfrey',
-        'email' => 'lsalamante4@myoptimind.com',
+        'email' => 'qlvld@gmail.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );
 
       $this->db->insert($table, $data);
       $data = array(
         'name' => 'Vane',
-        'email' => 'lsalamante15@myoptimind.com',
+        'email' => 'lorenzosalamante@yahoo.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );
       $this->db->insert($table, $data);
 
       $data = array(
         'name' => 'Admin',
-        'email' => 'john@doe.com',
+        'email' => 'smtpniclm@gmail.com',
         'password' => password_hash('password', PASSWORD_DEFAULT)
       );
       $this->db->insert($table, $data);

@@ -22,6 +22,7 @@
   <![endif]-->
   <script type="text/javascript">
     const base_url = '<?php echo base_url(); ?>';
+    const loader_gif = '<?php echo createLoader(['type' => 'gear']) ?>';
   </script>
 </head>
 

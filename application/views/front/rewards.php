@@ -48,7 +48,7 @@
         <?php if (!$value->is_grayed_out): ?>
           <h5><input type="checkbox" id="terms-<?php echo $value->id; ?>"><span><a href="#">Terms &amp; Conditions</a></span></h5>
           <a class="redeem-btn" data-id='<?php echo $value->id; ?>'
-           href="<?php echo base_url('dashboard/redeem_item/') . $value->id ?>">
+            href="<?php echo base_url('dashboard/redeem_item/') . $value->id ?>">
             <input style='cursor:pointer' type="submit" name="" value="REDEEM">
           </a>
         <?php endif; ?>
@@ -71,7 +71,11 @@ $(document).ready(function() {
       alert('Please agree to the terms & conditions to proceed');
       return false;
     } else {
-      return confirm('Are you sure you want to redeem this item?');
+      if(confirm('Are you sure you want to redeem this item?')){
+        $(this).empty();
+        $(this).after(loader_gif);
+        return true;
+      }
     }
 
   });

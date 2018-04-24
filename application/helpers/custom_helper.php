@@ -64,7 +64,7 @@ function initializeLoader($type)
     // code...
     break;
   }
-  $loader .= '" height="25px" alt=""></center>';
+  $loader .= '" style="width:25px" alt=""></center>';
 
   return $loader;
 }

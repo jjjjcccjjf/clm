@@ -24,7 +24,7 @@
 
                     <tr>
                       <td><?php echo $value->title ?></td>
-                      <td>Php <?php echo $value->cost ?></td>
+                      <td><?php echo $value->cost ?> Pts.</td>
                       <td><?php echo $value->created_at ?></td>
                     </tr>
                   <?php endforeach; ?>
