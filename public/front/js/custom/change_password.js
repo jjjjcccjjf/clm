@@ -9,7 +9,7 @@ $(document).ready(function() {
       return false
     } else {
 
-      if(confirm("Really change password?")){
+      if(confirm("Are you sure you want to change the password?")){
         return true;
       } else {
         return false;
