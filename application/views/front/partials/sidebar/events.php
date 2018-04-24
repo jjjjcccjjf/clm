@@ -6,10 +6,9 @@
 
       <div class="logo">
         <a href="<?php echo base_url('dashboard') ?>">
-        <img src="<?php echo base_url('public/front/') ?>images/clm-logo2.png">
-      </a>
+          <img src="<?php echo base_url('public/front/') ?>images/clm-logo2.png">
+        </a>
       </div>
-
 
       <section class="profile">
         <aside>
@@ -18,7 +17,9 @@
         </aside>
         <article>
           <h3><?php echo $side_seller->full_name ?></h3>
-          <h4>RANKED NO. <?php echo $side_seller->rank ?></h4>
+          <?php if ($side_seller->rank): ?>
+            <h4>RANKED NO. <?php echo $side_seller->rank ?></h4>
+          <?php endif; ?>
           <h6><?php echo $side_seller->master_class ?> CLASS</h6>
         </article>
 

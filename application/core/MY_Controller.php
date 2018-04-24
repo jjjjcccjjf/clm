@@ -13,6 +13,10 @@ class Admin_core_controller extends CI_Controller
   function __construct()
   {
     parent::__construct();
+
+    # this executes almost everytime
+    # but only if there's a new year
+    $this->sales_model->accumulateSales();
   }
 
   public function wrapper($body, $data = null)
@@ -42,6 +46,10 @@ class Front_core_controller extends CI_Controller
   function __construct()
   {
     parent::__construct();
+
+    # this executes almost everytime
+    # but only if there's a new year
+    $this->sales_model->accumulateSales();
   }
 
   public function wrapper($body, $data = null,  $sidebar = 'generic')
@@ -50,12 +58,12 @@ class Front_core_controller extends CI_Controller
       redirect('login');
     }
 
-    $id = $_SESSION['id'];
+    $id = $this->session->id;
     $seller['side_seller'] = $this->sellers_model->get($id);
     $seller['m2d_sale'] = $this->sales_model->monthToDateSales($id);
     $seller['y2d_sale'] = $this->sales_model->yearToDateSales($id);
     $seller['available_points'] = $this->sales_model->getNetPoints($id);
-
+    
     // $seller['side_sales'] = $this->sales_model->getUserSales($id);
     // $seller['side_rewards'] = $this->rewards_model->getUserReward($id);
     // $seller['side_events'] = $this->events_model->~;

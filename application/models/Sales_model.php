@@ -139,15 +139,21 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     return $new_arr;
   }
 
+  public function getAccumulatedPoints($id)
+  {
+    return $this->sellers_model->get($id)->accumulated_points;
+  }
+
   /**
   * eww, gross!
   */
   public function getGrossPoints($id)
   {
-    $gross_points = $this->db->query('SELECT SUM(sales_amount) as sales_amount
+    $gross_sales = $this->db->query('SELECT SUM(sales_amount) as sales_amount
     FROM sales WHERE seller_id = ' . $id . '')->row()->sales_amount;
+    $accumulated_points = $this->getAccumulatedPoints($id);
 
-    return floor($gross_points / 1000000);
+    return floor($gross_sales / 1000000) + $accumulated_points;
   }
 
   public function getPointsSpent($id)
@@ -165,25 +171,44 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     return $this->getGrossPoints($id) - $this->getPointsSpent($id);
   }
 
-  /**
-   * this deletes the entire sales db
-   * and converts the points to accumulated_points
-   * in the sellers table
-   * @return [type]        [description]
-   */
-  public function accumulateSales()
+  public function getLastAccumulatedYear()
   {
-    $sellers = $this->sellers_model->all();
-    foreach ($sellers as $seller) {
-      $this->accumulateSellerPoints($seller->id);
-    }
-
-    return $this->db->truncate('sales');
+    return $this->db->get('annual_refresh')->row()->last_year_updated;
   }
 
-  public function accumulateSellerPoints($seller_id)
+  /**
+  * this deletes the entire sales db
+  * and converts the points to accumulated_points
+  * in the sellers table
+  * @return [type]        [description]
+  */
+  public function accumulateSales()
   {
-    $points = $this->getNetPoints($seller_id);
+    if ((int) $this->getLastAccumulatedYear() < (int) date('Y')) {
+
+      $sellers = $this->sellers_model->all();
+
+      #### STEP 1: Update all seller's accumulated points
+      foreach ($sellers as $seller) {
+        $this->updateAccumulatedPoints($seller->id);
+      }
+
+      #### STEP 2: Clear sales table
+      $this->db->reset_query();
+      $this->db->empty_table('sales');
+
+      #### STEP 3: Update 'annual_refresh' table so script won't execute again this year
+      #### clever, ain't it?
+      $this->db->reset_query();
+      $this->db->where('id', 1); # Only 1 entry, so...
+      $this->db->update('annual_refresh', ['last_year_updated' => date('Y')]);
+    }
+  }
+
+  public function updateAccumulatedPoints($seller_id)
+  {
+    $points = $this->getGrossPoints($seller_id);
+
     $this->db->where('id', $seller_id);
     return $this->db->update('sellers', ['accumulated_points' => $points]);
   }
