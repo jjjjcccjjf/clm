@@ -78,7 +78,7 @@ class Dashboard extends Front_core_controller {
 
     $data['month_year'] = $month_year;
 
-    $this->wrapper('front/events', $data, 'events');
+    $this->wrapper('front/events', $data, 'generic');
   }
 
   public function account()
