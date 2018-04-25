@@ -135,7 +135,7 @@ function generateBrokerPanel() {
   <div class="row">
   <div class="form-group col-md-6">
   <label >PRC Reg. No.</label>
-  <input type="text" class="form-control" name="prc_reg_num" placeholder="PRC Reg. No." required="required">
+  <input type="text" class="form-control" maxlength="7" name="prc_reg_num" placeholder="PRC Reg. No." required="required">
   </div>
   <div class="form-group col-md-6">
   <label >HLURB Cert. of registration</label>

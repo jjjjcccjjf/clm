@@ -86,7 +86,7 @@ function generateBrokerPanel() {
   </li>
   <li>
   <label>PRC Reg. No.</label>
-  <input type="text" name="prc_reg_num" placeholder="PRC Reg. No." required="required">
+  <input type="text" maxlength="7" name="prc_reg_num" placeholder="PRC Reg. No." required="required">
   </li>
   <li>
   <label>HLURB Cert. of Registration</label>
