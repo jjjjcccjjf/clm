@@ -7,9 +7,9 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     $this->table = 'sellers';
     $this->upload_dir = 'uploads/sellers';
 
-    $config_mail['protocol']='smtp';
-    $config_mail['smtp_host']='mail.smtp2go.com';
-    $config_mail['smtp_port']='2525';
+    $config_mail['protocol']= getenv('MAIL_PROTOCOL');
+    $config_mail['smtp_host']= getenv('SMTP_HOST');
+    $config_mail['smtp_port']= getenv('SMTP_PORT');
     $config_mail['smtp_timeout']='30';
     $config_mail['smtp_user']= getenv('SMTP_EMAIL');
     $config_mail['smtp_pass']= getenv('SMTP_PASS');
