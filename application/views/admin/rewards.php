@@ -59,6 +59,24 @@
                   <?php endif; ?>
                   </tbody>
                 </table>
+                <style>
+                  .active_lg {
+                    background: lightgray !important
+                  }
+                </style>
+                <ul class="pagination">
+                  <ul class='pagination'>
+                    <?php
+                    $page = ($this->input->get('page')) ?: 1;
+                    for ($i=1; $i <= $total_pages; $i++) { ?>
+                      <li><a
+                        class="<?php echo ($i == $page) ? 'active_lg' : '' ?>"
+                        href="<?php echo base_url('admin/rewards')
+                        . "?page=" . $i;
+                        ?>"><?php echo $i ?></a></li>
+                      <?php } ?>
+                    </ul>
+                  </ul>
               </div>
             </div>
           </section>

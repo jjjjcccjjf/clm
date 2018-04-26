@@ -38,7 +38,15 @@ class Rewards_model extends Admin_core_model # application/core/MY_Model
       $this->db->where('class_available <=', $tier);
     }
 
+
+    if ($this->session->login_type === 'admin') {
+      $page = $this->input->get('page') ?: 1;
+      $per_page = $this->per_page;
+      $offset = max(($page - 1) * $per_page, 0);
+      $this->db->limit($per_page, $offset);
+    }
     $res = $this->db->get($this->table)->result();
+
     foreach ($res as $key => $value) {
       if (!(strpos($value->image_url, 'http') === 0)) {
         $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;

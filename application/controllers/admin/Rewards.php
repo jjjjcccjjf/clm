@@ -14,6 +14,7 @@ class Rewards extends Admin_core_controller { # see application/core/MY_Controll
 
     $data['rewards'] = $res;
     $data['tiers'] = $this->rewards_model->getTiers();
+    $data['total_pages'] = $this->rewards_model->getTotalPages();
 
     $this->wrapper('admin/rewards', $data);
   }
