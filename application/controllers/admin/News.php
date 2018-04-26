@@ -13,6 +13,7 @@ class News extends Admin_core_controller { # see application/core/MY_Controller.
     $res = $this->news_model->all();
 
     $data['news'] = $res;
+    $data['total_pages'] = $this->news_model->getTotalPages();
 
     $this->wrapper('admin/news', $data);
   }

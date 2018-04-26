@@ -13,6 +13,12 @@ class Admin_core_model extends CI_model {
     parent::__construct();
     $this->table = 'crud'; # Replace these properties on children
     $this->upload_dir = 'crud'; # Replace these properties on children
+    $this->per_page = 15;
+  }
+
+  public function getTotalPages()
+  {
+    return ceil(count($this->db->get($this->table)->result()) / $this->per_page);
   }
 
   public function all()

@@ -6,7 +6,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     parent::__construct();
     $this->table = 'sellers';
     $this->upload_dir = 'uploads/sellers';
-    $this->per_page = 15;
+    $this->per_page = 25;
 
     $config_mail['protocol']= getenv('MAIL_PROTOCOL');
     $config_mail['smtp_host']= getenv('SMTP_HOST');
@@ -40,11 +40,6 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     }
 
     return $res;
-  }
-
-  public function getTotalPages()
-  {
-    return ceil(count($this->db->get($this->table)->result()) / $this->per_page);
   }
 
   public function get($id)
