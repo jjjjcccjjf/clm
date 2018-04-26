@@ -13,6 +13,7 @@ class Events extends Admin_core_controller { # see application/core/MY_Controlle
     $res = $this->events_model->all();
 
     $data['events'] = $res;
+    $data['total_pages'] = $this->events_model->getTotalPages();
 
     $this->wrapper('admin/events', $data);
   }

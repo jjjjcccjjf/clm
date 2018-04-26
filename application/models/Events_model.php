@@ -6,10 +6,12 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
     parent::__construct();
     $this->table = 'events';
     $this->upload_dir = 'uploads/events';
+    $this->per_page = 25;
   }
 
   public function all($month = null, $year = null)
   {
+
     # Block to show everything to admin
     if ($this->session->login_type === 'sellers') {
       if ($month && $year) {
@@ -20,6 +22,11 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
         $this->db->where("month(date) = {$d} AND year(date) = {$y}");
       }
       $this->db->order_by('date', 'desc');
+    } else {
+      $page = $this->input->get('page') ?: 1;
+      $per_page = $this->per_page;
+      $offset = max(($page - 1) * $per_page, 0);
+      $this->db->limit($per_page, $offset);
     }
 
     $res = $this->db->get($this->table)->result();
