@@ -36,7 +36,7 @@ class Events_model extends Admin_core_model # application/core/MY_Model.php
 
   public function getEventsPerPeriod($month, $year)
   {
-    $res = $this->db->query("SELECT * FROM `events` WHERE month(date) = {$month} AND year(date) = {$year}")->result();
+    $res = $this->db->query("SELECT * FROM `events` WHERE month(date) = {$month} AND year(date) = {$year} ORDER BY date DESC")->result();
     $res = $this->filterFields($res);
     return $res;
   }
