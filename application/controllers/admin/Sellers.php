@@ -13,6 +13,7 @@ class Sellers extends Admin_core_controller { # see application/core/MY_Controll
     $res = $this->sellers_model->all();
 
     $data['sellers'] = $res;
+    $data['total_pages'] = $this->sellers_model->getTotalPages();
 
     $this->wrapper('admin/sellers', $data);
   }

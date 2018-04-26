@@ -6,6 +6,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     parent::__construct();
     $this->table = 'sellers';
     $this->upload_dir = 'uploads/sellers';
+    $this->per_page = 15;
 
     $config_mail['protocol']= getenv('MAIL_PROTOCOL');
     $config_mail['smtp_host']= getenv('SMTP_HOST');
@@ -23,7 +24,10 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
 
   public function all() // override
   {
-    $res = $this->db->get($this->table)->result();
+    $page = $this->input->get('page') ?: 1;
+    $per_page = $this->per_page;
+    $offset = max(($page - 1) * $per_page, 0);
+    $res = $this->db->get($this->table, $per_page, $offset)->result();
 
     foreach ($res as $key => $value) {
       if (!(strpos($value->image_url, 'http') === 0)) {
@@ -36,6 +40,11 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     }
 
     return $res;
+  }
+
+  public function getTotalPages()
+  {
+    return ceil(count($this->db->get($this->table)->result()) / $this->per_page);
   }
 
   public function get($id)

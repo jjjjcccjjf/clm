@@ -63,7 +63,7 @@
               <label>Pages:</label>
               <ul>
                 <?php
-                $page = ($_GET['page']) ?: 1;
+                $page = ($this->input->get('page')) ?: 1;
                 for ($i=1; $i <= $total_redeemed; $i++) { ?>
                   <li><a
                     class="<?php echo ($i == $page) ? 'active' : '' ?>"
