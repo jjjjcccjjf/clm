@@ -271,7 +271,7 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     <table>
     <tr><td>Dear Administrators,</td></tr>
     <tr><td></td></tr>
-    <tr><td>A user named <em>$user->full_name<em> just redeemed an item called <em>$reward->title.</em><br>
+    <tr><td>A user named <em>$user->full_name</em> just redeemed an item called <em>$reward->title.</em><br>
     You can find the reward details below:</td></tr>
     <tr><td></td></tr>
     <tr><td><b>Reward details</b></td></tr>
