@@ -76,6 +76,13 @@
                   <span>Rewards</span>
                 </a>
               </li>
+              <li>
+                <a href="<?php echo base_url('admin/projects')?>"
+                  class="<?php echo $this->uri->segment(2) === 'projects' ? 'active': ''; ?>">
+                  <i class="fa fa-briefcase"></i>
+                  <span>Projects</span>
+                </a>
+              </li>
 
             </ul>
             <!-- sidebar menu end-->
