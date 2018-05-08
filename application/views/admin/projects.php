@@ -46,7 +46,7 @@
                             ])?>'
                             class="edit-row btn btn-info btn-xs">Edit</button>
                             <!-- gallery button -->
-                            <a href="<?php echo base_url('admin/gallery?p=') . $value->id ?>">
+                            <a href="<?php echo base_url('admin/projects_gallery?p=') . $value->id ?>">
                               <button type="button" data-id='<?php echo $value->id; ?>'
                                 class="btn btn-gallery btn-warning btn-xs">Gallery</button>
                               </a>

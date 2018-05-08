@@ -6,7 +6,7 @@
       <i class="fa fa-bars"></i>
     </div>
     <!--logo start-->
-    <a href="index.html" class="logo" >Flat<span>lab</span></a>
+    <a href="index.html" class="logo" >CEBU<span>LANDMASTERS</span></a>
     <!--logo end-->
     <div class="top-nav ">
       <ul class="nav pull-right top-menu">
@@ -78,7 +78,7 @@
               </li>
               <li>
                 <a href="<?php echo base_url('admin/projects')?>"
-                  class="<?php echo $this->uri->segment(2) === 'projects' ? 'active': ''; ?>">
+                  class="<?php echo in_array($this->uri->segment(2), ['projects', 'projects_gallery', 'projects_downloadables']) && strlen($this->uri->segment(3)) <= 0 ? 'active': ''; ?>">
                   <i class="fa fa-briefcase"></i>
                   <span>Projects</span>
                 </a>
