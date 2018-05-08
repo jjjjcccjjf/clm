@@ -37,6 +37,22 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/rewards', $data, 'rewards');
   }
 
+  public function projects()
+  {
+    $data['projects'] = $this->projects_model->all();
+
+    $this->wrapper('front/projects', $data);
+  }
+
+  public function project_details($id)
+  {
+    $data['gallery'] = $this->projects_gallery_model->getGallery($id);
+    $data['downloadables'] = $this->projects_downloadables_model->getDownloadables($id);
+    $data['project'] = $this->projects_model->get($id);
+
+    $this->wrapper('front/project_details', $data);
+  }
+
   public function redeem_history()
   {
     $id = @$this->session->id;

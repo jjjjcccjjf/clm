@@ -39,8 +39,8 @@
           <a href="<?php echo base_url('dashboard/rewards'); ?>">Rewards</a></li>
         <li class="<?php echo ($this->uri->segment(2) === 'events')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/events'); ?>">Events</a></li>
-        <li class="<?php echo ($this->uri->segment(2) === 'projects')? 'active' : ''; ; ?>">
-          <a href="<?php echo base_url('dashboard/projects'); ?>">Projects</a></li>
+          <li class="<?php echo ($this->uri->segment(2) === 'projects' || $this->uri->segment(2) === 'project-details') ? 'active' : ''; ; ?>">
+            <a href="<?php echo base_url('dashboard/projects'); ?>">Projects</a></li>
         <li class="<?php echo ($this->uri->segment(2) === 'about')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/about'); ?>">About Us</a></li>
         <li><a href="<?php echo base_url('login/logout') ?>">Logout</a></li>
@@ -59,7 +59,7 @@
             <a href="<?php echo base_url('dashboard/rewards'); ?>">Rewards</a></li>
           <li class="<?php echo ($this->uri->segment(2) === 'events')? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/events'); ?>">Events</a></li>
-          <li class="<?php echo ($this->uri->segment(2) === 'projects')? 'active' : ''; ; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'projects' || $this->uri->segment(2) === 'project-details') ? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/projects'); ?>">Projects</a></li>
           <li class="<?php echo ($this->uri->segment(2) === 'about')? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/about'); ?>">About Us</a></li>
