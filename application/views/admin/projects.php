@@ -22,7 +22,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Photo</th>
-                    <th style="width:120px">Action</th>
+                    <th style="width:320px">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,6 +51,12 @@
                                 class="btn btn-gallery btn-warning btn-xs">Gallery</button>
                               </a>
                               <!-- /gallery button -->
+                            <!-- downloadables button -->
+                            <a href="<?php echo base_url('admin/projects_downloadables?p=') . $value->id ?>">
+                              <button type="button" data-id='<?php echo $value->id; ?>'
+                                class="btn btn-downloadables btn-success btn-xs">Downloadables</button>
+                              </a>
+                              <!-- /downloadables button -->
                               <button type="button" data-id='<?php echo $value->id; ?>'
                                 class="btn btn-delete btn-danger btn-xs">Delete</button>
                                 </td>
