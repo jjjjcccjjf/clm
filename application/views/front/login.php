@@ -31,7 +31,7 @@
       <div class="tab">
         <ul>
           <li>
-            <form method="post">
+            <form method="post" id="login_form">
 
               <label>Email Address</label>
               <input type="email" name="email" autofocus
@@ -44,7 +44,7 @@
               value="<?php echo $this->session->flash_password ?>"
               >
             </li>
-            <li><input type="submit" name="" value="LOGIN"></li>
+            <li><input type="submit" id="login_btn" name="" value="LOGIN"></li>
           </form>
           <li><a href="<?php echo base_url('forgot-password')?>">Forgot your password?</a></li>
         </ul>
@@ -105,20 +105,46 @@
                   announcements. For inquiries, you can email <a style="color:gold" href="mailto:sales@cebulandmasters.com">sales@cebulandmasters.com</a></h3><br>
                 </section>
                 <!-- <section class="application-btn" >
-                  <a href="#">Download</a> or <a href="#">View</a> Application Form
-                </section> -->
-              </div>
-
+                <a href="#">Download</a> or <a href="#">View</a> Application Form
+              </section> -->
             </div>
 
+            <input type="radio" name="tabs" id="tabthree">
+            <label for="tabthree">Accreditation Form</label>
+            <div class="tab">
+              <ul>
+                <form method="post" id="accreditation_form">
+                  <li>
+                    <label>Accomplished Accreditation Form</label>
+                    <input type="file" name="form_url" accept=".pdf" required>
+                  </li>
+                  <li>
+                    <label>1x1 Photo</label>
+                    <input type="file" name="image_url" accept=".jpg,.jpeg,.png" required>
+                  </li>
+                  <li>
+                    <label>Full name</label>
+                    <input type="text" name="full_name" required>
+                  </li>
+                  <li><input type="submit" id="acc_btn" name="" value="SUBMIT"></li>
+                </form>
+                <li><a href="<?php echo base_url()?>">Back to login</a></li>
+              </ul>
 
-          </article>
+              <h6>GO TO <a href="https://www.cebulandmasters.com">www.cebulandmasters.com</a></h6>
+            </div>
 
-          <div class="bgleft"></div>
-          <div class="bgright"></div>
-          <script src="<?php echo base_url('public/front/') ?>js/jquery-1.9.1.min.js"></script>
-          <script src="<?php echo base_url('public/front/js/custom/') ?>login.js"></script>
-          <?php echo $this->session->auto_login # auto login script from the reset password ?>
-        </body>
+          </div>
 
-        </html>
+
+        </article>
+
+        <div class="bgleft"></div>
+        <div class="bgright"></div>
+        <script src="<?php echo base_url('public/front/') ?>js/jquery-1.9.1.min.js"></script>
+        <script src="<?php echo base_url('public/front/js/custom/') ?>login.js"></script>
+        <script src="<?php echo base_url('public/front/js/custom/') ?>accreditation_form.js"></script>
+        <?php echo $this->session->auto_login # auto login script from the reset password ?>
+      </body>
+
+      </html>

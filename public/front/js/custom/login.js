@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  $('form').on('submit', function (e) {
+  $('#login_form').on('submit', function (e) {
     e.preventDefault()
 
-    $('input[type=submit]').attr('disabled', 'disabled');
-    $('input[type=submit]').val('Trying to login...');
+    $('#login_btn').attr('disabled', 'disabled');
+    $('#login_btn').val('Trying to login...');
 
     let email = $('input[type="email"]').val()
     let password = $('input[type="password"]').val()
@@ -14,8 +14,8 @@ $(document).ready(function () {
       data: { email: email, password: password},
       success: function (res, textStatus, xhr) {
 
-        $('input[type=submit]').removeAttr('disabled');
-        $('input[type=submit]').val('LOGIN');
+        $('#login_btn').removeAttr('disabled');
+        $('#login_btn').val('LOGIN');
 
         if (xhr.status === 200 && res.code === 'ok') {
           window.location.href = res.url;
