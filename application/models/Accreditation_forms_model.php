@@ -9,11 +9,14 @@ class Accreditation_forms_model extends Admin_core_model # application/core/MY_M
     $this->per_page = 25;
   }
 
-  public function all() # overriden method
+  public function all($from_date = null, $to_date = null) # overriden method
   {
     $page = $this->input->get('page') ?: 1;
     $per_page = $this->per_page;
     $offset = max(($page - 1) * $per_page, 0);
+    if ($from_date && $to_date) {
+      $this->db->where("created_at BETWEEN '$from_date' AND '$to_date'");
+    }
     $res = $this->db->get($this->table, $per_page, $offset)->result();
     foreach ($res as $key => $value) {
       if (!(strpos($value->image_url, 'http') === 0)) {
@@ -24,6 +27,14 @@ class Accreditation_forms_model extends Admin_core_model # application/core/MY_M
       $res[$key]->excerpt = (strlen($value->description) > 50)? substr($value->description, 0, 50) . "..." : $value->description;
     }
     return $res;
+  }
+
+  public function getTotalPages($from_date = null, $to_date = null)
+  {
+    if ($from_date && $to_date) {
+      $this->db->where("created_at BETWEEN '$from_date' AND '$to_date'");
+    }
+    return ceil(count($this->db->get($this->table)->result()) / $this->per_page);
   }
 
   # Override this little bitch

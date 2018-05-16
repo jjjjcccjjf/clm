@@ -83,6 +83,13 @@
                   <span>Projects</span>
                 </a>
               </li>
+              <li>
+                <a href="<?php echo base_url('admin/accreditation_forms')?>"
+                  class="<?php echo $this->uri->segment(2) === 'accreditation_forms' ? 'active': ''; ?>">
+                  <i class="fa fa-book"></i>
+                  <span>Accreditation forms</span>
+                </a>
+              </li>
 
             </ul>
             <!-- sidebar menu end-->
