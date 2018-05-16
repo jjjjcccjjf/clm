@@ -23,8 +23,8 @@ function removeFromArrayStart($word, $arr)
             Accomplished Accreditation Forms
             <div class="pull-right">
               <form method="get">
-                <input type="date" name="from_date" value="<?php echo ($this->input->get('from_date')) ?: date('Y-m-d', strtotime('-1 day', strtotime(date('Y-m-d')))) ; ?>"> to
-                <input type="date" name="to_date" value="<?php echo ($this->input->get('to_date')) ?: date('Y-m-d') ; ?>">
+                <input type="date" name="from_date" value="<?php echo ($this->input->get('from_date')) ?: date('Y-m-d'); ?>"> to
+                <input type="date" name="to_date" value="<?php echo ($this->input->get('to_date')) ?: date('Y-m-d', strtotime('+1 day', strtotime(date('Y-m-d')))); ?>">
                 <input type="submit" value="Filter">
               </form>
             </div>
@@ -62,8 +62,13 @@ function removeFromArrayStart($word, $arr)
                         <td>
                           <button type="button" data-id='<?php echo $value->id; ?>'
                             class="btn btn-delete btn-danger btn-xs">Delete</button>
-                            <button type="button" data-id='<?php echo $value->id; ?>'
-                              class="btn btn-complete btn-success btn-xs">Mark as complete <i class="fa fa-check"></i></button>
+                            <?php if ($value->is_marked): ?>
+                                <button type="button" data-id='<?php echo $value->id; ?>'
+                                  class="btn btn-unmark btn-success btn-xs">Completed <i class="fa fa-check"></i></button>
+                            <?php else: ?>
+                              <button type="button" data-id='<?php echo $value->id; ?>'
+                                class="btn btn-mark btn-warning btn-xs">Unmarked <i class="fa fa-times"></i></button>
+                            <?php endif; ?>
                             </td>
                           </tr>
                         <?php endforeach; ?>
@@ -103,4 +108,5 @@ function removeFromArrayStart($word, $arr)
         </section>
       </section>
 
+      <script src="<?php echo base_url('public/admin/js/custom/') ?>accreditation_forms.js"></script>
       <script src="<?php echo base_url('public/admin/js/custom/') ?>generic.js"></script>

@@ -20,6 +20,9 @@ class Migration_accreditation_forms_table extends CI_Migration {
       'image_url' => array(
         'type' => 'TEXT',
       ),
+      'is_marked' => array(
+        'type' => 'INT'
+      )
     ));
 
     # Table date defaults

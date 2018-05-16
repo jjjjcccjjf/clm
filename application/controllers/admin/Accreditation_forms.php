@@ -33,6 +33,18 @@ class Accreditation_forms extends Admin_core_controller { # see application/core
     $this->admin_redirect('admin/accreditation_forms');
   }
 
+  public function mark()
+  {
+    $id = $this->input->post('id');
+    $value = $this->input->post('value');
+
+    if($this->accreditation_forms_model->update($id, ['is_marked' => $value])){
+      custom_response(200, ['message' => 'Item marked as complete', 'code' => 'ok'], $this);
+    } else {
+      custom_response(200, ['message' => 'Failure to mark item. Please try again.', 'code' => 'fail'], $this);
+    }
+  }
+
   public function delete($id)
   {
     if($this->accreditation_forms_model->delete($this->input->post('id'))){
@@ -62,13 +74,5 @@ class Accreditation_forms extends Admin_core_controller { # see application/core
     $this->admin_redirect('admin/accreditation_forms');
   }
 
-  public function accreditation_formsPerPeriod($month, $year)
-  {
-    if ($res = $this->accreditation_forms_model->getEventsPerPeriod($month, $year)) {
-      custom_response(200, ['message' => 'Success', 'code' => 'ok', 'data' => $res], $this);
-    }else{
-      custom_response(200, ['message' => 'No accreditation_forms available at this month', 'code' => 'empty'], $this);
-    }
-  }
 
 }
