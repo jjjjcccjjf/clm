@@ -22,6 +22,7 @@ class Accreditation_forms_model extends Admin_core_model # application/core/MY_M
       if (!(strpos($value->image_url, 'http') === 0)) {
         $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
         $res[$key]->form_url = base_url("{$this->upload_dir}/") . $value->form_url;
+        $res[$key]->created_at_f = date_format(date_create($value->created_at),"F d, Y");
       }
 
       $res[$key]->excerpt = (strlen($value->description) > 50)? substr($value->description, 0, 50) . "..." : $value->description;

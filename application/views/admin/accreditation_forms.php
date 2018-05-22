@@ -41,6 +41,7 @@ function removeFromArrayStart($word, $arr)
                     <th>Full name</th>
                     <th>Photo</th>
                     <th>Accreditation Form</th>
+                    <th>Date Submitted</th>
                     <th style="width:300px">Action</th>
                   </tr>
                 </thead>
@@ -60,6 +61,9 @@ function removeFromArrayStart($word, $arr)
                           </button>
                         </a></td>
                         <td>
+                          <?php echo $value->created_at_f ?>
+                        </td>
+                        <td>
                           <button type="button" data-id='<?php echo $value->id; ?>'
                             class="btn btn-delete btn-danger btn-xs">Delete</button>
                             <?php if ($value->is_marked): ?>
@@ -69,6 +73,17 @@ function removeFromArrayStart($word, $arr)
                               <button type="button" data-id='<?php echo $value->id; ?>'
                                 class="btn btn-mark btn-warning btn-xs">Unmarked <i class="fa fa-times"></i></button>
                             <?php endif; ?>
+
+                            <a href="<?php echo $value->form_url ?>?fdl=1" >
+                              <button type="button" class="btn btn-xs btn-info">
+                                <i class="fa fa-download"></i> Download accreditation form
+                              </button>
+                            </a>
+                            <a href="<?php echo $value->image_url ?>?fdl=1">
+                              <button type="button" class="btn btn-xs btn-info">
+                                <i class="fa fa-download"></i> Download profile photo
+                              </button>
+                            </a>
                             </td>
                           </tr>
                         <?php endforeach; ?>
