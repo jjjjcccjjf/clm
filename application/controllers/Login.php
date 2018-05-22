@@ -20,6 +20,7 @@ class Login extends CI_Controller {
 
   public function accreditation_form()
   {
+    unset($_POST['g-recaptcha-response']);
     $data = $this->input->post();
     $data = array_merge($data, $this->accreditation_forms_model->upload('image_url'));
     $data = array_merge($data, $this->accreditation_forms_model->upload('form_url'));

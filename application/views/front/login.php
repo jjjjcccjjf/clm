@@ -17,6 +17,7 @@
   <script type="text/javascript">
   const base_url = '<?php echo base_url(); ?>';
   </script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 
@@ -125,6 +126,9 @@
                   <li>
                     <label>Full name</label>
                     <input type="text" name="full_name" required>
+                  </li>
+                  <li>
+                    <div class="g-recaptcha" data-sitekey="6LeYl1oUAAAAABQG04b7zs3E8LeXNFtUMb1LSrLT"></div>
                   </li>
                   <li><input type="submit" id="acc_btn" name="" value="SUBMIT"></li>
                 </form>
