@@ -7,6 +7,7 @@
 
     </div>
     <article class="content-container" >
+      <h1>Latest Updates</h1>
       <p><?php echo $project->description ?></p>
       <hr>
       <h1>Gallery</h1>
