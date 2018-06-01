@@ -52,14 +52,14 @@ input, select, textarea, button {
   -webkit-border-radius: 0; }
 
 /* Common Classes */
-.wid100, article.loginreg h6, article.loginreg .tabs .tab ul li, article.loginreg .tabs .tab ul li label, article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"], article.loginreg .tabs .tab ul li input[type="text"], header, #sidebar-wrapper .sideprofile .logo, #sidebar-wrapper .sideprofile .profile, #sidebar-wrapper .sideprofile .profile article, #sidebar-wrapper .sideprofile .profile ul, #sidebar-wrapper .sideprofile .profile ul li, #sidebar-wrapper .sideprofile .profile ul.rewards li, #sidebar-wrapper .sideprofile .profile ul.rewards li a, #sidebar-wrapper .sideprofile .profile .calendar, .maincontent .dbleft .featured, .maincontent .dbleft .featured ul.featured-news li a .caption, .maincontent .dbleft .events-calendar, .maincontent .dbleft .events-calendar .events-list, .maincontent .dbleft .events-calendar .events-list ul, .maincontent .dbleft .events-calendar .events-list ul li, .maincontent .dbleft .events-calendar .events-list ul li table, .maincontent .dbleft .events-calendar .events-list ul li table tr, .maincontent .dbleft .events-calendar .events-list ul li table tr td:first-child h3, .maincontent .dbleft .events-calendar .events-list ul li table tr td:last-child ul, .maincontent .dbleft .events-calendar .events-list ul li table tr td:last-child ul li, .maincontent .top-sellers ul, .maincontent .top-sellers ul li, .maincontent .top-sellers ul li figcaption, .maincontent .sales-content, .maincontent .sales-content .sales .filter, .maincontent .sales-content .sales .filter ul, .maincontent .sales-content .sales .filter ul li input[type="date"], .maincontent .sales-content .sales .filter ul li select, .maincontent .sales-content .sales .filter ul li:last-child input[type="submit"], .maincontent .sales-content .sales article, .maincontent .sales-content .sales article table tr, .maincontent .sales-content .sales article table thead, .maincontent .sales-content .sales .pagination, .maincontent .sales-content .sales .pagination ul, .maincontent .pagewrapper ul.catalogue, .maincontent .pagewrapper ul.catalogue li article.reward, .maincontent .pagewrapper ul.catalogue li article.reward div, .maincontent .pagewrapper ul.events, .maincontent .pagewrapper ul.events li article.reward, .maincontent .pagewrapper ul.events li article.reward div, .rewards-det h3, .rewards-det article h5, .event-details h3, .event-details article h5, .content-container, .myaccount section, .myaccount section ul, .myaccount section ul li label, .myaccount section ul li input, .myaccount section ul li select {
+.wid100, article.loginreg h6, article.loginreg .tabs .tab ul li, article.loginreg .tabs .tab ul li label, article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"], header, #sidebar-wrapper .sideprofile .logo, #sidebar-wrapper .sideprofile .profile, #sidebar-wrapper .sideprofile .profile article, #sidebar-wrapper .sideprofile .profile ul, #sidebar-wrapper .sideprofile .profile ul li, #sidebar-wrapper .sideprofile .profile ul.rewards li, #sidebar-wrapper .sideprofile .profile ul.rewards li a, #sidebar-wrapper .sideprofile .profile .calendar, .maincontent .dbleft .featured, .maincontent .dbleft .featured ul.featured-news li a .caption, .maincontent .dbleft .events-calendar, .maincontent .dbleft .events-calendar .events-list, .maincontent .dbleft .events-calendar .events-list ul, .maincontent .dbleft .events-calendar .events-list ul li, .maincontent .dbleft .events-calendar .events-list ul li table, .maincontent .dbleft .events-calendar .events-list ul li table tr, .maincontent .dbleft .events-calendar .events-list ul li table tr td:first-child h3, .maincontent .dbleft .events-calendar .events-list ul li table tr td:last-child ul, .maincontent .dbleft .events-calendar .events-list ul li table tr td:last-child ul li, .maincontent .top-sellers ul, .maincontent .top-sellers ul li, .maincontent .top-sellers ul li figcaption, .maincontent .sales-content, .maincontent .sales-content .sales .filter, .maincontent .sales-content .sales .filter ul, .maincontent .sales-content .sales .filter ul li input[type="date"], .maincontent .sales-content .sales .filter ul li select, .maincontent .sales-content .sales .filter ul li:last-child input[type="submit"], .maincontent .sales-content .sales article, .maincontent .sales-content .sales article table tr, .maincontent .sales-content .sales article table thead, .maincontent .sales-content .sales .pagination, .maincontent .sales-content .sales .pagination ul, .maincontent .pagewrapper ul.catalogue, .maincontent .pagewrapper ul.catalogue li article.reward, .maincontent .pagewrapper ul.catalogue li article.reward div, .maincontent .pagewrapper ul.events, .maincontent .pagewrapper ul.events li article.reward, .maincontent .pagewrapper ul.events li article.reward div, #rewards-details h3, #rewards-details article h5, .event-details h3, .event-details article h5, .content-container, .myaccount section, .myaccount section ul, .myaccount section ul li label, .myaccount section ul li input, .myaccount section ul li select {
   width: 100%;
   float: left; }
 
-.fleft, .main-logo, header aside, header nav ul li a, .maincontent .dbleft, .maincontent .dbleft .featured .slick-prev, .maincontent .dbleft .featured .slick-next, .maincontent .dbleft .events-calendar .calendar-container, .maincontent .sales-content .sales .filter ul li, .maincontent .sales-content .sales .pagination ul li a, .rewards-det aside, .event-details aside, .myaccount section ul li, .myaccount section ul.choice li input[type="radio"] {
+.fleft, .main-logo, header aside, header nav ul li a, .maincontent .dbleft, .maincontent .dbleft .featured .slick-prev, .maincontent .dbleft .featured .slick-next, .maincontent .dbleft .events-calendar .calendar-container, .maincontent .sales-content .sales .filter ul li, .maincontent .sales-content .sales .pagination ul li a, #rewards-details aside, .event-details aside, .myaccount section ul li, .myaccount section ul.choice li input[type="radio"] {
   float: left; }
 
-.fright, header nav, h1 span, #sidebar-wrapper .togglebtn, .maincontent .top-sellers, .maincontent .pagewrapper ul.catalogue li article.reward div h3 span, .rewards-det article, .event-details article, nav.cbp-spmenu button {
+.fright, header nav, h1 span, #sidebar-wrapper .togglebtn, .maincontent .top-sellers, .maincontent .pagewrapper ul.catalogue li article.reward div h3 span, #rewards-details article, .event-details article, nav.cbp-spmenu button {
   float: right; }
 
 .listn, article.loginreg .tabs .tab ul, header nav ul, #sidebar-wrapper .sideprofile .profile ul, #sidebar-wrapper .sideprofile .profile ul.rewards, .maincontent .dbleft .featured ul.featured-news, .maincontent .dbleft .events-calendar .events-list ul, .maincontent .dbleft .events-calendar .events-list ul li table tr td:last-child ul, .maincontent .top-sellers ul, .maincontent .sales-content .sales .filter ul, .maincontent .sales-content .sales .pagination ul, .maincontent .pagewrapper ul.catalogue, .maincontent .pagewrapper ul.events, .myaccount section ul {
@@ -67,7 +67,7 @@ input, select, textarea, button {
   margin: 0;
   padding: 0; }
 
-.defimg, img, #sidebar-wrapper .sideprofile .logo img, .rewards-det aside img, .event-details aside img {
+.defimg, img, #sidebar-wrapper .sideprofile .logo img, #rewards-details aside img, .event-details aside img {
   width: 100%;
   height: auto; }
 
@@ -95,6 +95,9 @@ input, select, textarea, button {
   width: 100%;
   margin: 0 auto;
   max-width: 990px; }
+
+.pad-0 {
+  padding: 0px; }
 
 /* Colors & Fonts */
 /* Colors */
@@ -204,7 +207,7 @@ article.loginreg {
           cursor: default !important;
           padding: 0 !important;
           text-transform: none !important; }
-        article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"], article.loginreg .tabs .tab ul li input[type="text"] {
+        article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"] {
           height: 60px;
           background: #1c2129;
           border: solid 1px #ffe9ae;
@@ -794,44 +797,44 @@ h1 {
   border: solid 1px #ffe9ae;
   float: left; }
 
-.rewards-det h3 {
+#rewards-details h3 {
   font: 36px/42px "montserratmedium", Arial, sans-serif;
   text-align: center;
   color: #fff;
   margin-bottom: 30px;
   letter-spacing: 5px; }
-.rewards-det aside {
+#rewards-details aside {
   width: 45%; }
-.rewards-det article {
+#rewards-details article {
   width: 50%; }
-  .rewards-det article h4 {
+  #rewards-details article h4 {
     font: 22px/28px "montserratmedium", Arial, sans-serif;
     color: #fff;
     margin-bottom: 10px; }
-    .rewards-det article h4 span {
+    #rewards-details article h4 span {
       color: #ffe9ae; }
-  .rewards-det article p {
+  #rewards-details article p {
     font: 20px/26px "montserratregular", Arial, sans-serif;
     color: #fff;
     margin-bottom: 20px; }
-  .rewards-det article h5 {
+  #rewards-details article h5 {
     margin-bottom: 30px; }
-    .rewards-det article h5 input[type="checkbox"] {
+    #rewards-details article h5 input[type="checkbox"] {
       border: solid 1px #ffe9ae;
       width: 30px;
       height: 30px;
       margin-right: 20px;
       float: left; }
-    .rewards-det article h5 input[type="checkbox"]:checked {
+    #rewards-details article h5 input[type="checkbox"]:checked {
       background: url(../images/checkbox.png) no-repeat center center; }
-    .rewards-det article h5 span {
+    #rewards-details article h5 span {
       float: left;
       padding-top: 5px; }
-      .rewards-det article h5 span a {
+      #rewards-details article h5 span a {
         color: #ffe9ae;
         text-decoration: underline;
         font: 18px/24px "montserratregular", Arial, sans-serif; }
-  .rewards-det article input[type="submit"] {
+  #rewards-details article input[type="submit"] {
     background: #ffe9ae;
     padding: 15px 20px;
     font: 18px/24px "montserratmedium", Arial, sans-serif;
@@ -886,103 +889,90 @@ h1 {
     color: #fff; }
 
 /* My Account */
-.myaccount {
-  /* zzzz */ }
-  .myaccount section {
-    z-index: 100; }
-    .myaccount section h4, .myaccount section h5 {
-      font: 20px/26px "montserratmedium", Arial, sans-serif;
-      color: #ffe9ae;
-      margin-bottom: 5px; }
-    .myaccount section ul {
-      margin-bottom: 10px; }
-      .myaccount section ul li {
-        width: 50%;
-        display: table-cell;
-        padding-right: 25px;
+.myaccount section {
+  z-index: 100; }
+  .myaccount section h4, .myaccount section h5 {
+    font: 20px/26px "montserratmedium", Arial, sans-serif;
+    color: #ffe9ae;
+    margin-bottom: 5px; }
+  .myaccount section ul {
+    margin-bottom: 10px; }
+    .myaccount section ul li {
+      width: 50%;
+      display: table-cell;
+      padding-right: 25px;
+      box-sizing: border-box;
+      margin-bottom: 15px; }
+      .myaccount section ul li label {
+        margin-bottom: 5px;
+        font: 16px/22px "montserratregular", Arial, sans-serif; }
+        .myaccount section ul li label span {
+          font-size: 12px; }
+      .myaccount section ul li input, .myaccount section ul li select {
+        padding: 5px 10px;
+        background: transparent;
         box-sizing: border-box;
-        margin-bottom: 15px; }
-        .myaccount section ul li label {
-          margin-bottom: 5px;
-          font: 16px/22px "montserratregular", Arial, sans-serif; }
-          .myaccount section ul li label span {
-            font-size: 12px; }
-        .myaccount section ul li input, .myaccount section ul li select {
-          padding: 5px 10px;
-          background: transparent;
-          box-sizing: border-box;
-          border: solid 1px #ffe9ae;
-          height: 36px;
-          font: 16px/22px "montserratregular", Arial, sans-serif;
-          color: #fff; }
-    .myaccount section h5 {
-      color: #fff; }
-    .myaccount section h6 {
-      font: 16px/22px "montserratregular", Arial, sans-serif;
-      margin-bottom: 5px; }
-      .myaccount section h6 span {
-        font-size: 12px; }
-    .myaccount section ul.choice li {
-      position: relative; }
-      .myaccount section ul.choice li input[type="radio"] {
-        width: 25px !important;
-        height: 25px !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 50%;
-        -webkit-border-radius: 50%; }
-      .myaccount section ul.choice li label {
-        padding-left: 40px;
-        box-sizing: border-box;
-        padding-top: 5px; }
-      .myaccount section ul.choice li input[type="radio"]:checked {
-        background: url(../images/radio.png) no-repeat center center; }
-    .myaccount section .inputfile {
-      width: 0.1px;
-      height: 0.1px;
-      opacity: 0;
-      overflow: hidden;
+        border: solid 1px #ffe9ae;
+        height: 36px;
+        font: 16px/22px "montserratregular", Arial, sans-serif;
+        color: #fff; }
+  .myaccount section h5 {
+    color: #fff; }
+  .myaccount section h6 {
+    font: 16px/22px "montserratregular", Arial, sans-serif;
+    margin-bottom: 5px; }
+    .myaccount section h6 span {
+      font-size: 12px; }
+  .myaccount section ul.choice li {
+    position: relative; }
+    .myaccount section ul.choice li input[type="radio"] {
+      width: 25px !important;
+      height: 25px !important;
       position: absolute;
-      z-index: -1; }
-    .myaccount section .inputfile + label {
-      font: 16px/24px "montserratbold", Arial, sans-serif;
-      color: #15181e;
-      background: #ffe9ae;
-      border-radius: 5px;
-      padding: 5px 10px;
-      width: 140px;
-      text-align: center;
-      display: inline-block;
-      border: solid 2px #ffe9ae; }
-    .myaccount section .inputfile:focus + label,
-    .myaccount section .inputfile + label:hover {
-      background-color: transparent;
-      color: #ffe9ae; }
-  .myaccount .personal-info li:nth-child(5), .myaccount .personal-info li:last-child {
-    width: 100%; }
-  .myaccount input[type="submit"] {
-    padding: 8px 30px;
-    background: #ffe9ae;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      -webkit-border-radius: 50%; }
+    .myaccount section ul.choice li label {
+      padding-left: 40px;
+      box-sizing: border-box;
+      padding-top: 5px; }
+    .myaccount section ul.choice li input[type="radio"]:checked {
+      background: url(../images/radio.png) no-repeat center center; }
+  .myaccount section .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1; }
+  .myaccount section .inputfile + label {
+    font: 16px/24px "montserratbold", Arial, sans-serif;
     color: #15181e;
-    font: 18px/24px "montserratbold", Arial, sans-serif;
-    text-transform: uppercase;
-    border-radius: 5px;
-    border: solid 2px #ffe9ae; }
-  .myaccount input[type="submit"]:hover {
-    color: #ffe9ae;
-    background: transparent; }
-  .myaccount input[type="button"] {
-    padding: 8px 30px;
     background: #ffe9ae;
-    color: #15181e;
-    font: 18px/24px "montserratbold", Arial, sans-serif;
-    text-transform: uppercase;
     border-radius: 5px;
+    padding: 5px 10px;
+    width: 140px;
+    text-align: center;
+    display: inline-block;
     border: solid 2px #ffe9ae; }
-  .myaccount input[type="button"]:hover {
-    color: #ffe9ae;
-    background: transparent; }
+  .myaccount section .inputfile:focus + label,
+  .myaccount section .inputfile + label:hover {
+    background-color: transparent;
+    color: #ffe9ae; }
+.myaccount .personal-info li:nth-child(5), .myaccount .personal-info li:last-child {
+  width: 100%; }
+.myaccount input[type="submit"] {
+  padding: 8px 30px;
+  background: #ffe9ae;
+  color: #15181e;
+  font: 18px/24px "montserratbold", Arial, sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: solid 2px #ffe9ae; }
+.myaccount input[type="submit"]:hover {
+  color: #ffe9ae;
+  background: transparent; }
 
 /* Jpushmenu */
 nav.cbp-spmenu {
@@ -1058,5 +1048,197 @@ nav.cbp-spmenu {
   h1 span select, .maincontent .sales-content .sales .filter ul li select {
     padding-right: 6px !important;
     background-image: none !important; } }
+/*===============Peter 5-28-18===============*/
+.projects .project-list {
+  padding: 0px;
+  margin: 0;
+  list-style-type: none;
+  margin-top: 25px; }
+  .projects .project-list li {
+    width: 33%;
+    display: inline-block;
+    padding: 0px 12.5px;
+    margin-bottom: 35px; }
+    .projects .project-list li figure {
+      max-width: 337px;
+      width: 100%;
+      height: 263px;
+      margin: 0 auto;
+      border: 2px solid #cfae79; }
+      .projects .project-list li figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+
+.projects-inner .prjinner-hldr {
+  margin-top: 30px; }
+  .projects-inner .prjinner-hldr > aside {
+    width: 20%;
+    float: left; }
+    .projects-inner .prjinner-hldr > aside > figure {
+      max-width: 295px;
+      width: 100%;
+      height: 230px;
+      margin: 0 auto; }
+      .projects-inner .prjinner-hldr > aside > figure img {
+        height: 100%;
+        object-fit: cover; }
+    .projects-inner .prjinner-hldr > aside > article {
+      padding: 33px 23px; }
+      .projects-inner .prjinner-hldr > aside > article > ul > li {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #353942; }
+      .projects-inner .prjinner-hldr > aside > article h5 {
+        font-family: "montserratbold", Arial, sans-serif;
+        font-size: 15px;
+        margin-bottom: 18px; }
+      .projects-inner .prjinner-hldr > aside > article p {
+        font-family: "montserratregular", Arial, sans-serif;
+        font-size: 20px; }
+  .projects-inner .prjinner-hldr > article {
+    width: 78%;
+    float: right; }
+    .projects-inner .prjinner-hldr > article .updates .update-list {
+      margin-bottom: 40px; }
+    .projects-inner .prjinner-hldr > article .updates h5 {
+      font-family: "montserratregular", Arial, sans-serif;
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 15px;
+      padding-left: 15px; }
+    .projects-inner .prjinner-hldr > article .updates li {
+      width: 33%;
+      display: inline-block;
+      padding: 0px 15px;
+      margin-bottom: 25px; }
+      .projects-inner .prjinner-hldr > article .updates li figure {
+        width: 100%;
+        height: 153px;
+        margin: 0 auto; }
+        .projects-inner .prjinner-hldr > article .updates li figure img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+    .projects-inner .prjinner-hldr > article .dwnld > ul {
+      padding-left: 25px; }
+      .projects-inner .prjinner-hldr > article .dwnld > ul > li {
+        width: 100%;
+        margin-bottom: 20px; }
+        .projects-inner .prjinner-hldr > article .dwnld > ul > li > a {
+          text-decoration: underline;
+          font-family: "montserratregular", Arial, sans-serif;
+          color: #fff;
+          font-size: 18px; }
+    .projects-inner .prjinner-hldr > article .gallery .main {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto; }
+    .projects-inner .prjinner-hldr > article .gallery .slider-nav figure {
+      margin: 0;
+      padding: 20px; }
+    .projects-inner .prjinner-hldr > article .gallery .slider-for figure {
+      height: 500px;
+      margin: 0; }
+      .projects-inner .prjinner-hldr > article .gallery .slider-for figure img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%; }
+    .projects-inner .prjinner-hldr > article .gallery .slick-slide.slick-current {
+      width: 100%; }
+    .projects-inner .prjinner-hldr > article .gallery .slider.slider-for.slick-initialized.slick-slider {
+      min-height: 500px; }
+    .projects-inner .prjinner-hldr > article .gallery .slick-prev {
+      background-image: url(../images/arrow-left.png);
+      text-indent: -999px;
+      width: 26px;
+      height: 44px;
+      background-size: contain;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      z-index: 1;
+      color: transparent; }
+    .projects-inner .prjinner-hldr > article .gallery .slick-next {
+      background-image: url(../images/arrow-right.png);
+      text-indent: -999px;
+      width: 26px;
+      height: 44px;
+      background-size: contain;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      color: transparent; }
+.projects-inner .tab {
+  overflow: hidden;
+  border-bottom: 1px solid #ffebba; }
+.projects-inner .tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 18px 24px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #fff;
+  font-family: "montserratbold", Arial, sans-serif;
+  border: 1px solid transparent; }
+.projects-inner .tabcontent {
+  height: 0;
+  padding: 15px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s; }
+.projects-inner .tab button.active {
+  border: 1px solid #ffebba;
+  border-bottom: 0px; }
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.galleria {
+  max-width: 100%;
+  height: 400px;
+  background: transparent; }
+
+.galleria-container.notouch.galleria-theme-classic {
+  max-width: 724px !important;
+  width: 100% !important;
+  margin: 0 auto; }
+
+.galleria-image .galleria-layer {
+  width: 100% !important;
+  left: 0 !important; }
+
+.galleria-image img {
+  width: 100% !important;
+  left: 0 !important; }
+
+.galleria-image-nav .galleria-image-nav-left {
+  background-image: url(../images/arrow-left.png) !important;
+  opacity: 1 !important; }
+
+.galleria-image-nav .galleria-image-nav-right {
+  background-image: url(../images/arrow-right.png) !important;
+  opacity: 1 !important;
+  width: 50px !important;
+  right: -10px !important;
+  background-position: center !important; }
+
+#wrapper.active .projects .project-list li figure {
+  max-width: 100%; }
+
+.gallery .slider-nav .slick-dots {
+  display: none !important; }
 
 /*# sourceMappingURL=styles.css.map */
