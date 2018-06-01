@@ -10,6 +10,9 @@
               <sub style="color: <?php echo $flash_msg['color'] ?>"><?php echo $flash_msg['message'] ?></sub> <br>
             <?php endif; ?>
             <br>
+            <a href="<?php echo base_url('admin/projects?page=' . $this->input->get('_p')) ?>">
+              <button type="button" class="btn btn-info btn-sm">&laquo; Go back</button>
+            </a>
             <button type="button" class="add-btn btn btn-success btn-sm">Add new</button>
           </header>
 

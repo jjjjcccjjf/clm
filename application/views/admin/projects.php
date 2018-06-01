@@ -55,19 +55,19 @@
                             ])?>'
                             class="edit-row btn btn-info btn-xs">Edit</button>
                             <!-- gallery button -->
-                            <a href="<?php echo base_url('admin/projects_gallery?p=') . $value->id ?>">
+                            <a href="<?php echo base_url('admin/projects_gallery?p=') . $value->id . "&_p=" . $this->input->get('page') ?>">
                               <button type="button" data-id='<?php echo $value->id; ?>'
                                 class="btn btn-gallery btn-warning btn-xs">Gallery</button>
                               </a>
                               <!-- /gallery button -->
                             <!-- latest updates -->
-                            <a href="<?php echo base_url('admin/projects_latest_updates?p=') . $value->id ?>">
+                            <a href="<?php echo base_url('admin/projects_latest_updates?p=') . $value->id . "&_p=" . $this->input->get('page') ?>">
                               <button type="button" data-id='<?php echo $value->id; ?>'
                                 class="btn btn-gallery btn-warning btn-xs">Latest updates</button>
                               </a>
                               <!-- /latest updates -->
                             <!-- downloadables button -->
-                            <a href="<?php echo base_url('admin/projects_downloadables?p=') . $value->id ?>">
+                            <a href="<?php echo base_url('admin/projects_downloadables?p=') . $value->id . "&_p=" . $this->input->get('page') ?>">
                               <button type="button" data-id='<?php echo $value->id; ?>'
                                 class="btn btn-downloadables btn-success btn-xs">Downloadables</button>
                               </a>
