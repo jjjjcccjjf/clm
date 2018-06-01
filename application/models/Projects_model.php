@@ -23,7 +23,6 @@ class Projects_model extends Admin_core_model # application/core/MY_Model.php
       if (!(strpos($value->image_url, 'http') === 0)) {
         $res[$key]->image_url = base_url("{$this->upload_dir}/") . $value->image_url;
       }
-      $res[$key]->excerpt = (strlen($value->description) > 50)? substr($value->description, 0, 50) . "..." : $value->description;
     }
 
     return $res;

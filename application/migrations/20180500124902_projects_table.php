@@ -14,7 +14,16 @@ class Migration_projects_table extends CI_Migration {
       'title' => array(
         'type' => 'TEXT',
       ),
-      'description' => array(
+      'address' => array(
+        'type' => 'TEXT',
+      ),
+      'total_land_area' => array(
+        'type' => 'TEXT',
+      ),
+      'phases' => array(
+        'type' => 'TEXT',
+      ),
+      'status' => array(
         'type' => 'TEXT',
       ),
       'image_url' => array( # logo of the project
@@ -29,7 +38,7 @@ class Migration_projects_table extends CI_Migration {
     if($this->dbforge->create_table('projects'))
     {
       // $table = 'projects';
-      // 
+      //
       // $data = array(
       //   'title' => 'All cheese',
       //   'description' => 'hhihuhuahsud',

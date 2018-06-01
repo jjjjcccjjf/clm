@@ -5,11 +5,17 @@ $(document).ready(function() {
     const payload = $(this).data('payload')
 
     $('input[name=title]').removeAttr('required')
-    $('textarea').removeAttr('required')
+    $('input[name=address]').removeAttr('required')
+    $('input[name=total_land_area]').removeAttr('required')
+    $('input[name=phases]').removeAttr('required')
+    $('input[name=status]').removeAttr('required')
     $('input[type=file]').removeAttr('required')
 
     $('input[name=title]').val(payload.title)
-    $('textarea').val(payload.description)
+    $('input[name=address]').val(payload.address)
+    $('input[name=total_land_area]').val(payload.total_land_area)
+    $('input[name=phases]').val(payload.phases)
+    $('input[name=status]').val(payload.status)
 
     $('form').attr('action', base_url + 'admin/projects/update/' + payload.id)
     $('.modal').modal()
@@ -20,7 +26,10 @@ $(document).ready(function() {
     $('form')[0].reset() // reset the form
 
     $('input[name=title]').attr('required', 'required')
-    $('textarea').attr("required", 'required')
+    $('input[name=address]').attr('required', 'required')
+    $('input[name=total_land_area]').attr('required', 'required')
+    $('input[name=phases]').attr('required', 'required')
+    $('input[name=status]').attr('required', 'required')
     $('input[type=file]').attr("required", 'required')
 
     $('form').attr('action', base_url + 'admin/projects/add')

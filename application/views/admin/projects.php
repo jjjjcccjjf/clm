@@ -20,7 +20,10 @@
                   <tr>
                     <th>#</th>
                     <th>Title</th>
-                    <th>Description</th>
+                    <th>Address</th>
+                    <th>Total land area</th>
+                    <th>Phases</th>
+                    <th>Status</th>
                     <th>Photo</th>
                     <th style="width:320px">Action</th>
                   </tr>
@@ -32,7 +35,10 @@
                       <tr>
                         <th scope="row"><?php echo $value->id?></th>
                         <td><?php echo $value->title ?></td>
-                        <td><?php echo $value->excerpt ?></td>
+                        <td><?php echo $value->address ?></td>
+                        <td><?php echo $value->total_land_area ?></td>
+                        <td><?php echo $value->phases ?></td>
+                        <td><?php echo $value->status ?></td>
                         <td><a href="<?php echo $value->image_url ?>" target="_blank">
                           <img src="<?php echo $value->image_url ?>" alt="" style="max-width:90px">
                         </a></td>
@@ -41,7 +47,10 @@
                           data-payload='<?php echo json_encode(
                             ['id' => $value->id,
                             'title' => $value->title,
-                            'description' => $value->description,
+                            'address' => $value->address,
+                            'total_land_area' => $value->total_land_area,
+                            'phases' => $value->phases,
+                            'status' => $value->status,
                             'image_url' => $value->image_url,
                             ])?>'
                             class="edit-row btn btn-info btn-xs">Edit</button>
@@ -65,7 +74,7 @@
 
                           <?php else: ?>
                             <tr>
-                              <td colspan="5" style="text-align:center">Empty table data</td>
+                              <td colspan="8" style="text-align:center">Empty table data</td>
                             </tr>
                           <?php endif; ?>
                         </tbody>
@@ -113,10 +122,20 @@
                       <input type="text" class="form-control" name="title" placeholder="Title" >
                     </div>
                     <div class="form-group">
-                      <label >Description</label>
-                      <textarea name="description" placeholder="Description"
-                      class="form-control" style="resize:vertical"
-                      rows="8" cols="60"></textarea>
+                      <label >Address</label>
+                      <input type="text" class="form-control" name="address" placeholder="Address" >
+                    </div>
+                    <div class="form-group">
+                      <label >Total land area</label>
+                      <input type="text" class="form-control" name="total_land_area" placeholder="Total land area" >
+                    </div>
+                    <div class="form-group">
+                      <label >Phases</label>
+                      <input type="text" class="form-control" name="phases" placeholder="Phases" >
+                    </div>
+                    <div class="form-group">
+                      <label >Status</label>
+                      <input type="text" class="form-control" name="status" placeholder="Status" >
                     </div>
                     <div class="form-group">
                       <label >Image</label>
