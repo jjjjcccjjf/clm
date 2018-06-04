@@ -5,6 +5,7 @@ $(document).ready(function() {
     $('form')[0].reset() // reset the form
 
     $('input[type=file]').attr("required", 'required')
+    $('input[type=date]').attr("required", 'required')
 
     let project_id = $('input[type=hidden]').val();
 

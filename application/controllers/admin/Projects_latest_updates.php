@@ -6,8 +6,7 @@ class Projects_latest_updates extends Admin_core_controller { # see application/
     if (!$this->input->get('p')) {
       redirect('admin/projects');
     }
-    $res = $this->projects_latest_updates_model->getGallery($this->input->get('p'));
-    $data['latest_updates'] = $res;
+    $data['latest_updates'] = $this->projects_latest_updates_model->getLatestUpdates($this->input->get('p'));
     $data['project'] = $this->projects_model->get($this->input->get('p'));
     $this->wrapper('admin/projects_latest_updates', $data);
   }

@@ -10,7 +10,7 @@
         <?php foreach ($projects as $key => $value): ?>
           <li>
             <figure>
-              <a href="<?php echo base_url('dashboard/project-details/') . $value->id ?>">
+              <a href="<?php echo base_url('dashboard/latest-updates/') . $value->id ?>">
                 <img src="<?php echo $value->image_url ?>">
               </a>
             </figure>

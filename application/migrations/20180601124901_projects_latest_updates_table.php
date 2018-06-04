@@ -17,6 +17,9 @@ class Migration_projects_latest_updates_table extends CI_Migration {
       'image_url' => array( # logo of the project
         'type' => 'TEXT',
       ),
+      'date' => array( 
+        'type' => 'DATE',
+      ),
     ));
 
     # Table date defaults

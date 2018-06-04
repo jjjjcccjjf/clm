@@ -44,13 +44,22 @@ class Dashboard extends Front_core_controller {
     $this->wrapper('front/projects', $data);
   }
 
-  public function project_details($id)
+  public function latest_updates($id)
   {
-    $data['gallery'] = $this->projects_gallery_model->getGallery($id);
-    $data['downloadables'] = $this->projects_downloadables_model->getDownloadables($id);
-    $data['project'] = $this->projects_model->get($id);
+    // $data['downloadables'] = $this->projects_downloadables_model->getDownloadables($id);
 
-    $this->wrapper('front/project_details', $data);
+    $data['project'] = $this->projects_model->get($id);
+    $data['latest_updates'] = $this->projects_latest_updates_model->getLatestUpdatesF($id);
+
+    $this->wrapper('front/latest_updates', $data);
+  }
+
+  public function gallery($id)
+  {
+  }
+
+  public function downloadables($id)
+  {
   }
 
   public function redeem_history()

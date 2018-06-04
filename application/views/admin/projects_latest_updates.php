@@ -23,7 +23,7 @@
                   <tr>
                     <th>#</th>
                     <th>Image</th>
-                    <th>Uploaded at</th>
+                    <th>Date</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -34,7 +34,7 @@
                       <td><a href="<?php echo $value->image_url ?>" target="_blank">
                         <img src="<?php echo $value->image_url ?>" alt="" style="max-width:90px">
                       </a></td>
-                      <td><?php echo $value->created_at_f ?></td>
+                      <td><?php echo $value->date_f ?></td>
                       <td>
                         <button type="button" data-id='<?php echo $value->id; ?>'
                           class="btn btn-delete btn-danger btn-xs">Delete</button>
@@ -64,7 +64,12 @@
               <form role="form" method="post" enctype='multipart/form-data'>
                 <div class="form-group">
                   <label >Image</label>
-                  <input type="file" name="image_url" class="default" accept=".jpg,.png,.jpeg">
+                  <input type="file" name="image_url" class="default" accept=".jpg,.png,.jpeg" required>
+                </div>
+                <div class="form-group">
+                  <label >Project Update Date</label>
+                  <input class="form-control" size="16" type="date" required
+                  name="date" value="">
                 </div>
                 <input type="hidden" name="project_id" value="<?php echo $project->id ?>">
 
