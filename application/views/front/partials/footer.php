@@ -9,8 +9,8 @@
 <!--load jPushMenu, required-->
 <script src="<?php echo base_url('public/front/') ?>js/jPushMenu.js"></script>
 <script src="<?php echo base_url('public/admin/') ?>js/custom/generic.js"></script>
-<script type="text/javascript" src="<?php echo base_url('public/front/') ?>js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url('public/front/') ?>js/slick.min.js"></script>
+<script src="<?php echo base_url('public/front/') ?>js/jquery-migrate-1.2.1.min.js"></script>
+<script src="<?php echo base_url('public/front/') ?>js/slick.min.js"></script>
 <script src="<?php echo base_url('public/front/') ?>js/vanillaCalendar.js" type="text/javascript"></script>
 <script src="<?php echo base_url('public/front/') ?>js/jquery.magnific-popup.min.js"></script>
 

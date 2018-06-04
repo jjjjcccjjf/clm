@@ -46,7 +46,6 @@ class Dashboard extends Front_core_controller {
 
   public function latest_updates($id)
   {
-    // $data['downloadables'] = $this->projects_downloadables_model->getDownloadables($id);
 
     $data['project'] = $this->projects_model->get($id);
     $data['latest_updates'] = $this->projects_latest_updates_model->getLatestUpdatesF($id);
@@ -56,10 +55,15 @@ class Dashboard extends Front_core_controller {
 
   public function gallery($id)
   {
+    $data['project'] = $this->projects_model->get($id);
+    $data['gallery'] = $this->projects_gallery_model->getGallery($id);
+
+    $this->wrapper('front/gallery', $data);
   }
 
   public function downloadables($id)
   {
+    // $data['downloadables'] = $this->projects_downloadables_model->getDownloadables($id);
   }
 
   public function redeem_history()
