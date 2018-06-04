@@ -39,7 +39,7 @@
           <a href="<?php echo base_url('dashboard/rewards'); ?>">Rewards</a></li>
         <li class="<?php echo ($this->uri->segment(2) === 'events')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/events'); ?>">Events</a></li>
-          <li class="<?php echo ($this->uri->segment(2) === 'projects' || $this->uri->segment(2) === 'project-details') ? 'active' : ''; ; ?>">
+          <li class="<?php echo ($this->uri->segment(2) === 'projects' || $this->uri->segment(2) === 'latest-details' || $this->uri->segment(2) === 'gallery' || $this->uri->segment(2) === 'downloadables') ? 'active' : ''; ; ?>">
             <a href="<?php echo base_url('dashboard/projects'); ?>">Projects</a></li>
         <li class="<?php echo ($this->uri->segment(2) === 'about')? 'active' : ''; ; ?>">
           <a href="<?php echo base_url('dashboard/about'); ?>">About Us</a></li>

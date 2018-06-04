@@ -34,7 +34,7 @@
                         <?php echo $value->title ?>&nbsp;
                       </td>
                       <td>
-                        <a href="<?php echo $value->file_url ?>" target="_blank">
+                        <a href="<?php echo $value->file_url ?>" download>
                           <button type="button" class="btn btn-xs btn-info">
                             View downloadable
                           </button>
@@ -70,8 +70,8 @@
                   <input type="text" class="form-control" name="title" placeholder="Label">
                 </div>
                 <div class="form-group">
-                  <label >Image</label>
-                  <input type="file" name="file_url" class="default" accept=".doc,.docx,.pdf,.ppt,.pptx,.xls,.csv,.jpg,.jpeg,.png">
+                  <label >File</label>
+                  <input type="file" name="file_url" class="default" accept=".doc,.docx,.pdf,.ppt,.pptx,.xls,.xlsx,.csv,.jpg,.jpeg,.png">
                 </div>
                 <input type="hidden" name="project_id" value="<?php echo $project->id ?>">
 

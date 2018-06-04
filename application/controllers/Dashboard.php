@@ -63,7 +63,11 @@ class Dashboard extends Front_core_controller {
 
   public function downloadables($id)
   {
-    // $data['downloadables'] = $this->projects_downloadables_model->getDownloadables($id);
+    $data['project'] = $this->projects_model->get($id);
+    $data['downloadables'] = $this->projects_downloadables_model->getDownloadables($id);
+
+    $this->wrapper('front/downloadables', $data);
+
   }
 
   public function redeem_history()
