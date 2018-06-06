@@ -10,7 +10,7 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     $this->upload_dir = 'uploads/sales';
   }
 
-  public function upload($file_key, $full_name)
+  public function uploadF($file_key, $full_name)
   {
     @$file = $_FILES[$file_key];
     $upload_path = $this->upload_dir;

@@ -16,7 +16,7 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
 
   public function import($id)
   {
-    $imported_csv = $this->sales_model->upload('imported_csv', $this->input->post('full_name'));
+    $imported_csv = $this->sales_model->uploadF('imported_csv', $this->input->post('full_name'));
     $this->sellers_model->update($id, $imported_csv); # We update the seller's last imported CSV
 
     $last_uploaded_csv_path = $this->sellers_model->getLastUploadedCsv($id);

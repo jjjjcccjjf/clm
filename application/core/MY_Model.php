@@ -45,7 +45,7 @@ class Admin_core_model extends CI_model {
     $file_deleted = false;
 
     try {
-      unlink($file_deleted);
+      @unlink($file_deleted);
       $file_deleted =  true;
     } catch (\Exception $e) {
       $file_deleted = false;
