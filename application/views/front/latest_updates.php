@@ -5,22 +5,27 @@
 
     <div id="updates" class="tabcontent updates">
 
-      <?php foreach ($latest_updates as $key => $value): ?>
-        <ul class="pad-0 listn update-list">
-          <h5><?php echo date_format(date_create($key),"F d, Y"); ?></h5>
+      <?php if ($latest_updates): ?>
 
-          <?php foreach ($latest_updates[$key] as $u): ?>
-            <li>
-              <figure>
-                <a href="<?php echo $u->image_url ?>" target="_blank">
-                  <img src="<?php echo $u->image_url ?>">
-                </a>
-              </figure>
-            </li>
-          <?php endforeach; #end individual update arr ?>
-        </ul>
+        <?php foreach ($latest_updates as $key => $value): ?>
+          <ul class="pad-0 listn update-list">
+            <h5><?php echo date_format(date_create($key),"F d, Y"); ?></h5>
 
-      <?php endforeach; #end updatelist ?>
+            <?php foreach ($latest_updates[$key] as $u): ?>
+              <li>
+                <figure>
+                  <a href="<?php echo $u->image_url ?>" target="_blank">
+                    <img src="<?php echo $u->image_url ?>">
+                  </a>
+                </figure>
+              </li>
+            <?php endforeach; #end individual update arr ?>
+          </ul>
+
+        <?php endforeach; #end updatelist ?>
+      <?php else: ?>
+        No images available yet
+      <?php endif; ?>
 
     </div>
 

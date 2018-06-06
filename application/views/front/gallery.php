@@ -7,26 +7,31 @@
     <div id="gallery" class="tabcontent gallery">
       <div class="main">
         <div class="slider slider-for">
-          <?php foreach ($gallery as $key => $value): ?>
-            <div>
-              <figure>
-                <img src="<?php echo $value->image_url ?>">
-              </figure>
-            </div>
-          <?php endforeach; ?>
-        </div> <!-- end slider for -->
-        <div class="slider slider-nav">
-          <?php foreach ($gallery as $key => $value): ?>
-            <div>
-              <figure>
-                <img src="<?php echo $value->image_url ?>">
-              </figure>
-            </div>
-          <?php endforeach; ?>
-        </div> <!-- end slider nav -->
-      </div>
+          <?php if ($gallery): ?>
+            <?php foreach ($gallery as $key => $value): ?>
+              <div>
+                <figure>
+                  <img src="<?php echo $value->image_url ?>">
+                </figure>
+              </div>
+            <?php endforeach; ?>
+          </div> <!-- end slider for -->
+          <div class="slider slider-nav">
+            <?php foreach ($gallery as $key => $value): ?>
+              <div>
+                <figure>
+                  <img src="<?php echo $value->image_url ?>">
+                </figure>
+              </div>
+            <?php endforeach; ?>
+          </div> <!-- end slider nav -->
+        <?php else: ?>
+          No images available yet
+        <?php endif; ?>
 
+      </div>
     </div>
+
 
   </article>
 </section>
