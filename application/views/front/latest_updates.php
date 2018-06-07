@@ -30,6 +30,19 @@
 
       </div>
 
+      <?php foreach ($latest_updates as $key => $value): ?>
+        <?php $c = 0; foreach ($latest_updates[$key] as $u): ?>
+
+          <!-- Inline Popup -->
+          <div id="<?php echo "event-{$key}-{$c}"?>" class="white-popup mfp-hide project-popup">
+            <aside class="proj-details">
+              <img src="<?php echo $u->image_url ?>">
+            </aside>
+          </div>
+
+          <?php $c++; endforeach; #end updatelist ?>
+        <?php endforeach; ?>
+
     </article>
   </section>
 
@@ -38,18 +51,7 @@
 
 </article>
 
-<?php foreach ($latest_updates as $key => $value): ?>
-  <?php $c = 0; foreach ($latest_updates[$key] as $u): ?>
 
-    <!-- Inline Popup -->
-    <div id="<?php echo "event-{$key}-{$c}"?>" class="white-popup mfp-hide">
-      <section class="event-details">
-        <img src="<?php echo $u->image_url ?>">
-      </section>
-    </div>
-
-    <?php $c++; endforeach; #end updatelist ?>
-  <?php endforeach; ?>
 
 
   <script type="text/javascript">

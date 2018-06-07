@@ -41,7 +41,7 @@ body, html, h1, h2, h3, h4, h5, h6, p, header, footer, div, article, section, as
 body, html {
   height: 100%; }
 
-input, select, textarea, button {
+input[type="text"], input[type="email"], select, textarea, button {
   outline: 0;
   border: 0;
   appearance: none;
@@ -1240,5 +1240,77 @@ nav.cbp-spmenu {
 
 .gallery .slider-nav .slick-dots {
   display: none !important; }
+
+.project-popup {
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 15px;
+  background: #fff;
+  position: relative; }
+  .project-popup aside {
+    max-width: 450px;
+    height: 280px;
+    margin: 0 auto;
+    margin-bottom: 25px; }
+    .project-popup aside img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+
+.mfp-content {
+  padding-left: 324px; }
+
+.rewards-det {
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 15px;
+  background: #fff;
+  position: relative; }
+  .rewards-det h3 {
+    font-family: "montserratbold", Arial, sans-serif;
+    color: #15181e;
+    font-size: 22px;
+    margin-bottom: 20px; }
+
+.rewards-det aside {
+  max-width: 450px;
+  height: 280px;
+  margin: 0 auto;
+  margin-bottom: 25px; }
+  .rewards-det aside img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%; }
+
+.rewards-det article {
+  color: #15181e; }
+  .rewards-det article h4 {
+    font-size: 20px;
+    color: #15181e;
+    font-family: "montserratregular", Arial, sans-serif;
+    margin-bottom: 10px;
+    letter-spacing: 1px; }
+  .rewards-det article p {
+    font-size: 18px;
+    color: #15181e;
+    font-family: "montserratregular", Arial, sans-serif;
+    margin-bottom: 15px; }
+  .rewards-det article input[type="submit"] {
+    max-width: 150px;
+    width: 100%;
+    padding: 12px 0px;
+    text-align: center;
+    background: #ffe9ae;
+    color: #15181e;
+    font-family: "montserratbold", Arial, sans-serif;
+    margin-top: 20px;
+    border: 0; }
+  .rewards-det article a {
+    color: #15181e;
+    border-bottom: 2px solid #15181e;
+    font-family: "montserratregular", Arial, sans-serif;
+    padding-bottom: 3px; }
 
 /*# sourceMappingURL=styles.css.map */
