@@ -18,14 +18,22 @@
 <script>
 jQuery(document).ready(function($) {
   $('.toggle-menu').jPushMenu();
+
+  (function() {
+    if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+      // $("#menu-toggle").click();
+      $('#wrapper').removeClass('active');
+    }
+  })();
+
 });
 </script>
 
 <script>
-  $("#menu-toggle").click(function(e) {
+$("#menu-toggle").click(function(e) {
   e.preventDefault();
   $("#wrapper").toggleClass("active");
-  });
+});
 </script>
 
 

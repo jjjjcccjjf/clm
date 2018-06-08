@@ -6,7 +6,7 @@
         <td class="sales-side">
           <section class="sales">
             <h1>Sales
-              <?php if ($_GET['from_date'] && $_GET['to_date']): ?>
+              <?php if (@$_GET['from_date'] && @$_GET['to_date']): ?>
                 from
                 <?php echo $this->input->get('from_date') ?> -
                 <?php echo $this->input->get('to_date') ?>
@@ -131,7 +131,7 @@
               <label>Pages:</label>
               <ul>
                 <?php
-                $page = ($_GET['page']) ?: 1;
+                $page = (@$_GET['page']) ?: 1;
                 for ($i=1; $i <= $total_page_count; $i++) { ?>
                   <li><a
                     class="<?php echo ($i == $page) ? 'active' : '' ?>"

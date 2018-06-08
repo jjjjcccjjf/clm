@@ -1,4 +1,4 @@
-<div id="wrapper" class="active">
+<div id="wrapper" class="<?php echo isMobile() ? '' :'active'; ?>">
   <!-- Sidebar -->
   <aside id="sidebar-wrapper" class="sidebar">
     <a id="menu-toggle" class="togglebtn" href="#"><img src="<?php echo base_url('public/front/') ?>images/toggle.png"></a>
