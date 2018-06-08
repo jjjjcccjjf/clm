@@ -1146,6 +1146,13 @@ nav.cbp-spmenu {
         height: 100%; }
     .projects-inner .prjinner-hldr > article .gallery .slick-slide.slick-current {
       width: 100%; }
+    .projects-inner .prjinner-hldr > article .gallery .gall {
+      margin: 0;
+      padding: 10px 20px;
+      height: 121px; }
+      .projects-inner .prjinner-hldr > article .gallery .gall img {
+        height: 100%;
+        object-fit: cover; }
     .projects-inner .prjinner-hldr > article .gallery .slider.slider-for.slick-initialized.slick-slider {
       min-height: 500px; }
     .projects-inner .prjinner-hldr > article .gallery .slick-prev {

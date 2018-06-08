@@ -19,7 +19,7 @@
           <div class="slider slider-nav">
             <?php foreach ($gallery as $key => $value): ?>
               <div>
-                <figure>
+                <figure class='gall'>
                   <img src="<?php echo $value->image_url ?>">
                 </figure>
               </div>
