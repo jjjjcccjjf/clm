@@ -25,7 +25,7 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
     if ($this->sales_model->replaceCsv($id, $csv_arr)) {
       $this->session->set_flashdata('flash_msg', ['message' => 'Import success. Data updated', 'color' => 'green']);
     } else {
-      $this->session->set_flashdata('flash_msg', ['message' => 'Unknown error occured while importing', 'color' => 'red']);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Unknown error occured while importing. Please double check your data.', 'color' => 'red']);
     }
 
     redirect('admin/sales' . "?u={$id}");
@@ -94,8 +94,8 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
       $this->session->set_flashdata('flash_msg', ['message' => 'Import success. Data updated', 'color' => 'green']);
       custom_response(200, ['message' => 'Import success. Data updated', 'code' => 'ok'], $this);
     } else {
-      $this->session->set_flashdata('flash_msg', ['message' => 'Unknown error occured while importing', 'color' => 'red']);
-      custom_response(200, ['message' => 'Unknown error occured while importing', 'code' => 'err'], $this);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Unknown error occured while importing. Please double check your data.', 'color' => 'red']);
+      custom_response(200, ['message' => 'Unknown error occured while importing. Please double check your data.', 'code' => 'err'], $this);
     }
   }
 
@@ -111,8 +111,8 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
       $this->session->set_flashdata('flash_msg', ['message' => 'Import success. Dataset replaced', 'color' => 'green']);
       custom_response(200, ['message' => 'Import success. Data updated', 'code' => 'ok'], $this);
     } else {
-      $this->session->set_flashdata('flash_msg', ['message' => 'Unknown error occured while importing', 'color' => 'red']);
-      custom_response(200, ['message' => 'Unknown error occured while importing', 'code' => 'err'], $this);
+      $this->session->set_flashdata('flash_msg', ['message' => 'Unknown error occured while importing. Please double check your data.', 'color' => 'red']);
+      custom_response(200, ['message' => 'Unknown error occured while importing. Please double check your data.', 'code' => 'err'], $this);
     }
   }
 

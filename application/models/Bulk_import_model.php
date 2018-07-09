@@ -32,7 +32,12 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
   public function appendCsv($csv_arr)
   {
     $data = $this->formatCsvArr($csv_arr);
-    return $this->db->insert_batch('sales', $data);
+    if ($data) {
+      return $this->db->insert_batch('sales', $data);
+    } else {
+      return false; # return false if empty
+
+    }
   }
 
   public function replaceCsv($csv_arr)
@@ -43,7 +48,11 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
     #/ delete block
 
     $this->db->reset_query();
-    return $this->db->insert_batch('sales', $data);
+    if ($data) {
+      return $this->db->insert_batch('sales', $data);
+    } else {
+      return false; # return false if empty
+    }
   }
 
   public function formatCsvArr($csv_arr)
@@ -52,12 +61,14 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
     $new_arr = [];
 
     foreach ($csv_arr as $key => $value) {
-      $new_arr[] = [
-        'project_name' => $value[0],
-        'sales_amount' => $value[1],
-        'date' => $value[2],
-        'seller_id' => $this->sellers_model->getByEmail($value[3])->id
-      ];
+      if (@$this->sellers_model->getByEmail($value[3])->id) { # Make sure all emails exist
+        $new_arr[] = [
+          'project_name' => $value[0],
+          'sales_amount' => $value[1],
+          'date' => $value[2],
+          'seller_id' => $this->sellers_model->getByEmail($value[3])->id
+        ];
+      }
     }
 
     return $new_arr;
@@ -66,7 +77,7 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
   public function getLastUploadedCsv()
   {
     $this->db->order_by('id', 'desc');
-    $res = $this->db->get($this->table)->row()->file_name;
+    $res = @$this->db->get($this->table)->row()->file_name;
 
     if ($res) {
       return base_url($this->upload_dir . "/") . $res;
