@@ -6,7 +6,7 @@
       <i class="fa fa-bars"></i>
     </div>
     <!--logo start-->
-    <a href="index.html" class="logo" >CEBU<span>LANDMASTERS</span></a>
+    <a href="<?php echo base_url('admin') ?>" class="logo" >CEBU<span>LANDMASTERS</span></a>
     <!--logo end-->
     <div class="top-nav ">
       <ul class="nav pull-right top-menu">

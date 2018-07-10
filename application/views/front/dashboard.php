@@ -65,6 +65,8 @@
   <aside class="top-sellers">
     <h2>Top Sellers</h2>
     <ul>
+      <?php if ($top_sellers): ?>
+
       <?php $i = 1; foreach ($top_sellers as $key => $value):
         ?>
         <li>
@@ -80,6 +82,10 @@
           </figcaption>
         </li>
       <?php endforeach; ?>
+    <?php else: ?>
+      <li style="text-align:center">No sales yet for this quarter</li>
+    <?php endif; ?>
+
     </ul>
   </aside>
 </article>
