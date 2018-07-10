@@ -23,7 +23,7 @@
                 <?php endif; ?>
                 <a href="#myModal" data-toggle="modal"
                 class="btn btn-info btn-xs" title="Import and replace all existing data for <?php echo $seller->full_name?>"
-                <i class="fa fa-plus"></i> Import and Replace
+                <i class="fa fa-pencil-square-o"></i> Import and Replace
               </a>
             </div>
           </header>

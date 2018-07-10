@@ -113,13 +113,18 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
   public function replaceCsv($id, $csv_arr)
   {
     $data = $this->formatCsvArr($id, $csv_arr);
-    # delete block
-    $this->db->where('seller_id', $id);
-    $this->db->delete('sales');
-    #/ delete block
+    if ($data) {
+      // code...
+      # delete block
+      $this->db->where('seller_id', $id);
+      $this->db->delete('sales');
+      #/ delete block
 
-    $this->db->reset_query();
-    return $this->db->insert_batch($this->table, $data);
+      $this->db->reset_query();
+      return $this->db->insert_batch($this->table, $data);
+    } else {
+      return false; # if empty data
+    }
   }
 
   public function formatCsvArr($id, $csv_arr)
@@ -127,13 +132,15 @@ class Sales_model extends Admin_core_model # application/core/MY_Model.php
     unset($csv_arr[0]);
     $new_arr = [];
 
-    foreach ($csv_arr as $key => $value) {
-      $new_arr[] = [
-        'project_name' => $value[0],
-        'sales_amount' => $value[1],
-        'date' => $value[2],
-        'seller_id' => $id
-      ];
+    if ($csv_arr) {
+      foreach ($csv_arr as $key => $value) {
+        $new_arr[] = [
+          'project_name' => $value[0],
+          'sales_amount' => $value[1],
+          'date' => $value[2],
+          'seller_id' => $id
+        ];
+      }
     }
 
     return $new_arr;
