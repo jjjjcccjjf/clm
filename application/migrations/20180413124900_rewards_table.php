@@ -44,7 +44,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Shangri-la Mactan overnight stay',
         'description' => '',
-        'image_url' => base_url('public/uploads/Shangri-la Mactan.jpg'),
+        'image_url' => base_url('public/uploads/shang.jpg'),
         'cost' => 17,
         'class_available' => 0,
         'total_winners_allowed' => 5,
@@ -72,7 +72,7 @@ class Migration_rewards_table extends CI_Migration {
       $this->db->insert($table, $data);
 
       $data = array(
-        'title' => 'Bohol Trip for 3D2N stay for 2 ',
+        'title' => 'Bohol Trip for 3D2N stay for 2',
         'description' => '',
         'image_url' => base_url('public/uploads/bohol-trip.jpg'),
         'cost' => 50,
@@ -81,7 +81,69 @@ class Migration_rewards_table extends CI_Migration {
       );
       $this->db->insert($table, $data);
 
+      ### GOLD ####
 
+      $data = array(
+        'title' => 'Shangri-la 2-night stay + 2 chi-spa massage',
+        'description' => '',
+        'image_url' => base_url('public/uploads/shang.jpg'),
+        'cost' => 50,
+        'class_available' => 1,
+        'total_winners_allowed' => 3,
+      );
+      $this->db->insert($table, $data);
+
+      $data = array(
+        'title' => 'Macbook Air',
+        'description' => '',
+        'image_url' => base_url('public/uploads/macbook-air.jpg'),
+        'cost' => 80,
+        'class_available' => 1,
+        'total_winners_allowed' => 3,
+      );
+      $this->db->insert($table, $data);
+
+      $data = array(
+        'title' => 'Iphone X',
+        'description' => '',
+        'image_url' => base_url('public/uploads/iphone-x.jpg'),
+        'cost' => 70,
+        'class_available' => 1,
+        'total_winners_allowed' => 3,
+      );
+      $this->db->insert($table, $data);
+
+      $data = array(
+        'title' => 'Bali, Indonesia 5D4N',
+        'description' => '',
+        'image_url' => base_url('public/uploads/bali-indo.jpg'),
+        'cost' => 80,
+        'class_available' => 1,
+        'total_winners_allowed' => 3,
+      );
+      $this->db->insert($table, $data);
+
+      ### PLATINUM ####
+
+      $data = array(
+        'title' => 'Omega (Female)/ Tag Heuer (Male)',
+        'description' => '',
+        'image_url' => base_url('public/uploads/omega-tag.jpg'),
+        'cost' => 100,
+        'class_available' => 2,
+        'total_winners_allowed' => 3,
+      );
+      $this->db->insert($table, $data);
+
+      $data = array(
+        'title' => 'Seoul, Korea 5D4N',
+        'description' => '',
+        'image_url' => base_url('public/uploads/korea.jpg'),
+        'cost' => 100,
+        'class_available' => 2,
+        'total_winners_allowed' => 3,
+      );
+      $this->db->insert($table, $data);
 
     }
   }
