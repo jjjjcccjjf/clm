@@ -26,31 +26,31 @@ class Migration_rewards_history_table extends CI_Migration {
 
     if($this->dbforge->create_table('rewards_history'))
     {
-      $table = 'rewards_history';
+      // $table = 'rewards_history';
 
-      $data = array(
-        'seller_id' => 1,
-        'reward_id' => 1,
-      );
-      $this->db->insert($table, $data);
-
-      $data = array(
-        'seller_id' => 1,
-        'reward_id' => 1,
-      );
-      $this->db->insert($table, $data);
-
-      $data = array(
-        'seller_id' => 2,
-        'reward_id' => 1,
-      );
-      $this->db->insert($table, $data);
-
-      $data = array(
-        'seller_id' => 1,
-        'reward_id' => 2,
-      );
-      $this->db->insert($table, $data);
+      // $data = array(
+      //   'seller_id' => 1,
+      //   'reward_id' => 1,
+      // );
+      // $this->db->insert($table, $data);
+      //
+      // $data = array(
+      //   'seller_id' => 1,
+      //   'reward_id' => 1,
+      // );
+      // $this->db->insert($table, $data);
+      //
+      // $data = array(
+      //   'seller_id' => 2,
+      //   'reward_id' => 1,
+      // );
+      // $this->db->insert($table, $data);
+      //
+      // $data = array(
+      //   'seller_id' => 1,
+      //   'reward_id' => 2,
+      // );
+      // $this->db->insert($table, $data);
 
     }
   }

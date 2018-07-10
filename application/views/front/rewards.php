@@ -43,8 +43,12 @@
       <article>
         <h4>Points Needed: <span><?php echo number_format($value->cost) ?> pts</span></h4>
         <h4>Winners: <span><?php echo $value->winners . "/" . $value->total_winners_allowed ?></span></h4>
-        <h4>Description</h4>
-        <p><?php echo $value->description ?></p>
+        <!-- handle description -->
+        <?php if ($value->description): ?>
+          <h4>Description</h4>
+          <p><?php echo $value->description ?></p>
+        <?php endif; ?>
+        <!-- handle description -->
         <?php if (!$value->is_grayed_out): ?>
           <h5><input type="checkbox" id="terms-<?php echo $value->id; ?>"><span><a href="#">Terms &amp; Conditions</a></span></h5>
           <a class="redeem-btn" data-id='<?php echo $value->id; ?>'

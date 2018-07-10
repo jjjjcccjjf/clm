@@ -42,74 +42,46 @@ class Migration_rewards_table extends CI_Migration {
       $table = 'rewards';
 
       $data = array(
-        'title' => 'Lemonade',
-        'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/gasg?set=set3',
-        'cost' => 5,
+        'title' => 'Shangri-la Mactan overnight stay',
+        'description' => '',
+        'image_url' => base_url('public/uploads/Shangri-la Mactan.jpg'),
+        'cost' => 17,
         'class_available' => 0,
-        'total_winners_allowed' => 10,
+        'total_winners_allowed' => 5,
       );
       $this->db->insert($table, $data);
 
       $data = array(
-        'title' => 'Some really nice cake',
-        'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/nae22e?set=set3',
-        'cost' => 3,
+        'title' => 'Rustans GCs /Sodexo GCs',
+        'description' => '',
+        'image_url' => base_url('public/uploads/rustans-pass.jpg'),
+        'cost' => 30,
         'class_available' => 0,
-        'total_winners_allowed' => 10,
+        'total_winners_allowed' => 5,
       );
       $this->db->insert($table, $data);
 
       $data = array(
-        'title' => 'Butter',
-        'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/na41ee?set=set3',
-        'cost' => 4,
+        'title' => 'Samsung J7',
+        'description' => '',
+        'image_url' => base_url('public/uploads/j7.jpg'),
+        'cost' => 40,
         'class_available' => 0,
-        'total_winners_allowed' => 10,
+        'total_winners_allowed' => 5,
       );
       $this->db->insert($table, $data);
 
       $data = array(
-        'title' => 'Cheese',
-        'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/na11ee?set=set3',
-        'cost' => 1,
+        'title' => 'Bohol Trip for 3D2N stay for 2 ',
+        'description' => '',
+        'image_url' => base_url('public/uploads/bohol-trip.jpg'),
+        'cost' => 50,
         'class_available' => 0,
-        'total_winners_allowed' => 11,
+        'total_winners_allowed' => 5,
       );
       $this->db->insert($table, $data);
 
-      $data = array(
-        'title' => 'Silver cheese',
-        'description' => 'asdasd',
-        'image_url' => 'https://robohash.org/na1xxx1ee?set=set3',
-        'cost' => 1,
-        'class_available' => 1,
-        'total_winners_allowed' => 10,
-      );
-      $this->db->insert($table, $data);
 
-      $data = array(
-        'title' => 'Golden cheese',
-        'description' => 'qwiehoqweh',
-        'image_url' => 'https://robohash.org/na11e111e?set=set3',
-        'cost' => 1,
-        'class_available' => 1,
-        'total_winners_allowed' => 10,
-      );
-      $this->db->insert($table, $data);
-
-      $data = array(
-        'title' => 'All cheese',
-        'description' => 'hhihuhuahsud',
-        'image_url' => 'https://robohash.org/hello111?set=set3',
-        'cost' => 1,
-        'class_available' => 2,
-        'total_winners_allowed' => 10,
-      );
-      $this->db->insert($table, $data);
 
     }
   }
