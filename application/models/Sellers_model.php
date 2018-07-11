@@ -238,19 +238,15 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     $d = date('F j, Y');
     $msg = "
     <table>
-    <tr><td>Dear $user->full_name,</td></tr>
+    <tr><td>Hello $user->full_name,</td></tr>
     <tr><td></td></tr>
-    <tr><td>You just redeemed an item called $reward->title.<br>
-    You can find the reward details below:</td></tr>
+    <tr><td>This is to notify you that you have successfully redeemed the <em>$reward->title</em> at <em>$d</em>. Our Administrator has been notified about this, Please expect that he/she will be coordinating with you to further discuss about your reward.</td></tr>
+    <tr><td><b>Reward details as follows:<b></td></tr>
     <tr><td></td></tr>
-    <tr><td><b>Reward details</b></td></tr>
-    <tr><td><b>-------------------</b></td></tr>
-    <tr><td>Reward name: $reward->title</td></tr>
-    <tr><td>Reward cost: $reward->cost</td></tr>
-    <tr><td>Date redeemed: $d</td></tr>
-    <tr><td><b>-------------------</b></td></tr>
+    <tr><td>Reward Name: $reward->title</td></tr>
+    <tr><td>Reward Cost: $reward->cost</td></tr>
     <tr><td></td></tr>
-    <tr><td>Thank you.</td></tr>
+    <tr><td>Thanks,</td></tr>
     </table>
     ";
     $this->email->message($msg);
@@ -269,19 +265,15 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     $d = date('F j, Y');
     $msg = "
     <table>
-    <tr><td>Dear Administrators,</td></tr>
+    <tr><td>Hello Administrator,</td></tr>
     <tr><td></td></tr>
-    <tr><td>A user named <em>$user->full_name</em> just redeemed an item called <em>$reward->title.</em><br>
-    You can find the reward details below:</td></tr>
+    <tr><td>Seller <em>$user->full_name</em> Have just redeemed <em>$reward->title.</em> at <em>$d</em>. Please coordinate with the seller to further discuss about his reward.</td></tr>
     <tr><td></td></tr>
-    <tr><td><b>Reward details</b></td></tr>
-    <tr><td><b>-------------------</b></td></tr>
-    <tr><td>Reward name: $reward->title</td></tr>
-    <tr><td>Reward cost: $reward->cost</td></tr>
-    <tr><td>Date redeemed: $d</td></tr>
-    <tr><td><b>-------------------</b></td></tr>
+    <tr><td><b>Reward details as follows:</b></td></tr>
+    <tr><td>Reward Name: $reward->title</td></tr>
+    <tr><td>Reward Cost: $reward->cost</td></tr>
     <tr><td></td></tr>
-    <tr><td>Thank you.</td></tr>
+    <tr><td>Thanks,</td></tr>
     </table>
     ";
 
