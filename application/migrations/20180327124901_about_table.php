@@ -33,8 +33,8 @@ class Migration_about_table extends CI_Migration {
 
       $data = array(
         'title' => 'About Us',
-        'description' => 'We started in Cebu with a vision to provide better homes for the average Filipino worker. Today, with 46 developments from Visayas to Mindanao, our real estate experience will be spent on continuously being masters of one thing - and that is to serve you.',
-        'iframe_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/xQdlO2evZFg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>',
+        'description' => 'Cebu Landmasters started with a vision to provide better homes for the average Filipino worker. Today, with 46 developments from Visayas to Mindanao, our real estate experience will be spent on continuously being masters of one thing - and that is to serve you.',
+        'iframe_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/mX2DBS-N640" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>',
       );
       $this->db->insert($table, $data);
 
