@@ -34,6 +34,19 @@ class Dashboard extends Front_core_controller {
       $this->sellers_model->get($this->session->id)->master_class
     );
 
+    $current_year = date('Y');
+    $current_qtr = ceil((new DateTime)->format('n') / 3); # See custom_helper line 116
+
+    $data['from_qtr_date'] = get_dates_of_quarter($current_qtr , $current_year)['start']->format('m/d/Y');
+    $data['to_qtr_date'] = get_dates_of_quarter($current_qtr , $current_year)['end']->format('m/d/Y');
+    $data['qtr'] = $current_qtr;
+    $data['current_year'] = $current_year;
+
+    $q1 = get_dates_of_quarter(1 , date('Y'));
+
+    $quarterly_start[] = "<option value='{$q1['start']->format('Y-m-d')}'>1st Quarter</option>";
+
+
     $this->wrapper('front/rewards', $data, 'rewards');
   }
 
