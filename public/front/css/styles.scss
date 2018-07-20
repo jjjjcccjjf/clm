@@ -243,7 +243,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
       img {@extend .defimg}
     }
     .profile {@extend .wid100; margin-top: 30px;
-      aside {width: 190px; height: 190px; margin: 0 auto; background: $darkgray; border-radius: 20px; overflow: hidden;
+      aside {width: 190px; height: 190px; margin: 0 auto; background: $darkgray; border-radius: 20px; /* overflow: hidden; */
         img {border-radius: 20px; @extend .coverimg}
         div {position: absolute; top: -30px; right: -30px; width: 60px;}
       }
@@ -813,3 +813,15 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 
       a { color: $black; border-bottom: 2px solid $black;  font-family: $fontmain; padding-bottom: 3px; }
     }
+
+
+
+.maincontent .pagewrapper ul.catalogue li article.reward div.rdeem_count {     border: 0px; position: absolute; top: 0; background: #ffe9ae; height: 45px; width: 45px; text-align: center; padding: 0px; padding-top: 15px; color: #000; right: 0;}
+
+.maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs {
+    h4 { font-family: $fontmain; font-size: 16px; color: #fff; float: left;}
+    h5 { font-family: $fontmain; font-size: 15px; color: #fff; float: right}
+} 
+
+.maincontent .pagewrapper .tp_title_cs h1 { float: left}
+.maincontent .pagewrapper .tp_title_cs h3 {     color: #ffe9ae; float: right; font-size: 22px; margin-right: 42px; text-shadow: 0 0 black; margin-top: 7px;}

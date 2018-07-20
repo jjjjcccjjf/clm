@@ -343,7 +343,7 @@ h1 {
         margin: 0 auto;
         background: #1c2129;
         border-radius: 20px;
-        overflow: hidden; }
+        /* overflow: hidden; */ }
         #sidebar-wrapper .sideprofile .profile aside img {
           border-radius: 20px; }
         #sidebar-wrapper .sideprofile .profile aside div {
@@ -1319,5 +1319,40 @@ nav.cbp-spmenu {
     border-bottom: 2px solid #15181e;
     font-family: "montserratregular", Arial, sans-serif;
     padding-bottom: 3px; }
+
+.maincontent .pagewrapper ul.catalogue li article.reward div.rdeem_count {
+  border: 0px;
+  position: absolute;
+  top: 0;
+  background: #ffe9ae;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  padding: 0px;
+  padding-top: 15px;
+  color: #000;
+  right: 0; }
+
+.maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs h4 {
+  font-family: "montserratregular", Arial, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  float: left; }
+.maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs h5 {
+  font-family: "montserratregular", Arial, sans-serif;
+  font-size: 15px;
+  color: #fff;
+  float: right; }
+
+.maincontent .pagewrapper .tp_title_cs h1 {
+  float: left; }
+
+.maincontent .pagewrapper .tp_title_cs h3 {
+  color: #ffe9ae;
+  float: right;
+  font-size: 22px;
+  margin-right: 42px;
+  text-shadow: 0 0 black;
+  margin-top: 7px; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,12 @@
 <!-- Main Dashboard -->
 <article class="maincontent" id="page-content-wrapper">
   <div class="pagewrapper">
-    <h1>Rewards Catalogue</h1>
+
+    <div class="tp_title_cs clearfix">
+      <h1>Rewards Catalogue</h1>
+    </div>
+
+
     <ul class="catalogue">
 
       <?php foreach ($rewards as $key => $value): ?>
@@ -12,10 +17,14 @@
             style="opacity:0.5"
           <?php endif; ?>
           >
-          <div>
-            <h3><?php echo number_format($value->cost) ?> Points
+
+          <div class="clearfix title_rewards_cs">
+            <h4><?php echo strlen($value->title) > 35 ? substr($value->title, 0, 35) . "..." : $value->title ?></h4>
+            <h5><?php echo number_format($value->cost) ?> Points
+            </h5>
+          </div>
+          <div class="rdeem_count">
               <span><?php echo $value->winners . "/" . $value->total_winners_allowed; ?></span>
-            </h3>
           </div>
           <a href="#rewards-details-<?php echo $value->id ?>" class="open-popup-link">
             <img src="<?php echo $value->image_url ?>">

@@ -1,346 +1,302 @@
 @media screen and (max-width: 1336px) {
-  .main-logo {
-    padding-top: 18% !important; }
-
-  article.loginreg h6 {
-    bottom: -80px !important; }
-  article.loginreg h6, article.loginreg h6 a {
-    font-size: 18px !important;
-    line-height: 24px !important; }
-  article.loginreg .tabs label {
-    font-size: 20px !important;
-    line-height: 26px !important; }
-  article.loginreg .tabs .tab {
-    padding: 40px 20px; }
-    article.loginreg .tabs .tab ul li label, article.loginreg .tabs .tab ul li a, article.loginreg .tabs .tab ul li input[type="submit"] {
-      font-size: 18px !important;
-      line-height: 24px !important; }
-    article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"] {
-      height: 48px; }
-    article.loginreg .tabs .tab section {
-      font-size: 16px !important;
-      line-height: 22px !important; }
-      article.loginreg .tabs .tab section h3 {
-        font-size: 18px !important;
-        line-height: 24px !important;
-        margin-bottom: 5px; }
-
-  header nav ul li a {
-    font-size: 16px;
-    line-height: 22px; }
-
-  .sideprofile {
-    overflow-y: scroll; }
-    .sideprofile .profile aside {
-      width: 130px !important;
-      height: 130px !important; }
-      .sideprofile .profile aside div {
-        width: 40px !important;
-        top: -20px !important;
-        right: -20px !important; }
-
-  .maincontent .top-sellers {
-    padding: 20px; } }
+.main-logo {
+padding-top: 18% !important; }
+article.loginreg h6 {
+bottom: -80px !important; }
+article.loginreg h6, article.loginreg h6 a {
+font-size: 18px !important;
+line-height: 24px !important; }
+article.loginreg .tabs label {
+font-size: 20px !important;
+line-height: 26px !important; }
+article.loginreg .tabs .tab {
+padding: 40px 20px; }
+article.loginreg .tabs .tab ul li label, article.loginreg .tabs .tab ul li a, article.loginreg .tabs .tab ul li input[type="submit"] {
+font-size: 18px !important;
+line-height: 24px !important; }
+article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"] {
+height: 48px; }
+article.loginreg .tabs .tab section {
+font-size: 16px !important;
+line-height: 22px !important; }
+article.loginreg .tabs .tab section h3 {
+font-size: 18px !important;
+line-height: 24px !important;
+margin-bottom: 5px; }
+header nav ul li a {
+font-size: 16px;
+line-height: 22px; }
+.sideprofile {
+overflow-y: scroll; }
+.sideprofile .profile aside {
+width: 130px !important;
+height: 130px !important; }
+.sideprofile .profile aside div {
+width: 40px !important;
+top: -20px !important;
+right: -20px !important; }
+.maincontent .top-sellers {
+padding: 20px; } }
 @media screen and (max-width: 1280px) {
-  article.loginreg {
-    top: 8%; }
-    article.loginreg .tabs .tab {
-      padding-bottom: 20px !important; }
-      article.loginreg .tabs .tab ul {
-        max-width: 350px; }
-      article.loginreg .tabs .tab .application-btn {
-        padding-bottom: 10px; }
-
-  .main-logo {
-    padding-top: 25% !important; }
-
-  header nav {
-    padding-right: 0; }
-
-  header nav ul li a {
-    padding: 30px 15px 0;
-    font-size: 16px; } }
+article.loginreg {
+top: 8%; }
+article.loginreg .tabs .tab {
+padding-bottom: 20px !important; }
+article.loginreg .tabs .tab ul {
+max-width: 350px; }
+article.loginreg .tabs .tab .application-btn {
+padding-bottom: 10px; }
+.main-logo {
+padding-top: 25% !important; }
+header nav {
+padding-right: 0; }
+header nav ul li a {
+padding: 30px 15px 0;
+font-size: 16px; } }
 @media screen and (max-width: 1024px) {
-  .main-logo img {
-    max-width: 500px !important;
-    width: 60% !important; }
-
-  article.loginreg h6 {
-    bottom: -80px !important; }
-  article.loginreg h6, article.loginreg h6 a {
-    font-size: 16px !important;
-    line-height: 22px !important; }
-  article.loginreg .tabs label {
-    font-size: 18px !important;
-    line-height: 24px !important; }
-  article.loginreg .tabs .tab {
-    padding: 40px 20px; }
-    article.loginreg .tabs .tab ul {
-      max-width: 300px !important; }
-      article.loginreg .tabs .tab ul li label, article.loginreg .tabs .tab ul li a, article.loginreg .tabs .tab ul li input[type="submit"] {
-        font-size: 16px !important;
-        line-height: 22px !important; }
-      article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"] {
-        height: 40px; }
-    article.loginreg .tabs .tab section {
-      font-size: 14px !important;
-      line-height: 20px !important;
-      max-width: 85% !important; }
-      article.loginreg .tabs .tab section h3 {
-        font-size: 16px !important;
-        line-height: 22px !important;
-        margin-bottom: 5px; }
-    article.loginreg .tabs .tab .application-btn {
-      line-height: 40px !important; }
-  article.loginreg .tabs input[type="radio"] + label {
-    margin-left: 50px; }
-
-  .maincontent .dbleft {
-    width: 100%; }
-
-  .maincontent .top-sellers {
-    width: 100%;
-    margin-top: 30px; }
-
-  .maincontent .top-sellers ul li {
-    width: 100%;
-    float: left;
-    display: table-cell; }
-
-  header aside {
-    width: 200px; }
-
-  header nav {
-    width: 70%; }
-
-  header nav ul li {
-    width: 25% !important;
-    display: table-cell;
-    float: left;
-    height: 40px; }
-
-  header nav ul li a {
-    height: 40px;
-    padding: 10px;
-    font-size: 14px; }
-
-  .maincontent .sales-content .sales .filter label {
-    position: relative;
-    width: 100%;
-    float: left;
-    display: block;
-    left: 0;
-    margin-bottom: 5px;
-    text-align: center;
-    top: 0 !important; }
-
-  .maincontent .sales-content .sales .filter ul {
-    padding-left: 0; }
-
-  .maincontent .sales-content .sales .filter ul li:last-child {
-    position: relative;
-    top: auto;
-    width: 100% !important;
-    float: left;
-    text-align: center;
-    padding-right: 0;
-    right: 0; }
-
-  .maincontent .sales-content .sales .filter ul li {
-    width: 33% !important; }
-
-  .maincontent .sales-content .sales .filter ul li:nth-child(3) {
-    padding-right: 0; }
-
-  .maincontent .sales-content .sales .filter ul li:last-child input[type="submit"] {
-    width: 70px !important;
-    margin: 5px auto;
-    float: none !important; }
-
-  .maincontent .sales-content .sales article table tr:first-child {
-    display: none; }
-
-  .maincontent .sales-content .sales article table tr td, .maincontent .sales-content .sales article table tr td:first-child {
-    display: block;
-    width: 100% !important;
-    text-align: left; }
-
-  .maincontent .sales-content .sales article table tr td label {
-    display: block; } }
+.main-logo img {
+max-width: 500px !important;
+width: 60% !important; }
+article.loginreg h6 {
+bottom: -80px !important; }
+article.loginreg h6, article.loginreg h6 a {
+font-size: 16px !important;
+line-height: 22px !important; }
+article.loginreg .tabs label {
+font-size: 18px !important;
+line-height: 24px !important; }
+article.loginreg .tabs .tab {
+padding: 40px 20px; }
+article.loginreg .tabs .tab ul {
+max-width: 300px !important; }
+article.loginreg .tabs .tab ul li label, article.loginreg .tabs .tab ul li a, article.loginreg .tabs .tab ul li input[type="submit"] {
+font-size: 16px !important;
+line-height: 22px !important; }
+article.loginreg .tabs .tab ul li input[type="email"], article.loginreg .tabs .tab ul li input[type="password"] {
+height: 40px; }
+article.loginreg .tabs .tab section {
+font-size: 14px !important;
+line-height: 20px !important;
+max-width: 85% !important; }
+article.loginreg .tabs .tab section h3 {
+font-size: 16px !important;
+line-height: 22px !important;
+margin-bottom: 5px; }
+article.loginreg .tabs .tab .application-btn {
+line-height: 40px !important; }
+article.loginreg .tabs input[type="radio"] + label {
+margin-left: 50px; }
+.maincontent .dbleft {
+width: 100%; }
+.maincontent .top-sellers {
+width: 100%;
+margin-top: 30px; }
+.maincontent .top-sellers ul li {
+width: 100%;
+float: left;
+display: table-cell; }
+header aside {
+width: 200px; }
+header nav {
+width: 70%; }
+header nav ul li {
+width: 25% !important;
+display: table-cell;
+float: left;
+height: 40px; }
+header nav ul li a {
+height: 40px;
+padding: 10px;
+font-size: 14px; }
+.maincontent .sales-content .sales .filter label {
+position: relative;
+width: 100%;
+float: left;
+display: block;
+left: 0;
+margin-bottom: 5px;
+text-align: center;
+top: 0 !important; }
+.maincontent .sales-content .sales .filter ul {
+padding-left: 0; }
+.maincontent .sales-content .sales .filter ul li:last-child {
+position: relative;
+top: auto;
+width: 100% !important;
+float: left;
+text-align: center;
+padding-right: 0;
+right: 0; }
+.maincontent .sales-content .sales .filter ul li {
+width: 33% !important; }
+.maincontent .sales-content .sales .filter ul li:nth-child(3) {
+padding-right: 0; }
+.maincontent .sales-content .sales .filter ul li:last-child input[type="submit"] {
+width: 70px !important;
+margin: 5px auto;
+float: none !important; }
+.maincontent .sales-content .sales article table tr:first-child {
+display: none; }
+.maincontent .sales-content .sales article table tr td, .maincontent .sales-content .sales article table tr td:first-child {
+display: block;
+width: 100% !important;
+text-align: left; }
+.maincontent .sales-content .sales article table tr td label {
+display: block; } }
 @media screen and (max-width: 800px) {
-  h1 {
-    font-size: 24px;
-    line-height: 30px; }
-
-  .bgleft {
-    width: 100%;
-    height: 100%; }
-
-  .bgright {
-    display: none; }
-
-  .main-logo {
-    position: relative;
-    width: 100%;
-    padding: 30px 0 !important;
-    top: 0 !important; }
-    .main-logo img {
-      max-width: 200px !important; }
-
-  article.loginreg {
-    width: 100%;
-    top: 20px !important;
-    margin-bottom: 100px;
-    background: #171b22;
-    padding-bottom: 0 !important; }
-    article.loginreg .tabs .tab {
-      border-left: 0 !important; }
-    article.loginreg .tabs input[type="radio"] + label {
-      margin-left: 31%; }
-
-  #wrapper {
-    padding-left: 0; }
-
-  .maincontent .sales-content td.sales-side, .maincontent .sales-content td.current-sales {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    float: left; }
-
-  .maincontent .sales-content td.current-sales {
-    margin: 20px 0;
-    padding: 20px; }
-
-  .white-popup {
-    max-width: 80% !important;
-    margin: 20px 10% !important; }
-
-  #rewards-details h3 {
-    font-size: 30px;
-    line-height: 36px; }
-
-  #rewards-details article h4 {
-    font-size: 18px;
-    line-height: 24px; }
-
-  #rewards-details article p, .content-container p #rewards-details article h5 span a {
-    font-size: 16px;
-    line-height: 22px; }
-
-  #rewards-details article, #rewards-details aside {
-    width: 100%; }
-
-  #rewards-details aside {
-    padding: 0 20%;
-    margin-bottom: 20px;
-    box-sizing: border-box; }
-
-  .maincontent .pagewrapper ul.catalogue li, .maincontent .pagewrapper ul.events li {
-    width: 100% !important;
-    padding-left: 0 !important; }
-
-  .maincontent .pagewrapper ul.catalogue, .maincontent .pagewrapper ul.events {
-    margin-left: 0; } }
+h1 {
+font-size: 24px;
+line-height: 30px; }
+.bgleft {
+width: 100%;
+height: 100%; }
+.bgright {
+display: none; }
+.main-logo {
+position: relative;
+width: 100%;
+padding: 30px 0 !important;
+top: 0 !important; }
+.main-logo img {
+max-width: 200px !important; }
+article.loginreg {
+width: 100%;
+top: 20px !important;
+margin-bottom: 100px;
+background: #171b22;
+padding-bottom: 0 !important; }
+article.loginreg .tabs .tab {
+border-left: 0 !important; }
+article.loginreg .tabs input[type="radio"] + label {
+margin-left: 31%; }
+#wrapper {
+padding-left: 0; }
+.maincontent .sales-content td.sales-side, .maincontent .sales-content td.current-sales {
+display: block !important;
+width: 100% !important;
+height: auto !important;
+float: left; }
+.maincontent .sales-content td.current-sales {
+margin: 20px 0;
+padding: 20px; }
+.white-popup {
+max-width: 80% !important;
+margin: 20px 10% !important; }
+#rewards-details h3 {
+font-size: 30px;
+line-height: 36px; }
+#rewards-details article h4 {
+font-size: 18px;
+line-height: 24px; }
+#rewards-details article p, .content-container p #rewards-details article h5 span a {
+font-size: 16px;
+line-height: 22px; }
+#rewards-details article, #rewards-details aside {
+width: 100%; }
+#rewards-details aside {
+padding: 0 20%;
+margin-bottom: 20px;
+box-sizing: border-box; }
+.maincontent .pagewrapper ul.catalogue li, .maincontent .pagewrapper ul.events li {
+width: 100% !important;
+padding-left: 0 !important; }
+.maincontent .pagewrapper ul.catalogue, .maincontent .pagewrapper ul.events {
+margin-left: 0; } }
 @media screen and (max-width: 680px) {
-  article.loginreg {
-    padding-bottom: 0 !important; }
-    article.loginreg .tabs input[type="radio"] + label {
-      margin-left: 25%; }
-
-  header nav.main {
-    display: none; }
-
-  .menu {
-    display: block; }
-
-  .maincontent .dbleft .events-calendar {
-    height: auto !important; }
-
-  .maincontent .dbleft .events-calendar .calendar-container {
-    width: 100%;
-    position: relative !important;
-    border-right: 0; }
-
-  .maincontent .dbleft .events-calendar .events-list {
-    padding-left: 0;
-    display: block;
-    clear: both; }
-
-  .maincontent .dbleft .featured ul.featured-news li a .caption {
-    position: relative; }
-
-  .maincontent .dbleft .featured .slick-prev, .maincontent .dbleft .featured .slick-next {
-    width: 40px;
-    height: 40px;
-    background-size: cover; }
-
-  #rewards-details h3 {
-    font-size: 24px;
-    line-height: 30px; }
-
-  #rewards-details article h4 {
-    font-size: 16px;
-    line-height: 22px; }
-
-  #rewards-details article p, #rewards-details article h5 span a, .content-container p {
-    font-size: 14px;
-    line-height: 20px; }
-
-  #rewards-details aside {
-    padding: 0;
-    margin-bottom: 20px;
-    box-sizing: border-box; }
-
-  .myaccount section ul li {
-    width: 100%;
-    padding-right: 0; }
-
-  .myaccount section ul.choice li {
-    width: 50% !important; } }
+article.loginreg {
+padding-bottom: 0 !important; }
+article.loginreg .tabs input[type="radio"] + label {
+margin-left: 25%; }
+header nav.main {
+display: none; }
+.menu {
+display: block; }
+.maincontent .dbleft .events-calendar {
+height: auto !important; }
+.maincontent .dbleft .events-calendar .calendar-container {
+width: 100%;
+position: relative !important;
+border-right: 0; }
+.maincontent .dbleft .events-calendar .events-list {
+padding-left: 0;
+display: block;
+clear: both; }
+.maincontent .dbleft .featured ul.featured-news li a .caption {
+position: relative; }
+.maincontent .dbleft .featured .slick-prev, .maincontent .dbleft .featured .slick-next {
+width: 40px;
+height: 40px;
+background-size: cover; }
+#rewards-details h3 {
+font-size: 24px;
+line-height: 30px; }
+#rewards-details article h4 {
+font-size: 16px;
+line-height: 22px; }
+#rewards-details article p, #rewards-details article h5 span a, .content-container p {
+font-size: 14px;
+line-height: 20px; }
+#rewards-details aside {
+padding: 0;
+margin-bottom: 20px;
+box-sizing: border-box; }
+.myaccount section ul li {
+width: 100%;
+padding-right: 0; }
+.myaccount section ul.choice li {
+width: 50% !important; } }
 @media screen and (max-width: 480px) {
-  article.loginreg .tabs input[type="radio"] + label {
-    margin-left: 10%; }
-
-  .maincontent .sales-content .sales .filter ul li {
-    width: 100% !important;
-    display: block !important;
-    padding-right: 0;
-    margin-bottom: 10px; }
-
-  #rewards-details article h5 input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px; }
-
-  .maincontent .pagewrapper ul.catalogue li article.reward img, .maincontent .pagewrapper ul.events li article.reward img {
-    object-fit: contain !important; }
-
-  .maincontent .pagewrapper ul.catalogue li article.reward, .maincontent .pagewrapper ul.events li article.reward {
-    background: white; }
-
-  .maincontent .pagewrapper ul.catalogue li article.reward, .maincontent .pagewrapper ul.events li article.reward {
-    height: 250px; }
-
-  #page-content-wrapper {
-    padding: 120px 10px 30px; }
-
-  .maincontent .dbleft .featured .slick-next {
-    right: -10px !important; }
-
-  .maincontent .dbleft .featured .slick-prev {
-    left: -10px !important; } }
+article.loginreg .tabs input[type="radio"] + label {
+margin-left: 10%; }
+.maincontent .sales-content .sales .filter ul li {
+width: 100% !important;
+display: block !important;
+padding-right: 0;
+margin-bottom: 10px; }
+#rewards-details article h5 input[type="checkbox"] {
+width: 25px;
+height: 25px;
+margin-right: 10px; }
+.maincontent .pagewrapper ul.catalogue li article.reward img, .maincontent .pagewrapper ul.events li article.reward img {
+object-fit: contain !important; }
+.maincontent .pagewrapper ul.catalogue li article.reward, .maincontent .pagewrapper ul.events li article.reward {
+background: white; }
+.maincontent .pagewrapper ul.catalogue li article.reward, .maincontent .pagewrapper ul.events li article.reward {
+height: 250px; }
+#page-content-wrapper {
+padding: 120px 10px 30px; }
+.maincontent .dbleft .featured .slick-next {
+right: -10px !important; }
+.maincontent .dbleft .featured .slick-prev {
+left: -10px !important; } }
 @media screen and (max-width: 375px) {
-  article.loginreg .tabs input[type="radio"] + label {
-    margin-left: 15px; }
-
-  .maincontent .top-sellers ul li figure {
-    position: relative;
-    float: none;
-    margin: 0 auto; }
-
-  .maincontent .top-sellers ul li figcaption {
-    padding-left: 0;
-    text-align: center;
-    margin-top: 10px; } }
-
+article.loginreg .tabs input[type="radio"] + label {
+margin-left: 15px; }
+.maincontent .top-sellers ul li figure {
+position: relative;
+float: none;
+margin: 0 auto; }
+.maincontent .top-sellers ul li figcaption {
+padding-left: 0;
+text-align: center;
+margin-top: 10px; } }
 /*# sourceMappingURL=responsive.css.map */
+@media only screen and (max-width: 1300px){
+#wrapper.active .maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs h4 { float: none!important; margin-bottom: 5px;}
+#wrapper.active .maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs h5 { float: none!important;}
+}
+@media only screen and (max-width: 1200px){
+#wrapper.active .maincontent .pagewrapper .tp_title_cs h1 { float: none;}
+#wrapper.active .maincontent .pagewrapper .tp_title_cs h3 { float: none;}
+}
+@media only screen and (max-width: 1000px){
+.maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs h4 { float: none!important; margin-bottom: 5px;}
+.maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs h5 { float: none!important;}
+}
+@media only screen and (max-width: 930px){
+.maincontent .pagewrapper .tp_title_cs h1{ float: none;}
+.maincontent .pagewrapper .tp_title_cs h3{ float: none; font-size: 20px; line-height: 30px;}
+}
+@media only screen and (max-width: 500px){
+.mfp-content { padding-left: 0px;}
+}
