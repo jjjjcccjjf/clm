@@ -26,10 +26,10 @@ $(document).ready(function() {
     $('form')[0].reset() // reset the form
 
     $('input[name=title]').attr('required', 'required')
-    $('input[name=address]').attr('required', 'required')
-    $('input[name=total_land_area]').attr('required', 'required')
-    $('input[name=phases]').attr('required', 'required')
-    $('input[name=status]').attr('required', 'required')
+    // $('input[name=address]').attr('required', 'required') // unrequire these shits
+    // $('input[name=total_land_area]').attr('required', 'required')
+    // $('input[name=phases]').attr('required', 'required')
+    // $('input[name=status]').attr('required', 'required')
     $('input[type=file]').attr("required", 'required')
 
     $('form').attr('action', base_url + 'admin/projects/add')

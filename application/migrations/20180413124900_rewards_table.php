@@ -44,7 +44,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Shangri-la Mactan overnight stay',
         'description' => '',
-        'image_url' => base_url('public/uploads/shang.jpg'),
+        'image_url' => base_url('public/uploads/rewards/shang.jpg'),
         'cost' => 17,
         'class_available' => 0,
         'total_winners_allowed' => 5,
@@ -54,7 +54,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Rustans GCs /Sodexo GCs',
         'description' => '',
-        'image_url' => base_url('public/uploads/rustans-pass.jpg'),
+        'image_url' => base_url('public/uploads/rewards/rustans-pass.jpg'),
         'cost' => 30,
         'class_available' => 0,
         'total_winners_allowed' => 5,
@@ -64,7 +64,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Samsung J7',
         'description' => '',
-        'image_url' => base_url('public/uploads/j7.jpg'),
+        'image_url' => base_url('public/uploads/rewards/j7.jpg'),
         'cost' => 40,
         'class_available' => 0,
         'total_winners_allowed' => 5,
@@ -74,7 +74,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Bohol Trip for 3D2N stay for 2',
         'description' => '',
-        'image_url' => base_url('public/uploads/bohol-trip.jpg'),
+        'image_url' => base_url('public/uploads/rewards/bohol-trip.jpg'),
         'cost' => 50,
         'class_available' => 0,
         'total_winners_allowed' => 5,
@@ -86,7 +86,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Shangri-la 2-night stay + 2 chi-spa massage',
         'description' => '',
-        'image_url' => base_url('public/uploads/shang.jpg'),
+        'image_url' => base_url('public/uploads/rewards/shang.jpg'),
         'cost' => 50,
         'class_available' => 1,
         'total_winners_allowed' => 3,
@@ -96,7 +96,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Macbook Air',
         'description' => '',
-        'image_url' => base_url('public/uploads/macbook-air.jpg'),
+        'image_url' => base_url('public/uploads/rewards/macbook-air.jpg'),
         'cost' => 80,
         'class_available' => 1,
         'total_winners_allowed' => 3,
@@ -106,7 +106,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Iphone X',
         'description' => '',
-        'image_url' => base_url('public/uploads/iphone-x.jpg'),
+        'image_url' => base_url('public/uploads/rewards/iphone-x.jpg'),
         'cost' => 70,
         'class_available' => 1,
         'total_winners_allowed' => 3,
@@ -116,7 +116,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Bali, Indonesia 5D4N',
         'description' => '',
-        'image_url' => base_url('public/uploads/bali-indo.jpg'),
+        'image_url' => base_url('public/uploads/rewards/bali-indo.jpg'),
         'cost' => 80,
         'class_available' => 1,
         'total_winners_allowed' => 3,
@@ -128,7 +128,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Omega (Female)/ Tag Heuer (Male)',
         'description' => '',
-        'image_url' => base_url('public/uploads/omega-tag.jpg'),
+        'image_url' => base_url('public/uploads/rewards/omega-tag.jpg'),
         'cost' => 100,
         'class_available' => 2,
         'total_winners_allowed' => 3,
@@ -138,7 +138,7 @@ class Migration_rewards_table extends CI_Migration {
       $data = array(
         'title' => 'Seoul, Korea 5D4N',
         'description' => '',
-        'image_url' => base_url('public/uploads/korea.jpg'),
+        'image_url' => base_url('public/uploads/rewards/korea.jpg'),
         'cost' => 100,
         'class_available' => 2,
         'total_winners_allowed' => 3,

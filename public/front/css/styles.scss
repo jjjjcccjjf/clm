@@ -644,7 +644,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 
       li { width: 33%; display: inline-block; padding: 0px 12.5px; margin-bottom: 35px;
         figure { max-width: 337px; width: 100%;height: 263px; margin: 0 auto; border: 2px solid #cfae79;
-          img { width: 100%; height: 100%; object-fit: cover;}
+          img { width: 100%; height: 100%; object-fit: contain; background-color: white}
         }
       }
 
@@ -659,7 +659,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
       > aside { width: 20%; float: left;
 
         > figure { max-width: 295px; width: 100%; height:230px; margin: 0 auto;
-          img { height: 100%; object-fit: cover;}
+          img { height: 100%; object-fit: contain;}
         }
 
         > article { padding: 33px 23px;
@@ -821,7 +821,7 @@ h1 {font: 30px/36px $fontbold; color: $gold; margin-bottom: 10px;
 .maincontent .pagewrapper ul.catalogue li article.reward div.title_rewards_cs {
     h4 { font-family: $fontmain; font-size: 16px; color: #fff; float: left;}
     h5 { font-family: $fontmain; font-size: 15px; color: #fff; float: right}
-} 
+}
 
 .maincontent .pagewrapper .tp_title_cs h1 { float: left}
 .maincontent .pagewrapper .tp_title_cs h3 {     color: #ffe9ae; float: right; font-size: 22px; margin-right: 42px; text-shadow: 0 0 black; margin-top: 7px;}

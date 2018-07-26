@@ -35,7 +35,7 @@ class Dashboard extends Front_core_controller {
     );
 
     $current_year = date('Y');
-    $current_qtr = ceil((new DateTime)->format('n') / 3); # See custom_helper line 116
+    $current_qtr = ceil((new DateTime)->format('n') / 3); # See custom_helper line 116 # Get the current quarter
 
     $data['from_qtr_date'] = get_dates_of_quarter($current_qtr , $current_year)['start']->format('m/d/Y');
     $data['to_qtr_date'] = get_dates_of_quarter($current_qtr , $current_year)['end']->format('m/d/Y');
