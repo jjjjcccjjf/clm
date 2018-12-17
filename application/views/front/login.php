@@ -58,6 +58,14 @@
       <div class="tab tabreg">
         <section class="requirements">
           <h3>HOW TO REGISTER:</h3>
+          <a href="<?php echo base_url('public/uploads/How to Register- Masters Class.docx') ?>">
+          <input type="submit" id="registration_form" name="" style="font: 24px/36px 'montserratbold', Arial, sans-serif;
+    color: #171b22;
+    padding: 5px 15px;
+    background: #ffe9ae;
+    border: 0; margin-top:13px;
+    border-radius: 5px;" value="Registration Form"></a>
+          <br>
           <br>
           <h3>1. Must be a Cebu Landmasters Inc. (CLI) accredited broker or a registered seller agent.</h3>
           <br>
