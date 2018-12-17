@@ -1,4 +1,5 @@
 <?php
+
 class Admin_model extends CI_Model
 {
   function __construct()
@@ -28,6 +29,7 @@ class Admin_model extends CI_Model
 
   public function add($data)
   {
+    $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
     return $this->db->insert('admin', $data);
   }
 
