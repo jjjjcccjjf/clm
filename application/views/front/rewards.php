@@ -4,7 +4,7 @@
 
     <div class="tp_title_cs clearfix">
       <h1>Rewards Catalogue</h1>
-      <h3><?php echo "For $from_qtr_date to $to_qtr_date Q$qtr sales in $current_year"; ?></h3>
+      <h3><?php echo "For $from_qtr_date to $to_qtr_date<br>Q$qtr sales in $current_year"; ?></h3>
     </div>
 
 
