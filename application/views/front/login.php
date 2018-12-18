@@ -64,7 +64,7 @@
     padding: 5px 15px;
     background: #ffe9ae;
     border: 0; margin-top:13px;
-    border-radius: 5px;" value="Registration Form"></a>
+    border-radius: 5px;" value="Download Registration Form"></a>
           <br>
           <br>
           <h3>1. Must be a Cebu Landmasters Inc. (CLI) accredited broker or a registered seller agent.</h3>
