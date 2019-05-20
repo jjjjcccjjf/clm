@@ -65,6 +65,11 @@ class Sellers_model extends Admin_core_model # application/core/MY_Model.php
     return $this->db->get_where($this->table, array('email' => $email))->row();
   }
 
+  public function getUserByBPnum($bp_num)
+  {
+    return $this->db->get_where($this->table, array('bp_num' => $bp_num))->row();
+  }
+
   public function getById($id)
   {
     return $this->db->get_where($this->table, array('id' => $id))->row();

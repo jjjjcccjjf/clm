@@ -61,12 +61,12 @@ class Bulk_import_model extends Admin_core_model # application/core/MY_Model.php
     $new_arr = [];
 
     foreach ($csv_arr as $key => $value) {
-      if (@$this->sellers_model->getByEmail($value[3])->id) { # Make sure all emails exist
+      if (@$this->sellers_model->getUserByBPnum($value[3])->id) { # Make sure all emails exist
         $new_arr[] = [
           'project_name' => $value[0],
           'sales_amount' => $value[1],
           'date' => $value[2],
-          'seller_id' => $this->sellers_model->getByEmail($value[3])->id
+          'seller_id' => $this->sellers_model->getUserByBPnum($value[3])->id
         ];
       }
     }

@@ -55,17 +55,17 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
     $file = fopen('php://output', 'w');
 
     // send the column headers
-    fputcsv($file, array('Project name', 'Sales amount', 'Date', 'Sellers Email'));
+    fputcsv($file, array('Project name', 'Sales amount', 'Date', 'Seller BP number'));
 
     $res = $this->sales_model->all();
     $new_res = [];
     foreach ($res as $key => $value) {
-      if ($value->seller_id && @$this->sellers_model->getById($value->seller_id)->email) { # skip zeros
+      if ($value->seller_id && @$this->sellers_model->getById($value->seller_id)->bp_num) { # skip zeros
         $new_res[] = array(
           $value->project_name,
           $value->sales_amount,
           $value->date,
-          $this->sellers_model->getById($value->seller_id)->email,
+          $this->sellers_model->getById($value->seller_id)->bp_num,
         );
       }
     }
