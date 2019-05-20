@@ -14,6 +14,11 @@ class Migration_sellers_table extends CI_Migration {
       'full_name' => array(
         'type' => 'VARCHAR',
         'constraint' => '140',
+      ),      
+      'bp_num' => array(
+        'type' => 'VARCHAR',
+        'constraint' => '200',
+        'null' => true
       ),
       'birth_date' => array(
         'type' => 'DATE',

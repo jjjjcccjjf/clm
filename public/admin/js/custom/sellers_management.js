@@ -5,6 +5,7 @@ $(document).ready(function() {
     const payload = $(this).data('payload')
 
     $('input[name=full_name]').val(payload.full_name)
+    $('input[name=bp_num]').val(payload.bp_num)
     $('input[name=birth_date]').val(payload.birth_date)
 
     $('select[name=gender] option')

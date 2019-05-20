@@ -81,6 +81,12 @@
                   <input type="text"
                   class="full_name" placeholder="Full name" required="required"
                   value="<?php echo $seller->full_name ?>" readonly>
+                </li>                
+                <li>
+                  <label>BP number</label>
+                  <input type="text"
+                  class="bp_num" placeholder="BP number"
+                  value="<?php echo $seller->bp_num ?>" readonly="readonly">
                 </li>
                 <li>
                   <label>Birth Date</label>
@@ -192,6 +198,12 @@
                     <input type="text" title=""
                     name="full_name" placeholder="Full name" required="required"
                     value="<?php echo $seller_pending->full_name ?>">
+                  </li>                  
+                  <li>
+                    <label>BP number</label>
+                    <input type="text" title=""
+                    name="bp_num" placeholder="BP number" readonly="readonly"
+                    value="<?php echo $seller_pending->bp_num ?>">
                   </li>
                   <li>
                     <label>Birth Date</label>

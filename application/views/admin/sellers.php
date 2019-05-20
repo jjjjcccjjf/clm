@@ -20,6 +20,7 @@
                   <tr>
                     <th>#</th>
                     <th>Full name</th>
+                    <th>BP Number</th>
                     <th>Email</th>
                     <th>Mobile</th>
                     <th>Date created</th>
@@ -34,6 +35,7 @@
                       <tr>
                         <th scope="row"><?php echo $value->id?></th>
                         <td><?php echo $value->full_name ?></td>
+                        <td><?php echo $value->bp_num ?></td>
                         <td><?php echo $value->email ?></td>
                         <td><?php echo $value->mobile_num ?></td>
                         <td><?php echo $value->created_at_f ?></td>
@@ -45,6 +47,7 @@
                           data-payload='<?php echo json_encode(
                             ['id' => $value->id,
                             'full_name' => $value->full_name,
+                            'bp_num' => $value->bp_num,
                             'birth_date' => $value->birth_date,
                             'gender' => $value->gender,
                             'division' => $value->division,
@@ -79,6 +82,7 @@
                                   data-payload='<?php echo json_encode(
                                     ['id' => $value->id,
                                     'full_name' => $seller_pending->full_name,
+                                    'bp_num' => $seller_pending->bp_num,
                                     'birth_date' => $seller_pending->birth_date,
                                     'gender' => $seller_pending->gender,
                                     'division' => $value->division,
@@ -92,7 +96,7 @@
                                     'email' => $seller_pending->email,
                                     'real_estate_record_payload' => $seller_pending->real_estate_record_payload,
                                     'real_estate_record_type' => $seller_pending->real_estate_record_type,
-                                    'image_url' => $seller_pending->image_url
+                                    'image_url' => @$seller_pending->image_url
                                     ])?>'
                                     class="edit-row btn btn-warning btn-xs">Review Pending</button>
                                   <?php endif; ?>
@@ -156,6 +160,10 @@
                       <div class="form-group col-md-6">
                         <label >Full name</label>
                         <input type="text" class="form-control" name="full_name" placeholder="Full name" required="required">
+                      </div>                      
+                      <div class="form-group col-md-6">
+                        <label >BP Number</label>
+                        <input type="text" class="form-control" name="bp_num" placeholder="BP number">
                       </div>
                       <div class="form-group col-md-6">
                         <label >Birth date</label>
