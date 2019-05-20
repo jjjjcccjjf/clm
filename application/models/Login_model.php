@@ -32,8 +32,12 @@ class Login_model extends CI_Model
 
   {
 
-    $user = $this->getUserByBPnum($bp_num, $login_type);
-    
+    if ($login_type == 'admin') {
+      $user = $this->getUserByEmail($bp_num, $login_type);
+    } else {
+      $user = $this->getUserByBPnum($bp_num, $login_type);
+    }
+
     if ($user) {
 
       return password_verify($password, $user->password) ? $user : false;
