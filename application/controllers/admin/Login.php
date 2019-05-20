@@ -11,10 +11,10 @@ class Login extends CI_Controller {
 
   public function attempt($login_type)
   {
-    $email = $this->input->post('email');
+    $bp_num = $this->input->post('email'); # now this is bp number
     $password = $this->input->post('password');
-
-    if($user = $this->login_model->verifyCredentials($email, $password, $login_type)){
+    
+    if($user = $this->login_model->verifyCredentials($bp_num, $password, $login_type)){
       $this->login_model->setSession($user, $login_type);
 
       $url = $this->login_model->createRedirectURL($login_type);

@@ -319,9 +319,10 @@ class Dashboard extends Front_core_controller {
       $data['forgot_token'] = null;
       $this->db->update('sellers', $data);
 
-      $this->session->set_flashdata('flash_email', base64_decode($this->input->get('e')));
-      $this->session->set_flashdata('flash_password', $this->input->post('new_password'));
-      $this->session->set_flashdata('auto_login', '<script>$(document).ready(function() {$("form").submit();});</script>');
+      // $this->session->set_flashdata('flash_email', base64_decode($this->input->get('e')));
+      // $this->session->set_flashdata('flash_password', $this->input->post('new_password'));
+      // $this->session->set_flashdata('auto_login', '<script>$(document).ready(function() {$("form").submit();});</script>');
+      $this->session->set_flashdata('auto_login', '<script>$(document).ready(function() {alert("Password changed successfully")});</script>');
 
       redirect('login');
     }

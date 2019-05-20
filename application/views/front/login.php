@@ -34,8 +34,8 @@
           <li>
             <form method="post" id="login_form">
 
-              <label>Email Address</label>
-              <input type="email" name="email" autofocus
+              <label>BP number</label>
+              <input type="text" name="email" autofocus
               value="<?php echo $this->session->flash_email ?>"
               >
             </li>

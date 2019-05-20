@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#login_btn').attr('disabled', 'disabled');
     $('#login_btn').val('Trying to login...');
 
-    let email = $('input[type="email"]').val()
+    let email = $('input[name="email"]').val()
     let password = $('input[type="password"]').val()
 
     $.ajax({

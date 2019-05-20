@@ -166,7 +166,7 @@ article.loginreg {width: 53%; float: right; position: relative; top: 15%; right:
     ul {@extend .listn; max-width: 470px; margin: 0 auto;
       li {@extend .wid100; margin-bottom: 25px;
         label {@extend .wid100; margin-bottom: 15px; font: 24px/36px $fontmain; cursor: default!important; padding: 0!important; text-transform: none!important;}
-        input[type="email"], input[type="password"] {@extend .wid100; height: 60px; background: $darkgray; border: solid 1px $gold; padding: 10px 15px; box-sizing: border-box; font: 18px/24px $fontmain; color: $white; border-radius: 5px;}
+        input[type="email"],input[type="text"], input[type="password"] {@extend .wid100; height: 60px; background: $darkgray; border: solid 1px $gold; padding: 10px 15px; box-sizing: border-box; font: 18px/24px $fontmain; color: $white; border-radius: 5px;}
         input[type="submit"] {font: 24px/36px $fontbold; color: $darkergray; padding: 10px 20px; background: $gold; border: 0; border-radius: 5px;}
         a {color: $lightgray; font: 24px/36px $fontmain}
       }
