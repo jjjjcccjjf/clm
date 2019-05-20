@@ -11,6 +11,7 @@ class Projects_latest_updates_model extends Admin_core_model # application/core/
   public function getLatestUpdates($fk)
   {
     $this->db->where('project_id', $fk);
+    $this->db->order_by('date', 'DESC');
     $res = $this->db->get($this->table)->result();
 
     foreach ($res as $key => $value) {
