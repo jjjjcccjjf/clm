@@ -87,7 +87,7 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
     $imported_csv = $this->bulk_import_model->upload('file_name');
     $this->bulk_import_model->add($imported_csv); # We update the seller's last imported CSV
 
-    $last_uploaded_csv_path = base_url() . "uploads/bulk_import/{$imported_csv['file_name']}";
+    $last_uploaded_csv_path = "uploads/bulk_import/{$imported_csv['file_name']}";
     $csv_arr = array_map('str_getcsv', file($last_uploaded_csv_path));
 
     if ($this->bulk_import_model->appendCsv($csv_arr)) {
@@ -104,7 +104,7 @@ class Sales extends Admin_core_controller { # see application/core/MY_Controller
     $imported_csv = $this->bulk_import_model->upload('file_name');
     $this->bulk_import_model->add($imported_csv); # We update the seller's last imported CSV
 
-    $last_uploaded_csv_path = base_url() . "uploads/bulk_import/{$imported_csv['file_name']}";
+    $last_uploaded_csv_path = "uploads/bulk_import/{$imported_csv['file_name']}";
     $csv_arr = array_map('str_getcsv', file($last_uploaded_csv_path));
 
     if ($this->bulk_import_model->replaceCsv($csv_arr)) {
